@@ -41,6 +41,6 @@ This integration follows standard integration removal. No extra steps are requir
 
 {% details "Authentication failure" %}
 
-Check that your storage account allows (`Shared Key` access)[https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent?tabs=portal#remediate-authorization-via-shared-key].
+Check that your storage account allows [`Shared Key` access](https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent?tabs=portal#remediate-authorization-via-shared-key).
 
 {% enddetails %}
