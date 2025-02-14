@@ -6,7 +6,7 @@ ha_category:
   - Binary sensor
   - Sensor
   - Switch
-ha_release: 2025.2.3
+ha_release: 2025.2
 ha_iot_class: Local Push
 ha_config_flow: true
 ha_codeowners:
@@ -15,9 +15,6 @@ ha_codeowners:
 ha_domain: bosch_alarm
 ha_platforms:
   - alarm_control_panel
-  - binary_sensor
-  - sensor
-  - switch
 ha_zeroconf: false
 ha_integration_type: integration
 ---
@@ -38,45 +35,14 @@ Supported panels:
 
 ## Provided entities
 
-The {% term entities %} are divided into four subdomains:
+The following {% term entities %} are provided:
 
 - [AlarmControlPanel](#alarm-control-panel)
-- [BinarySensor](#binary-sensor)
-- [Sensor](#sensor)
-- [Switch](#switch)
-- [Lock](#lock)
 
 ## Alarm Control Panel
 
 This integration adds an Alarm Control Panel device for each configured area, with the ability to issue arm/disarm commands.
 This entity reports state (_disarmed_, _armed_away_, etc), and contains custom attributes _ready_to_arm_ (_no_|_home_|_away_), and a _faulted_points_ counter.
-
-## Binary Sensor
-
-A binary sensor is added for each point configured on your alarm.
-
-## Sensor
-
-Two sensors are added, one containing the history events from your panel, and another containing the current faults from it.
-The history itself is stored on a `history` attribute, as there is a limit to how much text a sensor can store in its state.
-
-## Switch
-
-A switch is added for each output configured on the panel. Note that for some panels, only outputs with the type set to "remote output" can be controlled via _Mode 2_ API.
-
-## Lock
-
-A lock is added for each configured door on your panel  (_Solution 4000_, _B Series_ and _G Series_ panels only).
-
-## Actions
-
-The integration provides the following actions.
-
-### Action: Set Panel Date & Time
-
-| Data attribute         | Optional | Description                                                                     |
-|------------------------|----------|---------------------------------------------------------------------------------|
-| `datetime`             | Yes      | The Date & Time to set. Defaults to the current date and time if it is not set. |
 
 ## Authentication
 
