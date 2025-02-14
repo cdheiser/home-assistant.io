@@ -16,7 +16,7 @@ ha_zeroconf: false
 ha_integration_type: integration
 ---
 
-The **Bosch Alarm Panel** {% term integration %} allows you to connect your [Bosch Alarm Panel](https://www.boschsecurity.com) to Home Assistant in order to control and monitor your Bosch Alarm Panel.
+The **Bosch Alarm Panel** {% term integration %} allows you to connect your [Bosch Alarm Panel](https://www.boschsecurity.com) to Home Assistant to control and monitor your Bosch Alarm Panel.
 
 {% include integrations/config_flow.md %}
 
@@ -39,7 +39,7 @@ The following {% term entities %} are provided:
 ## Alarm Control Panel
 
 This integration adds an Alarm Control Panel device for each configured area, with the ability to issue arm/disarm commands.
-This entity reports state (_disarmed_, _armed_away_, etc), and contains custom attributes _ready_to_arm_ (_no_|_home_|_away_), and a _faulted_points_ counter.
+This entity reports state (_disarmed_, _armed_away_, etc.), and contains custom attributes _ready_to_arm_ (_no_|_home_|_away_), and a _faulted_points_ counter.
 
 ## Authentication
 
@@ -55,7 +55,7 @@ The integration will prompt for the required passcodes, which depend on the pane
 
 [^2]: The user needs to have the "master code functions" authority if you wish to interact with history events.
 
-⚠️ Since the _Mode 2_ automation user has "superuser" privileges, it bypasses the regularly-configured alarm pin: you will _not_ be prompted for a _User_ code when arming/disaming through the integration.
+⚠️ Since the _Mode 2_ automation user has "superuser" privileges, it bypasses the regularly configured alarm pin: you will _not_ be prompted for a _User_ code when arming/disaming through the integration.
 The integration also supports (optionally) setting a Home Assistant-local pin to protect these operations -- it does not need to match any of the codes configured on the panel.
 
 ## Removing the integration
