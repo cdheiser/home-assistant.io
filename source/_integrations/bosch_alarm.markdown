@@ -56,7 +56,6 @@ The integration will prompt for the required passcodes, which depend on the pane
 [^2]: The user needs to have the "master code functions" authority if you wish to interact with history events.
 
 ⚠️ Since the _Mode 2_ automation user has "superuser" privileges, it bypasses the regularly configured alarm pin: you will _not_ be prompted for a _User_ code when arming/disaming through the integration.
-The integration also supports (optionally) setting a Home Assistant-local pin to protect these operations -- it does not need to match any of the codes configured on the panel.
 
 ## Removing the integration
 
