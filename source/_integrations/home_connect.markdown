@@ -169,8 +169,79 @@ Changes a setting.
 | `key` | no | Key of the setting. |
 | `value` | no | Value of the setting. |
 
+
+## Automation examples
+
+Get started with these automation examples
+
+### Send a notification when the appliance ends the program
+
+{% details "Example YAML configuration" %}
+
+{% raw %}
+
+```yaml
+alias: "Notify when program ends"
+triggers:
+  - trigger: state
+    entity_id:
+      - sensor.appliance_operation_state
+    to: finished
+actions:
+  - service: notify.notify
+    data:
+      message: "The appliance has finished the program."
+```
+
+{% endraw %}
+{% enddetails %}
+
+### Start a program when electricity is cheap
+
+Because electricity is typically cheaper at night, this automation will activate the silent mode when starting the program at night.
+
+{% details "Example YAML configuration" %}
+
+{% raw %}
+
+```yaml
+alias: "Start program when electricity is cheap"
+triggers:
+  - trigger: state
+    entity_id: sensor.electricity_price
+    to: "0.10"
+conditions:
+  - condition: state
+    entity_id: sensor.diswasher_door
+    state: closed
+actions:
+  - if:
+      - condition: time
+        after: '22:00:00'
+        before: '06:00:00'
+    then:
+      - service: home_connect.set_program_and_options
+        data:
+          device_id: "your_device_id"
+          affects_to: "active_program"
+          program: "dishcare_dishwasher_program_eco_50"
+          options:
+            - key: "dishcare_dishwasher_option_silence_on_demand"
+              value: true
+    else:
+      - service: home_connect.set_program_and_options
+        data:
+          device_id: "your_device_id"
+          affects_to: "active_program"
+          program: "dishcare_dishwasher_program_eco_50"
+```
+
+{% endraw %}
+{% enddetails %}
+
 ## Data updates
 
 This integration uses server-sent events from the Home Connect API to receive live updates from the appliances.
 When the configuration entry is loaded or after a streaming error (for example after disconnection), the integration will request all data (such as appliance info, available commands, programs, settings, and status) for all appliances.
 If a new appliance is added to the account, the integration will request data for the new appliance and expose the related entities automatically.
+
