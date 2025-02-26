@@ -529,6 +529,12 @@ switch. They rarely worked because there were no energy or power
 capabilities available to get data from. If you do have the capabilities,
 it will still work for you.
 
+([@joostlek] - [#138313]) ([documentation](/integrations/smartthings))
+
+---
+
+There are a lot of states that are renamed, this might need an update in your automations or other config.
+
 - Set options for dishwasher job state sensor in SmartThings ([@joostlek] - [#139349])
 - Add translatable states to SmartThings media source input ([@joostlek] - [#139353])
 - Add translatable states to SmartThings media playback ([@joostlek] - [#139354])
@@ -539,7 +545,6 @@ it will still work for you.
 - Add translatable states to washer job state in SmartThings ([@joostlek] - [#139368])
 - Add translatable states to dryer job state in SmartThings ([@joostlek] - [#139370])
 
-([@joostlek] - [#138313]) ([documentation](/integrations/smartthings))
 
 [@joostlek]: https://github.com/joostlek
 [#138313]: https://github.com/home-assistant/core/pull/138313
@@ -569,7 +574,7 @@ to set a custom polling interval.
 
 {% enddetails %}
 
-{% details "Technove" %}
+{% details "TechnoVE" %}
 
 The status sensor state high_charge_period was renamed to high_tariff_period.
 
