@@ -37,11 +37,13 @@ There is currently support for the following **Qbus** products within Home Assis
 - **CTD01E to CTD03E (CTD 3.0)**: main controllers (yellow).
 - **CTD10 to CTDMax (CTD 3.5)**: main controllers (black).
 - **Toggle**: toggle outputs on controllers.
+- **Dimmer**: dimmer outputs on controllers.
 
 ## Available entities
 
 - **Switch**: toggles on/off outputs.
 - **Light**: controls dimmer lights, allowing both on/off functionality and brightness adjustment.
+- **Climate**: manages thermostats by setting temperature and choosing presets.
 
 ## Removing the integration
 
