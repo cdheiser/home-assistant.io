@@ -2,8 +2,12 @@
 title: Qbus
 description: Instructions on how to integrate your Qbus installation with Home Assistant.
 ha_category:
+  - Climate
+  - Light
   - Switch
 ha_platforms:
+  - climate
+  - light
   - switch
 ha_iot_class: Local Push
 ha_codeowners:
@@ -41,9 +45,9 @@ There is currently support for the following **Qbus** products within Home Assis
 
 ## Available entities
 
-- **Switch**: toggles on/off outputs.
-- **Light**: controls dimmer lights, allowing both on/off functionality and brightness adjustment.
 - **Climate**: manages thermostats by setting temperature and choosing presets.
+- **Light**: controls dimmer lights, allowing both on/off functionality and brightness adjustment.
+- **Switch**: toggles on/off outputs.
 
 ## Removing the integration
 
