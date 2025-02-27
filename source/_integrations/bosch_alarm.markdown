@@ -55,7 +55,9 @@ The integration will prompt for the required passcodes, which depend on the pane
 
 [^2]: The user needs to have the "master code functions" authority if you wish to interact with history events.
 
-⚠️ Since the _Mode 2_ automation user has "superuser" privileges, it bypasses the regularly configured alarm pin: you will _not_ be prompted for a _User_ code when arming/disaming through the integration.
+{% important %}
+Since the _Mode 2_ automation user has "superuser" privileges, it bypasses the regularly configured alarm pin: you will _not_ be prompted for a _User_ code when arming/disarming through the integration.
+{% endimportant %}
 
 ## Removing the integration
 
