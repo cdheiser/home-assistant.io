@@ -20,7 +20,7 @@ The **Bosch Alarm Panel** {% term integration %} allows you to connect your [Bos
 
 {% include integrations/config_flow.md %}
 
-Supported panels:
+## Supported devices
 
 - _Solution 2000/3000/4000_
 - B Series: _B3512/B4512/B5512/B6512_
