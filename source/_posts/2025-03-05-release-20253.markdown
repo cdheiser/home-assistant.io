@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2025.3: View those headers!"
-description: "Beautiful dashboard view headers, tons of tile card improvements and new features, better map clustering, assist now streams responses, and integrating with SmartThings is now better than ever!"
+description: "Beautiful dashboard view headers, tons of tile card improvements and new features, better map clustering, Assist now streams responses, and integrating with SmartThings is now better than ever!"
 date: 2025-03-05 00:01:00
 date_formatted: "March 5, 2025"
 author: Franck Nijhof
@@ -104,7 +104,7 @@ this with some subtle visual language in this release!
 
 <img class="no-shadow" src="/images/blog/2025-03/tile-card-clear-interactions.png" alt="Screenshot showing tile cards with and without direct actions on their icons. The ones that do have a direct action have a circular background, others don't." />
 
-When tapping the icon on the tile card results in directly performing an action,
+When tapping the icon on the tile card directly performs an action,
 like for example, turning on a light, the icon will have a circular background
 around it. In all other cases, the little circle will not be displayed.
 
@@ -193,7 +193,7 @@ to start reading while the response is being generated. A bonus side effect is
 that commands are now also faster: they will be executed as soon as they come
 in, without waiting for the rest of the message to be complete.
 
-<lite-youtube videoid="k6VvzDSI8RU" videoStartAt="3239" videotitle="Home Assistant 2025.3 Release Party"></lite-youtube>
+<lite-youtube videoid="k6VvzDSI8RU" videoStartAt="3239" videotitle="Voice - Chapter 9"></lite-youtube>
 
 There was quite a lot more to tell around Assist and the new voice features;
 in case you missed it, you can read all about it in this blog post:
@@ -308,14 +308,19 @@ changes to existing integrations:
 
 The [SmartThings] integration has been completely rewritten! 🎉 In December,
 SmartThings shut down the old authentication method, but thanks to
-[@joostlek]’s hard work and collaboration with SmartThings, the integration
-is back—better than ever.
+SmartThings' hard work and close collaboration with us, [@joostlek] was able to
+bring back the integration is back—better than ever.
 
 No more setting up routing, exposing ports, or creating developer accounts with
 access tokens—**just log in with your Samsung account**, and you’re good to go!
 
 And there’s more! Push updates now work without exposing your instance to the
 internet, making the experience faster, seamless, and more secure! 🚀
+
+A huge shoutout to our amazing community, who played a key role in this effort!
+💙 When [@joostlek] shared a guide on gathering test data, the community
+stepped up—sending in valuable test data that helped fine-tune the integration.
+This collaboration truly made a difference!
 
 [@joostlek]: https://github.com/joostlek
 [SmartThings]: /integrations/smartthings
@@ -335,7 +340,7 @@ noteworthy changes this release:
   Thanks, [@piitaya]!
 - The add/edit area dialog has been improved and compacted. They are
   much more pleasant to use now. Thanks, [@jpbede]!
-- We now have a device class for the wind speed sensors! Thanks, [@edenhaus]!
+- We now have a device class for the wind direction sensors! Thanks, [@edenhaus]!
 - [@jschlyter] has added the energy distance device class for sensors,
   which supports the following units: `kWh/100mi`, `kWh/100km`, and `mi/kWh`,
   including conversion between them. Awesome!
@@ -368,7 +373,7 @@ hard to improve this situation and make the new graph legends more similar
 to the old ones.
 
 <center>
-<img class="no-shadow" alt="A screen recording showing expanding and collapsing the " src="/images/blog/2025-03/graph-legend.gif"/>
+<img class="no-shadow" alt="A screen recording showing expanding and collapsing the legend" src="/images/blog/2025-03/graph-legend.gif"/>
 </center>
 
 By default, we show the legend below the graph and show as many data points
@@ -446,8 +451,8 @@ older (buggy) behavior might need to be adjusted.
 
 {% details "GPSD" %}
 
-All state attributes of the main sensor have been replaced with a dedicated
-sensor Home Assistant 2024.9. The deprecated attributes have now been removed.
+All state attributes of the main sensor were replaced with a dedicated sensor
+Home Assistant in 2024.9. The deprecated attributes have now been removed.
 
 ([@jrieger] - [#137600]) ([documentation](/integrations/gpsd))
 
@@ -461,8 +466,8 @@ sensor Home Assistant 2024.9. The deprecated attributes have now been removed.
 Some programs and program switches (which are being deprecated) and program
 select entities may not be exposed anymore by the integration as they are
 missing an `aiohomeconnect` program key enumeration ([file](https://github.com/MartinHjelmare/aiohomeconnect/blob/ccfbf802884aa781eef481da92e6bccd2e6de733/src/aiohomeconnect/model/program.py#L213C1-L507C6)).
-You can get the diagnostics from configuration entry or the device and open an
-issue or submit a PR with the generated diagnostics file on the
+You can get the diagnostics from the configuration entry or the device and open
+an issue or submit a PR with the generated diagnostics file on the
 [`aiohomeconnect` repository](https://github.com/MartinHjelmare/aiohomeconnect)
 to suggest the missing program(s).
 
@@ -473,9 +478,10 @@ to suggest the missing program(s).
 
 ---
 
-Using program and option keys that aren't in the API documentation will no
-longer work. To be able to use them, open an issue or submit a pull request
-with the required keys at [MartinHjelmare/aiohomeconnect](https://github.com/MartinHjelmare/aiohomeconnect).
+Using program and option keys that aren't in the API documentation in Home
+Connect actions will no longer work. To be able to use undocumented program or
+option keys, open an issue or submit a pull request with the required keys at
+[MartinHjelmare/aiohomeconnect](https://github.com/MartinHjelmare/aiohomeconnect).
 
 ([@Diegorro98] - [#137027]) ([documentation](/integrations/home_connect))
 
