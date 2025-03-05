@@ -83,7 +83,7 @@ header in multiple different ways. It comes with a responsive layout by default,
 but you can also set it to always be left-aligned or center-aligned.
 
 <p class="img">
-<img src="/images/blog/2025-03/temp-view-header.png" alt="Screenshot showing the new header feature in the dashboard view." />
+<img src="/images/blog/2025-03/view-header.png" alt="Screenshot showing the new header feature in the dashboard view." />
 </p>
 
 The badges can also be positioned below the text (default) or above the text. A
@@ -146,13 +146,13 @@ The first addition is one that is just surprising we didn't have it before:
 A switch toggle! This allows you to toggle a switch entity directly from the
 tile card.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-tile-card-switch-toggle.png" />
+<img class="no-shadow" src="/images/blog/2025-03/tile-card-switch-toggle.png" alt="Screenshot showing the new tile card feature for switch entities." />
 
 #### Counter actions
 
 The second addition is a counter toggle. This allows you to add a button to increase, decrease, or reset a counter entity directly from the tile card.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-tile-card-counter-actions.png" />
+<img class="no-shadow" src="/images/blog/2025-03/tile-card-counter-actions.png" alt="Screenshot showing the new tile card feature for counter helper entities."/>
 
 ### Tiny interaction improvements
 
@@ -183,7 +183,7 @@ the tile card has been improved. It is now clearer and easier to use.
 The new control gives you a better overview of what the option will do for
 the tile card.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-tile-card-editor.png" />
+<img class="no-shadow" src="/images/blog/2025-03/card-editor-improvements.png" alt="Screenshot showing the brand new visual card editor that make it more visually clear what options do." />
 
 ## Assist chat now has streaming responses
 
