@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "2025.3 Beta: View those headers!"
+title: "2025.3: View those headers!"
 description: "Beta release notes for Home Assistant 2025.3"
-date: 2025-02-26 00:00:00
+date: 2025-03-05 00:01:00
 date_formatted: "March 5, 2025"
 author: Franck Nijhof
 author_twitter: frenck
@@ -15,61 +15,36 @@ og_image: /images/blog/2025-03/social.jpg
 
 <lite-youtube videoid="TrNpNsZyGFw" videotitle="Home Assistant 2025.3 Release Party"></lite-youtube>
 
-{% note %}
-
-**Welcome to the beta release notes for Home Assistant 2025.3** 🎉
-
-<br />
-
-Please note that these release notes are a work in progress. 👷‍♀️ We will be
-completing them over the next couple of days. Not all features might be final
-yet, and some features _**may not** make it into the final release_.
-
-<br />
-
-**Want to help test the beta?** Awesome! ❤️ We have documented how you
-[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
-
-<br />
-
-While running the beta, we highly recommend joining our _#beta_ channel on
-the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
-testers are in this channel during the beta period to share experiences, ideas,
-and iterate over new features, fine-tuning them before the final release.
-It's a really fun place to hang out. 😎
-
-<br />
-
-**Reporting issues**: As this is a beta test, you might encounter unexpected
-behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
-You can find our issue trackers and the reported issues during beta here:
-
-<br />
-
-- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/129)
-- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/726)
-- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/136)
-
-🙏 When reporting issues, **make sure to mention the exact beta version you are
-running** in the issue description. This will help us identify and track the
-issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
-
-<br />
-
-Issues introduced in the beta are processed with priority. 🔝
-
-{% endnote %}
-
-{% tip %}
-
-Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=TrNpNsZyGFw)
-5 March 2025, at 20:00 GMT / 12:00 PT / 21:00 CET!
-
-{% endtip %}
-
 Home Assistant 2025.3! 🎉
 
-Enjoy the (beta) release!
+But! Before I dive into the release, let me quickly catch you up on things you
+might have missed. There is a lot of cool stuff happening lately!
+
+We have a live stream about Assist: [**Voice chapter 9**](https://www.youtube.com/watch?v=k6VvzDSI8RU)!
+Here we announced [**Speech-to-Phrase**](/blog/2025/02/13/voice-chapter-9-speech-to-phrase/#voice-for-the-masses),
+a voice recognition technology that is blazing fast and super accurate, even
+on a Raspberry Pi! 🚀
+
+I'm also super stoked [about the announcement](/blog/2025/02/27/apollo-joins-wwha/)
+that [**Apollo Automation**](https://apolloautomation.com/) has joined the
+[**Works with Home Assistant**](https://partner.home-assistant.io) program 🥰
+
+And our friends at [**Music Assistant**](https://www.music-assistant.io/) have
+[**shipped their next big hit**](/blog/2025/03/05/music-assistants-next-big-hit/)!
+With awesome new features like Spotify Connect, Assist optimization,
+an equalizer, and podcast & audiobook support. 🎶
+
+Great stuff, right? But this release today is also packed with amazing things!
+
+After a few releases [focussing on backups](/blog/2025/02/05/release-20252/),
+we are back with a release **packed** with new features and improvements,
+mostly **focussing on dashboards**! 🤩
+
+The new abilities, the tile card's fine-tuning, and the dashboard view's new
+headers are really cool; I can’t wait to see screenshots of your dashboards
+with these new features! 📸
+
+Enjoy the release!
 
 ../Frenck
 
@@ -88,65 +63,84 @@ Enjoy the (beta) release!
 - [Integrations](#integrations)
   - [New integrations](#new-integrations)
   - [Noteworthy improvements to existing integrations](#noteworthy-improvements-to-existing-integrations)
+  - [SmartThings](#smartthings)
 - [Other noteworthy changes](#other-noteworthy-changes)
 - [Iterating on the legends of graphs](#iterating-on-the-legends-of-graphs)
-- [Grouping / clustering of trackables on the maps](#grouping--clustering-of-trackables-on-the-maps)
+- [Grouping/clustering of trackables on the maps](#groupingclustering-of-trackables-on-the-maps)
 - [Need help? Join the community!](#need-help-join-the-community)
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
 
 ## Dashboard view headers
 
-This release brings a whole new look with the ability to add headers to your dashboards. This allows you to add a title and welcoming text to your dashboards, using Markdown and even templates. Additionally, this gives you a lot of space for badges next to the header.
+This release brings a whole new look with the ability to add headers to your
+dashboards. This allows you to add a title and welcoming text to your dashboards
+using Markdown and even templates. Additionally, this gives you a lot of space
+for badges next to the header.
 
-As always, we’ve baked in a lot of customization, with the ability to align the header in multiple different ways. It comes with a responsive layout by default, but you can also set it to always be left-aligned or center-aligned.
+As always, we’ve baked in a lot of customization, with the ability to align the
+header in multiple different ways. It comes with a responsive layout by default,
+but you can also set it to always be left-aligned or center-aligned.
 
 <img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-view-header.png" />
 
-The badges can also be positioned below the text (default) or above the text. A great visual menu makes it easy to choose how you want to organize your header.
+The badges can also be positioned below the text (default) or above the text. A
+great visual menu makes it easy to choose how you want to organize your header.
 
 ## Tile cards
 
-A lot of improvements and fine touches have been made to the tile card this release. The tile card is one of the most versatile cards in Home Assistant, and we have made it even better!
+This release has made many improvements and fine touches to the tile card. It
+is one of the most versatile cards in Home Assistant,
+and we have made it even better!
 
 ### Knowing which tile card can be controlled
 
-There is no doubt the tile card can do a lot, but ever since its creation, it has had a little flaw that you might have run into yourself…
+There is no doubt the tile card can do a lot, but ever since its creation,
+it has had a little flaw that you might have run into yourself…
 
-How would you know if tapping a tile card would trigger an action or whether it would just display more information about a sensor? We have addressed this with some subtle visual language in this release!
+How would you know if tapping a tile card would trigger an action or whether it
+would just display more information about a sensor? We have addressed this
+with some subtle visual language in this release!
 
 <img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-tile-card-shapes.png" />
 
-When there is no action (or only a “more info” tap behavior), we don’t show the circle around the icon. When it does have an action, it will show the circle, meaning you can tap that little button.
+When there is no action (or only a “more info” tap behavior), we don’t show the
+circle around the icon. When it does have an action, it will show the circle,
+meaning you can tap that little button.
 
 ### Position tile card features
 
-Ever since we added support for resizing cards, we gained the ability to make
-very wide tile cards. These cards would have a lot of empty space surrounding
-them, which, well, at times could be helpful, I guess.
+Since [we added support for resizing cards](/blog/2024/07/03/release-20247/#resize-the-cards-on-your-dashboard),
+we gained the ability to make very wide tile cards. These cards have a lot of
+empty space surrounding them, which can be helpful at times.
 
 But what if you could do something useful with that space? Now you can!
-All features of a tile card can now be positioned in-line in the tile card!
+All features of a tile card can now be positioned inline in the tile card!
 
 <img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-tile-card-inline-feature.png" />
 
-This brings a completely new look and feel which we are sure you are going to love! From the settings you can add a feature, like a brightness slider, and position it either below (bottom) or to the right side of the icon (inline).
+This brings a completely new look and feel, which we are sure you will love!
+From the settings, you can add a feature, like a brightness slider, and position
+it either below (bottom) or to the right side of the icon (inline).
 
 <img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-tile-card-inline-settings.png" />
 
-Note that only the first feature can be positioned inline; the rest will be positioned below the icon in the tile card.
+{% note %}
+Only the first feature can be positioned inline; the rest will be placed below
+the icon in the tile card.
+{% endnote %}
 
 ### New tile card features
 
 This release also ships with two new tile card features that can be
-added to your entities to provide new controls. These have been contributed by
-[@jpbede], so a big shout out to him!
+added to your entities to provide new controls. [@jpbede] contributed these,
+so a big shout out to him!
 
 [@jpbede]: https://github.com/jpbede
 
 #### Switch toggle
 
-The first addition is one that is just surprising we didn't have it before.
+The first addition is one that is just surprising we didn't have it before:
 A switch toggle! This allows you to toggle a switch entity directly from the
 tile card.
 
@@ -160,19 +154,19 @@ The second addition is a counter toggle. This allows you to add a button to incr
 
 ### Tiny interaction improvements
 
-More tweaks to the tile card have been made to improve the interaction
-experience with them. For example, we now have nice tiny little animations when you hover over
-the tile card, making it clearer that it is interactive; but also when
-you tap the tile card, it will now show a little animation to indicate that
-the tap was registered.
+More tweaks to the tile card have been made to improve their interaction
+experience. For example, we now have nice little animations when you hover over
+the tile card, making it more apparent that it is interactive. Still, when you
+tap the tile card, it will show a little animation to indicate that the
+tap was registered.
 
 <video controls>
   <source src="/images/blog/2025-03/temp-tile-card-micro-interactions.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-Another nice addition is that the tile card can now be interacted with
-by using your keyboard as well! Tab and shift-tab your way across the screen like the keyboard warrior you are.
+Another nice addition is that the tile card can now interact with your keyboard!
+Tab and shift-tab your way across the screen like the keyboard warrior you are.
 
 <video controls>
   <source src="/images/blog/2025-03/temp-tile-card-keyboard-navigation.mp4" type="video/mp4">
@@ -182,9 +176,9 @@ by using your keyboard as well! Tab and shift-tab your way across the screen lik
 ### Editor improvements
 
 Not just the tile card itself has been improved, but also the editor for
-the tile card has been improved. It is now clearer and easier to use. 
+the tile card has been improved. It is now clearer and easier to use.
 
-The new control give you a better overview of what the option will do for
+The new control gives you a better overview of what the option will do for
 the tile card.
 
 <img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-tile-card-editor.png" />
@@ -205,9 +199,12 @@ to start reading while the response is being generated. A bonus side effect is
 that commands are now also faster: they will be executed as soon as they come
 in, without waiting for the rest of the message to be complete.
 
-**TODO**: Insert clip from the voice livestream where this is shown.
+<lite-youtube videoid="k6VvzDSI8RU" videoStartAt="3239" videotitle="Home Assistant 2025.3 Release Party"></lite-youtube>
 
-https://www.youtube.com/live/k6VvzDSI8RU?si=75LSYXm-ULx9PQXG&t=3218
+There was quite a lot more to tell around Assist and the new voice features;
+in case you missed it, you can read all about it in this blog post:
+
+📰 [Speech-to-Phrase brings voice home - Voice chapter 9](/blog/2025/02/13/voice-chapter-9-speech-to-phrase/)
 
 ## Integrations
 
@@ -282,19 +279,18 @@ changes to existing integrations:
 - [@MartinHjelmare] and [@Diegorro98] have been putting in a lot of effort to bring
   the [Home Connect integration] to the next level. Nice!
 - Got an [ESPHome] device that is acting up? [@bdraco] has added a new option
-  to the integration to let Home Assistant shadowlog the logs of the device.
+  to the integration to let Home Assistant shadowlog the device logs.
   Helpful!
 - The [OpenAI conversation integration] now supports the `o1`, `o1-preview`,
   `o1-mini`, and `o3-mini` reasoning models. Thanks, [@Shulyaka]!
 - The [Shelly integration] now supports the 4th generation of the Shelly Flood
-  sensors and added support for Shelly script events entities. Thanks, [@chemelli74]
-  and [@wjtje]!
+  sensors and added support for Shelly script events entities.
+  Thanks, [@chemelli74] and [@wjtje]!
 - Support for the [Switchbot Remote] has been added to the
   [Switchbot integration]. Thanks, [@awahlig]!
-- UniFi version 9 introduced zone-based rules. These are now supported in the
+- UniFi version 9 introduced zone-based rules. These are now supported by
   [Unifi integration]. Thanks, [@Samywamy10]!
 - [@Galorhallen] has added support for effects in [Govee lights]. Nice!
-- [@joostlek] completely rewrote the [SmartThings] integration! In december, SmartThings shut down the authentication method that we used to use to connect with their platform. During the last 2 months, we collaborated with SmartThings to get the integration up and running again. No more need to request a personal access token! You can just sign in using your Samsung account (like how you are used to with, for example, OneDrive). Another improvement we have made is that to get push updates, you don't need to expose your instance to the internet anymore!
 
 [@awahlig]: https://github.com/awahlig
 [@bdraco]: https://github.com/bdraco
@@ -305,7 +301,6 @@ changes to existing integrations:
 [@Samywamy10]: https://github.com/Samywamy10
 [@Shulyaka]: https://github.com/Shulyaka
 [@wjtje]: https://github.com/wjtje
-[@joostlek]: https://github.com/joostlek
 [ESPhome]: /integrations/esphome
 [Govee lights]: /integrations/govee_light_local
 [Home Connect integration]: /integrations/home_connect
@@ -314,6 +309,21 @@ changes to existing integrations:
 [Switchbot Remote]: https://eu.switch-bot.com/products/switchbot-Remote
 [UniFi integration]: /integrations/unifi
 [Shelly integration]: /integrations/shelly
+
+### SmartThings
+
+The [SmartThings] integration has been completely rewritten! 🎉 In December,
+SmartThings shut down the old authentication method, but thanks to
+[@joostlek]’s hard work and collaboration with SmartThings, the integration
+is back—better than ever.
+
+No more setting up routing, exposing ports, or creating developer accounts with
+access tokens—**just log in with your Samsung account**, and you’re good to go!
+
+And there’s more! Push updates now work without exposing your instance to the
+internet, making the experience faster, seamless, and more secure! 🚀
+
+[@joostlek]: https://github.com/joostlek
 [SmartThings]: /integrations/smartthings
 
 ## Other noteworthy changes
@@ -322,21 +332,20 @@ There are many more improvements in this release; here are some of the other
 noteworthy changes this release:
 
 - Ever upgraded Home Assistant and needed to do a hard refresh in your
-  browser to make it work again? That is now a thing of the past! Every
-  time your browser connects to Home Assistant, it will ensure your browser's
-  cache is up-to-date. Thanks, [@bramkragten]!
-- [@balloob] made a small change with a big impact. When you set up an
-  new integration for a new device, Home Assistant will now redirect you
-  to the device page after setting it up. Nice!
+  browser to make it work again? We have been able to reduce the cases in
+  which this happens! Thanks, [@bramkragten]!
+- [@balloob] made a small change with a big impact. When you set up a new
+  integration for a new device, Home Assistant will now redirect you to the
+  device page after setting it up. Nice!
 - There is now an option to add an extra margin to the top of a section view.
   Thanks, [@piitaya]!
 - The add/edit area dialog has been improved and compacted. They are
   much more pleasant to use now. Thanks, [@jpbede]!
 - We now have a device class for the wind speed sensors! Thanks, [@edenhaus]!
 - [@jschlyter] has added the energy distance device class for sensors,
-  which supports the following units: `kWh/100mi`, `kWh/100km`, `mi/kWh`,
+  which supports the following units: `kWh/100mi`, `kWh/100km`, and `mi/kWh`,
   including conversion between them. Awesome!
-- Media player entities which support browsing media now have a new action
+- Media player entities that support browsing media now have a new action
   available to [browse media as an action with a response]. Thanks, [@PeteRager]!
 - [@rikroe] has added an action to [retrieve the configuration of a schedule
   helper]. Thanks!
@@ -354,34 +363,47 @@ noteworthy changes this release:
 
 ## Iterating on the legends of graphs
 
-Last release, we made quite a big change to the charts by replacing the software we use to make these graphs in Home Assistant. Things changed behind the scenes, but our aim to start was to make it look and feel similar.
+Last release, we made [quite a big change to the charts](/blog/2025/02/05/release-20252/#preparing-our-graphs-for-the-future)
+by replacing the software we use to make these graphs in Home Assistant. Things
+changed behind the scenes, but our aim to start was to make it look
+and feel similar.
 
-However, we received a lot of feedback from the community that the legends shown on the new graphs were suboptimal. Our UX and frontend teams have been hard at work to improve this situation and make it look more similar to the old graph legends.
+However, we received a lot of feedback from the community that the legends shown
+on the new graphs were suboptimal. Our UX and frontend teams have been working
+hard to improve this situation and make the new graph legends more similar
+to the old ones.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-graph-legend.png" />
+<center>
+<img class="no-shadow" alt="A screen recording showing expanding and collapsing the " src="/images/blog/2025-03/graph-legend.gif"/>
+</center>
 
 By default, we show the legend below the graph and show as many data points
 as possible. If there are too many, they will be displayed on demand using the
 little ellipsis button.
 
-When using these cards on your dashboard, if you want to always show the full legend, a new option will allow you to keep it fully visible.
+When using these cards on your dashboard, if you want to always show the full
+legend, a new option will allow you to keep it fully visible.
 
-You can now also zoom in and out, by double clicking on a graph. If you want more control over the range you want to view in your graph, you can press the ctrl/cmd key and then select the range on the graph you want to zoom in on.
+You can now also zoom in and out, by double clicking on a graph. If you want
+more control over the range you want to view in your graph, you can press the
+ctrl/cmd key and then select the range on the graph you want to zoom in on.
 
-## Grouping / clustering of trackables on the maps
+## Grouping/clustering of trackables on the maps
 
-The map card in Home Assistant is a great way to visualize the location of
-your entities. However, when you have a lot of entities on the map, especially
-when they are in the same location, it can become a bit cluttered.
+The map card is perfect for visualizing your entities’ locations, but when too
+many cluster together in the same spot, it can get a bit cluttered.
 
-This release improves the map card by adding marker clustering. This makes
-currently stacked entities visible as well. When spidered, the entity markers
-show a line to the original coordinates. Clustering can be disabled temporarily
-with a toggle.
-
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-marker-clustering.png" />
+To tackle this, we’ve introduced marker clustering, which groups nearby entities
+together, making it easier to see them at a glance. When zooming in, the markers
+‘spider’ out, showing individual entity locations with a connecting line to
+their original positions. You can temporarily disable clustering with a
+simple toggle.
 
 Thanks [@jpbede] and [@marcinbauer85] for this awesome improvement!
+
+<center>
+<img class="no-shadow" alt="The map now nicely clusters the items on the same location. This animation shows the ability to expand the cluster of items." src="/images/blog/2025-03/map-marker-clustering.gif"/>
+</center>
 
 [@jpbede]: https://github.com/jpbede
 [@marcinbauer85]: https://github.com/marcinbauer85
@@ -413,7 +435,7 @@ possible for you. This release has the following backward-incompatible changes:
 
 {% details "GPSD" %}
 
-All state attributes of the main sensor have been replaced with dedicated
+All state attributes of the main sensor have been replaced with a dedicated
 sensor Home Assistant 2024.9. The deprecated attributes have now been removed.
 
 ([@jrieger] - [#137600]) ([documentation](/integrations/gpsd))
@@ -427,7 +449,7 @@ sensor Home Assistant 2024.9. The deprecated attributes have now been removed.
 
 Some programs and program switches (which are being deprecated) and program
 select entities may not be exposed anymore by the integration as they are
-missing a `aiohomeconnect` program key enumeration ([file](https://github.com/MartinHjelmare/aiohomeconnect/blob/ccfbf802884aa781eef481da92e6bccd2e6de733/src/aiohomeconnect/model/program.py#L213C1-L507C6)).
+missing an `aiohomeconnect` program key enumeration ([file](https://github.com/MartinHjelmare/aiohomeconnect/blob/ccfbf802884aa781eef481da92e6bccd2e6de733/src/aiohomeconnect/model/program.py#L213C1-L507C6)).
 You can get the diagnostics from configuration entry or the device and open an
 issue or submit a PR with the generated diagnostics file on the
 [`aiohomeconnect` repository](https://github.com/MartinHjelmare/aiohomeconnect)
@@ -471,9 +493,9 @@ and config entry.
 
 Users with a YAML setup have been instructed to update their configuration in
 `configuration.yaml` via repair issue flow. Deprecation issues with MQTT JSON
-lights that were set up through discovery were communicated via warnings in
-the logs. Use of the removed parameters in discovery will not break
-the configuration, but will still log a warning.
+lights set up through discovery were communicated via warnings in the logs.
+Using the removed parameters in discovery will not break the configuration but
+will still log a warning.
 
 ([@jbouwh] - [#136996]) ([documentation](/integrations/mqtt))
 
@@ -507,17 +529,18 @@ it will still work for you.
 
 ---
 
-There are a lot of states that are renamed, this might need an update in your automations or other config.
+There are a lot of states that have been renamed; this might need an update in
+your automations or other configurations.
 
-- Set options for dishwasher job state sensor in SmartThings ([@joostlek] - [#139349])
-- Add translatable states to SmartThings media source input ([@joostlek] - [#139353])
-- Add translatable states to SmartThings media playback ([@joostlek] - [#139354])
-- Add translatable states to oven mode in SmartThings ([@joostlek] - [#139356])
-- Add translatable states to oven job state in SmartThings ([@joostlek] - [#139361])
-- Add translatable states to robot cleaner movement in SmartThings ([@joostlek] - [#139363])
-- Add translatable states to robot cleaner turbo mode in SmartThings ([@joostlek] - [#139364])
-- Add translatable states to washer job state in SmartThings ([@joostlek] - [#139368])
-- Add translatable states to dryer job state in SmartThings ([@joostlek] - [#139370])
+- Set options for dishwasher job state sensor in SmartThings ([#139349])
+- Add translatable states to SmartThings media source input ([#139353])
+- Add translatable states to SmartThings media playback ([#139354])
+- Add translatable states to oven mode in SmartThings ([#139356])
+- Add translatable states to oven job state in SmartThings ([#139361])
+- Add translatable states to robot cleaner movement in SmartThings ([#139363])
+- Add translatable states to robot cleaner turbo mode in SmartThings ([#139364])
+- Add translatable states to washer job state in SmartThings ([#139368])
+- Add translatable states to dryer job state in SmartThings ([#139370])
 
 
 [@joostlek]: https://github.com/joostlek
@@ -550,7 +573,7 @@ to set a custom polling interval.
 
 {% details "TechnoVE" %}
 
-The status sensor state high_charge_period was renamed to high_tariff_period.
+The status sensor state `high_charge_period` was renamed to `high_tariff_period`.
 
 ([@Moustachauve] - [#139314]) ([documentation](/integrations/technove))
 
@@ -565,7 +588,9 @@ new features available for your integration: Be sure to follow our
 
 - [Backup agents](https://developers.home-assistant.io/blog/2025/02/17/backup-agents)
 - [Changed config entry state transitions](https://developers.home-assistant.io/blog/2025/02/19/new-config-entry-states)
+- [Changes to the BackupAgent API](https://developers.home-assistant.io/blog/2025/03/04/backup-agent-api-changes)
 - [Energy by distance units](https://developers.home-assistant.io/blog/2025/01/31/energy-distance-units)
+- [New checks for config flow unique ID](https://developers.home-assistant.io/blog/2025/03/01/config-flow-unique-id/)
 - [Relocate dhcp/ssdp/usb/zeroconf ServiceInfo models](https://developers.home-assistant.io/blog/2025/01/15/service-info)
 - [Support for config subentries](https://developers.home-assistant.io/blog/2025/02/16/config-subentries)
 
