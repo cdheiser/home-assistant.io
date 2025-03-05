@@ -164,7 +164,7 @@ preset_modes:
 
 ## Counter actions
 
-Widget that displays buttons to increment, decrement and reset a [counter](/integrations/counter).
+Widget that displays buttons to increment, decrement, and reset a [counter](/integrations/counter).
 
 <p class='img'>
   <img src='/images/dashboards/features/counter_actions.png' alt='Screenshot of the tile card with counter actions feature'>
