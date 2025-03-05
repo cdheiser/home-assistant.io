@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2025.3: View those headers!"
-description: "Beta release notes for Home Assistant 2025.3"
+description: "Beautiful dashboard view headers, tons of tile card improvements and new features, better map clustering, assist now streams responses, and integrating with SmartThings is now better than ever!"
 date: 2025-03-05 00:01:00
 date_formatted: "March 5, 2025"
 author: Franck Nijhof
@@ -20,7 +20,7 @@ Home Assistant 2025.3! 🎉
 But! Before I dive into the release, let me quickly catch you up on things you
 might have missed. There is a lot of cool stuff happening lately!
 
-We have a live stream about Assist: [**Voice chapter 9**](https://www.youtube.com/watch?v=k6VvzDSI8RU)!
+We had a live stream about Assist: [**Voice chapter 9**](https://www.youtube.com/watch?v=k6VvzDSI8RU)!
 Here we announced [**Speech-to-Phrase**](/blog/2025/02/13/voice-chapter-9-speech-to-phrase/#voice-for-the-masses),
 a voice recognition technology that is blazing fast and super accurate, even
 on a Raspberry Pi! 🚀
@@ -36,9 +36,9 @@ an equalizer, and podcast & audiobook support. 🎶
 
 Great stuff, right? But this release today is also packed with amazing things!
 
-After a few releases [focussing on backups](/blog/2025/02/05/release-20252/),
+After a few releases [focusing on backups](/blog/2025/02/05/release-20252/),
 we are back with a release **packed** with new features and improvements,
-mostly **focussing on dashboards**! 🤩
+mostly **focusing on dashboards**! 🤩
 
 The new abilities, the tile card's fine-tuning, and the dashboard view's new
 headers are really cool; I can’t wait to see screenshots of your dashboards
@@ -52,7 +52,7 @@ Enjoy the release!
 
 - [Dashboard view headers](#dashboard-view-headers)
 - [Tile cards](#tile-cards)
-  - [Knowing which tile card can be controlled](#knowing-which-tile-card-can-be-controlled)
+  - [Making tile card interactions clearer](#making-tile-card-interactions-clearer)
   - [Position tile card features](#position-tile-card-features)
   - [New tile card features](#new-tile-card-features)
     - [Switch toggle](#switch-toggle)
@@ -82,9 +82,7 @@ As always, we’ve baked in a lot of customization, with the ability to align th
 header in multiple different ways. It comes with a responsive layout by default,
 but you can also set it to always be left-aligned or center-aligned.
 
-<p class="img">
-<img src="/images/blog/2025-03/view-header.png" alt="Screenshot showing the new header feature in the dashboard view." />
-</p>
+<img class="no-shadow" src="/images/blog/2025-03/dashboard-view-header.png" alt="Screenshot showing the new header feature in the dashboard view." />
 
 The badges can also be positioned below the text (default) or above the text. A
 great visual menu makes it easy to choose how you want to organize your header.
@@ -95,20 +93,22 @@ This release has made many improvements and fine touches to the tile card. It
 is one of the most versatile cards in Home Assistant,
 and we have made it even better!
 
-### Knowing which tile card can be controlled
+### Making tile card interactions clearer
 
 There is no doubt the tile card can do a lot, but ever since its creation,
 it has had a little flaw that you might have run into yourself…
 
-How would you know if tapping a tile card would trigger an action or whether it
-would just display more information about a sensor? We have addressed this
-with some subtle visual language in this release!
+How would you know if tapping the icon on the tile card would trigger
+an action or whether it would just display more information? We have addressed
+this with some subtle visual language in this release!
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-tile-card-shapes.png" />
+<img class="no-shadow" src="/images/blog/2025-03/tile-card-clear-interactions.png" alt="Screenshot showing tile cards with and without direct actions on their icons. The ones that do have a direct action have a circular background, others don't." />
 
-When there is no action (or only a “more info” tap behavior), we don’t show the
-circle around the icon. When it does have an action, it will show the circle,
-meaning you can tap that little button.
+When tapping the icon on the tile card results in directly performing an action,
+like for example, turning on a light, the icon will have a circular background
+around it. In all other cases, the little circle will not be displayed.
+
+Now you know! 👍
 
 ### Position tile card features
 
@@ -119,13 +119,11 @@ empty space surrounding them, which can be helpful at times.
 But what if you could do something useful with that space? Now you can!
 All features of a tile card can now be positioned inline in the tile card!
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-tile-card-inline-feature.png" />
+<img class="no-shadow" src="/images/blog/2025-03/tile-card-inline-features.png" alt="Screenshot showcasing the new inline tile card features (versus the existing bottom feature" />
 
 This brings a completely new look and feel, which we are sure you will love!
 From the settings, you can add a feature, like a brightness slider, and position
 it either below (bottom) or to the right side of the icon (inline).
-
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-tile-card-inline-settings.png" />
 
 {% note %}
 Only the first feature can be positioned inline; the rest will not be displayed.
@@ -149,9 +147,10 @@ tile card.
 
 #### Counter actions
 
-The second addition is a counter toggle. This allows you to add a button to increase, decrease, or reset a counter entity directly from the tile card.
+The second addition is a counter toggle. This allows you to add a button to
+increase, decrease, or reset a counter entity directly from the tile card.
 
-<img class="no-shadow" src="/images/blog/2025-03/tile-card-counter-actions.png" alt="Screenshot showing the new tile card feature for counter helper entities."/>
+<img class=" no-shadow" src="/images/blog/2025-03/tile-card-counter-actions.png" alt="Screenshot showing the new tile card feature for counter helper entities."/>
 
 ### Tiny interaction improvements
 
@@ -161,18 +160,12 @@ the tile card, making it more apparent that it is interactive. Still, when you
 tap the tile card, it will show a little animation to indicate that the
 tap was registered.
 
-<video controls>
-  <source src="/images/blog/2025-03/temp-tile-card-micro-interactions.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<center>
+<img class="no-shadow" src="/images/blog/2025-03/tile-card-interactions.gif" alt="Screenrecording showing the new tiny micro interactions added to the tile card and a small demo of using keyboard navigation" />
+</center>
 
 Another nice addition is that the tile card can now interact with your keyboard!
-Tab and shift-tab your way across the screen like the keyboard warrior you are.
-
-<video controls>
-  <source src="/images/blog/2025-03/temp-tile-card-keyboard-navigation.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+Tab and shift + tab your way across the screen like the keyboard warrior you are.
 
 ### Editor improvements
 
