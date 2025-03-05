@@ -82,7 +82,9 @@ As always, we’ve baked in a lot of customization, with the ability to align th
 header in multiple different ways. It comes with a responsive layout by default,
 but you can also set it to always be left-aligned or center-aligned.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-03/temp-view-header.png" />
+<p class="img">
+<img src="/images/blog/2025-03/temp-view-header.png" alt="Screenshot showing the new header feature in the dashboard view." />
+</p>
 
 The badges can also be positioned below the text (default) or above the text. A
 great visual menu makes it easy to choose how you want to organize your header.
