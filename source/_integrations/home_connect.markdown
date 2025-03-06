@@ -42,29 +42,8 @@ The Home Connect integration allows users to integrate their home appliances sup
 - Control the light of your appliances.
 - Adjust the appliance settings.
 
-The integration will add one Home Assistant device for each connected home appliance which will have the following entities:
-
-- A power switch
-- If the device has programs:
-  - Two select entities that will allow you to select and start a program between the available ones.
-  - A timestamp sensor for remaining time and a numeric sensor for the progress percentage.
-- Light:
-  - Hoods:
-    - Functional light: on/off and brightness
-    - Ambient light: on/off, brightness, HSV and RGB
-  - Dishwasher: on/off, brightness, HS and RGB
-  - Cooling appliances: Both, external and internal lights, on/off and brightness
-- Numbers that set the temperature of cooling appliances.
-- Time for alarm clock for cooktops and ovens.
-- Multiple sensors that report the different states and events reported by the appliance.
-- Binary sensors that show binary states of the appliance.
-
 {% note %}
 Note that it depends on the appliance and on API permissions which of the features are supported.
-{% endnote %}
-
-{% note %}
-Some devices only have the state `on` and turn off is not supported by the appliance, check [power state availability at Home Connect API documentation](https://api-docs.home-connect.com/settings/#power-state) for more information.
 {% endnote %}
 
 ## Supported devices
@@ -110,14 +89,6 @@ Internal examples: `http://192.168.0.2:8123/auth/external/callback`, `http://hom
 {% include integrations/config_flow.md %}
 
 The integration configuration will ask for the *Client ID* and *Client Secret* created above. See [Application Credentials](/integrations/application_credentials) for more details.
-
-## Removing the integration
-
-This integration follows standard integration removal. No extra steps are required.
-
-{% include integrations/remove_device_service.md %}
-
-After deleting the integration, go to [your applications at the Home Connect Developer portal](https://developer.home-connect.com/applications), find the application that you were using for Home Assistant, click on details and click on "Delete Application".
 
 ## Supported functionality
 
@@ -1003,7 +974,6 @@ Changes a setting.
 | `key` | no | Key of the setting. |
 | `value` | no | Value of the setting. |
 
-
 ## Automation examples
 
 Get started with these automation examples
@@ -1078,6 +1048,12 @@ actions:
 This integration uses server-sent events from the Home Connect API to receive live updates from the appliances.
 When the configuration entry is loaded or after a streaming error (for example after disconnection), the integration will request all data (such as appliance info, available commands, programs, settings, and status) for all appliances.
 If a new appliance is added to the account, the integration will request data for the new appliance and expose the related entities automatically.
+
+## Known limitations
+
+- The Home Connect API does not fully match the Home Connect app. Some programs, options, or settings available in the app may not be accessible or usable via the API.
+- This integration supports only one integration entry, as the Home Connect API does not allow for the unique identification of an account.
+
 ## Troubleshooting
 
 ### I could not configure the Home Connect integration
@@ -1144,7 +1120,10 @@ To try to solve the above issues, follow these steps:
    - [Home Connect service and contact](https://www.home-connect.com/us/en/support/contact-and-service)
    - [Home Connect developer Help & Support](https://developer.home-connect.com/support)
 
-## Known limitations
+## Removing the integration
 
-- The Home Connect API does not fully match the Home Connect app. Some programs, options, or settings available in the app may not be accessible or usable via the API.
-- This integration supports only one integration entry, as the Home Connect API does not allow for the unique identification of an account.
+This integration follows standard integration removal. No extra steps are required.
+
+{% include integrations/remove_device_service.md %}
+
+After deleting the integration, go to [your applications at the Home Connect Developer portal](https://developer.home-connect.com/applications), find the application that you were using for Home Assistant, click on details and click on "Delete Application".
