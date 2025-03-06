@@ -218,6 +218,11 @@ data:
 | `entity_id`            | yes      | Remove this media player from any player groups. |
 
 
+{% note %}
+
+Actions may fail if they cannot be processed by the HEOS device. For example, attempting to call `media_player.clear_playlist` when the queue is empty will result in an error. To prevent this from halting a script or automation, set [`continue_on_error: true`](/docs/scripts/#continuing-on-error) in the action call.
+{% endnote %}
+
 ## Supported devices
 
 Denon and Marantz do not currently publish an inventory of HEOS-enabled devices, however, many receiver and hi-fi products began including HEOS since 2013. Consult your product model to confirm support:
