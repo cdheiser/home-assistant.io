@@ -34,7 +34,7 @@ ha_integration_type: integration
 
 
 The Roborock {% term integration %} allows you to connect your [Roborock](https://us.roborock.com/pages/robot-vacuum-cleaner) robotic vacuums to your Home Assistant. Roborock vacuums are
-intelligent home cleaning robots and depending on the specific device may have features
+intelligent home cleaning robots and, depending on the specific device, may have features
 like mopping capabilities, laser navigation, and options for changing cleaning
 performance or location in the home. This integration enables you to control and
 monitor your Roborock vacuum directly from Home Assistant.
@@ -46,8 +46,8 @@ pause the vacuum when a media player starts playing music.
 ## Prerequisites
 
 1. Download the Roborock App for iOS or Android.
-1. Create an account and login
-1. Add your Roborock device to the Roborock App (for example, by scanning a QR code)
+2. Create an account and log in.
+3. Add your Roborock device to the Roborock App (for example, by scanning a QR code).
 
 {% include integrations/config_flow.md %}
 
@@ -165,7 +165,7 @@ The vacuum entity holds the ability to control most things the vacuum can do, su
 #### Sensor
 
 - **Cleaning area**
-  - **Description**: How much area the vacuum has cleaned in its current run.  If the vacuum is not currently cleaning, how much area it has cleaned during its last run.
+  - **Description**: How much area the vacuum has cleaned in its current run. If the vacuum is not currently cleaning, how much area it has cleaned during its last run.
 
 - **Cleaning time**
   - **Description**: How long the vacuum has been cleaning for. If the vacuum is not currently cleaning, how long it cleaned for in its last run.
@@ -174,7 +174,7 @@ The vacuum entity holds the ability to control most things the vacuum can do, su
   - **Description**: Only available on some newer devices - what percent of the current cleaning is completed.
 
 - **Dock error**
-  - **Description**: Only available on the non-basic docks - The current error of the vacuum or 'Ok' if none exist
+  - **Description**: Only available on the non-basic docks - The current error of the vacuum or 'Ok' if none exists.
 
 - **Main brush time left**
   - **Description**: How much time is left before Roborock recommends you replace your main brush.
@@ -377,7 +377,7 @@ We are working on adding a lot of features to the core integration. We have reve
 ### How can I clean a specific room?
 We plan to make the process simpler in the future, but for now, it is a multi-step process.
 1. Make sure to first name the rooms in the Roborock app; otherwise, they won't appear in the debug log.
-1. Go to {% my developer_call_service service="roborock.get_maps" title="**Developer Tools** > **Actions** > **Roborock: Get Maps**" %}. Select your vacuum as the entity. Note that room IDs and names are only updated on the currently selected map.
+2. Go to {% my developer_call_service service="roborock.get_maps" title="**Developer Tools** > **Actions** > **Roborock: Get Maps**" %}. Select your vacuum as the entity. Note that room IDs and names are only updated on the currently selected map.
 
    - **Request**: Your request should look like:
 
@@ -399,7 +399,7 @@ We plan to make the process simpler in the future, but for now, it is a multi-st
               "17": Living room
       ```
 
-1. Go back to {% my developer_call_service service="vacuum.send_command" title="**Developer Tools** > **Actions** > **Vacuum: Send Command**" %} then type `app_segment_clean` as your command and `segments` with a list of the 2-digit IDs you want to clean. Then, add `repeat` with a number (ranging from 1 to 3) to determine how many times you want to clean these areas.
+3. Go back to {% my developer_call_service service="vacuum.send_command" title="**Developer Tools** > **Actions** > **Vacuum: Send Command**" %} then type `app_segment_clean` as your command and `segments` with a list of the 2-digit IDs you want to clean. Then, add `repeat` with a number (ranging from 1 to 3) to determine how many times you want to clean these areas.
 
 Example:
 
@@ -423,10 +423,10 @@ target:
 
 Roborock servers require accepting a user agreement before using the API, which may block Home Assistant during setup. Additionally, the Roborock may ask you to re-enter the user agreement, even if you have entered it before.  To allow Home Assistant to use the Roborock API, you need to take the following steps:
 1. Open your Roborock app.
-1. Open **Profile** > **About Us** > **User Agreement & Privacy Policy**.
-1. Hit **Revoke authorization**.
-1. Log back in and accept the policy.
-1. Reload the Roborock integration!
+2. Open **Profile** > **About Us** > **User Agreement & Privacy Policy**.
+3. Hit **Revoke authorization**.
+4. Log back in and accept the policy.
+5. Reload the Roborock integration!
 
 ### The integration tells me it cannot reach my vacuum and is using the cloud API and that this is not supported
 
