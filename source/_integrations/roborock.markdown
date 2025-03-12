@@ -256,12 +256,15 @@ There are currently four buttons that allow you to reset the various maintenance
 The `roborock.set_vacuum_goto_position` action will set the vacuum to go to
 the specified coordinates.
 
-
-| Data attribute   | Optional | Description                                          |
-|------------------|----------|------------------------------------------------------|
-| `entity_id`      | No       | Only act on a specific robot. |
-| `x_coord`        | No       | X-coordinate, integer value. The dock is located at x-coordinate 25500. |
-| `y_coord`        | No       | Y-coordinate, integer value. The dock is located at y-coordinate 25500. |
+- **Data attribute**: `entity_id`
+  - **Description**: Only act on a specific robot.
+  - **Optional**: No.
+- **Data attribute**: `x_coord`
+  - **Description**: X-coordinate, integer value. The dock is located at x-coordinate 25500.
+  - **Optional**: No.
+- **Data attribute**: `y_coord`
+  - **Description**: Y-coordinate, integer value. The dock is located at y-coordinate 25500.
+  - **Optional**: No.
 
 ##### Action Get Vacuum Current Position
 
@@ -269,9 +272,9 @@ The `roborock.get_vacuum_current_position` action will get the current position 
 is a cloud call and should only be used for diagnostics. This is not meant to be used for
 automations. Frequent requests can lead to rate limiting. 
 
-| Data attribute   | Optional | Description                                          |
-|------------------|----------|------------------------------------------------------|
-| `entity_id`      | No       | Only act on a specific robot. |
+- **Data attribute**: `entity_id`
+  - **Description**: Only act on a specific robot.
+  - **Optional**: No.
 
 Example:
 
@@ -293,11 +296,11 @@ data: {}
 ##### Action Get Maps
 
 The `roborock.get_maps` action will return the maps available on the device and
-details about any named rooms.
+details about any named rooms on each map.
 
-| Data attribute   | Optional | Description                                          |
-|------------------|----------|------------------------------------------------------|
-| `entity_id`      | No       | Get maps for a specific device. |
+- **Data attribute**: `entity_id`
+  - **Description**: Get maps for a specific device
+  - **Optional**: No.
 
 This will return the name of the map, and the room names and id numbers. See [How can I clean a specific room? ](#how-can-i-clean-a-specific-room) for more details on how to use the maps response.
 
