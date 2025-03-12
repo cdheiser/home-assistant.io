@@ -37,7 +37,7 @@ The Roborock {% term integration %} allows you to connect your [Roborock](https:
 intelligent home cleaning robots and depending on the specific device may have features
 like mopping capabilities, laser navigation, and options for changing cleaning
 performance or location in the home. This integration enables you to control and
-monitor your Roborock vacuum directly from  Home Assistant.
+monitor your Roborock vacuum directly from Home Assistant.
 
 The integration also allows for automation and integration with other smart home
 devices. For example, you could send a notification when the vacuum is stuck, or
@@ -100,7 +100,7 @@ Zones:
 
 ## Data Updates
 
-This integration uses both local and cloud {% term polling %}, and also receives
+This integration uses both local and cloud {% term polling %} and also receives
 cloud push events using MQTT. Local communication is preferred when possible.
 Map data is always fetched through the cloud, and Dyad and Zeo devices are cloud only. 
 
