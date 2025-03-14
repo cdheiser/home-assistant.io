@@ -123,6 +123,7 @@ MQTT Devices and entities can be set up through [MQTT -discovery](#mqtt-discover
 {% details "Configuration of MQTT components via Subentries" %}
 
 - [Notify](/integrations/notify.mqtt/)
+- [Sensor](/integrations/sensor.mqtt/)
 
 To add an MQTT device via a Subentry, follow these steps:
 
@@ -1376,7 +1377,7 @@ Compatibility and features will vary, and not all devices may work.
 
 ## Manual configured MQTT items
 
-Support to add manual items is added for the MQTT Notify entities, other platforms will follow later.
+Support to allow [adding manual items as a subentry via a config flow](#configuration), is work in progress. Not all entity platforms are supported yet.
 
 For most integrations, it is also possible to manually set up MQTT items in {% term "`configuration.yaml`" %}. Read more [about configuration in YAML](/docs/configuration/yaml).
 
