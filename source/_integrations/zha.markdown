@@ -94,14 +94,6 @@ ZHA uses an open-source Python library called [zigpy](https://github.com/zigpy/z
 
 The hardware-independent design of this integration provides support for many Zigbee coordinators available from different manufacturers, as long as the coordinator is compatible with the [zigpy](https://github.com/zigpy/zigpy) library.
 
-### Zigbee 3.0 support
-
-Some coordinators may not support firmware capable of Zigbee 3.0, but they can still be fully functional and feature-complete for your needs. Support for Zigbee 3.0 depends primarily on your coordinator hardware and firmware.
-
-{% note %}
-Newer coordinators generally support Zigbee 3.0 firmware, but it is up to the manufacturer to make such firmware available to them. If your coordinator was shipped with an older firmware version, you may want to manually upgrade the firmware.
-{% endnote %}
-
 ### Recommended Zigbee radio adapters and modules
 
 - Silicon Labs EmberZNet based radios using the EZSP protocol (via the [bellows](https://github.com/zigpy/bellows) library for zigpy)
@@ -908,3 +900,11 @@ services:
 When you see `NCP entered failed state. Requesting APP controller restart` in logs during normal operation, it indicates a drop in communication between ZHA and the serial interface of the Silabs EmberZNet Zigbee Coordinator.
 
 The EZSP (EmberZNet Serial Protocol) interface used by Silicon Labs EmberZNet Zigbee Coordinator adapters requires a stable connection to the serial port; therefore, it is not recommended to use a connection over Wi-Fi, WAN, VPN, etc.
+
+### Zigbee 3.0 support
+
+Some coordinators may not support firmware capable of Zigbee 3.0, but they can still be fully functional and feature-complete for your needs.
+
+{% note %}
+It is up to hardware manufacturers to make such firmware available to them. If your coordinator was shipped with an older firmware version, you be able to manually upgrade the firmware.
+{% endnote %}
