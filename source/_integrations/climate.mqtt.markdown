@@ -293,7 +293,7 @@ preset_mode_state_topic:
   required: false
   type: string
 preset_mode_value_template:
-  description: Defines a [template](/docs/configuration/templating/#using-value-templates-with-mqttintegration) to extract the `preset_mode` value from the payload received on `preset_mode_state_topic`.
+  description: Defines a [template](/docs/configuration/templating/#using-value-templates-with-mqtt) to extract the `preset_mode` value from the payload received on `preset_mode_state_topic`.
   required: false
   type: template
 preset_modes:
