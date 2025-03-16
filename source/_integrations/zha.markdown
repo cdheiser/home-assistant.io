@@ -297,11 +297,11 @@ Additional devices in the [Compatible hardware](#compatible-hardware) section ma
 
 ### OTA updates of Zigbee device firmware
 
-The ZHA integration has the ability to perform OTA (over-the-air) firmware updates of Zigbee devices. This feature is enabled by default. As it uses standard [Update](/integrations/update/) entities in Home Assistant, users will get a UI notification if and when an OTA firmware update is available for a specific device, with an option to initiate the update or ignore that specific update for the device.
+The ZHA integration can perform over-the-air (OTA) firmware updates of Zigbee devices.
 
-To see OTA updates for a device, it must support OTA updates and firmware images for the device must be publicly provided by the manufacturer. ZHA currently only includes OTA providers for a few manufacturers that provide these updates publicly.
+A UI notification will be created if an OTA update is available for a device with an option to initiate or ignore the specific update for a device.
 
-**Included manufacturers:**
+To see OTA updates for a device, it must support OTA updates and the device's firmware must be publicly provided by the manufacturer. ZHA currently only includes OTA providers the following manufacturers that provide updates publicly:
 
 - IKEA
 - Inovelli
@@ -561,18 +561,24 @@ Manual backups can also be created from the configuration page under **Network S
 
 ZHA supports migrating the Zigbee network between different Zigbee Coordinators based on chips from Silicon Labs, Texas Instruments, or ConBee/RaspBee if the backup was made from inside ZHA.
 
-#### Prerequisites
-
-To migrate your Zigbee network from one Zigbee Coordinator to another, confirm you meet the following requirements before proceeding with the migration process:
-
-- The previous Zigbee Coordinator is used in the ZHA {% term integration %} and _not_ in deCONZ or MQTT.
-- The radio type is one of the following:
-  - ezsp (Silicon Labs EmberZnet)
-  - znp (Texas Instruments Z-Stack ZNP)
-  - deCONZ (ConBee/RaspBee from dresden elektronik)
-    - For deCONZ (ConBee/RaspBee) radio adapters, make sure it is running [firmware 0x26700700 (from 2021-08-18)](https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Firmware-Changelog) or later.
-
 #### To migrate to a new Zigbee coordinator radio inside ZHA
+
+Confirm you meet the following requirements before migrating:
+
+- The previous coordinator is used in the ZHA {% term integration %} and _not_ in deCONZ or MQTT.
+- The radio type is one of the following:
+  - ezsp _(Silicon Labs EmberZnet)_
+  - znp _(Texas Instruments Z-Stack ZNP)_
+  - deCONZ _(ConBee/RaspBee from dresden elektronik)_
+    - Be sure it is running [firmware 0x26700700 (from 2021-08-18)](https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Firmware-Changelog) or later.
+
+{% details "To migrate to a new Zigbee coordinator radio inside ZHA:" %}
+
+{% important %}
+You will not be able to control your existing Zigbee devices until the new coordinator fully joins the network after the migration. **This can take a few minutes.**
+
+If some existing devices do not resume normal functions after some time, try power-cycling them to attempt rejoining to the network.
+{% endimportant %}
 
 1. Go to **{% my integrations title="Settings > Devices & services" %}** and select the ZHA {% term integration %}. Then select **Configure**.
 2. Under **Network settings**, select **Migrate radio**.
@@ -604,11 +610,7 @@ To migrate your Zigbee network from one Zigbee Coordinator to another, confirm y
 11. Finally, a **Success!** message should pop up with information that all options were successfully saved.
     - Select **Finish** to confirm.
 
-{% important %}
-You will not be able to control your existing Zigbee devices until the new coordinator fully joins the network after the migration. **This can take a few minutes.**
-
-If some existing devices do not resume normal functions after some time, try power-cycling them to attempt rejoining to the network.
-{% endimportant %}
+{% enddetails %}
 
 ## Troubleshooting
 
