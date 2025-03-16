@@ -4,6 +4,7 @@ description: Instructions on how to integrate Snoo into Home Assistant
 ha_category:
   - Binary Sensor
   - Sensor
+  - Select
 ha_iot_class: Cloud Push
 ha_release: 2025.3
 ha_config_flow: true
@@ -13,6 +14,7 @@ ha_domain: snoo
 ha_platforms:
   - binary_sensor
   - sensor
+  - select
 ha_integration_type: integration
 ha_quality_scale: bronze
 ---
@@ -47,6 +49,19 @@ The Snoo can have one of 8 states
 
 ## Time left
 This describes how long until the Snoo will change levels or it is Unknown if it is not currently planning to change levels.
+
+## Select
+
+### Intensity
+
+This allows you to set the soothing level of your Snoo.
+
+1. Baseline - This is the basic state the snoo starts with. It has not detected the need to do any further soothing.
+2. Level 1 - This is the lowest level of soothing.
+3. Level 2
+4. Level 3
+5. Level 4
+6. Stop - The snoo is no longer running.
 
 ## Removing the integration
 
