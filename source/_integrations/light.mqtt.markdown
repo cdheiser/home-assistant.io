@@ -309,12 +309,12 @@ payload_not_available:
   type: string
   default: offline
 payload_off:
-  description: The payload that represents disabled state.
+  description: The payload that represents the off state.
   required: false
   type: string
   default: "OFF"
 payload_on:
-  description: The payload that represents enabled state.
+  description: The payload that represents the on state.
   required: false
   type: string
   default: "ON"
