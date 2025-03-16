@@ -271,12 +271,6 @@ custom_quirks_path:
   type: string
 {% endconfiguration %}
 
-#### Advanced OTA configuration
-
-OTA for a few manufacturers is enabled by default, currently Ledvance, Sonoff, Inovelli, and ThirdReality. Other manufacturers are supported but disabled by default because their updates may change or remove device functionality, may require you to reconfigure devices, or are contributed by the community and may be minimally tested.
-
-Refer to the [zigpy documentation for OTA configuration](https://github.com/zigpy/zigpy/wiki/OTA-Configuration) for more information on additional OTA providers.
-
 #### Defining Zigbee channel to use
 
 Tip! Before considering to change to an other Zigbee channel on an existing Zigbee network, it is highly recommended that you read through the two segments under the [troubleshooting](#troubleshooting) section below about _Best practices to avoid pairing/connection difficulties_ and _Zigbee interference avoidance and network range/coverage optimization_. These sections provide prerequisite information and advice on how to achieve the best possible Zigbee network in your environment.
@@ -318,6 +312,31 @@ zha:
 ```
 
 `{ieee}` is the device hardware address which can be read from the Home Assistant UI when looking at _Device info_. From device info, you can find the `{endpoint_id}` by viewing the _Zigbee device signature_.
+
+### OTA updates of Zigbee device firmware
+
+The ZHA integration has the ability to perform OTA (over-the-air) firmware updates of Zigbee devices. This feature is enabled by default. As it uses standard [Update](/integrations/update/) entities in Home Assistant, users will get a UI notification if and when an OTA firmware update is available for a specific device, with an option to initiate the update or ignore that specific update for the device.
+
+To see OTA updates for a device, it must support OTA updates and firmware images for the device must be publicly provided by the manufacturer. ZHA currently only includes OTA providers for a few manufacturers that provide these updates publicly.
+
+**Included manufacturers:**
+
+- IKEA
+- Inovelli
+- Ledvacnce/OSRAM
+- SALUS/Computime
+- Sonoff/iTead
+- Third Reality
+
+{% warning %}
+Before updating a device, you should search for any disadvantages or if you even need to install an available update. Some firmware updates can break features you might use (e.g. group binding for IKEA devices). Some updates might also require changes to ZHA. In rare cases, you can even brick devices by installing a firmware update.
+{% endwarning %}
+
+#### Advanced OTA configuration
+
+OTA for a few manufacturers is enabled by default, currently Ledvance, Sonoff, Inovelli, and ThirdReality. Other manufacturers are supported but disabled by default because their updates may change or remove device functionality, may require you to reconfigure devices, or are contributed by the community and may be minimally tested.
+
+Refer to the [zigpy documentation for OTA configuration](https://github.com/zigpy/zigpy/wiki/OTA-Configuration) for more information on additional OTA providers.
 
 ## Adding devices
 
@@ -417,25 +436,6 @@ Some devices can be auto-discovered, which can simplify the ZHA setup process. T
 {% enddetails %}
 
 Additional devices in the [Compatible hardware](#compatible-hardware) section may be discoverable, however, only devices that have been confirmed discoverable are listed above.
-
-### OTA updates of Zigbee device firmware
-
-The ZHA integration has the ability to perform OTA (over-the-air) firmware updates of Zigbee devices. This feature is enabled by default. As it uses standard [Update](/integrations/update/) entities in Home Assistant, users will get a UI notification if and when an OTA firmware update is available for a specific device, with an option to initiate the update or ignore that specific update for the device.
-
-To see OTA updates for a device, it must support OTA updates and firmware images for the device must be publicly provided by the manufacturer. ZHA currently only includes OTA providers for a few manufacturers that provide these updates publicly.
-
-**Included manufacturers:**
-
-- IKEA
-- Inovelli
-- Ledvacnce/OSRAM
-- SALUS/Computime
-- Sonoff/iTead
-- Third Reality
-
-{% warning %}
-Before updating a device, you should search for any disadvantages or if you even need to install an available update. Some firmware updates can break features you might use (e.g. group binding for IKEA devices). Some updates might also require changes to ZHA. In rare cases, you can even brick devices by installing a firmware update.
-{% endwarning %}
 
 ## Actions
 
