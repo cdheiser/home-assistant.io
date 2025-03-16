@@ -5,6 +5,7 @@ ha_category:
   - Binary Sensor
   - Sensor
   - Select
+  - Switch
 ha_iot_class: Cloud Push
 ha_release: 2025.3
 ha_config_flow: true
@@ -15,6 +16,7 @@ ha_platforms:
   - binary_sensor
   - sensor
   - select
+  - switch
 ha_integration_type: integration
 ha_quality_scale: bronze
 ---
@@ -62,6 +64,16 @@ This allows you to set the soothing level of your Snoo.
 4. Level 3
 5. Level 4
 6. Stop - The snoo is no longer running.
+
+## Switch
+
+### Level lock
+
+Keep SNOO’s rhythms locked on your baby’s favorite level (Baseline, Level 1, or Level 2).
+
+### Sleepytime sounds
+
+Allows you to turn on SNOO’s soothing sounds before you put your baby in SNOO or after you took your baby out of SNOO for a diaper change or feeding.
 
 ## Removing the integration
 
