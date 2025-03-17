@@ -94,14 +94,6 @@ ZHA uses an open-source Python library called [zigpy](https://github.com/zigpy/z
 
 The hardware-independent design of this integration provides support for many Zigbee coordinators available from different manufacturers, as long as the coordinator is compatible with the [zigpy](https://github.com/zigpy/zigpy) library.
 
-### Zigbee 3.0 support
-
-Some coordinators may not support firmware capable of Zigbee 3.0, but they can still be fully functional and feature-complete for your needs. Support for Zigbee 3.0 depends primarily on your coordinator hardware and firmware.
-
-{% note %}
-Newer coordinators generally support Zigbee 3.0 firmware, but it is up to the manufacturer to make such firmware available to them. If your coordinator was shipped with an older firmware version, you may want to manually upgrade the firmware.
-{% endnote %}
-
 ### Recommended Zigbee radio adapters and modules
 
 - Silicon Labs EmberZNet based radios using the EZSP protocol (via the [bellows](https://github.com/zigpy/bellows) library for zigpy)
@@ -571,16 +563,22 @@ ZHA supports migrating the Zigbee network between different Zigbee Coordinators 
 
 #### Prerequisites
 
-To migrate your Zigbee network from one Zigbee Coordinator to another, confirm you meet the following requirements before proceeding with the migration process:
+Confirm you meet the following requirements before migrating:
 
-- The previous Zigbee Coordinator is used in the ZHA {% term integration %} and _not_ in deCONZ or MQTT.
+- The previous coordinator is used in the ZHA {% term integration %} and _not_ in deCONZ or MQTT.
 - The radio type is one of the following:
-  - ezsp (Silicon Labs EmberZnet)
-  - znp (Texas Instruments Z-Stack ZNP)
-  - deCONZ (ConBee/RaspBee from dresden elektronik)
-    - For deCONZ (ConBee/RaspBee) radio adapters, make sure it is running [firmware 0x26700700 (from 2021-08-18)](https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Firmware-Changelog) or later.
+  - ezsp _(Silicon Labs EmberZnet)_
+  - znp _(Texas Instruments Z-Stack ZNP)_
+  - deCONZ _(ConBee/RaspBee from dresden elektronik)_
+    - Be sure it is running [firmware 0x26700700 (from 2021-08-18)](https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Firmware-Changelog) or later.
 
-#### To migrate to a new Zigbee coordinator radio inside ZHA
+{% details "To migrate to a new Zigbee coordinator radio inside ZHA:" %}
+
+{% important %}
+You will not be able to control your existing Zigbee devices until the new coordinator fully joins the network after the migration. **This can take a few minutes.**
+
+If some existing devices do not resume normal functions after some time, try power-cycling them to attempt rejoining to the network.
+{% endimportant %}
 
 1. Go to **{% my integrations title="Settings > Devices & services" %}** and select the ZHA {% term integration %}. Then select **Configure**.
 2. Under **Network settings**, select **Migrate radio**.
@@ -612,11 +610,7 @@ To migrate your Zigbee network from one Zigbee Coordinator to another, confirm y
 11. Finally, a **Success!** message should pop up with information that all options were successfully saved.
     - Select **Finish** to confirm.
 
-{% important %}
-You will not be able to control your existing Zigbee devices until the new coordinator fully joins the network after the migration. **This can take a few minutes.**
-
-If some existing devices do not resume normal functions after some time, try power-cycling them to attempt rejoining to the network.
-{% endimportant %}
+{% enddetails %}
 
 ## Troubleshooting
 
@@ -908,3 +902,11 @@ services:
 When you see `NCP entered failed state. Requesting APP controller restart` in logs during normal operation, it indicates a drop in communication between ZHA and the serial interface of the Silabs EmberZNet Zigbee Coordinator.
 
 The EZSP (EmberZNet Serial Protocol) interface used by Silicon Labs EmberZNet Zigbee Coordinator adapters requires a stable connection to the serial port; therefore, it is not recommended to use a connection over Wi-Fi, WAN, VPN, etc.
+
+### Zigbee 3.0 support
+
+Some coordinators may not support firmware capable of Zigbee 3.0, but they can still be fully functional and feature-complete for your needs.
+
+{% note %}
+It is up to hardware manufacturers to make such firmware available to them. If your coordinator was shipped with an older firmware version, you be able to manually upgrade the firmware.
+{% endnote %}
