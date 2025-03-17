@@ -561,7 +561,7 @@ Manual backups can also be created from the configuration page under **Network S
 
 ZHA supports migrating the Zigbee network between different Zigbee Coordinators based on chips from Silicon Labs, Texas Instruments, or ConBee/RaspBee if the backup was made from inside ZHA.
 
-#### To migrate to a new Zigbee coordinator radio inside ZHA
+#### Prerequisites
 
 Confirm you meet the following requirements before migrating:
 
