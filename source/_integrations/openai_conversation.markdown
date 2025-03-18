@@ -165,11 +165,20 @@ Allows you to ask OpenAI to generate a content based on a prompt. This service
 populates [Response Data](/docs/scripts/service-calls#use-templates-to-handle-response-data)
 with the response from OpenAI.
 
-| Service data attribute | Optional | Description                                             | Example              |
-| ---------------------- | -------- | ------------------------------------------------------- | -------------------- |
-| `config_entry`         | no       | Integration entry ID to use.                            |                      |
-| `prompt`               | no       | The text to generate content from.                      | Describe the weather |
-| `image_filename`       | yes      | List of file names for images to include in the prompt. | /tmp/image.jpg       |
+- **Service data attribute**: `config_entry`
+  - **Description**: Integration entry ID to use.
+  - **Example**: 
+  - **Optional**: no
+
+- **Service data attribute**: `prompt`
+  - **Description**: The text to generate content from.
+  - **Example**: Describe the weather
+  - **Optional**: no
+
+- **Service data attribute**: `image_filename`
+  - **Description**: List of file names for images to include in the prompt.
+  - **Example**: /tmp/image.jpg
+  - **Optional**: yes
 
 {% raw %}
 
