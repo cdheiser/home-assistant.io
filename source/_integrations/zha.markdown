@@ -265,9 +265,9 @@ custom_quirks_path:
 
 #### Defining Zigbee channel to use
 
-{% warning %}
+{% important %}
 The best practice is to **not change the Zigbee channel** from the ZHA default.
-{% endwarning %}
+{% endimportant %}
 
 {% note %}
 **Before changing the Zigbee channel on an existing network**, review the following sections on this page:
@@ -636,7 +636,7 @@ To help resolve any kinks or compatibility problems, report bugs as issues with 
 
 ### Limitations
 
-Please note the following limitations. This list may not be exhaustive; if you find an opportunity to improve this information, please submit feedback for this page.
+The list of ZHA limitations may not be exhaustive.
 
 {% details "List of ZHA limitations:" %}
 
@@ -830,12 +830,10 @@ When reporting potential bugs related to the ZHA integration on the issues track
      - Both the **Zigbee Device Signature** and the **Diagnostics** information can be found under {% my integrations title="**Settings** > **Devices & services**" %}. Select the **Zigbee Home Automation** integration. Then, select **Configure** > **Devices** (pick your device). Select **Zigbee Device Signature** and **Download Diagnostics**, respectively.
 
 {% tip %}
-When troubleshooting, please review the following sections on this page before reaching out for support:
+For troubleshooting, read the following sections on this page. They provide information on improving your Zigbee network performance.
 
 - [Best practices to avoid pairing/connection difficulties](#best-practices-to-avoid-pairingconnection-difficulties)
 - [Zigbee interference avoidance and network range/coverage optimization](#zigbee-interference-avoidance-and-network-rangecoverage-optimization)
-
-These sections both provide helpful advice on improving your Zigbee network performance.
 {% endtip %}
 
 ### Debug logging
