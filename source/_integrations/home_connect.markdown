@@ -1086,7 +1086,7 @@ Some programs that are available to select on the app, on the physical device or
 
 ##### Description
 
-If you see programs at the app or the physical device that are missing at the integration, first check if they are available at the diagnostics file (more info about how to download the device diagnostics [here](https://www.home-assistant.io/docs/configuration/troubleshooting/#download-diagnostics)). If they are at the diagnostics file, the API is able to send them to the integration, but the integration is not recognizing them.
+If you see programs at the app or the physical device that are missing at the integration, first check if they are available in the diagnostics file (more info about how to download the device diagnostics [here](https://www.home-assistant.io/docs/configuration/troubleshooting/#download-diagnostics)). If they are in the diagnostics file, the API can send them to the integration, but the integration is not recognizing them.
 
 ##### Solution
 
@@ -1102,7 +1102,7 @@ The Home Connect API is not sending any programs to the integration.
 
 #### Solution
 
-There's no solution for this issue. The only thing that can be done is reporting the issue to Home Connect through this channels:
+There's no solution for this issue. The only thing that can be done is reporting the issue to Home Connect through these channels:
 
 - [Home Connect service and contact](https://www.home-connect.com/us/en/support/contact-and-service)
 - [Home Connect developer Help & Support](https://developer.home-connect.com/support)
