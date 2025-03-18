@@ -3,6 +3,7 @@ title: Happiest Baby Snoo
 description: Instructions on how to integrate Snoo into Home Assistant
 ha_category:
   - Binary Sensor
+  - Event
   - Sensor
   - Select
   - Switch
@@ -14,6 +15,7 @@ ha_codeowners:
 ha_domain: snoo
 ha_platforms:
   - binary_sensor
+  - event
   - sensor
   - select
   - switch
@@ -34,6 +36,24 @@ This integration follows standard integration installation. No extra steps are r
 ### Left and right safety clips
 
 States if the left or right safety clip is connected to the baby's swaddle.
+
+## Events
+
+### Snoo events
+
+These are the events broadcasted by your device. The most notable event is your baby crying.
+
+They can be:
+
+- Timer - A timer has started or updated for the current Snoo level.
+- Cry - The Snoo has detected your baby crying.
+- Command sent - A command has been received by the Snoo.
+- Safety clip changed - The left or right safety clip has been disconnected or connected.
+- Long activity press - The activity button has been held down.
+- Activity press - The activity button has been pressed.
+- Power button pressed - The power button has been pressed.
+- Status requested - Either the integration or your mobile app has requested a status update.
+- Sleepytime sounds updated - The Sleepytime sounds were turned on or off.
 
 ## Sensors
 
