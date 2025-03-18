@@ -1078,6 +1078,83 @@ To solve the above issue, follow these steps:
 3. Select the three dots {% icon "mdi:dots-vertical" %} menu from the application credentials you created for the Home Connect integration and select **Delete**.
 4. Add the Home Connect integration again under {% my integrations title="**Settings** > **Devices & services**" %}
 
+### Missing options at the "active program" and "selected program" entities
+
+#### Symptom: "On the "active program" and "selected program" entities, I see only one program"
+
+The "active program" and "selected program" entities show only one program at the available options to choose from.
+
+##### Description
+
+This usually happens when the integration has been loaded while the appliance was running a program.
+
+##### Solution
+
+1. Stop the program or wait for it to finish
+2. Reload the integration
+
+#### Symptom: "Although I have options, some programs that are available on the app are not in the list of options at the "active program" and "selected program" entities"
+
+Some programs that are available to select on the app, on the physical device or in the diagnostics file from the device  are missing at the "active program" and "selected program" entities.
+
+##### Description
+
+If you see programs at the app or the physical device that are missing at the integration, first check if they are available at the diagnostics file (more info about how to download the device diagnostics [here](https://www.home-assistant.io/docs/configuration/troubleshooting/#download-diagnostics)). If they are at the diagnostics file, the API is able to send them to the integration, but the integration is not recognizing them.
+
+##### Solution
+
+The program key needs to be added to the integration. To help with that, you can open an issue at [aiohomeconnect](https://github.com/MartinHjelmare/aiohomeconnect) about the missing program key.
+
+### Symptom: "No program available at "active program" and "selected program" entities but diagnostics return one program"
+
+There are no programs available to select at the "active program" and "selected program" entities, but at the downloaded device diagnostics file, a program is listed.
+
+Example:
+
+```json
+{
+"data": {
+    "ha_id": "",
+    "name": "",
+    "connected": true,
+    "status": {
+      "BSH.Common.Status.OperationState": "BSH.Common.EnumType.OperationState.Run"
+    },
+    "programs": [
+      "A.HomeConnect.Program"
+    ]
+  }
+}
+```
+
+#### Description
+
+This issue is a combination of the above issues: the integration was loaded while the appliance was running a program whose key is not recognized by the integration.
+
+#### Solution
+
+To get all the programs available:
+
+1. Stop the program or wait for it to finish
+2. Reload the integration
+
+To get the program key recognized by the integration, open an issue at [aiohomeconnect](https://github.com/MartinHjelmare/aiohomeconnect) about the missing program key.
+
+### Symptom: "No programs available at the "active program" and "selected program" entities nor in the diagnostics file"
+
+There are no programs available to select at the "active program" and "selected program" entities, and the downloaded device diagnostics file does not list any programs.
+
+#### Description
+
+The Home Connect API is not sending any programs to the integration.
+
+#### Solution
+
+There's no solution for this issue. The only thing that can be done is reporting the issue to Home Connect through this channels:
+
+- [Home Connect service and contact](https://www.home-connect.com/us/en/support/contact-and-service)
+- [Home Connect developer Help & Support](https://developer.home-connect.com/support)
+
 ### Unavailable entities for a device
 
 #### Symptom: "The entities related to an appliance were available but no longer are"
