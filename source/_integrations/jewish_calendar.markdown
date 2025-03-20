@@ -137,3 +137,21 @@ The following is the list of holidays the sensor knows about with their selected
 | tisha_bav            | Tish'a B'Av                | תשעה באב              | FAST_DAY                  |
 | tu_bav               | Tu B'Av                    | ט"ו באב               | MINOR_HOLIDAY             |
 | rosh_chodesh         | Rosh Chodesh               | ראש חודש              | ROSH_CHODESH              |
+
+## Actions
+
+### Counting the Omer
+
+Available {% term actions %}: `jewish_calendar.get_omer_blessing`
+
+### Action`jewish_calendar.get_omer_blessing`
+
+Returns the blessing for the Omer for a given date.
+
+| Data attribute | Optional | Description                                                                   |
+| -------------- | -------- | ----------------------------------------------------------------------------- |
+| `date`         | no       | Date for which to get the Omer blessing.                                      |
+| `nusach`       | no       | Nusach (tradition) of the Omer blessing.                                      |
+| `language`     | no       | Language to return, will default to the languaged defined by the integration. |
+
+The response data contains a string representing the blessing.
