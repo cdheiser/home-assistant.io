@@ -68,6 +68,7 @@ In Home Assistant, a binary sensor entity will be created for each of the follow
 | [`filterStatus`](https://developer.smartthings.com/docs/devices/capabilities/proposed#filterStatus)                             |
 | [`motionSensor`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#motionSensor)               |
 | [`presenceSensor`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#presenceSensor)           |
+| `samsungce.kidsLock`                                                                                                            |
 | [`remoteControlStatus`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#remoteControlStatus) |
 | [`tamperAlert`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#tamperAlert)                 |
 | [`valve`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#valve)                             |
