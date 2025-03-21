@@ -14,6 +14,7 @@ ha_category:
   - Scene
   - Sensor
   - Switch
+  - Update
   - Valve
 ha_release: 0.87
 ha_iot_class: Cloud Push
@@ -30,6 +31,7 @@ ha_platforms:
   - scene
   - sensor
   - switch
+  - update
   - valve
 ha_dhcp: true
 ha_integration_type: integration
@@ -212,6 +214,10 @@ The SmartThings Scene lets you activate scenes defined in SmartThings. A scene e
 ### Switch
 
 The SmartThings Switch lets you control devices that have the [`switch`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#switch) capability that are not already represented by a more specific platform.
+
+### Update
+
+The SmartThings update platform lets you update the firmware of devices that have the [`firmwareUpdate`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#firmwareUpdate) capability.
 
 ### Valve
 
