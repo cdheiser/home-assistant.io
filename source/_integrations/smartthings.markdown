@@ -12,6 +12,7 @@ ha_category:
   - Hub
   - Light
   - Lock
+  - Number
   - Scene
   - Select
   - Sensor
@@ -31,6 +32,7 @@ ha_platforms:
   - fan
   - light
   - lock
+  - number
   - scene
   - select
   - sensor
@@ -61,6 +63,7 @@ SmartThings represents devices as a set of [capabilities](https://developer.smar
 - [Fan](#fan)
 - [Light](#light)
 - [Lock](#lock)
+- [Number](#number)
 - [Select](#select)
 - [Sensor](#sensor)
 - [Scene](#scene)
@@ -156,6 +159,10 @@ The SmartThings Light lets you control devices that have light-related capabilit
 ### Lock
 
 The SmartThings Lock platform lets you control devices that have the [`lock`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#lock) capability, showing current lock status and supporting lock and unlock commands.
+
+### Number
+
+The SmartThings number platform lets you control the amount of washer rinse cycles.
 
 ### Select
 
