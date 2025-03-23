@@ -4,6 +4,7 @@ description: Instructions on how to set up NUT sensors within Home Assistant.
 ha_category:
   - Button
   - System monitor
+  - Switch
 ha_iot_class: Local Polling
 ha_release: 0.34
 ha_domain: nut
@@ -18,6 +19,7 @@ ha_platforms:
   - button
   - diagnostics
   - sensor
+  - switch
 ha_integration_type: device
 ---
 
@@ -27,15 +29,16 @@ The Network UPS Tools (NUT) integration allows you to monitor and manage a UPS (
 
 ## Supported functionality
 
-### Buttons
-
 {% important %}
 The username and password configured for the device must be granted
-`instcmds` permissions on the NUT server to use buttons. Buttons will
-not be available if user credentials are not specified. See the
-[NUT server documentation](https://networkupstools.org/documentation.html)
-for configuration information.
+`instcmds` permissions on the NUT server to use buttons and
+switches. Buttons and switches will not be available if user
+credentials are not specified. See the [NUT server
+documentation](https://networkupstools.org/documentation.html) for
+configuration information.
 {% endimportant %}
+
+### Buttons
 
 This NUT integration will add buttons for NUT server commands
 available for your device.
@@ -45,6 +48,17 @@ The following buttons are available for each switchable outlet:
 | name                      | Description                                     |
 |---------------------------|:------------------------------------------------|
 | Power cycle outlet `name` | Power cycle the named outlet                    |
+
+### Switches
+
+This NUT integration will add switches for NUT server commands
+available for your device.
+
+The following switches are available for each switchable outlet:
+
+| name                      | Description                                     |
+|---------------------------|:------------------------------------------------|
+| Power outlet `name`       | Turn power on/off for named outlet              |
 
 ## Example Resources
 
