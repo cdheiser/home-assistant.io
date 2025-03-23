@@ -40,6 +40,7 @@ You need a supported SLZB-06 adapter.
 
 - [SLZB-06](https://smlight.tech/product/slzb-06)
 - [SLZB-06M](https://smlight.tech/product/slzb-06m)
+- [SLZB-06Mg24](https://smlight.tech/product/slzb-06mg24)
 - [SLZB-06p7](https://smlight.tech/product/slzb-06p7)
 - [SLZB-06p10](https://smlight.tech/product/slzb-06p10/)
   
