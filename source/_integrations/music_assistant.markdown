@@ -69,6 +69,36 @@ media_content_type: playlist
 media_content_id: 'The Best of Disco'
 ```
 
+### Action `media_player.browse_media`
+
+Browse the media available on a Music Assistant server. The action configuration is as described in the [media player documentation](https://www.home-assistant.io/integrations/media_player/#action-media_playerbrowse_media)
+
+The `media_content_id` must be a URI which is understood by MA such as: `library://artist/1`, `library://album/20` or `spotify://album/5zj4Ej0FrlJQaSo0d6cttH`. These URIs can be obtained from a variety of places such as the output of the `get_library` or `search` actions described below or the `media_player.browse_media` HA action. The type of item must be an album or artist.
+
+#### Examples
+
+Get all tracks of an album
+
+```yaml
+action: media_player.browse_media
+data:
+  media_content_type: music
+  media_content_id: library://album/20
+target:
+  entity_id: media_player.ma_study_player_provsp
+```
+
+Get all albums of an artist
+
+```yaml
+action: media_player.browse_media
+data:
+  media_content_type: music
+  media_content_id: library://artist/1
+target:
+  entity_id: media_player.ma_study_player_provsp
+```
+
 ## Additional actions
 
 ### Action `music_assistant.play_media`
