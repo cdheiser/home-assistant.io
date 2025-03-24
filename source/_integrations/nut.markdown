@@ -27,6 +27,20 @@ This integration supports hardware devices compatible with
 NUT. NUT's hardware compatibility list is available from the [Network
 UPS Tools](https://networkupstools.org/) website.
 
+## Prerequisites
+
+You must have a NUT server configured to monitor one or more supported
+power device(s).
+
+It is not possible to automatically detect a NUT server IP address
+change. You should therefore configure the NUT server with a static
+IP address, assign a fixed IP address reservation with DHCP, or use
+DNS as appropriate for your network.
+
+In addition, you will need a username and password for
+this integration to log into the NUT server if authentication is
+required.
+
 {% include integrations/config_flow.md %}
 
 Setting up the integration requires the following information:
