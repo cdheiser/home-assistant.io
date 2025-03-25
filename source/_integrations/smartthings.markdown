@@ -12,6 +12,7 @@ ha_category:
   - Hub
   - Light
   - Lock
+  - Media player
   - Number
   - Scene
   - Select
@@ -32,6 +33,7 @@ ha_platforms:
   - fan
   - light
   - lock
+  - media_player
   - number
   - scene
   - select
@@ -63,6 +65,7 @@ SmartThings represents devices as a set of [capabilities](https://developer.smar
 - [Fan](#fan)
 - [Light](#light)
 - [Lock](#lock)
+- [Media player](#media-player)
 - [Number](#number)
 - [Select](#select)
 - [Sensor](#sensor)
@@ -159,6 +162,21 @@ The SmartThings Light lets you control devices that have light-related capabilit
 ### Lock
 
 The SmartThings Lock platform lets you control devices that have the [`lock`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#lock) capability, showing current lock status and supporting lock and unlock commands.
+
+### Media player
+
+The SmartThings Media player lets you control devices that have media player-related capabilities. For a SmartThings device to be represented by the media player entity, it must have all required capabilities.
+
+| SmartThings capability                                                                                                            | Related media player features in Home Assistant                                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [`audioMute`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#audioMute) (required)            | `volume_mute`                                                                         |
+| [`audioTrackData`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#audioTrackData) (required)  | `media_title` and `media_artist`                                                      |
+| [`audioVolume`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#audioVolume) (required)        | `volume_up`, `volume_down`, `volume_set`                                              |
+| [`mediaPlayback`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#mediaPlayback) (required)    | `media_play`, `media_pause`, `media_stop`, `media_next_track`, `media_previous_track` |
+| [`mediaInputSource`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#mediaInputSource)         | `select_source`                                                                       |
+| [`mediaPlaybackRepeat`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#mediaPlaybackRepeat)   | `repeat_set`                                                                          |
+| [`mediaPlaybackShuffle`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#mediaPlaybackShuffle) | `shuffle_set`                                                                         |
+| [`switch`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#switch)                             | `turn_on`, `turn_off`                                                                 |
 
 ### Number
 
