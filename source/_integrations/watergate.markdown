@@ -12,9 +12,11 @@ ha_codeowners:
   - '@adam-the-hero'
 ha_domain: watergate
 ha_platforms:
-  - valve
   - sensor
   - event
+  - valve
+ha_quality_scale: bronze
+ha_integration_type: integration
 ---
 
 The **Watergate** integration integrates your Watergate Devices (currently Sonic Wi-Fi) with your Home Assistant.
@@ -98,12 +100,6 @@ IP address:
     description: "The IP address of your Sonic device."
 {% endconfiguration_basic %}
 
-## Removing the integration
-
-This integration follows standard integration removal procedures. No extra steps are required.
-
-{% include integrations/remove_device_service.md %}
-
 ## Examples
 
 ### Monitor water usage in the Energy Dashboard
@@ -117,3 +113,9 @@ The water meter volume entity can be added to the Energy Dashboard, allowing you
 - Send a notification when the water is too hot.
 - Send a notification when the water is too cold.
 - Send a notification when water is flowing for too long.
+
+## Removing the integration
+
+This integration follows standard integration removal procedures. No extra steps are required.
+
+{% include integrations/remove_device_service.md %}

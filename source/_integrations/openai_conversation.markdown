@@ -57,7 +57,7 @@ If you choose to not use the recommended settings, you can configure the followi
 
 {% configuration_basic %}
 Model:
-  description: The GPT language model is used for text generation. You can find more details on the available models in the [OpenAI GPT-3.5 Turbo Documentation](https://platform.openai.com/docs/models/gpt-3-5-turbo), [OpenAI GPT-4 Turbo and GPT-4 Documentation](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4), or [GPT-4o Documentation](https://platform.openai.com/docs/models/gpt-4o). The default is "gpt-4o".
+  description: The GPT language model is used for text generation. You can find more details on the available models in the [GPT-4o Documentation](https://platform.openai.com/docs/models/gpt-4o). The default is "gpt-4o-mini".
 Maximum Tokens to Return in Response:
   description: The maximum number of words or "tokens" that the AI model should generate in its completion of the prompt. For more information, see the [OpenAI Completion Documentation](https://platform.openai.com/docs/guides/completion/introduction).
 Temperature:
@@ -133,7 +133,7 @@ automation:
           config_entry: abce6b8696a15e107b4bd843de722249
           size: "1024x1024"
           prompt: >-
-            New York when the weather is {{ states("weather.home") }}"
+            New York when the weather is {{ states("weather.home") }}
 
       - alias: "Send out a manual event to update the image entity"
         event: new_weather_image
@@ -141,13 +141,73 @@ automation:
           url: '{{ generated_image.url }}'
 
 template:
-  - triggers:
+  - trigger:
       - alias: "Update image when a new weather image is generated"
         trigger: event
         event_type: new_weather_image
     image:
-      name: "AI generated image of New York"
-      url: "{{ trigger.event.data.url }}"
+      - name: "AI generated image of New York"
+        url: "{{ trigger.event.data.url }}"
+```
+
+{% endraw %}
+
+### Service `openai_conversation.generate_content`
+
+Allows you to ask OpenAI to generate a content based on a prompt. This service
+populates [Response Data](/docs/scripts/service-calls#use-templates-to-handle-response-data)
+with the response from OpenAI.
+
+- **Service data attribute**: `config_entry`
+  - **Description**: Integration entry ID to use.
+  - **Example**: 
+  - **Optional**: no
+
+- **Service data attribute**: `prompt`
+  - **Description**: The text to generate content from.
+  - **Example**: Describe the weather
+  - **Optional**: no
+
+- **Service data attribute**: `image_filename`
+  - **Description**: List of file names for images to include in the prompt.
+  - **Example**: /tmp/image.jpg
+  - **Optional**: yes
+
+{% raw %}
+
+```yaml
+service: openai.generate_content
+data:
+  config_entry: abce6b8696a15e107b4bd843de722249
+  prompt: >-
+    Very briefly describe what you see in this image from my doorbell camera.
+    Your message needs to be short to fit in a phone notification. Don't
+    describe stationary objects or buildings.
+  image_filename: 
+    - /tmp/doorbell_snapshot.jpg
+response_variable: generated_content
+```
+
+{% endraw %}
+
+The response data field `text` will contain the generated content.
+
+Another example with multiple images:
+
+{% raw %}
+
+```yaml
+service: openai.generate_content
+data:
+  prompt: >-
+    Briefly describe what happened in the following sequence of images
+    from my driveway camera.
+  image_filename:
+    - /tmp/driveway_snapshot1.jpg
+    - /tmp/driveway_snapshot2.jpg
+    - /tmp/driveway_snapshot3.jpg
+    - /tmp/driveway_snapshot4.jpg
+response_variable: generated_content
 ```
 
 {% endraw %}
