@@ -178,6 +178,25 @@ data:
 | `media_content_type`   | no       | Set to the value `url`                           |
 | `media_content_id`     | no       | The full URL to the stream (max 255 characters)  |
 
+#### Play a queue item
+
+You can play/move to an item within the player's queue by using the `media_player.play_media` action. Set `media_content_type` to `queue` and `media_content_id` to the index (starting from 1) of an item in the play queue.
+The play queue can be enumerated by using the `heos.get_queue` service. Example action data payload:
+
+```yaml
+action: media_player.play_media
+data:
+  entity_id: media_player.office
+  media_content_type: "queue"
+  media_content_id: "1"
+```
+
+| Data attribute | Optional | Description                   |
+| ---------------------- | -------- | ----------------------------- |
+| `entity_id`            | yes      | `entity_id` of the player(s)  |
+| `media_content_type`   | no       | Set to the value `queue`   |
+| `media_content_id`     | no       | The queue index (e.g. `1`) |
+
 ### Grouping players
 
 #### Join
