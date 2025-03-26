@@ -29,6 +29,7 @@ Add this integration to automate playback and group configuration of HEOS-capabl
 - Controlling play mode (e.g., play/pause), volume, mute, and shuffle
 - Playing HEOS favorites, playlists, quick selects, URLs
 - Setting the source to physical inputs (e.g., `AUX1`)
+- Browsing HEOS music services (for example, **Tidal**) and sources (such as **Favorites**)
 - Grouping and ungrouping HEOS devices
 - Clearing playlists
 
@@ -40,12 +41,12 @@ Add this integration to automate playback and group configuration of HEOS-capabl
 {% include integrations/config_flow.md %}
 
 {% note %}
-Only a single instance of the integration is needed to access the entire HEOS system on the network. It will only connect to a single {% term host %}.
+A single instance of the integration adds all devices in the HEOS system to Home Assistant. When setup through discovery, it will automatically select the best {% term host %}. The integration will automatically reconnect and fail over to other hosts in the HEOS system if the configured host goes offline.
 {% endnote %}
 
 {% configuration_basic %}
 Host:
-    description: "The host name or IP address (e.g., \"192.168.1.2\") of your HEOS-capable product. If you have more than one device, select, or enter a host, that is connected to the LAN via wire or has the strongest wireless signal."
+    description: "The host name or IP address (e.g., \"192.168.1.2\") of your HEOS-capable product. If you have more than one device, enter a host that is connected to the LAN via wire and is always powered on."
 {% endconfiguration_basic %}
 
 ## Configuration options
@@ -217,6 +218,11 @@ data:
 | ---------------------- | -------- | ------------------------------------------------ |
 | `entity_id`            | yes      | Remove this media player from any player groups. |
 
+
+{% note %}
+
+Actions may fail if they cannot be processed by the HEOS device. For example, attempting to call `media_player.clear_playlist` when the queue is empty will result in an error. To prevent this from halting a script or automation, set [`continue_on_error: true`](/docs/scripts/#continuing-on-error) in the action call.
+{% endnote %}
 
 ## Supported devices
 
