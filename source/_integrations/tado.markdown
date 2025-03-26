@@ -42,12 +42,13 @@ There is currently support for the following device types within Home Assistant:
 
 The Tado thermostats are internet connected thermostats. There exists an unofficial API at [my.tado.com](https://my.tado.com/), which is used by their website and now by this component.
 
-It currently supports presenting the current temperature, the setting temperature and the current operation mode. The operation mode can be set to manual, auto and off. If no user is at home anymore, all Tado zones show the away-state (Only with Tado assist mode). Manually switching between home-mode and away-mode is also supported. Manually switching to auto-mode is only supported with Tado assist mode. Any Tado climate card can be switched between these presence modes, this changes the setting for the entire home.
+It currently supports presenting the current temperature, the setting temperature, and the current operation mode. The operation mode can be set to manual, auto, and off. If no user is at home anymore, all Tado zones show the away-state (Only with Tado assist mode). Manually switching between `home-mode` and `away-mode` is also supported. Manually switching to `auto-mode` is only supported with Tado assist mode. Any Tado climate card can be switched between these presence modes. This changes the setting for the entire home.
 
 {% include integrations/config_flow.md %}
 
 ## Connect with Tado
-As of **March 21st 2025**, Tado has changed the authentication method. This means a few extra steps need to be followed in order to login:
+
+As of **March 21st 2025**, Tado has changed the authentication method. This means a few extra steps need to be followed in order to log in:
 
 1. When you set up this integration, the integration will setup a "Device Code" and provide a URL to Tado's authentication server.
 2. Follow the URL and confirm the "Device Code" (normally it should be copied automatically).
@@ -55,7 +56,8 @@ As of **March 21st 2025**, Tado has changed the authentication method. This mean
 4. Once the authentication is completed, go back to Home Assistant. Wait a few seconds for the loading screen to finish. You are now connected with Tado!
 
 ### Migrate to new authentication method
-By default, the integration will detect when a re-authentication is needed for the new login method. It will prompt with a re-authenticate action. These are the same steps as explained in "Connect with Tado".
+
+By default, the integration detects when re-authentication is needed for the new login method and prompts with a re-authenticate action. Follow the steps described under  [Connect with Tado](#connect-with-tado).
 
 ## Unsupported device types
 
