@@ -47,7 +47,7 @@ It currently supports presenting the current temperature, the setting temperatur
 {% include integrations/config_flow.md %}
 
 ## Connect with Tado
-As of the **21th of March, 2025** Tado has changed the authentication method. This means a few extra steps need to be followed in order to login:
+As of **March 21st 2025**, Tado has changed the authentication method. This means a few extra steps need to be followed in order to login:
 
 1. When you set up this integration, the integration will setup a "Device Code" and provide a URL to Tado's authentication server.
 2. Follow the URL and confirm the "Device Code" (normally it should be copied automatically).
