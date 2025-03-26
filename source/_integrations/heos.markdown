@@ -109,7 +109,7 @@ Returns the items in the player's queue. This can be used to inspect the current
 Example response:
 
 ```yaml
-media_player.media_player.office:
+media_player.office:
   queue:
     - queue_id: 1
       song: Alone Again
