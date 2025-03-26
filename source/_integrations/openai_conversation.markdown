@@ -67,7 +67,7 @@ Top P:
 Enable web search:
   description: Enable OpenAI-provided [Web search tool](https://openai.com/index/new-tools-for-building-agents/#web-search). Note that it is only available for gpt-4o and gpt-4o-mini models.
 Search context size:
-  The search is performed with a separate fine-tuned `gpt-4o-search-preview` or `gpt-4o-mini-search-preview` model with its own context and its own [pricing](https://platform.openai.com/docs/pricing#web-search). This parameter controls how much context is retrieved from the web to help the tool formulate a response. The tokens used by the search tool do not affect the context window of the main model. These tokens are also not carried over from one turn to another — they're simply used to formulate the tool response and then discarded. This parameter would affect the search quality, cost, and latency.
+  The search is performed with a separate fine-tuned "gpt-4o-search-preview" or "gpt-4o-mini-search-preview" model with its own context and its own [pricing](https://platform.openai.com/docs/pricing#web-search). This parameter controls how much context is retrieved from the web to help the tool formulate a response. The tokens used by the search tool do not affect the context window of the main model. These tokens are also not carried over from one turn to another — they're simply used to formulate the tool response and then discarded. This parameter would affect the search quality, cost, and latency.
 Include home location:
   This parameter allows using the location of your Home Assistant instance during search to provide more relevant search results.
 {% endconfiguration_basic %}
