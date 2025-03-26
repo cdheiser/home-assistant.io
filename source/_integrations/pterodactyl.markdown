@@ -58,14 +58,17 @@ This integration provides a binary sensor with the following information for eac
 This integration provides sensors with the following information for each game server of your Pterodactyl server:
 
 - CPU utilization
-  - Including the CPU limit in the state attributes
-- Memory utilization
-  - Including the memory usage and limit in the state attributes
-- Disk utilization
-  - Including the disk usage and limit in the state attributes
+- Memory usage
+- Disk usage
+- Uptime
+
+The following sensors are provided as well, but disabled by default:
+
+- CPU limit
+- Memory limit
+- Disk limit
 - Network inbound
 - Network outbound
-- Uptime
 
 ## Removing the integration
 
