@@ -33,12 +33,12 @@ The **Bosch Alarm Panel** {% term integration %} allows you to connect your [Bos
 
 The following {% term entities %} are provided:
 
-- [AlarmControlPanel](#alarm-control-panel)
+- [Alarm Control Panel](#alarm-control-panel)
 
 ### Alarm Control Panel
 
 This integration adds an Alarm Control Panel device for each configured area, with the ability to issue arm/disarm commands.
-This entity reports state (_disarmed_, _armed_away_, etc.), and contains custom attributes _ready_to_arm_ (_no_|_home_|_away_), and a _faulted_points_ counter.
+This entity reports state (_disarmed_, _armed_away_, etc.).
 
 ## Authentication
 
