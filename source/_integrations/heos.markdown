@@ -87,6 +87,8 @@ In addition to the standard [Media Player actions](/integrations/media_player#ac
 
 Group volume actions: `media_player.group_volume_set`, `media_player.group_volume_down`, and `media_player.group_volume_up` for entities joined to a group.
 
+Queue actions: `heos.get_queue` to manage a player's queue items.
+
 ### Action `media_player.group_volume_set`
 
 Sets the group's volume while preserving member volume ratios. This action can be called on any entity in a group.
@@ -95,6 +97,37 @@ Sets the group's volume while preserving member volume ratios. This action can b
 |------------------------|----------|------------------------------------------------------------------|
 | `entity_id`            |      yes | A media player entity that is joined to a group.                  |
 | `volume_level`         |       no | The volume level, where 0 is inaudible, 1 is the maximum volume. |
+
+### Action `heos.get_queue`
+
+Returns the items in the player's queue. This can be used to inspect the current play queue of target players.
+
+| Data attribute | Optional | Description                                      |
+|------------------------|----------|------------------------------------------------------------------|
+| `entity_id`            | no      | `entity_id` of the player(s)                                     |
+
+Example response:
+
+```yaml
+media_player.media_player.office:
+  queue:
+    - queue_id: 1
+      song: Alone Again
+      album: After Hours
+      artist: The Weeknd
+      image_url: >-
+        http://resources.wimpmusic.com/images/22f72311/8e9e/461e/a100/d9cfd4ddc2fa/640x640.jpg
+      media_id: "134788274"
+      album_id: "134788273"
+    - queue_id: 2
+      song: Too Late
+      album: After Hours
+      artist: The Weeknd
+      image_url: >-
+        http://resources.wimpmusic.com/images/22f72311/8e9e/461e/a100/d9cfd4ddc2fa/640x640.jpg
+      media_id: "134788275"
+      album_id: "134788273"
+```
 
 ## Examples
 
