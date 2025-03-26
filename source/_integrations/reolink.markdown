@@ -266,7 +266,7 @@ The Push-notification in the Reolink app is independent of the Home Assistant se
 
 The **PTZ patrol** positions first need to be configured using the Reolink [app](https://support.reolink.com/hc/en-us/articles/360008746833/)/[windows](https://support.reolink.com/hc/en-us/articles/900003738126/)/web client. When no positions are configured, the PTZ patrol entity will not be added. When adding patrol positions for the first time, you need to restart the Reolink integration.
 
-The **Manual record** switch will turn off automatically after 10 minutes. Therefore the recording will end as soon as the manual record switch is turned off, or 10 minutes pass.
+The **Manual record** switch will turn off automatically after 10 minutes. Therefore the recording will end as soon as the manual record switch is turned off, or 10 minutes have passed.
 
 ### Light entities
 
