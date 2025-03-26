@@ -1256,6 +1256,71 @@ Some examples:
 
 {% endraw %}
 
+### Find common elements between lists
+
+The template engine provides a filter to find common elements between two lists: `intersect`.
+
+This function returns a list containing all elements that are present in both input lists.
+
+Some examples:
+
+{% raw %}
+
+- `{{ intersect([1, 2, 5, 3, 4, 10], [1, 2, 3, 4, 5, 11, 99]) }}` - renders as `[1, 2, 3, 4, 5]`
+- `{{ [1, 2, 5, 3, 4, 10] | intersect([1, 2, 3, 4, 5, 11, 99]) }}` - renders as `[1, 2, 3, 4, 5]`
+- `{{ intersect(['a', 'b', 'c'], ['b', 'c', 'd']) }}` - renders as `['b', 'c']`
+- `{{ ['a', 'b', 'c'] | intersect(['b', 'c', 'd']) }}` - renders as `['b', 'c']`
+
+{% endraw %}
+
+### Find elements in first list not in second list
+
+The template engine provides a filter to find elements that are in the first list but not in the second list: `difference`.
+This function returns a list containing all elements that are present in the first list but absent from the second list.
+
+Some examples:
+
+{% raw %}
+
+- `{{ difference([1, 2, 5, 3, 4, 10], [1, 2, 3, 4, 5, 11, 99]) }}` - renders as `[10]`
+- `{{ [1, 2, 5, 3, 4, 10] | difference([1, 2, 3, 4, 5, 11, 99]) }}` - renders as `[10]`
+- `{{ difference(['a', 'b', 'c'], ['b', 'c', 'd']) }}` - renders as `['a']`
+- `{{ ['a', 'b', 'c'] | difference(['b', 'c', 'd']) }}` - renders as `['a']`
+
+{% endraw %}
+
+### Find elements that are in either list but not in both
+
+The template engine provides a filter to find elements that are in either of the input lists but not in both: `symmetric_difference`.
+This function returns a list containing all elements that are present in either the first list or the second list, but not in both.
+
+Some examples:
+
+{% raw %}
+
+- `{{ symmetric_difference([1, 2, 5, 3, 4, 10], [1, 2, 3, 4, 5, 11, 99]) }}` - renders as `[10, 11, 99]`
+- `{{ [1, 2, 5, 3, 4, 10] | symmetric_difference([1, 2, 3, 4, 5, 11, 99]) }}` - renders as `[10, 11, 99]`
+- `{{ symmetric_difference(['a', 'b', 'c'], ['b', 'c', 'd']) }}` - renders as `['a', 'd']`
+- `{{ ['a', 'b', 'c'] | symmetric_difference(['b', 'c', 'd']) }}` - renders as `['a', 'd']`
+
+{% endraw %}
+
+### Combine all unique elements from two lists
+
+The template engine provides a filter to combine all unique elements from two lists: `union`.
+This function returns a list containing all unique elements that are present in either the first list or the second list.
+
+Some examples:
+
+{% raw %}
+
+- `{{ union([1, 2, 5, 3, 4, 10], [1, 2, 3, 4, 5, 11, 99]) }}` - renders as `[1, 2, 3, 4, 5, 10, 11, 99]`
+- `{{ [1, 2, 5, 3, 4, 10] | union([1, 2, 3, 4, 5, 11, 99]) }}` - renders as `[1, 2, 3, 4, 5, 10, 11, 99]`
+- `{{ union(['a', 'b', 'c'], ['b', 'c', 'd']) }}` - renders as `['a', 'b', 'c', 'd']`
+- `{{ ['a', 'b', 'c'] | union(['b', 'c', 'd']) }}` - renders as `['a', 'b', 'c', 'd']`
+
+{% endraw %}
+
 ### Combining dictionaries
 
 The template engine provides a function and filter to merge multiple dictionaries: `combine`.
