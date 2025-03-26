@@ -144,9 +144,9 @@ Available {% term actions %}:
 
 - `jewish_calendar.get_omer_blessing`
 
-### Action `jewish_calendar.get_omer_blessing`
+### Action Get Omer blessing
 
-Returns the blessing for the Omer for a given date.
+The `jewish_calendar.get_omer_blessing` action returns the blessing for the Omer for a given date.
 The response data contains a string representing the blessing.
 
 | Data attribute | Optional | Description                                                              |
