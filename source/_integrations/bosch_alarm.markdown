@@ -3,7 +3,7 @@ title: Bosch Alarm
 description: Integrate Bosch Alarms.
 ha_category:
   - Alarm
-ha_release: 2025.3
+ha_release: 2025.4
 ha_iot_class: Local Push
 ha_config_flow: true
 ha_codeowners:
@@ -12,7 +12,6 @@ ha_codeowners:
 ha_domain: bosch_alarm
 ha_platforms:
   - alarm_control_panel
-ha_zeroconf: false
 ha_integration_type: integration
 ---
 
