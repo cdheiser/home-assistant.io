@@ -742,13 +742,13 @@ Prerequisites:
 
 ### Battery drains fast
 
-The Reolink Home Assistant integration is supposed to only wake battery cameras once per hour for about 10 seconds, which should not have a big impact on battery life. You can check this using the **Sleep status** entity. However there are several things that can influence battery life significantly:
+The Reolink Home Assistant integration is supposed to only wake battery cameras once per hour for about 10 seconds, which should not have a big impact on battery life. You can check this using the **Sleep status** entity. However, there are several factors that can have significant impact on battery life:
 
 - Make sure the **Preload camera stream** option is turned off for all battery camera entities under {% my integrations title="**Settings** > **Devices & services**" %} > Reolink integration card > **x devices** > select the battery camera > select the camera stream (do this for all enabled streams) > Gear icon {% icon "mdi:cog-outline" %}. The Preload camera stream will keep a active stream open, keeping the camera awake. This will drain the battery.
 - Make sure the **Manual Record** switch is turned off. While this switch is on, the camera will be awake and recording. Excessive use of this entity will drain the battery.
 - **Automations** which use entities from a Reolink battery camera can wake up the camera. Changing settings or requesting a snapshot will wake the battery camera for 10-30 seconds. When automations trigger very often, this can cause excessive battery use.
 - Some **Custom cards** that can be used to view the camera in a dashboard are known to keep a battery camera constantly awake, draining its battery.
-- Viewing a **dashboard** with a picture-entity card of a Reolink battery camera, will wake that camera to show the latest snapshot and/or stream. Therefore it is recommended to place the picture-entity cards in a separate dashboard/tab which is only accessed when actually wanting to view the battery camera stream(s).
+- Viewing a **dashboard** with a picture-entity card of a Reolink battery camera, will wake that camera to show the latest snapshot and/or stream. Therefore, it is recommended to place the picture-entity cards in a separate dashboard/tab, which is only accessed when actually wanting to view the battery camera streams.
 
 ### Streams or recordings not playing
 
