@@ -14,7 +14,6 @@ ha_iot_class: Local Push
 ha_quality_scale: internal
 ha_codeowners:
   - '@PhracturedBlue'
-  - '@tetienne'
   - '@home-assistant/core'
 ha_domain: template
 ha_platforms:
@@ -37,6 +36,8 @@ ha_config_flow: true
 related:
   - docs: /docs/configuration/
     title: Configuration file
+  - docs: /docs/blueprint/
+    title: About blueprints
 ---
 
 The `template` integration allows creating entities which derive their values from other data. This is done by specifying [templates](/docs/configuration/templating/) for properties of an entity, like the name or the state.
@@ -72,7 +73,7 @@ Entities (sensors, binary sensors, buttons, images, numbers, and selections) are
 
 _For old sensor/binary sensor configuration format, [see below](#legacy-binary-sensor-configuration-format)._
 
-### State-based template binary sensors, buttons, images, numbers, selects and sensors
+### State-based template binary sensors, buttons, images, numbers, selects, sensors, and weathers
 
 Template entities will by default update as soon as any of the referenced data in the template updates.
 
@@ -94,8 +95,7 @@ template:
 
 {% endraw %}
 
-
-### Trigger-based template binary sensors, buttons, images, numbers, selects and sensors
+### Trigger-based template binary sensors, images, numbers, selects, sensors, and weathers
 
 If you want more control over when an entity updates, you can define a trigger. Triggers follow the same format and work exactly the same as [triggers in automations][trigger-doc]. This feature is a great way to create entities based on webhook data ([example](#trigger-based-sensor-and-binary-sensor-storing-webhook-information)), or update entities based on a schedule.
 
@@ -105,12 +105,16 @@ Trigger-based entities do not automatically update when states referenced in the
 
 The state, including attributes, of trigger-based sensors and binary sensors is restored when Home Assistant is restarted. The state of other trigger-based template entities is not restored.
 
+{% note %}
+Buttons do not support using `trigger` or `action` options.
+{% endnote %}
+
 {% raw %}
 
 ```yaml
 # Example configuration entry
 template:
-  - triggers:
+  - trigger:
       - trigger: time_pattern
         # This will update every night
         hours: 0
@@ -124,6 +128,8 @@ template:
 
 {% endraw %}
 
+### Configuration reference
+
 {% configuration %}
 trigger:
   description: Define an automation trigger to update the entities. Optional. If omitted will update based on referenced entities. [See trigger documentation](/docs/automation/trigger).
@@ -134,17 +140,26 @@ unique_id:
   required: false
   type: string
 condition:
-  description: Define conditions that have to be met after a trigger fires and before any actions are executed or sensor updates are performed. Optional. [See condition documentation](/docs/automation/condition).
+  description: Define conditions that have to be met after a trigger fires and before any actions are executed or sensor updates are performed (for trigger-based entities only). Optional. [See condition documentation](/docs/automation/condition).
   required: false
   type: list
 action:
-  description: Define actions to be executed when the trigger fires. Optional. Variables set by the action script are available when evaluating entity templates. This can be used to interact with anything using actions, in particular actions with [response data](/docs/scripts/perform-actions#use-templates-to-handle-response-data). [See action documentation](/docs/automation/action).
+  description: Define actions to be executed when the trigger fires (for trigger-based entities only). Optional. Variables set by the action script are available when evaluating entity templates. This can be used to interact with anything using actions, in particular actions with [response data](/docs/scripts/perform-actions#use-templates-to-handle-response-data). [See action documentation](/docs/automation/action).
   required: false
   type: list
+variables:
+  description: Key-value pairs of variable definitions which can be referenced and used in the templates below (for trigger-based entities only). Mostly used by blueprints.
+  required: false
+  type: map
+  keys:
+    "variable_name: value":
+      description: The variable name and corresponding value.
+      required: true
+      type: string
 sensor:
   description: List of sensors
   required: true
-  type: map
+  type: list
   keys:
     state:
       description: "Defines a template to get the state of the sensor. If the sensor is numeric, i.e. it has a `state_class` or a `unit_of_measurement`, the state template must render to a number or to `none`. The state template must not render to a string, including `unknown` or `unavailable`. An `availability` template may be defined to suppress rendering of the state template."
@@ -168,7 +183,7 @@ sensor:
 binary_sensor:
   description: List of binary sensors
   required: true
-  type: map
+  type: list
   keys:
     state:
       description: The sensor is `on` if the template evaluates as `True`, `yes`, `on`, `enable` or a positive number. Any other value will render it as `off`. The actual appearance in the frontend (`Open`/`Closed`, `Detected`/`Clear` etc) depends on the sensor’s device_class value
@@ -424,13 +439,18 @@ template:
 [trigger-doc]: /docs/automation/trigger
 
 #### Video tutorial
+
 This video tutorial explains how to set up a Trigger based template that makes use of an action to retrieve the weather forecast (precipitation).
 
 <lite-youtube videoid="zrWqDjaRBf0" videotitle="How to create Action Template Sensors in Home Assistant" posterquality="maxresdefault"></lite-youtube>
 
 ### Template and action variables
 
-State-based and trigger-based template entities have the special template variable `this` available in their templates and actions. The `this` variable is the [state object](/docs/configuration/state_object) of the entity and aids [self-referencing](#self-referencing) of an entity's state and attribute in templates and actions. Trigger-based entities also provide [the trigger data](/docs/automation/templating/). 
+State-based and trigger-based template entities have the special template variable `this` available in their templates and actions. The `this` variable is the current [state object](/docs/configuration/state_object) of the entity and aids [self-referencing](#self-referencing) of an entity's state and attributes in templates and actions. Trigger-based entities also provide [the trigger data](/docs/automation/templating/).
+
+{% note %}
+Self-referencing using `this` provides the state and attributes for the entity before rendering the templates to calculate a new state. To access the new state, use the `value` or `value_json` variable.
+{% endnote %}
 
 ### Rate limiting updates
 
@@ -488,6 +508,46 @@ The same would apply to the `is_state()` function. You should replace {% raw %}`
 ```
 
 {% endraw %}
+
+## Using blueprints
+
+If you're just starting out and are not really familiar with templates, we recommend that you start with {% term blueprint %} template entities. These are template entities which are ready-made by the community and that you only need to configure.
+
+Each blueprint contains the "recipe" for creating a single template entity, but you can create multiple template entities based on the same blueprint.
+
+To create your first template entity based on a blueprint, open up your `configuration.yaml` file and add:
+
+```yaml
+# Example configuration.yaml template entity based on a blueprint located in config/blueprints/homeassistant/inverted_binary_sensor.yaml
+template:
+  - use_blueprint:
+      path: homeassistant/inverted_binary_sensor.yaml # relative to config/blueprints/template/
+      input:
+        reference_entity: binary_sensor.foo
+    name: Inverted foo
+    unique_id: inverted_foo
+```
+
+If you look at the blueprint definition, you will notice it has one input defined (`reference_entity`), which expects a `binary_sensor` entity ID. When you create a template entity based on that blueprint, you will have to tell it which of your `binary_sensor` entities it should use to fill that spot.
+
+### Importing blueprints
+
+Home Assistant can import blueprints from the Home Assistant forums, GitHub, and GitHub gists.
+
+1. To import a blueprint, first [find a blueprint you want to import][blueprint-forums].
+   - If you just want to practice importing, you can use this URL:
+
+      ```text
+      https://github.com/home-assistant/core/blob/dev/homeassistant/components/template/blueprints/inverted_binary_sensor.yaml
+      ```
+
+2. Download the file and place it under `config/blueprints/template/<source or author>/<blueprint name>.yaml`
+3. Use a config similar to the one above to create a new template entity based on the blueprint you just imported.
+4. Make sure to fill in all required inputs.
+
+The blueprint can now be used for creating template entities.
+
+[blueprint-forums]: /get-blueprints
 
 ## Examples
 
@@ -882,7 +942,7 @@ binary_sensor:
     sensors:
       sun_up:
         friendly_name: "Sun is up"
-        value_template: {{ state_attr('sun.sun', 'elevation') > 0 }}
+        value_template: "{{ state_attr('sun.sun', 'elevation') > 0 }}"
 ```
 
 {% endraw %}

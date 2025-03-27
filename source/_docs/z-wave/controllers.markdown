@@ -12,13 +12,14 @@ You need to have a compatible Z-Wave stick or module installed. The following de
 The firmwares of 700 and 800 series Z-Wave controllers have several bugs which impact the stability of the mesh and can cause the controller to become unresponsive. Because there is no known firmware version that is completely fixed, it is recommended to choose a firmware based on the following criteria:
 
 - 700 series:
-  - prefer SDK versions 7.17.2 to 7.18.x
+  - prefer SDK versions 7.17.2 to 7.18.x or 7.21.6 and newer
   - SDK versions 7.19.x are okay
   - avoid SDK versions before 7.17.2
-  - avoid SDK versions 7.20 to 7.21.3
+  - avoid SDK versions 7.20 to 7.21.5
 
 - 800 series
-  - prefer SDK versions 7.22.x
+  - prefer SDK versions 7.23.x and newer
+  - SDK versions 7.22.x are okay
   - SDK versions 7.17.2 to 7.19.x are okay
   - avoid SDK versions before 7.17.2
   - avoid SDK versions 7.20 to 7.21.3
@@ -41,16 +42,16 @@ Firmware can be upgraded using the below directions:
 {% endwarning %}
 
 - 800 series controllers (with some caveats, see notes)
-  - Z-Wave.Me Z-Station
   - HomeSeer SmartStick G8
   - Zooz 800 Series Z-Wave Long Range S2 Stick (ZST39 LR)
 
 - 700 series controllers
   - Aeotec Z-Stick 7 USB stick (ZWA010) (the EU version is not recommended due to RF performance issues)
-  - Silicon Labs UZB-7 USB Stick (Silabs SLUSB7000A / SLUSB001A)
-  - Zooz S2 Stick 700 (ZST10 700)
   - HomeSeer SmartStick+ G3
   - HomeSeer Z-NET G3
+  - Silicon Labs UZB-7 USB Stick (Silabs SLUSB7000A / SLUSB001A)
+  - Zooz S2 Stick 700 (ZST10 700)
+  - Z-Wave.Me Z-Station
 
 - 500 series controllers
   - Aeotec Z-Stick Gen5 (see note below)
