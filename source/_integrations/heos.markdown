@@ -180,7 +180,7 @@ data:
 
 #### Play a queue item
 
-You can play/move to an item within the player's queue by using the `media_player.play_media` action. Set `media_content_type` to `queue` and `media_content_id` to the index (starting from 1) of an item in the play queue. The play queue can be enumerated by using the `heos.get_queue` service. Example action data payload:
+You can play/move to an item within the player's queue by using the `media_player.play_media` action. Set `media_content_type` to `queue` and `media_content_id` to the index (starting from 1) of an item in the play queue. The play queue can be enumerated by using the `heos.get_queue` action. Example action data payload:
 
 ```yaml
 action: media_player.play_media
