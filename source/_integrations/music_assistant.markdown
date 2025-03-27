@@ -25,8 +25,8 @@ All of the Home Assistant [Media Player Control Actions](https://www.home-assist
 
 The `media_content_id` payload for `media_player.play_media` can be any of the following:
 
-- The name of a track, artist or album. (for example, "Queen")
-- A track or album combined with the artist name (for example, "Queen - Innuendo")
+- The name of a track, artist or album. (for example, `Queen`)
+- A track or album combined with the artist name (for example, `Queen - Innuendo`)
 - A streaming provider URI (for example, `spotify://artist/12345`)
 
 The `media_content_id` payload for `media_player.browse_media` must be a URI of the form `library://artist/1`, `library://album/20`, or `spotify://album/5zj4Ej0FrlJQaSo0d6cttH`. The type of item that the URI refers to must be an album or artist.
@@ -37,7 +37,7 @@ These URIs can be obtained from, for example, the output of the `get_library` or
 
 ### Manual configuration
 
-Under normal circumstances, Home Assistant automatically discovers your running Music Assistant Server. If there is something special about the HA or MA setup (for example, the MA server is running as a remote Docker container) or discovery is not working, you can manually specify the URL to your Music Assistant server. If the Music Assistant Server is not installed then follow these [installation instructions](https://music-assistant.io/installation/).
+Under normal circumstances, Home Assistant automatically discovers your running Music Assistant Server. If there is something special about the HA or MA setup (for example, the MA server is running as a remote Docker container) or discovery is not working, you can manually specify the URL to your Music Assistant server. If the Music Assistant Server is not installed, then follow these [installation instructions](https://music-assistant.io/installation/).
 
 ## Removing the integration
 
@@ -49,7 +49,7 @@ After deleting the integration, go to the HA SETTINGS >> ADD-ONS and remove the 
 
 ## Media player entities
 
-The Music Assistant integration creates media player entities for all players available in MA including those imported from Home Assistant. This is needed to provide the full functionality Music Assistant has to offer. These entities will display media information, playback progress, and playback controls.
+The Music Assistant integration creates media player entities for all players available in MA, including those imported from Home Assistant. This is needed to provide the full functionality Music Assistant has to offer. These entities will display media information, playback progress, and playback controls.
 
 ## Actions
 
