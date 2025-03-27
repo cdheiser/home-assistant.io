@@ -23,85 +23,35 @@ There is currently support for the following Home Assistant Platforms:
 
 All of the Home Assistant [Media Player Control Actions](https://www.home-assistant.io/integrations/media_player/#media-control-actions) are supported.
 
+The `media_content_id` payload for `media_player.play_media` can be any of the following:
+
+- The name of a track, artist or album. (for example, "Queen")
+- A track or album combined with the artist name (for example, "Queen - Innuendo")
+- A streaming provider URI (for example, `spotify://artist/12345`)
+
+The `media_content_id` payload for `media_player.browse_media` must be a URI of the form `library://artist/1`, `library://album/20`, or `spotify://album/5zj4Ej0FrlJQaSo0d6cttH`. The type of item that the URI refers to must be an album or artist.
+
+These URIs can be obtained from, for example, the output of the `get_library` or `search` actions described below or the `media_player.browse_media` HA action. 
+
 {% include integrations/config_flow.md %}
 
 ### Manual configuration
 
 Under normal circumstances, Home Assistant automatically discovers your running Music Assistant Server. If there is something special about the HA or MA setup (for example, the MA server is running as a remote Docker container) or discovery is not working, you can manually specify the URL to your Music Assistant server. If the Music Assistant Server is not installed then follow these [installation instructions](https://music-assistant.io/installation/).
 
-## Media player
+## Removing the integration
+
+This integration follows standard integration removal. No extra steps are required.
+
+{% include integrations/remove_device_service.md %}
+
+After deleting the integration, go to the HA SETTINGS >> ADD-ONS and remove the Music Assistant Add-on from there as well (if installed).
+
+## Media player entities
 
 The Music Assistant integration creates media player entities for all players available in MA including those imported from Home Assistant. This is needed to provide the full functionality Music Assistant has to offer. These entities will display media information, playback progress, and playback controls.
 
-### Action `media_player.play_media`
-
-Play media hosted on a Music Assistant server on a Music Assistant player. The action configuration is as described in the [media player documentation](https://www.home-assistant.io/integrations/media_player/#action-media_playerplay_media)
-
-The `media_content_id` payload can be any of the following:
-
-- The name of a track, artist or album. (for example, "Queen")
-- A track or album combined with the artist name (for example, "Queen - Innuendo")
-- A streaming provider URI (for example, `spotify://artist/12345`)
-
-#### Examples
-
-Play Adele's album 25
-
-```yaml
-entity_id: media_player.music_assistant_player
-media_content_type: album
-media_content_id: 'Adele - 25'
-```
-
-Play all tracks from Stevie Wonder in random order
-
-```yaml
-entity_id: media_player.music_assistant_player
-media_content_type: artist
-media_content_id: 'Stevie Wonder'
-```
-
-Play the playlist The Best of Disco
-
-```yaml
-entity_id: media_player.music_assistant_player
-media_content_type: playlist
-media_content_id: 'The Best of Disco'
-```
-
-### Action `media_player.browse_media`
-
-Browse the media available on a Music Assistant server. The action configuration is as described in the [media player documentation](https://www.home-assistant.io/integrations/media_player/#action-media_playerbrowse_media)
-
-The `media_content_type` is optional, but if used will always be `music`.
-
-The `media_content_id` must be a URI which is understood by MA such as `library://artist/1`, `library://album/20`, or `spotify://album/5zj4Ej0FrlJQaSo0d6cttH`. These URIs can be obtained from, for example, the output of the `get_library` or `search` actions described below or the `media_player.browse_media` HA action. The type of item that the URI refers to must be an album or artist.
-
-#### Examples
-
-Get all tracks from an album
-
-```yaml
-action: media_player.browse_media
-data:
-  media_content_type: music
-  media_content_id: library://album/20
-target:
-  entity_id: media_player.ma_study_player_provsp
-```
-
-Get all albums of an artist
-
-```yaml
-action: media_player.browse_media
-data:
-  media_content_type: music
-  media_content_id: library://artist/1
-target:
-  entity_id: media_player.ma_study_player_provsp
-```
-
-## Additional actions
+## Actions
 
 ### Action `music_assistant.play_media`
 
