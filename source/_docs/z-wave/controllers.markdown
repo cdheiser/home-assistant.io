@@ -95,7 +95,7 @@ Z-Wave JS does not support Z-Wave Long Range yet.
 
 {% note %}
 
-The Aeotec Z-Stick and some of its variants (e.g. Z-Wave.Me UZB1) are known to have compatibility issues with the Linux kernel because of their [non-compliant behavior](https://forums.raspberrypi.com/viewtopic.php?f=28&t=245031#p1502030). Plugging these controllers through a USB hub can suit as a workaround that sometimes mitigates the issue.
+The Aeotec Z-Stick and some of its variants (e.g. Z-Wave.Me UZB1) are known to have compatibility issues with the Linux kernel because of their [non-compliant behavior](https://forums.raspberrypi.com/viewtopic.php?f=28&t=245031#p1502030). Plugging these controllers through a USB hub can serve as a workaround that sometimes mitigates the issue.
 
 {% endnote %}
 
