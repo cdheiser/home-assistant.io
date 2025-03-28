@@ -25,19 +25,19 @@ All of the Home Assistant [Media Player Control Actions](https://www.home-assist
 
 The `media_content_id` payload for `media_player.play_media` can be any of the following:
 
-- The name of a track, artist or album. (for example, `Queen`)
-- A track or album combined with the artist name (for example, `Queen - Innuendo`)
-- A streaming provider URI (for example, `spotify://artist/12345`)
+- The name of a track, artist, or album. For example, `Queen`.
+- A track or album combined with the artist's name. For example, `Queen - Innuendo`.
+- A streaming provider URI. For example, `spotify://artist/12345`.
 
 The `media_content_id` payload for `media_player.browse_media` must be a URI of the form `library://artist/1`, `library://album/20`, or `spotify://album/5zj4Ej0FrlJQaSo0d6cttH`. The type of item that the URI refers to must be an album or artist.
 
-These URIs can be obtained from, for example, the output of the `get_library` or `search` actions described below or the `media_player.browse_media` HA action. 
+These URIs can be obtained from, for example, the output of the `get_library` or `search` actions described below or the `media_player.browse_media` action from Home Assistant. 
 
 {% include integrations/config_flow.md %}
 
 ### Manual configuration
 
-Under normal circumstances, Home Assistant automatically discovers your running Music Assistant Server. If there is something special about the HA or MA setup (for example, the MA server is running as a remote Docker container) or discovery is not working, you can manually specify the URL to your Music Assistant server. If the Music Assistant Server is not installed, then follow these [installation instructions](https://music-assistant.io/installation/).
+Under normal circumstances, Home Assistant automatically discovers your running Music Assistant Server. If there is something special about the Home Assistant or MA setup (for example, the MA server is running as a remote Docker container) or discovery is not working, you can manually specify the URL to your Music Assistant server. If the Music Assistant Server is not installed, then follow these [installation instructions](https://music-assistant.io/installation/).
 
 ## Removing the integration
 
@@ -45,7 +45,7 @@ This integration follows standard integration removal. No extra steps are requir
 
 {% include integrations/remove_device_service.md %}
 
-After deleting the integration, go to the HA SETTINGS >> ADD-ONS and remove the Music Assistant Add-on from there as well (if installed).
+After deleting the integration, go to the {% my supervisor_addon title="**Settings** > **Add-ons**" addon="core_samba" %} and remove the **Music Assistant** add-on from there as well (if installed).
 
 ## Media player entities
 
