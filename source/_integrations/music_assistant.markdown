@@ -39,14 +39,6 @@ These URIs can be obtained from, for example, the output of the `get_library` or
 
 Under normal circumstances, Home Assistant automatically discovers your running Music Assistant Server. If there is something special about the Home Assistant or MA setup (for example, the MA server is running as a remote Docker container) or discovery is not working, you can manually specify the URL to your Music Assistant server. If the Music Assistant Server is not installed, then follow these [installation instructions](https://music-assistant.io/installation/).
 
-## Removing the integration
-
-This integration follows standard integration removal. No extra steps are required.
-
-{% include integrations/remove_device_service.md %}
-
-After deleting the integration, go to the {% my supervisor_addon title="**Settings** > **Add-ons**" addon="core_samba" %} and remove the **Music Assistant** add-on from there as well (if installed).
-
 ## Media player entities
 
 The Music Assistant integration creates media player entities for all players available in MA, including those imported from Home Assistant. This is needed to provide the full functionality Music Assistant has to offer. These entities will display media information, playback progress, and playback controls.
@@ -203,3 +195,11 @@ Get the queue details of a Music Assistant player queue.
 ## Notes
 
 - Any Home Assistant players added to Music Assistant will appear duplicated as the MA version of the player is created. The original HA player can be hidden if desired.
+
+## Removing the integration
+
+This integration follows standard integration removal. No extra steps are required.
+
+{% include integrations/remove_device_service.md %}
+
+After deleting the integration, go to the {% my supervisor_addon title="**Settings** > **Add-ons**" addon="music_assistant" %} and remove the **Music Assistant** add-on from there as well (if installed).
