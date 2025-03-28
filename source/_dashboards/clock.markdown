@@ -24,11 +24,11 @@ All options for this card can be configured via the user interface.
 
 {% configuration_basic %}
 Clock Size:
-  description: Adjusts the size of the text allowing a wider range of use with different types of dashboards. Defaults to small
+  description: Adjusts the size of the text allowing a wider range of use with different types of dashboards. Defaults to small.
 Display Seconds:
-  description: Shows seconds alongside the clock providing the time format is in a 12 hour format
+  description: Shows seconds alongside the clock, providing the time format is in a 12-hour format.
 Time Format:
-  description: Allows the time format to be changed on a per-card level. Defaults to the user profile setting
+  description: Allows the time format to be changed on a per-card level. Defaults to the user profile setting.
 {% endconfiguration_basic %}
 
 ### Examples
