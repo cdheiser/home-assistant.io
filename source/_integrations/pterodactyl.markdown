@@ -4,6 +4,7 @@ description: Instructions on how to integrate a Pterodactyl server into Home Ass
 ha_release: 2025.4
 ha_category:
   - Binary sensor
+  - Sensor
 ha_iot_class: Local Polling
 ha_config_flow: true
 ha_codeowners:
@@ -11,6 +12,7 @@ ha_codeowners:
 ha_domain: pterodactyl
 ha_platforms:
   - binary_sensor
+  - sensor
 ha_integration_type: integration
 ha_quality_scale: bronze
 ---
@@ -50,6 +52,23 @@ Account API key:
 This integration provides a binary sensor with the following information for each game server of your Pterodactyl server:
 
 - Status: `Running` or `Not running`
+
+## Sensors
+
+This integration provides sensors with the following information for each game server of your Pterodactyl server:
+
+- CPU utilization
+- Memory usage
+- Disk usage
+- Uptime
+
+The following sensors are provided as well, but disabled by default:
+
+- CPU limit
+- Memory limit
+- Disk limit
+- Network inbound
+- Network outbound
 
 ## Removing the integration
 
