@@ -32,7 +32,7 @@ Assistant. You can control what devices and entities it can access from the {% m
 2. If your MCP server only supports the <abbr title="Standard input/output">*stdio*</abbr> protocol, you will also need an additional
    MCP proxy (such as [mcp-proxy](https://github.com/sparfenyuk/mcp-proxy)) to expose
    the server over <abbr title="Server-sent events">*SSE*</abbr>.
-3. If your MCP server requires authentication then you will need an OAuth Client ID and Secret.
+3. If your MCP server requires authentication, then you will need an OAuth Client ID and Secret.
 
 {% include integrations/config_flow.md %}
 
@@ -81,7 +81,7 @@ are exposed.
 
 ### Authorization
 
-The Model Context Protocol supports OAuth, and allows you to give Home Assistant 
+The Model Context Protocol supports OAuth, and allows you to give Home Assistant
 access to restricted MCP servers. You can enter the MCP Servers [Application Credentials](https://www.home-assistant.io/integrations/application_credentials/) when configuring
 the MCP integration.
 
