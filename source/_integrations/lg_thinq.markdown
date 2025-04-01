@@ -20,8 +20,6 @@ ha_platforms:
   - switch
   - vacuum
 ha_integration_type: integration
-ha_codeowners:
-  - '@LG-ThinQ-Integration'
 ---
 
 The **LG ThinQ** integration allows you to connect LG ThinQ devices to Home Assistant. The features of this integration include:
@@ -109,147 +107,147 @@ A list of all Entity Platforms provided by LG ThinQ Integration:
 
 A read-only property which has only two states that can be toggled is represented as a binary sensor platform.
 
-| Device | Property |
-| ------ | -------- |
-| Cooktop | Remote start |
-| Dish Washer | Chime sound<br>Clean indicator light<br>Door<br>Machine clean reminder<br>Remote start<br>Rinse refill needed | 
-| Hood | Power |
-| Oven | Remote start |
-| Refrigerator | Door<br>Eco friendly<br>Power saving mode<br>Sabbath |
-| Kimchi Refrigerator | Fresh air filter |
-| Dryer<br>Styler<br>Washer<br>Washcombo Main<br>Washcombo Mini<br>Washtower<br>Washtower Dryer<br>Washtower Washer | Remote start |
-| Water Heater | Power |
-| Wine Cellar | Sabbath |
+| Device                                                                                                            | Property                                                                                                      |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Cooktop                                                                                                           | Remote start                                                                                                  |
+| Dish Washer                                                                                                       | Chime sound<br>Clean indicator light<br>Door<br>Machine clean reminder<br>Remote start<br>Rinse refill needed |
+| Hood                                                                                                              | Power                                                                                                         |
+| Oven                                                                                                              | Remote start                                                                                                  |
+| Refrigerator                                                                                                      | Door<br>Eco friendly<br>Power saving mode<br>Sabbath                                                          |
+| Kimchi Refrigerator                                                                                               | Fresh air filter                                                                                              |
+| Dryer<br>Styler<br>Washer<br>Washcombo Main<br>Washcombo Mini<br>Washtower<br>Washtower Dryer<br>Washtower Washer | Remote start                                                                                                  |
+| Water Heater                                                                                                      | Power                                                                                                         |
+| Wine Cellar                                                                                                       | Sabbath                                                                                                       |
 
 ### Climate
 
 The properties for controlling both the temperature and wind strength of the appliance are represented as a climate platform.
 
-| Device | Property |
-| ------ | -------- |
+| Device          | Property                                                                                                                                                          |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Air Conditioner | Current temperature<br>Fan mode<br>Swing mode<br>Swing horizontal mode<br>HVAC mode<br>Preset mode<br>Temperature<br>Temperature cool<br>Temperature heat<br>Unit |
-| System Boiler | Current temperature<br>HVAC mode<br>Temperature<br>Temperature cool<br>Temperature heat<br>Unit |
+| System Boiler   | Current temperature<br>HVAC mode<br>Temperature<br>Temperature cool<br>Temperature heat<br>Unit                                                                   |
 
 ### Event
 
 A notification message pushed from the server is represented as an event platform. The **Notification codes** shows the full support range, and you can check the range of your device through the developer tools.
 
-| Device | Property | Notification codes |
-| ------ | -------- | ---------- |
-| Air Conditioner | Notification | water_is_full |
-| Air Purifier| Notification | lack_of_water, time_to_clean_filter, pollution_is_high, time_to_change_filter |
-| Air Purifier Fan | Notification | time_to_change_filter |
-| Dehumidifier | Notification | water_is_full |
-| Dish Washer | Error<br>Notification | cleaning_is_complete, error_during_cleaning, water_leak_has_occurred, rinse_is_not_enough, salt_refill_is_needed |
-| Humidifier | Notification | time_to_change_filter, lack_of_water |
-| Kimchi Refrigerator | Notification | door_is_open |
-| Microwave Oven | Notification | none |
-| Oven | Notification | preheating_is_complete, cooking_is_complete, time_to_clean, error_has_occurred |
-| Refrigerator | Notification | time_to_change_filter, time_to_change_water_filter, frozen_is_complete, door_is_open |
-| Robot Cleaner | Error<br>Notification | - |
-| Stick Cleaner | Notification | charging_is_complete, time_to_clean_filter |
-| Washer<br>Dryer<br>Washcombo Main<br>Washcombo Mini<br>Washtower<br>Washtower Dryer<br>Washtower Washer | Error<br>Notification | washing_is_complete, error_during_washing, drying_is_complete, drying_failed |
-| Styler | Error<br>Notification | styling_is_complete, error_has_occurred |
-| Wine Cellar | Notification | door_is_open |
+| Device                                                                                                  | Property              | Notification codes                                                                                               |
+| ------------------------------------------------------------------------------------------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Air Conditioner                                                                                         | Notification          | water_is_full                                                                                                    |
+| Air Purifier                                                                                            | Notification          | lack_of_water, time_to_clean_filter, pollution_is_high, time_to_change_filter                                    |
+| Air Purifier Fan                                                                                        | Notification          | time_to_change_filter                                                                                            |
+| Dehumidifier                                                                                            | Notification          | water_is_full                                                                                                    |
+| Dish Washer                                                                                             | Error<br>Notification | cleaning_is_complete, error_during_cleaning, water_leak_has_occurred, rinse_is_not_enough, salt_refill_is_needed |
+| Humidifier                                                                                              | Notification          | time_to_change_filter, lack_of_water                                                                             |
+| Kimchi Refrigerator                                                                                     | Notification          | door_is_open                                                                                                     |
+| Microwave Oven                                                                                          | Notification          | none                                                                                                             |
+| Oven                                                                                                    | Notification          | preheating_is_complete, cooking_is_complete, time_to_clean, error_has_occurred                                   |
+| Refrigerator                                                                                            | Notification          | time_to_change_filter, time_to_change_water_filter, frozen_is_complete, door_is_open                             |
+| Robot Cleaner                                                                                           | Error<br>Notification | -                                                                                                                |
+| Stick Cleaner                                                                                           | Notification          | charging_is_complete, time_to_clean_filter                                                                       |
+| Washer<br>Dryer<br>Washcombo Main<br>Washcombo Mini<br>Washtower<br>Washtower Dryer<br>Washtower Washer | Error<br>Notification | washing_is_complete, error_during_washing, drying_is_complete, drying_failed                                     |
+| Styler                                                                                                  | Error<br>Notification | styling_is_complete, error_has_occurred                                                                          |
+| Wine Cellar                                                                                             | Notification          | door_is_open                                                                                                     |
 
 ### Fan
 
 The properties for controlling the wind strength of the appliance are represented as a fan platform.
 
-| Device | Property |
-| ------ | -------- |
+| Device      | Property       |
+| ----------- | -------------- |
 | Ceiling Fan | Power<br>Speed |
 
 ### Number
 
 A read-write property which has a numeric value is represented as a number platform.
 
-| Device | Property |
-| ------ | -------- |
-| Air Conditioner | Schedule turn-off<br>Schedule turn-on<br>Sleep timer |
-| Air Purifier Fan | Sleep timer<br>Wind temperature |
-| Hood | Fan<br>Light |
-| Humidifier | Sleep timer<br>Target humidity |
-| Microwave Oven | Fan<br>Light |
-| Oven | Temperature |
-| Refrigerator | Temperature |
-| Dryer<br>Styler<br>Washer<br>Washcombo Main<br>Washcombo Mini<br>Washtower<br>Washtower Dryer<br>Washtower Washer | Delayed start/end |
-| Water Heater | Temperature |
-| Wine Cellar | Light<br>Temperature |
+| Device                                                                                                            | Property                                             |
+| ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| Air Conditioner                                                                                                   | Schedule turn-off<br>Schedule turn-on<br>Sleep timer |
+| Air Purifier Fan                                                                                                  | Sleep timer<br>Wind temperature                      |
+| Hood                                                                                                              | Fan<br>Light                                         |
+| Humidifier                                                                                                        | Sleep timer<br>Target humidity                       |
+| Microwave Oven                                                                                                    | Fan<br>Light                                         |
+| Oven                                                                                                              | Temperature                                          |
+| Refrigerator                                                                                                      | Temperature                                          |
+| Dryer<br>Styler<br>Washer<br>Washcombo Main<br>Washcombo Mini<br>Washtower<br>Washtower Dryer<br>Washtower Washer | Delayed start/end                                    |
+| Water Heater                                                                                                      | Temperature                                          |
+| Wine Cellar                                                                                                       | Light<br>Temperature                                 |
 
 ### Select
 
 A writable property which has a list of selectable values is represented as a select platform.
 
-| Device |Property |
-| ------ |-------- |
-| Air Conditioner | Air purify<br>Air quality sensor |
-| Air Purifier| Operating mode<br>Speed |
-| Air Purifier Fan | Display brightness<br>Operating mode<br>Rotation<br>Speed |
-| Dehumidifier | Speed |
-| Dish Washer | Operation |
-| Humidifier | Display brightness<br>Drying mode<br>Operating mode<br>Speed |
-| Oven | Cook mode<br>Operation<br> |
-| Refrigerator | Fresh air filter |
-| Dryer<br>Styler<br>Washer<br>Washcombo Main<br>Washcombo Mini<br>Washtower<br>Washtower Dryer<br>Washtower Washer | Operation |
-| Water Heater | Operating mode |
-| Wine Cellar | Light<br>Operating mode |
+| Device                                                                                                            | Property                                                     |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| Air Conditioner                                                                                                   | Air purify<br>Air quality sensor                             |
+| Air Purifier                                                                                                      | Operating mode<br>Speed                                      |
+| Air Purifier Fan                                                                                                  | Display brightness<br>Operating mode<br>Rotation<br>Speed    |
+| Dehumidifier                                                                                                      | Speed                                                        |
+| Dish Washer                                                                                                       | Operation                                                    |
+| Humidifier                                                                                                        | Display brightness<br>Drying mode<br>Operating mode<br>Speed |
+| Oven                                                                                                              | Cook mode<br>Operation<br>                                   |
+| Refrigerator                                                                                                      | Fresh air filter                                             |
+| Dryer<br>Styler<br>Washer<br>Washcombo Main<br>Washcombo Mini<br>Washtower<br>Washtower Dryer<br>Washtower Washer | Operation                                                    |
+| Water Heater                                                                                                      | Operating mode                                               |
+| Wine Cellar                                                                                                       | Light<br>Operating mode                                      |
 
 ### Switch
 
 A read-write property which has only two states that can be toggled is represented as a switch platform.
 
-| Device | Property |
-| ------ | -------- |
-| Air Conditioner | Power<br>Lighting<br>Energy saving |
-| Air Purifier | Power |
-| Air Purifier Fan | Heating<br>Power<br>UVnano |
-| Dehumidifier | Power |
-| Humidifier | Auto mode<br>Heating<br>Mood light<br>Power<br>Sleep mode |
-| Refrigerator | Express mode<br>Express cool<br>Quick freeze |
-| System Boiler | Power<br>Hot water |
-| Wine Cellar | Ventilation |
+| Device           | Property                                                  |
+| ---------------- | --------------------------------------------------------- |
+| Air Conditioner  | Power<br>Lighting<br>Energy saving                        |
+| Air Purifier     | Power                                                     |
+| Air Purifier Fan | Heating<br>Power<br>UVnano                                |
+| Dehumidifier     | Power                                                     |
+| Humidifier       | Auto mode<br>Heating<br>Mood light<br>Power<br>Sleep mode |
+| Refrigerator     | Express mode<br>Express cool<br>Quick freeze              |
+| System Boiler    | Power<br>Hot water                                        |
+| Wine Cellar      | Ventilation                                               |
 
 ### Vacuum
 
 The properties for controlling the clean operations of the appliance are represented as a vacuum platform.
 
-| Device | Property |
-| ------ | -------- |
+| Device        | Property                               |
+| ------------- | -------------------------------------- |
 | Robot Cleaner | Battery<br>Current status<br>Operation |
 
 ### Water heater
 
 The properties for controlling the operating mode and temperature are represented as a water_heater platform.
 
-| Device | Property |
-| ------ | -------- |
+| Device       | Property                                   |
+| ------------ | ------------------------------------------ |
 | Water heater | Mode<br>Current temperature<br>Temperature |
 
 ### Sensor
 
 A read-only property which has states is represented as a sensor platform.
 
-| Device | Property |
-| ------ | -------- |
-| Air Conditioner | Filter remaining<br>Humidity<br>Odor<br>Overall air quality<br>PM1<br>PM10<br>PM2.5<br>Schedule turn-off<br>Schedule turn-on<br>Sleep timer |
-| Air Purifier| Air quality sensor<br>Humidity<br>Odor<br>Operating mode<br>Overall air quality<br>Personal mode<br>PM1<br>PM10<br>PM2.5<br>Filter remaining<br>Schedule turn-off<br>Schedule turn-on |
-| Air Purifier Fan | Air quality sensor<br>Humidity<br>Odor<br>Overall air quality<br>PM1<br>PM10<br>PM2.5<br>Sleep timer<br>Temperature<br>Schedule turn-off<br>Schedule turn-on |
-| Cooktop | Current status<br>Power level |
-| Dehumidifier | Humidity<br>Operating mode |
-| Dish Washer | Current cycle<br>Current status<br>Rinse aid dispenser level<br>Softening level<br>Delayed start<br>Remaining time<br>Total time |
-| Home Brew| Brewing duration<br>Brewing period<br>Current status<br>First flavor<br>Second flavor<br>Homebrew recipe<br>First hop<br>Second hop<br>Recipe progress<br>Wort<br>Yeast |
-| Humidifier | Air quality sensor<br>Humidity<br>Overall air quality<br>PM1<br>PM10<br>PM2.5<br>Schedule turn-off<br>Schedule turn-on<br>Sleep timer<br>Temperature |
-| Kimchi Refrigerator | Fresh air filter<br>Temperature |
-| Microwave Oven | Current status |
-| Oven | Current status<br>Temperature |
-| Plant Cultivator | Current status<br>Day growth temperature<br>Lighting duration<br>Lighting intensity<br>Lights on time<br>Mode<br>Night growth temperature<br>Temperature<br>Wind speed |
-| Refrigerator | Fresh air filter<br>Water filter used |
-| Robot Cleaner | Current status<br>Operating mode<br>Running time |
-| Stick Cleaner | Battery<br>Current status<br>Operating mode |
-| System Boiler | Indoor temperature<br>Inlet temperature<br>Outlet temperature |
-| Water Purifier | High-temp sterilization<br>Type<br>UVnano|
-| Dryer<br>Styler<br>Washer<br>Washcombo Main<br>Washcombo Mini<br>Washtower<br>Washtower Dryer<br>Washtower Washer | Current status<br>Delayed start/end<br>Remaining time<br>Total time<br>Cycles |
+| Device                                                                                                            | Property                                                                                                                                                                              |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Air Conditioner                                                                                                   | Filter remaining<br>Humidity<br>Odor<br>Overall air quality<br>PM1<br>PM10<br>PM2.5<br>Schedule turn-off<br>Schedule turn-on<br>Sleep timer                                           |
+| Air Purifier                                                                                                      | Air quality sensor<br>Humidity<br>Odor<br>Operating mode<br>Overall air quality<br>Personal mode<br>PM1<br>PM10<br>PM2.5<br>Filter remaining<br>Schedule turn-off<br>Schedule turn-on |
+| Air Purifier Fan                                                                                                  | Air quality sensor<br>Humidity<br>Odor<br>Overall air quality<br>PM1<br>PM10<br>PM2.5<br>Sleep timer<br>Temperature<br>Schedule turn-off<br>Schedule turn-on                          |
+| Cooktop                                                                                                           | Current status<br>Power level                                                                                                                                                         |
+| Dehumidifier                                                                                                      | Humidity<br>Operating mode                                                                                                                                                            |
+| Dish Washer                                                                                                       | Current cycle<br>Current status<br>Rinse aid dispenser level<br>Softening level<br>Delayed start<br>Remaining time<br>Total time                                                      |
+| Home Brew                                                                                                         | Brewing duration<br>Brewing period<br>Current status<br>First flavor<br>Second flavor<br>Homebrew recipe<br>First hop<br>Second hop<br>Recipe progress<br>Wort<br>Yeast               |
+| Humidifier                                                                                                        | Air quality sensor<br>Humidity<br>Overall air quality<br>PM1<br>PM10<br>PM2.5<br>Schedule turn-off<br>Schedule turn-on<br>Sleep timer<br>Temperature                                  |
+| Kimchi Refrigerator                                                                                               | Fresh air filter<br>Temperature                                                                                                                                                       |
+| Microwave Oven                                                                                                    | Current status                                                                                                                                                                        |
+| Oven                                                                                                              | Current status<br>Temperature                                                                                                                                                         |
+| Plant Cultivator                                                                                                  | Current status<br>Day growth temperature<br>Lighting duration<br>Lighting intensity<br>Lights on time<br>Mode<br>Night growth temperature<br>Temperature<br>Wind speed                |
+| Refrigerator                                                                                                      | Fresh air filter<br>Water filter used                                                                                                                                                 |
+| Robot Cleaner                                                                                                     | Current status<br>Operating mode<br>Running time                                                                                                                                      |
+| Stick Cleaner                                                                                                     | Battery<br>Current status<br>Operating mode                                                                                                                                           |
+| System Boiler                                                                                                     | Indoor temperature<br>Inlet temperature<br>Outlet temperature                                                                                                                         |
+| Water Purifier                                                                                                    | High-temp sterilization<br>Type<br>UVnano                                                                                                                                             |
+| Dryer<br>Styler<br>Washer<br>Washcombo Main<br>Washcombo Mini<br>Washtower<br>Washtower Dryer<br>Washtower Washer | Current status<br>Delayed start/end<br>Remaining time<br>Total time<br>Cycles                                                                                                         |
 
 ## Automation example
 
