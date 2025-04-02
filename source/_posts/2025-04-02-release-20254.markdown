@@ -24,7 +24,7 @@ something you might have missed—something I’m extremely excited about:
 
 **[The State of the Open Home 2025](/blog/2025/03/26/state-of-the-open-home-2025-announcement/)**!
 
-Yes, you read that right! On **Sunday, April 12th, 2025**, we'll be
+Yes, you read that right! On **Saturday, April 12th, 2025**, we'll be
 [streaming a big live event on YouTube](https://www.youtube.com/watch?v=o4Vctz1_KYE),
 sharing our vision for the [Open Home Foundation](https://www.openhomefoundation.org),
 including the future of Home Assistant. Don't miss it!
@@ -163,8 +163,8 @@ addition to our card collection. It might be a great card for dashboards
 you are showing on things like a wall-mounted tablet!
 
 The Clock card offers several customization options, including the ability to
-adjust the clock size, display the seconds alongside the hours and minutes,
-and the ability to choose between a 12-hour or 24-hour format.
+adjust the clock size, timezone, display the seconds alongside the hours
+and minutes, and the ability to choose between a 12-hour or 24-hour format.
 
 For more details, check out the [Clock card documentation].
 
@@ -318,7 +318,7 @@ It is not just new {% term integrations %} that have been added; existing
 integrations are also being constantly improved. Here are some of the noteworthy
 changes to existing integrations:
 
-- The [OpenAI conversation integration] has a new service to generate content,
+- The [OpenAI conversation integration] has a new action to generate content,
   thanks to [@timlaing], **and** it can now search the web! Nice [@Shulyaka]!
 - The [Google AI conversation integration] also gained the ability to search the
   web, just like the above OpenAI one. Thanks [@tronikos]!
@@ -545,6 +545,23 @@ distinct variable names to prevent any conflicts.
 
 [@arturpragacz]: https://github.com/arturpragacz
 [#141114]: https://github.com/home-assistant/core/pull/141114
+
+{% enddetails %}
+
+{% details "Jewish Calendar" %}
+
+Holiday sensor changes:
+
+- In Israel, "Simchat Torah" is now "Shmini Atzeret, Simchat Torah"
+- In Israel, the 30th of Shvat returns "Family Day, Rosh Chodesh"
+
+Additionally, the `type_id` has been removed from the state attributes, use
+the `type` if needed instead.
+
+([@tsvi] - [#137247]) ([documentation](/integrations/jewish_calendar))
+
+[@tsvi]: https://github.com/tsvi
+[#137247]: https://github.com/home-assistant/core/pull/137247
 
 {% enddetails %}
 
