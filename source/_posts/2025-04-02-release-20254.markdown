@@ -425,7 +425,7 @@ noteworthy changes this release:
 - Variables in automations & scripts have been greatly simplified and fixed by
   [@arturpragacz]. All variables are now accessible anywhere in the script or
   automation, greatly simplifying the use of variables. Amazing!
-- We now support for adding additional interactions to cards! The hold and
+- We now support adding additional interactions to cards! The hold and
   double tap actions are now available through the UI. Thanks [@piitaya]!
 
 [@arturpragacz]: https://github.com/arturpragacz
@@ -445,7 +445,7 @@ If you are a power user, you probably use {% term templates %} in your
 automations, scripts, or maybe even your dashboard. This release has a few
 additions to our template engine that you might find useful.
 
-To start with the [template integration]. The light and switch templates have
+To start with, in the [template integration] the light and switch templates have
 been migrated to support the new and modern YAML style. Thanks [@Petro31] for
 this one!
 
@@ -569,7 +569,7 @@ the `type` if needed instead.
 
 Persistent notifications with `notification_id` `config_entry_reconfigure` are
 no longer created when an integration fails to authenticate.
-Automations [triggering on such persistent notification](/integrations/persistent_notification/#automation)
+Automations [triggering on such persistent notifications](/integrations/persistent_notification/#automation)
 will thus no longer work.
 
 ([@emontnemery] - [#140932]) ([documentation](/integrations/gpsd))
