@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "2025.4 Beta release notes"
-description: "Beta release notes for Home Assistant 2025.4"
+title: "2025.4 Time to continue the dashboards!"
+description: "Enjoy ready-to-use Area dashboards, have continuous conversations with an LLM, or let your voice assistant start a conversation! Energy device hierarchies, new template functions, and many more exciting improvements!"
 date: 2025-04-02 00:00:00
 date_formatted: "April 2, 2025"
 author: Franck Nijhof
@@ -15,61 +15,38 @@ og_image: /images/blog/2025-04/social.jpg
 
 <lite-youtube videoid="-w9IBKg5RAw" videotitle="Home Assistant 2025.4 Release Party"></lite-youtube>
 
-{% note %}
-
-**Welcome to the beta release notes for Home Assistant 2025.4** 🎉
-
-<br />
-
-Please note that these release notes are a work in progress. 👷‍♀️ We will be
-completing them over the next couple of days. Not all features might be final
-yet, and some features _**may not** make it into the final release_.
-
-<br />
-
-**Want to help test the beta?** Awesome! ❤️ We have documented how you
-[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
-
-<br />
-
-While running the beta, we highly recommend joining our _#beta_ channel on
-the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
-testers are in this channel during the beta period to share experiences, ideas,
-and iterate over new features, fine-tuning them before the final release.
-It’s a really fun place to hang out. 😎
-
-<br />
-
-**Reporting issues**: As this is a beta test, you might encounter unexpected
-behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
-You can find our issue trackers and the reported issues during beta here:
-
-<br />
-
-- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/130)
-- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/732)
-- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/137)
-
-🙏 When reporting issues, **make sure to mention the exact beta version you are
-running** in the issue description. This will help us identify and track the
-issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
-
-<br />
-
-Issues introduced in the beta are processed with priority. 🔝
-
-{% endnote %}
-
-{% tip %}
-
-Don’t forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=-w9IBKg5RAw)
-2 April 2025, at 20:00 GMT / 12:00 PT / 21:00 CEST!
-
-{% endtip %}
-
 Home Assistant 2025.4! 🎉
 
-Enjoy the (beta) release!
+It's April 2nd, so this is definitely not an April Fool's joke! 😃
+
+But before diving into this month’s release, I want to quickly highlight
+something you might have missed—something I’m extremely excited about:
+
+**[The State of the Open Home 2025](/blog/2025/03/26/state-of-the-open-home-2025-announcement/)**!
+
+Yes, you read that right! On **Sunday, April 12th, 2025**, we'll be
+[streaming a big live event on YouTube](https://www.youtube.com/watch?v=o4Vctz1_KYE),
+sharing our vision for the [Open Home Foundation](https://www.openhomefoundation.org),
+including the future of Home Assistant. Don't miss it!
+
+Alright, back to the release! As I was saying, it’s April already, and we have
+another fantastic release lined up for you.
+
+The big news is the introduction of our **new experimental Areas dashboard**,
+which might evolve to become the default dashboard in the future. If you’re like
+me—not really a UI-oriented person—you’re going to love this one! 🤩
+
+My personal absolute favorite feature this month is something I’ve dreamed of
+ever since we started working on voice assistants: **the ability for your
+assistant to start a conversation proactively!** This is a game
+changer—**no other** voice assistant on the market can do this!
+I’m going to have so much fun with this. 😃
+
+If you’re a power user who loves templates, don’t worry—we’ve got you covered
+too! This release ships with **a bunch of new template functions**, making your
+life a lot easier.
+
+Enjoy the release!
 
 ../Frenck
 
@@ -170,7 +147,7 @@ have helped shape this design, and we would love to see how it works
 with a wide variety of your homes. Even if you already have the perfect
 dashboard built for your home, try it!
 
-**Use [this feedback form](https://forms.gle/gJ6HiNbE1GXDv5g18) to let us know
+**Use [this feedback form](https://forms.clickup.com/2533032/f/2d9n8-30491/9CJ7EPBGLB01LX6WOR) to let us know
 your thoughts!**
 
 ### Time for a new card!
