@@ -166,8 +166,8 @@ or simply watching your pets.
 
 Please note that this is experimental, meaning it is subject to change and may
 not always work as intended. We would love your feedback if you notice some
-aspects we can improve. It are the community’s dashboards shared over the
-years that helped us shape this design, and we would love to see how it works
+aspects we can improve. The community’s dashboards, shared over the years,
+have helped shape this design, and we would love to see how it works
 with a wide variety of your homes. Even if you already have the perfect
 dashboard built for your home, try it!
 
@@ -197,9 +197,9 @@ For more details, check out the [Clock card documentation].
 
 ## Voice
 
-The year of the voice is long gone, but we are still working on improving
-the voice experience in Home Assistant. This release has a few improvements
-to the voice experience in Home Assistant!
+The _**["year of the voice"](/blog/2022/12/20/year-of-voice/)**_ might be behind
+us, but we keep improving the voice experience in Home Assistant! This release
+brings several enhancements to make interacting with your smart home even better.
 
 ### Improved Voice Wizard
 
@@ -239,49 +239,45 @@ assistants, and it works with all LLMs supported by Home Assistant.
 
 During [Voice chapter 9](https://www.youtube.com/watch?v=k6VvzDSI8RU&t=4750s),
 we added the ability for Home Assistant [to call analog phones to start a
-conversation](/blog/2025/02/13/voice-chapter-9-speech-to-phrase/#home-assistant-phones-home-analog-phones-are-back).
+conversation](/blog/2025/02/13/voice-chapter-9-speech-to-phrase/#home-assistant-phones-home-analog-phones-are-back). As of this release, this
+feature is now available for ESPHome-based voice assistants,
+like the [Home Assistant Voice Preview Edition][pve]!
 
-As of this release, this feature is now available for ESPHome based voice
-assistant, like the [Home Assistant Voice Preview Edition][pve]!
-
-This is an amazing feature, as it allows you to build your own automations that
+This is a fantastic feature, as it allows you to build your own automations that
 can send out voice prompts from your voice assistant and listen for a response,
 instead of you having to trigger the conversation by saying the wake word.
 
-_**TODO:**_ Add a demo video here.
-
 Imagine, for example, you have left the garage door open, and a few minutes
-later, your assistant says: "Hey, I noticed you left the garage door open,
-do you want me to close it for you?" And you can just say "yes" or "no" to
-the assistant, and it will close the door for you... 🤯
+later, your assistant says:
 
-Or maybe you come home from a long day at work, and your assistant says:
-"Welcome home Frenck! Hope you had a great day! Want to hear the news? Or
-maybe you are in the mood for some music?" and answering that?
+> "Hey, I noticed you left the garage door open, do you want me to close it for you?"
 
-This is unbelievably powerful, and opens up a whole new world of possibilities
-for your voice assistant. This power is currently only available when using
-LLMs, but we are working on making this available in other places it would
-be useful.
+You simply reply “yes” or “no,” and it handles the rest… 🤯
+
+Or perhaps after a long day at work, you return home, and your assistant greets
+you warmly:
+
+> “Welcome home, Frenck! Hope you had a great day. Want to hear the news or maybe enjoy some music?”
+
+JLo made a great demo video of this one, involving his oven and the assistant
+asking if he wants to set a timer:
+
+<lite-youtube videoid="dq7--T_pVNA" videotitle="Starting a conversation from the Home Assistant Voice Preview Edition"></lite-youtube>
+
+This opens up a whole new world of possibilities for voice-driven automations.
+Currently, this capability is only available when using LLM integrations,
+but we’re exploring more use cases where it would be helpful.
+
+If you listen closely to the demo above, you’ll notice a brief pre-announce
+sound just before the conversation starts. This little notification prevents
+your assistant from startling anyone by suddenly speaking out of nowhere and
+preventing a jump scare! 🫣
+
+You could even use custom sounds based on the scenario—like a doorbell chime
+for visitors or a train station-style jingle when your morning commute gets
+delayed, giving you extra time to grab that coffee before heading out. ☕
 
 [pve]: /voice-pe/
-
-### Pre-announce sound
-
-Having your assistant start a conversation is great, but having it start talking
-out of nowhere might be a bit scary for some people 🫣. To help with that, it is
-possible to add a pre-announce sound when starting a conversation or making an
-announcement.
-
-Using this, you can play a little sound before the assistant starts talking,
-preventing the "jump scare" effect.
-
-_**TODO:**_ Add a demo video here.
-
-Hmmm… this might be cool for different sound effects, depending on the
-situation. Like a doorbell chime when the doorbell rings, or a train
-station-style announcement jingle when your morning commute is
-delayed (so you have a little more time to grab your coffee before you leave ☕).
 
 ## Onboarding with a Home Assistant Cloud backup
 
@@ -574,20 +570,6 @@ distinct variable names to prevent any conflicts.
 
 [@arturpragacz]: https://github.com/arturpragacz
 [#141114]: https://github.com/home-assistant/core/pull/141114
-
-{% enddetails %}
-
-{% details "Hue" %}
-
-The effect `None` for hue lights has been changed to `off`.
-
-If you rely on this value in your automation or script, you will need to
-adapt them to this change.
-
-([@joostlek] - [#138990]) ([documentation](/integrations/hue))
-
-[@joostlek]: https://github.com/joostlek
-[#138990]: https://github.com/home-assistant/core/pull/138990
 
 {% enddetails %}
 
