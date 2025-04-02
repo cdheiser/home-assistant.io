@@ -437,7 +437,7 @@ noteworthy changes this release:
 [backups]: /integrations/backup
 [device selector]: /docs/blueprint/selectors/#device-selector
 [Google Assistant]: /integrations/google_assistant
-[HomeKit]: /integrations/homekit_controller
+[HomeKit]: /integrations/homekit
 
 ## Templates
 
