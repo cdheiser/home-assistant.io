@@ -82,7 +82,6 @@ Enjoy the (beta) release!
   - [Improved Voice Wizard](#improved-voice-wizard)
   - [Continued conversation with LLMs](#continued-conversation-with-llms)
   - [Starting conversations](#starting-conversations)
-  - [Pre-announce sound](#pre-announce-sound)
 - [Onboarding with a Home Assistant Cloud backup](#onboarding-with-a-home-assistant-cloud-backup)
 - [Integrations](#integrations)
   - [New integrations](#new-integrations)
@@ -252,10 +251,8 @@ later, your assistant says:
 
 > "Hey, I noticed you left the garage door open, do you want me to close it for you?"
 
-You simply reply “yes” or “no,” and it handles the rest… 🤯
-
-Or perhaps after a long day at work, you return home, and your assistant greets
-you warmly:
+You simply reply “yes” or “no,” and it handles the rest… 🤯 Or perhaps after a
+long day at work, you return home, and your assistant greets you warmly:
 
 > “Welcome home, Frenck! Hope you had a great day. Want to hear the news or maybe enjoy some music?”
 
@@ -446,7 +443,8 @@ noteworthy changes this release:
 - This one is interesting if you make Blueprints. The [device selector] now
   supports filtering by model ID. Thanks for this one [@karwosts]!
 - We now support turning on/off TVs in [HomeKit], nice one [@bdraco]!
-- Thanks to [@piitaya], we now support lawn mower devices in [Google Assistant]!
+- Thanks to [@piitaya], we now support lawn mower devices in [Google Assistant]
+  and [HomeKit]!
 - Variables in automations & scripts have been greatly simplified and fixed by
   [@arturpragacz]. All variables are now accessible anywhere in the script or
   automation, greatly simplifying the use of variables. Amazing!
