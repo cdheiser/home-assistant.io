@@ -226,12 +226,12 @@ instead of you having to trigger the conversation by saying the wake word.
 Imagine, for example, you have left the garage door open, and a few minutes
 later, your assistant says:
 
-> "Hey, I noticed you left the garage door open, do you want me to close it for you?"
+> Hey, I noticed you left the garage door open, do you want me to close it for you?
 
 You simply reply “yes” or “no,” and it handles the rest… 🤯 Or perhaps after a
 long day at work, you return home, and your assistant greets you warmly:
 
-> “Welcome home, Frenck! Hope you had a great day. Want to hear the news or maybe enjoy some music?”
+> Welcome home, Frenck! Hope you had a great day. Want to hear the news or maybe enjoy some music?
 
 JLo made a great demo video of this one, involving his oven and the assistant
 asking if he wants to set a timer:
