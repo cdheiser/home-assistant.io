@@ -67,6 +67,22 @@ The **Comelit SimpleHome** {% term integration %} provides the following entitie
 
 The integration will create an alarm entity for each area. Additionally, it will create a sensor and a presence detection binary sensor for each zone, enhancing monitoring capabilities.
 
+## Troubleshooting
+
+### Can’t set up the device
+
+#### Symptom: "Cannot connect"
+
+When trying to set up the integration, the form shows the message "Cannot connect".
+
+##### Description
+
+This means that the IP address or the port specified is wrong.
+
+##### Resolution
+
+To resolve this issue, verify the device’s IP address and port by navigating to them in a web browser.
+
 ## Removing the integration
 
 This integration follows standard integration removal. No extra steps are required.
