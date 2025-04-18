@@ -75,6 +75,20 @@ This integration follows the standard integration removal process; no extra step
 
 {% include integrations/remove_device_service.md %}
 
+## Supported devices
+
+The ESPHome integration works with devices that run ESPHome firmware and expose their functionality through the [native ESPHome API](https://esphome.io/components/api.html). This API is designed for tight, efficient integration with Home Assistant, enabling ESPHome devices to push updates directly to Home Assistant in **near real time**.
+
+## Updating data
+
+Rather than polling for sensor values or device states, Home Assistant maintains a persistent connection to each ESPHome device using the native API. This allows state changes—such as a temperature sensor update, a button press, or a binary sensor trigger—to be sent immediately as they happen, reducing latency and improving responsiveness in automations.
+
+### Additional Technical Details
+- **Efficient Communication Protocol**: ESPHome uses a lightweight, bi-directional protocol over TCP, optimized for microcontrollers. This protocol is implemented in [aioesphomeapi](https://github.com/esphome/aioesphomeapi), the async Python library used by Home Assistant to handle real-time communication with ESPHome devices. It enables low-latency updates and near instant command execution.
+- **Automatic Reconnection**: Home Assistant maintains a persistent connection to each ESPHome device and will automatically attempt to reconnect if the connection is lost. This includes support for "sleepy" or battery-powered devices that periodically wake from deep sleep. When such a device comes online, Home Assistant quickly re-establishes the connection—especially when **mDNS** (Multicast DNS) is available—allowing the device to be discovered and connected without requiring static IPs or manual configuration.
+
+This real-time behavior enables fast, reactive automations and a smooth user experience compared to traditional polling-based integrations.
+
 ## Home Assistant actions
 
 ESPHome devices can perform actions to any [Home Assistant action](https://esphome.io/components/api.html#homeassistant-service-action). This functionality is not enabled by default for newly configured device, but can be turned on the options flow on a per device basis.
