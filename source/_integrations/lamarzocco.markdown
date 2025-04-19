@@ -7,6 +7,7 @@ ha_category:
   - Calendar
   - Number
   - Select
+  - Sensor
   - Switch
   - Update
 ha_iot_class: Cloud Push
@@ -19,6 +20,7 @@ ha_platforms:
   - diagnostics
   - number
   - select
+  - sensor
   - switch
   - update
 ha_bluetooth: true
@@ -95,6 +97,14 @@ Use Bluetooth:
 | **Brewing active** | Is on if you are in the process of making coffee. | `all` | {% icon "material-symbols:cloud-outline" title="La Marzocco Cloud" %} | - |
 | **Backflush enabled** | Is on if you started the backflushing process. | `all` | {% icon "material-symbols:cloud-outline" title="La Marzocco Cloud" %}| - |
 | **WebSocket connected** | Track your connection to the cloud WebSocket for real time updates. | `all` | {% icon "material-symbols:cloud-outline" title="La Marzocco Cloud" %}| Disabled by default. |
+
+## Sensors
+
+| Sensor name | Description | Available for machines |  Retrievable from | Remarks |
+|------------------- |-------------| ---------------------- | ----------------- | ------- |
+| **Coffee boiler ready time** | Indicates when the coffee boiler will be ready for brewing. | `all` | {% icon "material-symbols:cloud-outline" title="La Marzocco Cloud" %} | - |
+| **Steam boiler ready time** | Indicates when the steam boiler will be ready for brewing. | `all` | {% icon "material-symbols:cloud-outline" title="La Marzocco Cloud" %} | - |
+
 
 ## Updates
 
