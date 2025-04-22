@@ -493,7 +493,7 @@ Then power up the camera while pointing it at the QR code. It takes about a minu
 
 Set up the Reolink integration in Home Assistant using the credentials you set in step 1.
 
-## Remove integration
+## Removing the integration
 
 ### Removing a directly connected camera/NVR/Home Hub
 
