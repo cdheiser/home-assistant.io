@@ -2,6 +2,8 @@
 title: Miele
 description: Instructions on how to set up the Miele integration within Home Assistant.
 ha_category:
+  - Button
+  - Climate
   - Binary sensor
   - Hub
   - Light
@@ -13,6 +15,8 @@ ha_codeowners:
   - '@astrandb'
 ha_config_flow: true
 ha_platforms:
+  - button
+  - climate
   - binary_sensor
   - diagnostics
   - light
@@ -82,6 +86,24 @@ The integration configuration may ask for the *Client ID* and *Client Secret* cr
 - Products from professional and semi-professional series are generally not supported due to the limitations in the Miele 3rd party API.
 - Some appliances don't report data while they are turned off, so corresponding entities will not appear in the Miele integration after loading until the appliances are turned on.
 {% endnote %}
+
+### Button
+
+{% details "List of button entities" %}
+
+Button entities are used to control program progress in washing machines, dryers, dishwashers, robot vacuum cleaners, and others. The exact response to pressing a button can vary slightly between product models, but the result is usually intuitive. The API enables and disables the buttons according to the actual state of the appliance. Most appliances require you to manually activate mobile start or remote control mode.
+
+- **Start**: Starts or resumes a program.
+- **Pause**: Pauses a program.
+- **Stop**: Stops a program.
+
+{% enddetails %}
+
+### Climate
+
+{% details "List of climate entities" %}
+
+Climate entities are used to control target temperatures in refrigerators, freezers, and wine cabinets. One, two, or three zones can be controlled depending on the capabilities of the appliance.
 
 ### Binary sensor
 
