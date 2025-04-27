@@ -8,6 +8,7 @@ ha_category:
   - Hub
   - Light
   - Sensor
+  - Switch
 ha_iot_class: Cloud Push
 ha_release: '2025.5'
 ha_domain: miele
@@ -21,6 +22,7 @@ ha_platforms:
   - diagnostics
   - light
   - sensor
+  - switch
 ha_integration_type: integration
 ---
 
@@ -105,6 +107,15 @@ Button entities are used to control program progress in washing machines, dryers
 
 Climate entities are used to control target temperatures in refrigerators, freezers, and wine cabinets. One, two, or three zones can be controlled depending on the capabilities of the appliance.
 
+{% enddetails %}
+
+### Light
+
+{% details "List of light entities" %}
+
+- **Light**: The light can be turned on and off in many models of ovens, cooker hoods, and wine cabinets.
+- **Ambient light**: Some models of cooker hoods have ambient light that can be turned on and off.
+
 ### Binary sensor
 
 {% details "List of binary sensors" %}
@@ -127,12 +138,13 @@ Climate entities are used to control target temperatures in refrigerators, freez
   - **Temperature**: Represents the current temperature in refrigerators, freezers, and ovens. Entities are created for up to 3 zones depending on the device capabilities.
 {% enddetails %}
 
-### Light
+### Switch
 
-{% details "List of light entities" %}
+{% details "List of switch entities" %}
 
-- **Light**: The light can be turned on and off in many models of ovens, cooker hoods, and wine cabinets.
-- **Ambient light**: Some models of cooker hoods have ambient light that can be turned on and off. 
+- **Power**: The Power switch has slightly different characteristics depending on the appliance model. For some devices, it works more or less as a traditional power switch, while it behaves like a wake-up/sleep toggle on others. The availability of the switch is controlled by the API, depending on the operational state of the appliance.
+- **Supercooling**: The switch controls Supercooling mode for refrigerators.
+- **Superfreezing**: The switch controls Superfreezing mode for freezers.
 {% enddetails %}
 
 ## Automation examples
