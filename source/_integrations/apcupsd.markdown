@@ -137,6 +137,10 @@ Some sensors are disabled by default, since they provide information that is onl
 - UPS Transfer from Battery (XOFFBATT)
 - UPS Transfer to Battery (XONBATT)
 
+## Data updates
+
+The integration {% term polling polls %} data from your APC UPS Daemon every 60 seconds by default.
+
 ## Removing the integration
 
 This integration follows standard integration removal. No extra steps are required.
