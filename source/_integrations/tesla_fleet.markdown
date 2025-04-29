@@ -158,6 +158,14 @@ The following steps involve sensitive credentials. Never share your `Client Secr
 
 {% enddetails %}
 
+## Vehicle data polling interval
+
+The integration is configured to {% term polling poll %} each vehicle every 10 minutes while it's awake.
+This is long enough that a single vehicle can be polled 24/7 without exceeding the USD$10 credit Tesla provides.
+It is expected that most vehicles are asleep over 50% of the day, so the defaults should also suit users with multiple vehicles or that want to run automated commands.
+
+If the default polling interval does not suit your needs, you can [define a custom polling interval](https://www.home-assistant.io/common-tasks/general/#defining-a-custom-polling-interval).
+
 ## Scopes
 
 When connecting your Tesla account to Home Assistant, you **must** select at least one of the `Vehicle Information` or `Energy Product Information` scopes. It is recommended you select all scopes for full functionality. The `Vehicle Location` scope was added in Home Assistant 2024.1, so any authorizations performed on previous releases that want this scope will need to be [modified](https://accounts.tesla.com/en_au/account-settings/security?tab=tpty-apps).
