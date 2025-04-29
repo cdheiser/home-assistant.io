@@ -72,7 +72,7 @@ If you need more specific features for your use case, the manual [YAML-configura
 
 ## YAML configuration
 
-Entities (sensors, binary sensors, buttons, images, numbers, and selections) are defined in your YAML configuration files under the `template:` key. You can define multiple configuration blocks as a list. Each block defines sensor/binary sensor/number/select entities and can contain an optional update trigger.
+Entities (sensors, binary sensors, buttons, images, numbers, and selections) are defined in your YAML configuration files under the `template:` key. You can define multiple configuration blocks as a list. Each block defines sensor/binary sensor/number/select entities and can contain optional update triggers.
 
 _For old sensor/binary sensor configuration format, [see below](#legacy-binary-sensor-configuration-format)._
 
@@ -100,9 +100,9 @@ template:
 
 ### Trigger-based template binary sensors, images, numbers, selects, sensors, and weathers
 
-If you want more control over when an entity updates, you can define a trigger. Triggers follow the same format and work exactly the same as [triggers in automations][trigger-doc]. This feature is a great way to create entities based on webhook data ([example](#trigger-based-sensor-and-binary-sensor-storing-webhook-information)), or update entities based on a schedule.
+If you want more control over when an entity updates, you can define triggers. Triggers follow the same format and work exactly the same as [triggers in automations][trigger-doc]. This feature is a great way to create entities based on webhook data ([example](#trigger-based-sensor-and-binary-sensor-storing-webhook-information)), or update entities based on a schedule.
 
-Whenever the trigger fires, all related entities will re-render and it will have access to [the trigger data](/docs/automation/templating/) in the templates.
+Whenever a trigger fires, all related entities will re-render and it will have access to [the trigger data](/docs/automation/templating/) in the templates.
 
 Trigger-based entities do not automatically update when states referenced in the templates change. This functionality can be added back by defining a [state trigger](/docs/automation/trigger/#state-trigger) for each entity that you want to trigger updates.
 
@@ -117,7 +117,7 @@ Buttons do not support using `trigger` or `action` options.
 ```yaml
 # Example configuration entry
 template:
-  - trigger:
+  - triggers:
       - trigger: time_pattern
         # This will update every night
         hours: 0
@@ -134,19 +134,19 @@ template:
 ### Configuration reference
 
 {% configuration %}
-trigger:
-  description: Define an automation trigger to update the entities. Optional. If omitted will update based on referenced entities. [See trigger documentation](/docs/automation/trigger).
+triggers:
+  description: Define one or multiple automation triggers to update the entities. Optional. If omitted will update based on referenced entities. [See trigger documentation](/docs/automation/trigger).
   required: false
   type: list
 unique_id:
   description: The unique ID for this config block. This will be prefixed to all unique IDs of all entities in this block.
   required: false
   type: string
-condition:
+conditions:
   description: Define conditions that have to be met after a trigger fires and before any actions are executed or sensor updates are performed (for trigger-based entities only). Optional. [See condition documentation](/docs/automation/condition).
   required: false
   type: list
-action:
+actions:
   description: Define actions to be executed when the trigger fires (for trigger-based entities only). Optional. Variables set by the action script are available when evaluating entity templates. This can be used to interact with anything using actions, in particular actions with [response data](/docs/scripts/perform-actions#use-templates-to-handle-response-data). [See action documentation](/docs/automation/action).
   required: false
   type: list
@@ -481,7 +481,7 @@ template:
       ...
 
   # Define trigger-based template entities
-  - trigger:
+  - triggers:
       ...
     sensor:
       ...
@@ -493,7 +493,7 @@ template:
 
 #### Video tutorial
 
-This video tutorial explains how to set up a Trigger based template that makes use of an action to retrieve the weather forecast (precipitation).
+This video tutorial explains how to set up a trigger based template that makes use of an action to retrieve the weather forecast (precipitation).
 
 <lite-youtube videoid="zrWqDjaRBf0" videotitle="How to create Action Template Sensors in Home Assistant" posterquality="maxresdefault"></lite-youtube>
 
@@ -630,7 +630,7 @@ Template entities can be triggered using any automation trigger, including webho
 
 ```yaml
 template:
-  - trigger:
+  - triggers:
       - trigger: webhook
         webhook_id: my-super-secret-webhook-id
     sensor:
@@ -665,7 +665,7 @@ You can use a trigger-based template entity to convert any event or other automa
 
 ```yaml
 template:
-  - trigger:
+  - triggers:
       trigger: event
       event_type: my_event
     binary_sensor:
@@ -682,10 +682,10 @@ This example shows how to store the last valid value of a temperature sensor. It
 
 ```yaml
 template:
-  - trigger:
+  - triggers:
       trigger: state
       entity_id: sensor.outside_temperature
-    condition:
+    conditions:
       - condition: template
         value_template: "{{ is_number(states('sensor.outside_temperature')) }}"
     sensor:
@@ -881,7 +881,7 @@ The binary sensor turns on and sets the matching icon when the appropriate event
 
 ```yaml
 template:
-  - trigger:
+  - triggers:
       - trigger: event
         event_type: YOUR_EVENT
       - trigger: state
@@ -948,10 +948,10 @@ and use the response in a template.
 
 ```yaml
 template:
-  - trigger:
+  - triggers:
       - trigger: time_pattern
         hours: /1
-    action:
+    actions:
       - action: weather.get_forecasts
         data:
           type: hourly
