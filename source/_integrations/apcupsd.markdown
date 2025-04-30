@@ -134,6 +134,30 @@ Some sensors are disabled by default, since they provide information that is onl
 - UPS Transfer from Battery (XOFFBATT)
 - UPS Transfer to Battery (XONBATT)
 
+## Examples
+
+### Send me a push notification when UPS load is high
+
+{% raw %}
+
+```yaml
+alias: "APC UPS Load High Notification"
+description: "Notify when APC UPS load is too high"
+mode: single
+triggers:
+  - trigger: numeric_state
+    entity_id:
+      - sensor.gogoups_load
+    above: 80
+conditions: []
+actions:
+  - action: notify.notify
+    data:
+      message: "APC UPS load is high: {{ states('sensor.apc_ups_load') }}%"
+```
+
+{% endraw %}
+
 ## Data updates
 
 The integration {% term polling polls %} data from your APC UPS Daemon every 60 seconds by default.
