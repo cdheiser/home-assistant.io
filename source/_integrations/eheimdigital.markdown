@@ -6,6 +6,7 @@ ha_category:
   - Light
   - Number
   - Sensor
+  - Switch
   - Time
 ha_release: 2025.1
 ha_iot_class: Local Polling
@@ -19,6 +20,7 @@ ha_platforms:
   - light
   - number
   - sensor
+  - switch
   - time
 ha_quality_scale: bronze
 ha_zeroconf: true
@@ -76,6 +78,10 @@ Currently, the following devices and entities are supported:
 - **Current pump speed**: Displays the current pump speed
 - **Remaining hours until service**: Displays the remaining time until the filter needs to be serviced
 - **Error code**: Displays the current error code of the device (No error, Rotor stuck, air in filter)
+
+#### Switch
+
+- **Pump**: Turning on and off the filter pump
 
 #### Time
 
