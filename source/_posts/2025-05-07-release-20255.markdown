@@ -183,16 +183,29 @@ fit the mood and context of the situation.
 
 {% details "Overview of extra voices" %}
 
-- de: 19 voices previously, 21 voices with variants
-- en: 86 voices previously, 199 voices with variants
-- es: 71 voices previously, 81 voices with variants
-- fr: 22 voices previously, 30 voices with variants
-- hi: 9 voices previously, 12 voices with variants
-- it: 16 voices previously, 24 voices with variants
-- ja: 7 voices previously, 10 voices with variants
-- ko: 9 voices previously, 10 voices with variants
-- pt: 19 voices previously, 22 voices with variants
-- zh: 31 voices previously, 150 voices with variants
+| Language                                            | Old choices | New choices |
+| --------------------------------------------------- | ----------- | ----------- |
+| Assamese (India) **new**                            | 0           | 2           |
+| German (Germany)                                    | 15          | 17          |
+| English (United Kingdom)                            | 14          | 20          |
+| English (India)                                     | 2           | 13          |
+| English (United States)                             | 25          | 132         |
+| Spanish (Spain)                                     | 15          | 18          |
+| Spanish (Mexico)                                    | 15          | 23          |
+| French (Canada)                                     | 3           | 4           |
+| French (France)                                     | 14          | 22          |
+| Hindi (India)                                       | 2           | 12          |
+| Italian (Italy)                                     | 15          | 24          |
+| Inuktitut (Canadian Aboriginal Syllabics, Canada) **new** | 0           | 2           |
+| Inuktitut (Latin, Canada) **new**                   | 0           | 2           |
+| Japanese (Japan)                                    | 7           | 10          |
+| Korean (Korea)                                      | 8           | 10          |
+| Oriya (India) **new**                               | 0           | 2           |
+| Punjabi (India) **new**                             | 0           | 2           |
+| Portuguese (Brazil)                                 | 15          | 17          |
+| Portuguese (Portugal)                               | 3           | 5           |
+| Serbian (Latin, Serbia) **new**                     | 0           | 2           |
+| Chinese (China)                                     | 21          | 142         |
 
 {% enddetails %}
 
