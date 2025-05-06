@@ -203,7 +203,6 @@ fit the mood and context of the situation.
 | Oriya (India) **new**                               | 0           | 2           |
 | Punjabi (India) **new**                             | 0           | 2           |
 | Portuguese (Brazil)                                 | 15          | 17          |
-| Portuguese (Portugal)                               | 3           | 5           |
 | Serbian (Latin, Serbia) **new**                     | 0           | 2           |
 | Chinese (China)                                     | 21          | 142         |
 
