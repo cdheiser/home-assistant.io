@@ -43,7 +43,7 @@ quality of life improvements that I'm sure you will love. 🥰
 
 The quest for a great backup system is continuing this release, shipping
 quite the list of improvements, most notably the ability to set a retention
-policy per backup location! 🤯 [Nabu Casa](https://nabucasa.com) throws in a
+policy per backup location! [Nabu Casa](https://nabucasa.com) throws in a
 whole bunch of new text-to-speech voice variants 🗣️ [included in your Home Assistant Cloud subscription](https://www.nabucasa.com/config/tts/),
 allowing your announcements to sound, for example, sad or happy!
 
@@ -262,11 +262,11 @@ You can choose if you want to add the Z-Wave device to the existing mesh network
 or connect it directly using Long Range.
 </p>
 
-If your device supports Z-Wave Long Range, you will get the option to either
-add it to the existing mesh network or connect it directly using long range.
-Both have pros and cons, mesh networking is recommended for most devices,
-but if you have a device that needs to be placed far away, long range
-might be the better option.
+After scanning the QR code of a Long Range capable device, you will get the
+option to either add it to the existing mesh network or connect it directly
+using Long Range. Both have pros and cons, mesh networking is recommended for
+most devices, but if you have a device that needs to be placed far away,
+Long Range might be the better option.
 
 ## Integrations
 
