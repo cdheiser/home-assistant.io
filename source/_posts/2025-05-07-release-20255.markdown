@@ -256,9 +256,11 @@ over much longer distances than traditional Z-Wave devices. This is especially
 useful if you have a specific device that needs to be placed far away,
 for example, a contact sensor on a gate or mailbox up your driveway.
 
-**TODO**: Add screenshots or little video of this process.
-
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-zwave-long-range.png" />
+<p class='img'>
+<img alt="Screenshot showing adding a Z-Wave device with Long Range support." src="/images/blog/2025-05/zwave-long-range.png" />
+You can choose if you want to add the Z-Wave device to the existing mesh network
+or connect it directly using Long Range.
+</p>
 
 If your device supports Z-Wave Long Range, you will get the option to either
 add it to the existing mesh network or connect it directly using long range.
