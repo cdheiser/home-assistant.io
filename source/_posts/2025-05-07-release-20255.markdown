@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2025.5: Two Million Strong and Getting Better"
-description: "Celebrating 2 million users with quality of life improvements! Enjoy smarter backups with per-location retention, Z-Wave Long Range support, an improved entity picking experience, thousands of new voices for Home Assistant Cloud, and the ability to just paste YAML into your automations."
+description: "Celebrating 2 million users with quality of life improvements! Enjoy smarter backups with per-location retention, Z-Wave Long Range support, an improved entity picking experience, tons of new voices for Home Assistant Cloud, and the ability to just paste YAML into your automations."
 date: 2025-05-07 00:00:00
 date_formatted: "May 7, 2025"
 author: Franck Nijhof
@@ -39,7 +39,7 @@ world!** Want to learn more? Join a meetup? Or even host one?
 [Check out the Home Assistant Community Day 2025 blog post](/blog/2025/04/24/community-day/) for more information!
 
 Ok, the May release, really, I love this one! It is filled to the brim with
-quality of life improvements that I'm sure you will love. 🥰
+quality of life improvements, that I'm sure you will love. 🥰
 
 The quest for a great backup system is continuing this release, shipping
 quite the list of improvements, most notably the ability to set a retention
@@ -85,8 +85,8 @@ Enjoy the release!
 
 In our [January release](/blog/2025/01/03/release-20251/#overhaul-of-the-backup-system),
 we did the first overhaul of the backup system. In the [February release](/blog/2025/02/05/release-20252/#iterating-on-backups)
-we did an iteration based on your feedback. This release, we dedicated additional
-time to further iterate and improve backups even more.
+we did an iteration based on your feedback. This release, we dedicated some more
+time to once more iterate and improve backups even further.
 
 Let's dive in!
 
@@ -116,7 +116,7 @@ now includes the option to create a backup before starting the upgrade process.
 <img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-backup-before-upgrade-home-assistant-operating-system.png" />
 
 This way, you can be sure that you have a backup of your system before
-upgrading, even if something goes wrong beyond the safeguards of the
+upgrading, even if something goes wrong beyond the safe guards of the
 operating system upgrade.
 
 ### Set the default backup preference for upgrades
@@ -151,12 +151,12 @@ abort the process by restarting Home Assistant.
 ## Thousands of new text-to-speech voice variants for Home Assistant Cloud subscribers
 
 If you are subscribed to [Home Assistant Cloud](https://www.nabucasa.com), you
-not only get [backup storage included](https://www.nabucasa.com/config/backups/),
+not just get [backup storage included](https://www.nabucasa.com/config/backups/),
 but you also get access to the absolute [best in class text-to-speech](https://www.nabucasa.com/config/tts/)
 available. If you haven't tried it yet, you should!
 
 This release extends the already staggering amount of text-to-speech voices
-and above all now includes voice variants and styles. This means that you can
+and above all now include voice variants and styles. This means that you can
 now choose between different voice styles and tones, such as "friendly",
 "angry", "sad", "whisper", etc., allowing you to customize your announcements to
 fit the mood and context of the situation.
@@ -287,7 +287,7 @@ We welcome the following new integrations in this release:
   and solar usage in the [energy dashboard].
 - **[Miele]**, added by [@astrandb]  
   Monitor and control your [Miele home appliances], including washing machines,
-  dryers, dishwashers, and more!
+  dryers, and dishwashers, and more!
 - **[ntfy]**, added by [@tr4nt0r]  
   Integrates with [ntfy.sh], a simple HTTP-based pub-sub notification service
   that allows you to send notifications to your phones or desktops.
@@ -512,7 +512,7 @@ noteworthy changes this release:
 
 ## Badges on the dashboard can now be wrapped or scrolled
 
-A cool little new feature for dashboards landed this release that we don't
+A cool little new feature for dashboards landed this release, that we don't
 want to walk past unnoticed. The behavior of the badges in the header of a
 dashboard view can now be configured to either wrap or scroll.
 
@@ -524,7 +524,7 @@ for you.
 
 ## Improved UI experience when using templates in automations & scripts
 
-If you are a power-user, using templates in your automations and scripts, you
+If you are a power-user, using templates in your automations and script, you
 are probably familiar with the fact that the UI falls back to using YAML for
 any action block that contains a template.
 
@@ -561,7 +561,7 @@ YAML format? No problem! You can now paste the YAML directly into the UI.
 
 When you are editing an automation, you can now simply paste the YAML directly
 into the UI editor and it will be converted to the UI format, regardless of
-whether the paste example is a full blown automation or just a single trigger,
+whether the paste example is a full-blown automation or just a single trigger,
 condition, or action.
 
 **TODO:** Add small movie clip on how this works.
