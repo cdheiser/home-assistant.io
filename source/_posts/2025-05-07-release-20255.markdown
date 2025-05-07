@@ -96,7 +96,7 @@ This release adds a much requested feature: the ability to set a backup retentio
 policy per location. This is particularly useful if you have multiple backup
 locations configured in Home Assistant.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-backups-retention-per-location.png" />
+<img class="no-shadow" alt="Screenshot showing the backup retention policy settings for the Microsoft OneDrive integration." src="/images/blog/2025-05/backups-retention-per-location.png" />
 
 It might be that one of your backup locations has more storage space than
 another, or that you want to keep more backups in one location than another.
@@ -113,7 +113,7 @@ idea to have a backup before you start the upgrade process.
 To help you with that, the update dialog for the Home Assistant Operating System
 now includes the option to create a backup before starting the upgrade process.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-backup-before-upgrade-home-assistant-operating-system.png" />
+<img class="no-shadow" alt="Screenshot showing the Home Assistant Operating System update dialog, which has a new toggle that asks you if you want to backup before upgrading." src="/images/blog/2025-05/backup-before-upgrade-home-assistant-operating-system.png" />
 
 This way, you can be sure that you have a backup of your system before
 upgrading, even if something goes wrong beyond the safe guards of the
@@ -130,7 +130,7 @@ of Home Assistant.
 To please both groups, we have added a new setting to the backup settings page
 to set the default behavior for the backup before upgrade toggle.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-backups-select-preference-backup-before-update.png" />
+<img class="no-shadow" alt="Screenshot showing the backup before upgrade toggle preference in the backup settings." src="/images/blog/2025-05/backups-select-preference-backup-before-update.png" />
 
 When you set the option to "Backup before upgrade", the toggle will be enabled
 by default, otherwise it will default to disabled. There is an additional
@@ -143,7 +143,7 @@ Another small improvement, but not an unimportant one, is that if you restart
 Home Assistant while a backup is in progress, the restart will wait for the
 backup to finish before proceeding.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-backups-prevents-restart-when-in-progress.png" />
+<img class="no-shadow" alt="Screenshot showing Home Assistant waiting for backup to finish before restarting." src="/images/blog/2025-05/backups-prevents-restart-when-in-progress.png" />
 
 This prevents the unintended situation where a backup is in progress, and you
 abort the process by restarting Home Assistant.
