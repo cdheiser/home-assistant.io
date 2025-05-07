@@ -561,7 +561,7 @@ into the UI editor and it will be converted to the UI format, regardless of
 whether the paste example is a full-blown automation or just a single trigger,
 condition, or action.
 
-**TODO:** Add small movie clip on how this works.
+<lite-youtube videoid="RRl-G3Igo4E" videotitle="Copy & paste YAML directly into the UI!"></lite-youtube>
 
 An amazing quality of life improvement, contributed by [@jpbede]! Thank you! 🙌
 
@@ -758,6 +758,20 @@ entries.
 
 [@mib1185]: https://github.com/mib1185
 [#142845]: https://github.com/home-assistant/core/pull/142845
+
+---
+
+All the extra state attributes of the climate entity got migrated to their
+own entities. With this these attributes are deprecated and will be removed
+in Home Assistant 2025.11.
+
+If you rely on these attributes in your automations or scripts, you will need
+to update them to use the dedicated sensors instead.
+
+([@mib1185] - [#143394]) ([documentation](/integrations/fritzbox))
+
+[@mib1185]: https://github.com/mib1185
+[#143394]: https://github.com/home-assistant/core/pull/143394
 
 {% enddetails %}
 
