@@ -161,7 +161,7 @@ now choose between different voice styles and tones, such as "friendly",
 "angry", "sad", "whisper", etc., allowing you to customize your announcements to
 fit the mood and context of the situation.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-new-voice-variants-for-home-assistant-cloud.png" />
+<img class="no-shadow" alt="Screenshot showing a glimpse of the new voice variants for available for Home Assistant Cloud subscribers." src="/images/blog/2025-05/new-voice-variants-for-home-assistant-cloud.png" />
 
 <br /><br />
 
@@ -520,7 +520,7 @@ Wrap was the original and is still the default behavior, but if you have a lot
 of badges and primarily use a mobile device, scrolling might be a better option
 for you.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-badges-scroll.png" />
+<img class="no-shadow" alt="Screenshot showing the behavior options for the badges shown in the header of a dashboard view: Either scroll or wrap." src="/images/blog/2025-05/dashboards-header-badges-behavior.png" />
 
 ## Improved UI experience when using templates in automations & scripts
 
@@ -531,18 +531,15 @@ any action block that contains a template.
 [@karwosts] to the rescue! He has worked on a solution to improve this
 experience.
 
-How this looked before this release:
-
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-template-automation-old.png" />
-
 So, instead of falling back to pure YAML for the whole block, it now only
 falls back to a code editor for fields that contain an action template. This
 means the rest of the UI—for all other action fields—remains intact and you
 can still use the UI to edit the rest.
 
-This is how the same as above looks now:
+As you can see in this screenshot below, the brightness is set using a template,
+which is no problem, as the rest of the action is still editable in the UI.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-template-automation-new.png" />
+<img class="no-shadow" alt="Screenshot showing the automation improvements made, when using templates keeping the rest of the UI available in those cases." src="/images/blog/2025-05/template-automation-improvement.png" />
 
 This is a great improvement for power users, as it allows you to use the UI
 for most of the automation or script, while still being able to use templates
@@ -583,7 +580,7 @@ or wondering why a certain device is not being discovered. To help with that
 allow you to see what Home Assistant is seeing. It is quite technical, but
 it is a great way to see what is going on in your network.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-discovery-browsers.png" />
+<img class="no-shadow" alt="Screenshot of the new ZeroConf/mDNS browser, showing the internal the discovery process of Home Assistant." src="/images/blog/2025-05/discovery-browsers.png" />
 
 You can find these new tools in **Settings** > **System** > **Network**. At the
 bottom of that page, you will find the ability to browse all the things
