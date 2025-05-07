@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "2025.5: Beta release notes for this QoL release"
-description: "Beta release notes for Home Assistant 2025.5"
-date: 2025-04-29 00:00:00
+title: "2025.5: Two Million Strong and Getting Better"
+description: "Celebrating 2 million users with quality of life improvements! Enjoy smarter backups with per-location retention, Z-Wave Long Range support, an improved entity picking experience, tons of new voices for Home Assistant Cloud, and the ability to just paste YAML into your automations."
+date: 2025-05-07 00:00:00
 date_formatted: "May 7, 2025"
 author: Franck Nijhof
 author_twitter: frenck
@@ -15,61 +15,44 @@ og_image: /images/blog/2025-05/social.jpg
 
 <lite-youtube videoid="kfu_3Fm0wDw" videotitle="Home Assistant 2025.5 Release Party"></lite-youtube>
 
-{% note %}
-
-**Welcome to the beta release notes for Home Assistant 2025.5** 🎉
-
-<br />
-
-Please note that these release notes are a work in progress. 👷‍♀️ We will be
-completing them over the next couple of days. Not all features might be final
-yet, and some features _**may not** make it into the final release_.
-
-<br />
-
-**Want to help test the beta?** Awesome! ❤️ We have documented how you
-[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
-
-<br />
-
-While running the beta, we highly recommend joining our _#beta_ channel on
-the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
-testers are in this channel during the beta period to share experiences, ideas,
-and iterate over new features, fine-tuning them before the final release.
-It's a really fun place to hang out. 😎
-
-<br />
-
-**Reporting issues**: As this is a beta test, you might encounter unexpected
-behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
-You can find our issue trackers and the reported issues during beta here:
-
-<br />
-
-- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/131)
-- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/738)
-- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/138)
-
-🙏 When reporting issues, **make sure to mention the exact beta version you are
-running** in the issue description. This will help us identify and track the
-issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
-
-<br />
-
-Issues introduced in the beta are processed with priority. 🔝
-
-{% endnote %}
-
-{% tip %}
-
-Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=kfu_3Fm0wDw)
-7 May 2025, at 20:00 GMT / 12:00 PT / 21:00 CEST!
-
-{% endtip %}
-
 Home Assistant 2025.5! 🎉
 
-Enjoy the (beta) release!
+Time for the May release, and we have a lot to talk about this time! But before
+we do, I want to quickly touch on things that happened in the last month that
+you might have missed...
+
+We recently hosted our State of the Open Home event—a [live streamed show](https://www.youtube.com/watch?v=o4Vctz1_KYE)
+where we discussed the current state and future vision of the [Open Home Foundation](https://www.openhomefoundation.org/)
+and its projects, including Home Assistant. During this event, we not only
+revealed our roadmap for the upcoming year but also celebrated a tremendous
+milestone:
+
+**2,000,000 active installations** of Home Assistant worldwide! 🎉
+
+[Read more about the State of the Open Home in this summarized blog post](/blog/2025/04/16/state-of-the-open-home-recap/)
+
+A community of 2 million households is something to celebrate! And we are
+doing that by gathering together in person on **[Home Assistant Community Day](https://lu.ma/haday2025)**
+on **May 24th 2025**; over **50!** meetups are being organized **all around the
+world!** Want to learn more? Join a meetup? Or even host one?
+
+[Check out the Home Assistant Community Day 2025 blog post](/blog/2025/04/24/community-day/) for more information!
+
+Ok, the May release, really, I love this one! It is filled to the brim with
+quality of life improvements, that I'm sure you will love. 🥰
+
+The quest for a great backup system is continuing this release, shipping
+quite the list of improvements, most notably the ability to set a retention
+policy per backup location! 🤯 [Nabu Casa](https://nabucasa.com) throws in a
+whole bunch of new text-to-speech voice variants 🗣️ [included in your Home Assistant Cloud subscription](https://www.nabucasa.com/config/tts/),
+allowing your announcements to sound, for example, sad or happy!
+
+But... there is more! Z-Wave gets long range support 📶, you can now copy and
+paste YAML automation snippets directly in our automation UI, panels to
+look at the internal device discovery process of Home Assistant, and–my personal
+favorite–the improved experience when you pick an entity anywhere in the UI. 🤩
+
+Enjoy the release!
 
 ../Frenck
 
@@ -82,7 +65,7 @@ Enjoy the (beta) release!
   - [Waiting for the backup to finish on restarts](#waiting-for-the-backup-to-finish-on-restarts)
 - [Thousands of new text-to-speech voice variants for Home Assistant Cloud subscribers](#thousands-of-new-text-to-speech-voice-variants-for-home-assistant-cloud-subscribers)
 - [Picking entities](#picking-entities)
-- [Z-Wave Smart Start and Long Range support](#z-wave-smart-start-and-long-range-support)
+- [Z-Wave Long Range support and improved Smart Start experience](#z-wave-long-range-support-and-improved-smart-start-experience)
 - [Integrations](#integrations)
   - [New integrations](#new-integrations)
   - [Noteworthy improvements to existing integrations](#noteworthy-improvements-to-existing-integrations)
@@ -90,6 +73,7 @@ Enjoy the (beta) release!
   - [Now available to set up from the UI](#now-available-to-set-up-from-the-ui)
   - [Farewell to the following](#farewell-to-the-following)
 - [Other noteworthy changes](#other-noteworthy-changes)
+- [Badges on the dashboard can now be wrapped or scrolled](#badges-on-the-dashboard-can-now-be-wrapped-or-scrolled)
 - [Improved UI experience when using templates in automations \& scripts](#improved-ui-experience-when-using-templates-in-automations--scripts)
 - [Pasting automations and scripts YAML directly into the UI](#pasting-automations-and-scripts-yaml-directly-into-the-ui)
 - [Discover what Home Assistant is discovering](#discover-what-home-assistant-is-discovering)
@@ -109,8 +93,8 @@ Let's dive in!
 ### Per location backup retention policy settings
 
 This release adds a much requested feature: the ability to set a backup retention
-policy per location. This is particularly useful for those of you who have
-multiple locations configured in Home Assistant.
+policy per location. This is particularly useful if you have multiple backup
+locations configured in Home Assistant.
 
 <img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-backups-retention-per-location.png" />
 
@@ -181,7 +165,9 @@ fit the mood and context of the situation.
 
 <br /><br />
 
-{% details "Overview of extra voices" %}
+{% details "Overview of new voice options" %}
+
+We've expanded our voice selection dramatically, with some languages seeing huge increases in available options:
 
 | Language                                            | Old choices | New choices |
 | --------------------------------------------------- | ----------- | ----------- |
@@ -210,19 +196,6 @@ fit the mood and context of the situation.
 
 ## Picking entities
 
-{% important %}
-
-**During beta testing, we'd like to collect feedback from you on this change.**
-
-Please help us out, by filling out this small survey to share your thoughts
-on this change after testing it out.
-
-✍️ [Feedback survey](https://usabi.li/do/nfv79h4wcf6q/kioaqa)
-
-Thanks a ton! 🙏 ❤️
-
-{% endimportant %}
-
 We are working on improving the context of things shown in the UI. This is to
 ensure you always know which device or entity you are looking at, no matter
 where you are in the Home Assistant interface.
@@ -237,15 +210,35 @@ or script. This picker will now show the device and area name as well!
 
 <img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-improved-entity-picker.png" />
 
-This will slowly remove the need for you to rename every single entity or
-device to include this information in the name of the entity.
+This enhancement gradually eliminates the need for you to manually rename
+entities or devices to include location information—giving you a much better
+out-of-the-box experience with less setup work.
 
-You might notice that the entity ID isn't shown in the picker anymore. We think
-we are at a point where many uses solely rely on the UI and the entity ID is
-not needed anymore. However, if you do prefer to see the entity ID, you can
-enable it in your profile settings.
+Not only has the visual appearance of the picker improved, but the search
+functionality has been completely overhauled too! 🔎 Finding the exact entity
+you're looking for is now significantly easier thanks to a smarter search
+algorithm and the addition of more contextual information in the matching
+process.
 
-## Z-Wave Smart Start and Long Range support
+{% tip %}
+
+**You might notice that the entity ID isn't shown in the picker anymore!**
+
+We think we are at a point where you may solely rely on the UI and the
+entity ID is not needed anymore. However, if you **do prefer** to see the
+entity ID in this drop down, **you can enable it** in your profile settings.
+
+<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-improved-entity-picker.png" />
+
+To do so, select your profile picture in the bottom left corner of the
+Home Assistant UI, and under **{% my profile title="User settings" %}** enable
+the **Display entity IDs in picker** option.
+
+{% my profile badge %}
+
+{% endtip %}
+
+## Z-Wave Long Range support and improved Smart Start experience
 
 We are providing quite a few enhancements to the Z-Wave integration and
 experience in this release. Our commercial partner [Nabu Casa](https://nabucasa.com)
@@ -254,13 +247,29 @@ Home Assistant is ready for it, providing the best user experience
 possible.
 
 This release, we improved the whole experience in setting up new Z-Wave devices,
-improved support for Z-Wave Smart Start to scan a QR code from your new device
-to magically add it to Home Assistant; and most noteworthy, we added support
-for Z-Wave Long Range devices directly in Home Assistant!
+including improved support for setting up new Z-Wave devices by scanning the
+Smart Start QR code.
+
+Z-Wave Smart Start QR scanning now works natively in our [mobile companion apps](https://companion.home-assistant.io/),
+removing browser limitations. Added devices are immediately visible in
+Home Assistant, even if the device is not yet powered on. Once powered on, the
+device will automatically be added to your Z-Wave network.
+
+The most exciting part of this release is the addition of Z-Wave Long Range
+support. This is a new Z-Wave technology that allows devices to communicate
+over much longer distances than traditional Z-Wave devices. This is especially
+useful if you have a specific device that needs to be placed far away,
+for example, a contact sensor on a gate or mailbox up your driveway.
 
 **TODO**: Add screenshots or little video of this process.
 
 <img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-zwave-long-range.png" />
+
+If your device supports Z-Wave Long Range, you will get the option to either
+add it to the existing mesh network or connect it directly using long range.
+Both have pros and cons, mesh networking is recommended for most devices,
+but if you have a device that needs to be placed far away, long range
+might be the better option.
 
 ## Integrations
 
@@ -271,6 +280,8 @@ and improvements to existing ones! You’re all awesome 🥰
 
 We welcome the following new integrations in this release:
 
+- **[AWS S3]**, added by [@tomasbedrich]  
+  Use an [Amazon S3 storage] bucket as a backup location for your Home Assistant backups.
 - **[Imeon Inverter]**, added by [@Imeon-Energy]  
   Integrates your [Imeon] inverter, allowing you to monitor your home battery
   and solar usage in the [energy dashboard].
@@ -280,25 +291,26 @@ We welcome the following new integrations in this release:
 - **[ntfy]**, added by [@tr4nt0r]  
   Integrates with [ntfy.sh], a simple HTTP-based pub-sub notification service
   that allows you to send notifications to your phones or desktops.
-- **[AWS S3]**, added by [@tomasbedrich]  
-  Use an [Amazon S3 storage] bucket as a backup location for your Home Assistant backups.
-
-To process:
-- Add Rehlko (formerly Kohler Energy Management) Integration ([@PeteRager] - [#143602])
+- **[Rehlko]**, added by [@PeteRager]  
+  Monitor the status of your Rehlko (formerly Kohler Energy Management) enabled
+  [Kohler generator].
 
 [@astrandb]: https://github.com/astrandb
 [@Imeon-Energy]: https://github.com/Imeon-Energy
+[@PeterRager]: https://github.com/PeterRager
 [@tomasbedrich]: https://github.com/tomasbedrich
 [@tr4nt0r]: https://github.com/tr4nt0r
 [Amazon S3 storage]: https://aws.amazon.com/s3/
+[AWS S3]: /integrations/aws_s3
 [energy dashboard]: /docs/energy/
 [Imeon Inverter]: /integrations/imeon_inverter
 [Imeon]: https://imeon-energy.com/
+[Kohler generator]: https://www.kohlerhomeenergy.rehlko.com/kohler-energy-management-app
 [Miele home appliances]: https://www.miele.com/
 [Miele]: /integrations/miele
 [ntfy.sh]: https://ntfy.sh/
 [ntfy]: /integrations/ntfy
-[AWS S3]: /integrations/aws_s3
+[Rehlko]: /integrations/rehlko
 
 This release also has new virtual integrations. Virtual integrations
 are stubs that are handled by other (existing) integrations to help with
@@ -341,24 +353,51 @@ It is not just new {% term integrations %} that have been added; existing
 integrations are also being constantly improved. Here are some of the noteworthy
 changes to existing integrations:
 
-Potential candidates for this list:
+- The [OpenAI Conversation] integration now supports PDFs in the
+  [`openai_conversion.generate_content` action](/integrations/openai_conversation/#service-openai_conversationgenerate_content),
+  meaning it can now, for example, summarize PDF reports for you.
+  Great work [@Shulyaka]!
+- [@allenporter] added a new LLM tool for fetching to-do list items,
+  enabling you to interact with your to-do lists contents via voice or chat
+  assistants. Awesome!
+- The [HomeKit Bridge] integration now has support for air purifiers!
+  Thanks [@MaartenStaa]!
+- [@frenck] extended the [YouTube] integration allowing you to monitor your own
+  YouTube channel 📺. Nice!
+- The [HEOS] integration received multiple improvements from [@andrewsayre],
+  including the ability to add items to the play queue and remove queued items.
+- Thanks to [@Danielhiversen], the [Mill] integration now includes statistics,
+  making it possible to track your heating energy usage over time. Great!
+- The [Xiaomi BLE] integration now supports the Body Composition Scale S400,
+  thanks [@zry98]!
+- [SwitchBot] now supports [Roller Shade] and [HubMini Matter] devices.
+  Nice job [@zerzhang]!
+- [@lezmaka] worked on the [Synology DSM] integration, which now includes support
+  for external USB drives, allowing you to monitor external storage. Nice!
+- The [La Marzocco] integration has been extended with additional sensors and
+  statistic entities, providing better insights into your coffee machine's performance.
+  Great additions [@zweckj]!
 
-- Add support for air purifiers in HomeKit ([@MaartenStaa] - [#142467]) ([homekit docs]) (noteworthy)
-- Add support for external USB drives to Synology DSM ([@lezmaka] - [#138661])
-- Add PDF support for `openai_conversation.generate_content` service ([@Shulyaka] - [#141588])
-- Add switchbot roller shade and hubmini matter support ([@zerzhang] - [#142168])
-- Add ability to subscribe to own YouTube channels ([@frenck] - [#141693])
-- [xiaomi_ble] Support Body Composition Scale S400 ([@zry98] - [#142705])
-- Add support for InkBird IAM-T1 ([@bdraco] - [#142824])
-- Add preset modes to HKC fans ([@bdraco] - [#142528])
-- Add play queue item to HEOS ([@andrewsayre] - [#141480])
-- Add HEOS entity service to remove queue items ([@andrewsayre] - [#141495])
-- Add sensors to lamarzocco ([@zweckj] - [#143156])
-- Add statistic entities to lamarzocco ([@zweckj] - [#143415])
-- Wiz - update dependency to support new light features and bugfixes ([@sbidy] - [#141529])
-- Mill, add statistics ([@Danielhiversen] - [#130406])
-- Add number & sensor platform to eheimdigital ([@autinerd] - [#142835] - [#138809])
-- Add an LLM tool for fetching todo list items ([@allenporter] - [#143777]) ([todo docs]) (noteworthy)
+[@allenporter]: https://github.com/allenporter
+[@andrewsayre]: https://github.com/andrewsayre
+[@Danielhiversen]: https://github.com/Danielhiversen
+[@lezmaka]: https://github.com/lezmaka
+[@MaartenStaa]: https://github.com/MaartenStaa
+[@Shulyaka]: https://github.com/Shulyaka
+[@zerzhang]: https://github.com/zerzhang
+[@zry98]: https://github.com/zry98
+[@zweckj]: https://github.com/zweckj
+[HEOS]: /integrations/heos
+[HomeKit Bridge]: /integrations/homekit
+[HubMini Matter]: https://www.switch-bot.com/products/switchbot-hub-mini-matter-enabled
+[La Marzocco]: /integrations/lamarzocco
+[Mill]: /integrations/mill
+[OpenAI Conversation]: /integrations/openai_conversation
+[Roller Shade]: https://www.switch-bot.com/products/switchbot-roller-shade
+[SwitchBot]: /integrations/switchbot
+[Synology DSM]: /integrations/synology_dsm
+[Xiaomi BLE]: /integrations/xiaomi_ble
+[YouTube]: /integrations/youtube
 
 ### Integration quality scale achievements
 
@@ -435,6 +474,10 @@ of this release:
 There are many more improvements in this release; here are some of the other
 noteworthy changes this release:
 
+- Did you know Home Assistant actually has keyboard shortcuts for all kinds of
+  things? No? Well... if you are curious to learn, after upgrading, press
+  `?` anywhere in the UI to see a list of all available keyboard shortcuts.
+  Nice addition [@jpbede]!
 - Support for the [Matter] 1.4 water heater devices types have been added.
   Thanks, [@lboue]!
 - When setting up a new device in Home Assistant, you can now directly name
@@ -445,14 +488,20 @@ noteworthy changes this release:
   in Home Assistant. Cool!
 - The `floor_id` and `area_id` template methods have been enhanced by [@formatBCE]
   to also look for floors or area aliases. Awesome!
-- We now have support for trigger-based template entities for switches and
+- We now have support for trigger-based [template entities] for switches and
   lights. Amazing work [@Petro31]!
-- Support for modern YAML-syntax was also added to the cover template entities
+- Support for modern YAML-syntax was also added to the cover [template entities]
   by [@Petro31]. Nice!
 - [@frenck] added support for detecting Home Assistant Container installation
   types not running in host networking mode. This is important for
   Home Assistant to function properly. It raises a repair issue if it detects
   this.
+- A long-standing issue with iOS and the dropdown items in our user interface
+  has been fixed! No longer will it select the wrong item when you tap on it
+  while the dropdown is open and the keyboard is shown.
+
+* Add badges section on the areas strategy editor (#25154) @piitaya
+
 
 [@bramkragten]: https://github.com/bramkragten
 [@formatBCE]: https://github.com/formatBCE
@@ -462,6 +511,19 @@ noteworthy changes this release:
 [@piitaya]: https://github.com/piitaya
 [@zweckj]: https://github.com/zweckj
 [Matter]: /integrations/matter
+[template entities]: /integrations/template/
+
+## Badges on the dashboard can now be wrapped or scrolled
+
+A cool little new feature for dashboards landed this release, that we don't
+want to walk past unnoticed. The behavior of the badges in the header of a
+dashboard view can now be configured to either wrap or scroll.
+
+Wrap was the original and is still the default behavior, but if you have a lot
+of badges and primarily use a mobile device, scrolling might be a better option
+for you.
+
+<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-badges-scroll.png" />
 
 ## Improved UI experience when using templates in automations & scripts
 
@@ -478,7 +540,7 @@ How this looked before this release:
 
 So, instead of falling back to pure YAML for the whole block, it now only
 falls back to a code editor for fields that contain an action template. This
-means the rest of the UI–for all other action fields–remains intact and you
+means the rest of the UI—for all other action fields—remains intact and you
 can still use the UI to edit the rest.
 
 This is how the same as above looks now:
@@ -514,8 +576,8 @@ An amazing quality of life improvement, contributed by [@jpbede]! Thank you! �
 ## Discover what Home Assistant is discovering
 
 Home Assistant is constantly scanning your network for new devices and
-integrations using all sorts of discovery protocols. This greatly improves the
-user experience, as it allows you to easily add new devices to your Home
+integrations using all sorts of discovery protocols. This greatly improves your
+experience, as it allows you to easily add new devices to your Home
 Assistant installation.
 
 However, sometimes, you might want to know what Home Assistant is seeing
@@ -526,7 +588,7 @@ it is a great way to see what is going on in your network.
 
 <img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-discovery-browsers.png" />
 
-You can find these new tools in **Settings** > **System** > **Network**. On the
+You can find these new tools in **Settings** > **System** > **Network**. At the
 bottom of that page, you will find the ability to browse all the things
 Home Assistant is seeing on your network for each of the discovery protocols.
 
