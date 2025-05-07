@@ -208,7 +208,7 @@ In this release, we improve context on the entity pickers in our UI. This is the
 dropdown you see when you select an entity in, for example, a card, automation,
 or script. This picker will now show the device and area name as well!
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-improved-entity-picker.png" />
+<img class="no-shadow" alt="Screenshot showing the new entity pickers, providing more context and improves search capabilities." src="/images/blog/2025-05/improved-entity-picker.png" />
 
 This enhancement gradually eliminates the need for you to manually rename
 entities or devices to include location information—giving you a much better
@@ -228,7 +228,7 @@ We think we are at a point where you may solely rely on the UI and the
 entity ID is not needed anymore. However, if you **do prefer** to see the
 entity ID in this drop down, **you can enable it** in your profile settings.
 
-<img class="no-shadow" alt="TODO: Replace." src="/images/blog/2025-05/temp-improved-entity-picker.png" />
+<img class="no-shadow" alt="Screenshot showing the improved entity picker with the show entity ID in entity picker option enabled in my user profile." src="/images/blog/2025-05/improved-entity-picker-with-entity-ids.png" />
 
 To do so, select your profile picture in the bottom left corner of the
 Home Assistant UI, and under **{% my profile title="User settings" %}** enable
