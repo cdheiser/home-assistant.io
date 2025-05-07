@@ -65,7 +65,7 @@ Enjoy the release!
   - [Waiting for the backup to finish on restarts](#waiting-for-the-backup-to-finish-on-restarts)
 - [Thousands of new text-to-speech voice variants for Home Assistant Cloud subscribers](#thousands-of-new-text-to-speech-voice-variants-for-home-assistant-cloud-subscribers)
 - [Picking entities](#picking-entities)
-- [Z-Wave Long Range support and improved Smart Start experience](#z-wave-long-range-support-and-improved-smart-start-experience)
+- [Z-Wave Long Range support and improved Smart Start](#z-wave-long-range-support-and-improved-smart-start)
 - [Integrations](#integrations)
   - [New integrations](#new-integrations)
   - [Noteworthy improvements to existing integrations](#noteworthy-improvements-to-existing-integrations)
@@ -238,7 +238,7 @@ the **Display entity IDs in picker** option.
 
 {% endtip %}
 
-## Z-Wave Long Range support and improved Smart Start experience
+## Z-Wave Long Range support and improved Smart Start
 
 We are providing quite a few enhancements to the Z-Wave integration and
 experience in this release. Our commercial partner [Nabu Casa](https://nabucasa.com)
@@ -297,7 +297,7 @@ We welcome the following new integrations in this release:
 
 [@astrandb]: https://github.com/astrandb
 [@Imeon-Energy]: https://github.com/Imeon-Energy
-[@PeterRager]: https://github.com/PeterRager
+[@PeteRager]: https://github.com/PeteRager
 [@tomasbedrich]: https://github.com/tomasbedrich
 [@tr4nt0r]: https://github.com/tr4nt0r
 [Amazon S3 storage]: https://aws.amazon.com/s3/
