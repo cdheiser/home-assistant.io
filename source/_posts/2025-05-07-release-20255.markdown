@@ -33,7 +33,7 @@ milestone:
 
 A community of 2 million households is something to celebrate! And we are
 doing that by gathering together in person on **[Home Assistant Community Day](https://lu.ma/haday2025)**
-on **May 24th 2025**; over **50!** meetups are being organized **all around the
+on **May 24th 2025**; over **fifty!** meetups are being organized **all around the
 world!** Want to learn more? Join a meetup? Or even host one?
 
 [Check out the Home Assistant Community Day 2025 blog post](/blog/2025/04/24/community-day/) for more information!
@@ -119,7 +119,7 @@ operating system upgrade.
 
 ### Set the default backup preference for upgrades
 
-The above option to update before upgrade is great, but the feedback on the
+The above option to backup before upgrade is great, but the feedback on the
 toggle to create a backup before upgrade is mixed. Some of you prefer to always
 backup before upgrading, while others rely on their scheduled backups and don't
 want to be bothered with the backup process whenever they upgrade a part
@@ -148,7 +148,7 @@ abort the process by restarting Home Assistant.
 
 If you are subscribed to [Home Assistant Cloud](https://www.nabucasa.com), you
 not only get [backup storage included](https://www.nabucasa.com/config/backups/),
-but you also get access to speedy, super accurate [text-to-speech](https://www.nabucasa.com/config/tts/)
+but you also get access to the most speedy, super accurate [text-to-speech](https://www.nabucasa.com/config/tts/)
 available. If you haven’t tried it yet, now is the perfect time to sign up for the 30-day trial!
 
 This release extends the already staggering number of text-to-speech voices,
