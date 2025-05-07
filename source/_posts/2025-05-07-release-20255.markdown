@@ -62,7 +62,7 @@ Enjoy the release!
   - [Backup before upgrading the Home Assistant Operating System](#backup-before-upgrading-the-home-assistant-operating-system)
   - [Set the default backup preference for upgrades](#set-the-default-backup-preference-for-upgrades)
   - [Waiting for the backup to finish on restarts](#waiting-for-the-backup-to-finish-on-restarts)
-- [Thousands of new text-to-speech voice variants for Home Assistant Cloud subscribers](#thousands-of-new-text-to-speech-voice-variants-for-home-assistant-cloud-subscribers)
+- [Lots of new text-to-speech voice variants for Home Assistant Cloud subscribers](#lots-of-new-text-to-speech-voice-variants-for-home-assistant-cloud-subscribers)
 - [Picking entities](#picking-entities)
 - [Z-Wave Long Range support and improved Smart Start](#z-wave-long-range-support-and-improved-smart-start)
 - [Integrations](#integrations)
@@ -144,7 +144,7 @@ Another small but important improvement is that if you initiate a restart of Hom
 This prevents the unintended situation where a backup is in progress, and you
 abort the process by restarting Home Assistant.
 
-## Thousands of new text-to-speech voice variants for Home Assistant Cloud subscribers
+## Lots of new text-to-speech voice variants for Home Assistant Cloud subscribers
 
 If you are subscribed to [Home Assistant Cloud](https://www.nabucasa.com), you
 not only get [backup storage included](https://www.nabucasa.com/config/backups/),
