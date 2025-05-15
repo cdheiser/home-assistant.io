@@ -3,8 +3,9 @@ title: Bosch Alarm
 description: Integrate Bosch Alarms.
 ha_category:
   - Alarm
-  - Switch
+  - Binary Sensor
   - Sensor
+  - Switch
 ha_release: 2025.4
 ha_iot_class: Local Push
 ha_config_flow: true
@@ -14,9 +15,10 @@ ha_codeowners:
 ha_domain: bosch_alarm
 ha_platforms:
   - alarm_control_panel
-  - switch
+  - binary_sensor
   - diagnostics
   - sensor
+  - switch
 ha_integration_type: device
 ha_quality_scale: bronze
 ---
@@ -40,23 +42,30 @@ The **Bosch Alarm Panel** {% term integration %} allows you to connect your [Bos
 The following {% term entities %} are provided:
 
 - [Alarm Control Panel](#alarm-control-panel)
-- [Switch](#switch)
+- [Binary Sensor](#binary-sensor)
 - [Sensor](#sensor)
+- [Switch](#switch)
 
 ### Alarm Control Panel
 
 This integration adds an Alarm Control Panel device for each configured area, with the ability to issue arm/disarm commands.
 This entity reports state (_disarmed_, _armed_away_, etc.).
  
+### Binary Sensor
+
+A binary sensor is added for each point configured on your alarm.
+
+Two binary sensors are added for each area to indicate whether it can be armed away or armed home.
+
+### Sensor
+
+A sensor is provided per area that lists how many points are currently in a faulted state.
+
 ### Switch
 
 A switch is added for each output configured on the panel. Note that for some panels, only outputs with the type set to **remote output** can be controlled via _Mode 2_ API.
 
 Three switches are added per door, which allow for locking, securing, or momentarily unlocking the door.
-
-### Sensor
-
-A sensor is provided per area that lists how many points are currently in a faulted state.
 
 ## Authentication
 
@@ -81,6 +90,34 @@ Since the _Mode 2_ automation user has "superuser" privileges, it bypasses the r
 The **Bosch Alarm** {% term integration %} fetches data from the device every 30 seconds.
 Newer devices and firmware revisions have the possibility to push data instead of needing to rely on {% term polling %}.
 At startup, the integration checks whether your panel supports push data updates and falls back to {% term polling %} if not.
+
+## Examples
+
+### Turning on lights when walking into a room
+
+{% raw %}
+
+```yaml
+automation:
+  - alias: "Turn on light when walking into room"
+    triggers:
+      - platform: state
+        entity_id:
+          - binary_sensor.bosch_solution_3000_bedroom
+        to: "on"
+    actions:
+      - action: light.turn_on
+        target:
+          entity_id: light.bedroom_light
+
+
+```
+
+{% endraw %}
+
+## Reconfiguration
+
+This integration supports reconfiguration, so it is possible to change the configuration such as the IP Address after it is configured.
 
 ## Troubleshooting
 
