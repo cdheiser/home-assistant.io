@@ -17,6 +17,7 @@ ha_platforms:
   - button
   - media_player
   - sensor
+  - switch
   - update
 ha_integration_type: integration
 ---
@@ -164,6 +165,11 @@ data:
 ```
 
 ## Supported functionality
+
+### Switches
+
+- **Alarm**: Enables a scheduled alarm to sound. Alarms must also be enabled on the associated player for the alarm to sound, using the Alarms Enabled switch or directly on the Lyrion Music Server for that player.
+- **Alarms Enabled**: Enables a player to sound alarms. Disabling will prevent all alarms from sounding on that player, regardless of whether the individual alarm is enabled
 
 ### Binary sensors
 
