@@ -7,6 +7,7 @@ ha_release: 2021.8
 ha_iot_class: Local Polling
 ha_codeowners:
   - '@danielhiversen'
+  - '@lazytarget'
 ha_domain: adax
 ha_config_flow: true
 ha_platforms:

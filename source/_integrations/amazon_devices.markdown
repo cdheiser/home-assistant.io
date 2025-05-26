@@ -8,11 +8,14 @@ ha_domain: amazon_devices
 ha_config_flow: true
 ha_codeowners:
   - '@chemelli74'
-ha_iot_class: Local Polling
+ha_iot_class: Cloud Polling
 ha_platforms:
   - binary_sensor
+  - notify
+  - switch
 ha_integration_type: hub
 ha_quality_scale: bronze
+ha_dhcp: true
 ---
 
 The **Amazon Devices** {% term integration %} allows you to control your [Amazon Echo dots](https://www.amazon.com/echo-dot/).
