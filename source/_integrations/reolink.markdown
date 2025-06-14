@@ -165,6 +165,7 @@ Depending on the supported features of the camera, number entities are added for
 - AI linger delay+ (up to 3 zones)
 - AI item forgotten delay+ (up to 3 zones)
 - AI item taken delay+ (up to 3 zones)
+- Baby cry sensitivity
 - Auto quick reply time
 - Auto track limit left
 - Auto track limit right
