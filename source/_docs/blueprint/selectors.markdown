@@ -1136,15 +1136,78 @@ number:
 
 The object selector can be used to input arbitrary data in YAML form. This is useful for e.g. lists and dictionaries containing data for actions. The value of the input will contain the provided data.
 
-![Screenshot of an object selector](/images/blueprints/selector-object.png)
+When used without options, the selector will accept a free form object.
 
-This selector does not have any other options; therefore, it only has its key.
+![Screenshot of an object selector](/images/blueprints/selector-object.png)
 
 ```yaml
 object:
 ```
 
+When used with a `schema`, the selector will force the object to be in this format by displaying a form.
+
+![Screenshot of an object selector](/images/blueprints/selector-object-schema.png)
+
+```yaml
+object:
+  label_key: name
+  description_key: percentage
+  multiple: true
+  fields:
+    name:
+      label: Name
+      selector: 
+        text:
+    percentage:
+      label: Percentage
+      selector:
+        number:
+          unit_of_measurement: "%"
+```
+
 The output of this selector is a YAML object.
+
+{% configuration qr_code %}
+fields:
+  description: >
+    List of fields of the object.
+  type: map
+  required: false
+  keys:
+    label:
+      description: The label of the field
+      required: false
+      type: string
+    selector:
+      description: The selector to use for this field. It can be any available selector.
+      required: true
+      type: string
+label_field:
+  description: >
+    The field to use as a label. By default, it will be the first field defined. This option is only used if `fields` option set.
+  type: string
+  required: false
+description_field:
+  description: >
+    The field to use as a description. This option is only used if `fields` option set.
+  type: string
+  required: false
+translation_key:
+  description: >
+    Allows translations provided by an integration where `translation_key`
+    is the translation key that is providing the selector option strings
+    translation. See the documentation on
+    [Backend Localization](https://developers.home-assistant.io/docs/internationalization/core/#selectors)
+    for more information.
+  type: string
+  required: false
+multiple:
+  description: >
+    Allows selecting multiple options. If set to `true`, the resulting value of this selector will be a list instead of a single string value. This option is only used if `fields` option set.
+  type: boolean
+  required: false
+  default: false
+{% endconfiguration %}
 
 ## QR code selector
 
