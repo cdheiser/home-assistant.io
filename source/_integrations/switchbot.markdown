@@ -410,6 +410,12 @@ Features:
 - calibration state
 - get battery level
 
+Options:
+
+1. To enable nightlatch operation mode, go to {% my integrations title="**Settings** > **Devices & services**" %}.
+2. Under **Integration entries**, find the lock and select **Configure**.
+3. In the **Options** dialog, configure the nightlatch operation mode.
+
 #### Lock Pro
 
 This is an encrypted device.
@@ -421,6 +427,14 @@ Features:
 - auto-lock paused state
 - calibration state
 - get battery level
+
+Options:
+
+1. To enable nightlatch operation mode, go to {% my integrations title="**Settings** > **Devices & services**" %}.
+2. Under **Integration entries**, find the lock and select **Configure**.
+3. In the **Options** dialog, configure the nightlatch operation mode.
+
+
 
 #### Lock Ultra
 
@@ -434,6 +448,12 @@ Features:
 - calibration state
 - get battery level
 
+Options:
+
+1. To enable nightlatch operation mode, go to {% my integrations title="**Settings** > **Devices & services**" %}.
+2. Under **Integration entries**, find the lock and select **Configure**.
+3. In the **Options** dialog, configure the nightlatch operation mode.
+
 #### Lock Lite
 
 This is an encrypted device.
@@ -441,8 +461,6 @@ This is an encrypted device.
 Features:
 
 - Lock or unlock
-- open or closed state
-- auto-lock paused state
 - calibration state
 - get battery level
 
@@ -476,17 +494,17 @@ Features:
 
 ### Fans
 
-Fan entities are added for Circulator Fan, Air Purifier, and Air Purifier Table
+Fan entities are added for Battery Circulator Fan/Circulator Fan, Air Purifier, and Air Purifier Table
 
-#### Circulator Fan
+#### Battery Circulator Fan/Circulator Fan
 
 Features:
-
 - turn on
 - turn off
 - set speed
 - set mode
 - oscillate left and right
+- get battery level (Battery Circulator Fan only)
 
 #### Air Purifier
 
@@ -513,7 +531,7 @@ Features:
 Vacuum entities are added for K10+, K10+ Pro, K10+ Pro Combo, K20, S10.
 
 Features:
-
+- get states, including `cleaning`, `docked`, `idle`, `paused`, `returning`, and `error`; refer to Known limitations for more details
 - start
 - return to base
 - get battery
@@ -533,9 +551,24 @@ Move the device closer, or replace the Bluetooth adapter with a faster one. See 
 
 Device names configured in the SwitchBot app are not transferred into Home Assistant.
 
+### Battery level
+
+Due to firmware limitations, early models such as **Lock** and **Lock Lite** report the battery level in coarse ranges rather than an exact value:
+
+- < 10 %  → 10  
+- 10 % – 20 % → 20  
+- 20 % – 60 % → 60  
+- ≥ 60 % → 100
+
+Refer to the latest version of the [OpenAPI doc](https://github.com/OpenWonderLabs/SwitchBotAPI) for precise definitions.
+
 ### Lock state
 
 The integration currently only uses the primary lock state; in dual lock mode, not all things might work properly.
+
+### Vacuum state
+
+For robot vacuum K10+ and K10+ Pro, due to firmware implementation, it only returns these states, `cleaning` and `docked`
 
 ## Troubleshooting
 
