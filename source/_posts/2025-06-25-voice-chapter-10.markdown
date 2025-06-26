@@ -18,7 +18,7 @@ Welcome to Voice chapter 10 🎉, [a series](/blog/categories/assist/) where we 
 
 Before we get going, we just want to say that Voice Chapter 10 isn't just a broadcast; **it's an invitation** ✉️. Our **public Voice project board** lives on GitHub, and it shows what we're fixing, currently building, and what we'll work on next. Every card is open for comments, so please feel free to have a look and participate in the discussion.
 
-👉 **Project board**: [https://github.com/orgs/OHF-Voice/projects/2](https://github.com/orgs/OHF-Voice/projects/2)
+👉 **Project board**: [https://github.com/orgs/OHF-Voice/projects/2](https://github.com/orgs/OHF-Voice/projects/2)<!--more-->
 
 ## ESPHome gains a voice
 
@@ -53,7 +53,7 @@ Speaking of voice hardware becoming more like Voice Preview Edition, why not use
 
 The sentence format for Speech-to-Phrase is getting an upgrade! Besides making it simpler for community members to contribute, it now allows for more thorough testing to ensure compatibility with existing Home Assistant commands.
 
-We have also begun experimenting with more precise sentence generation, restricting sentences like "set the <light> to red" only to lights that support setting color. Another improvement is making Speech-to-Phrase more careful about combining names and articles in certain languages. For instance, in French, a device or entity that starts with a vowel or an "h" will have an "l" apostrophe at its beginning, such as l'humidificateur or l'entrée. Allowing Speech-to-Phrase to understand this avoids it guessing pronunciations for nonsensical combinations.
+We have also begun experimenting with more precise sentence generation, restricting sentences like "set the {light} to red" only to lights that support setting color. Another improvement is making Speech-to-Phrase more careful about combining names and articles in certain languages. For instance, in French, a device or entity that starts with a vowel or an "h" will have an "l" apostrophe at its beginning, such as l'humidificateur or l'entrée. Allowing Speech-to-Phrase to understand this avoids it guessing pronunciations for nonsensical combinations.
 
 Speech-to-Phrase currently supports **six languages**, namely English, French, German, Dutch, Spanish, and Italian. We are now engaging with language leaders to add support for Russian, Czech, Catalan, Greek, Romanian, Portuguese, Polish, Hindi, Basque, Finnish, Mongolian, Slovenian, Swahili, Thai, and Turkish --- this takes our language support to **21 languages** 🥳!
 
@@ -93,7 +93,7 @@ Finally, of course, not everyone wants to (or can) be reliant on the cloud, and 
 
 - ***Cloud*** - Home Assistant Cloud
 - ***Focused Local*** - Speech-to-Phrase and Piper
-- ***Fully Local*** - Whisper and Piper
+- ***Full Local*** - Whisper and Piper
 
 Each category is given a score from 0 to 3, with 0 meaning it is unsupported and 3 meaning it is fully supported. Users who choose Home Assistant Cloud can look at the Cloud score to determine the level of language support. For users wanting a local voice assistant, they will need to decide between Focused Local (limited commands for low-powered hardware) and Fully Local (open-ended commands for high-powered hardware). Importantly, these scores take into account the availability of voice commands translated by our language leaders. A language's score in every category will be lowered if it has minimal coverage of useful voice commands.
 
