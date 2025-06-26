@@ -100,12 +100,7 @@ Until now, Assist was mostly transactional: say something, get a response, done 
 
 This lets you build custom conversations from the comfort of our automation engine. Ask a question, handle the answer, and keep the interaction going.
 
-**TODO**: Screenshot of the ask question bloc in an automation
-
-This action even allows you to define expected answers so that our extremely fast speech engine Speech-to-Phrase can train on them.
-Yes! Fully local, custom conversations! Here is a video of what this allows you to build.
-
-**TODO:** Video of Ask Question in action
+This action even allows you to define expected answers so that our extremely fast speech engine Speech-to-Phrase can train on them. Yes! Fully local, custom conversations!
 
 {% details "Example YAML automation actions" %}
 
@@ -120,7 +115,7 @@ actions:
       entity_id: assist_satellite.living_room_voice_assistant
       preannounce: true   # optional
       preannounce_media_id: media-source://...   # optional
-      question: What kind of music do you want to listen to?
+      question: "What kind of music do you want to listen to?"
       answers:
         - id: genre
           sentences:
@@ -129,9 +124,8 @@ actions:
           sentences:
             - "artist {artist}"
     response_variable: answer
-
   - choose:
-      - conditions: '{{ answer.id == "genre" }}'
+      - conditions: "{{ answer.id == 'genre' }}"
         sequence:
           - action: music_assistant.play_media
             data:
@@ -139,7 +133,7 @@ actions:
               media_type: playlist
             target:
               entity_id: media_player.living_room_speakers
-      - conditions: '{{ answer.id == "artist" }}'
+      - conditions: "{{ answer.id == 'artist' }}"
         sequence:
           - action: music_assistant.play_media
             data:
@@ -159,8 +153,6 @@ Originally introduced a few years ago, the [Area card](/dashboards/area/) offere
 
 The card has now been completely redesigned with a look and feel similar to the [Tile card](/dashboards/tile/). It integrates seamlessly into Sections thanks to its flexible layouts. You can choose between a compact version that shows only an icon and the area name, or a more detailed view featuring elements like your camera feed and buttons to toggle your lights or fans.
 
-<img class="no-shadow" alt="TODO: Replace screenshot." src="/images/blog/2025-07/temp-area-card.png" />
-
 The control section itself has also been revamped, giving you the ability to choose which controls to include and to rearrange them as you want. As a result of these changes, you'll need to reconfigure the controls for your existing area cards.
 
 Additionally, the card now supports controlling [cover](/integrations/cover/) {% term entities %}.
@@ -173,27 +165,33 @@ This release introduces an all-new overview that leverages the redesigned Area c
 
 <img class="no-shadow" alt="TODO: Replace screenshot." src="/images/blog/2025-07/temp-areas-dashboard.png" />
 
+{% tip %}
+
+**During this beta, we're gathering feedback on the updated Areas dashboard!**
+
+Please share your thoughts and experiences with the new design by filling out our [Areas dashboard feedback survey](https://forms.clickup.com/2533032/f/2d9n8-32191/NK2MUOVKXQVH2L0NHI).
+
+{% endtip %}
+
 ## Integration sub entries
 
 Ever wondered why you had to enter your API keys for every AI agent you created, while they were all using the same key? Or why you had to authenticate for every calendar you wanted to add for the same account? Or why you couldn't add MQTT devices from the UI?
 
-This release solves that with the introduction of integration sub entries. This allows you to add a sub entry to an existing integration entry. This means, for example, that your integration entry has your credentials, and all the sub entries use these credentials. In the sub entry, you can then configure what should be done with these credentials, such as fetching a specific calendar, adding 3 AI agents with different prompts using the same OpenAI account, or in the case of MQTT, configuring devices that are connected to your broker.
+This release solves that with the introduction of integration sub entries. This allows you to add a sub entry to an existing {% term integration %} entry. This means, for example, that your {% term integration %} entry has your credentials, and all the sub entries use these credentials. In the sub entry, you can then configure what should be done with these credentials, such as fetching a specific calendar, adding 3 AI agents with different prompts using the same OpenAI account, or in the case of MQTT, configuring devices that are connected to your broker.
 
 <img class="no-shadow" alt="TODO: Replace screenshot." src="/images/blog/2025-07/temp-add-mqtt-device-using-sub-entry.png" />
 
-The following integrations now support sub entries as of this release: [Anthropic], [Google Generative AI], [MQTT], [Ollama], and [OpenAI Conversation].
+The following {% term integrations %} now support sub entries as of this release: [Anthropic], [Google Generative AI], [MQTT], [Ollama], [OpenAI Conversation], and [Telegram Bot].
 
 [Anthropic]: /integrations/anthropic
-[Google Generative AI]: /integrations/google_generative_ai_conversation
 [MQTT]: /integrations/mqtt
-[Ollama]: /integrations/ollama
 [OpenAI Conversation]: /integrations/openai_conversation
 
 ## Integration page has seen an overhaul
 
-The integration page got a big overhaul! It now has support for sub entries, allowing you to easily add a sub entry to an integration entry and see which devices and services belong to which sub entry.
+The {% term integration %} page got a big overhaul! It now has support for sub entries, allowing you to easily add a sub entry to an {% term integration %} entry and see which devices and services belong to which sub entry.
 
-But we took the opportunity to do more. Instead of just showing your integration entries, it now also shows the devices and services that are provided by that configuration entry. This makes it much easier to manage your devices and see the relationship between your devices and their integrations at a glance.
+But we took the opportunity to do more. Instead of just showing your {% term integration %} entries, it now also shows the devices and services that are provided by that configuration entry. This makes it much easier to manage your devices and see the relationship between your devices and their {% term integrations %} at a glance.
 
 <img class="no-shadow" alt="TODO: Replace screenshot." src="/images/blog/2025-07/temp-new-integrations-page.png" />
 
@@ -209,11 +207,11 @@ We welcome the following new integrations in this release:
 - **[Altruist]**, added by [@LoSk-p]  
   Connect to your Altruist account to monitor your charitable giving and impact.
 - **[PlayStation Network]**, added by [@JackJPowell]  
-  Integrate with the PlayStation Network to track gaming activity and friends' online status.
+  Integrate with the PlayStation Network to track your currently playing games and display game information on your dashboard.
 - **[Tilt Pi]**, added by [@michaelheyman]  
-  Monitor your Tilt Pi hydrometer for brewing temperature and specific gravity measurements.
+  Monitor your Tilt Pi hydrometer for brewing temperature and specific gravity measurements during your brewing process.
 - **[VegeHub]**, added by [@Thulrus]  
-  Connect to your VegeHub system to monitor and control your hydroponic garden.
+  Connect to your VegeHub system to monitor and control your hydroponic garden and growing conditions.
 
 [@JackJPowell]: https://github.com/JackJPowell
 [@LoSk-p]: https://github.com/LoSk-p
@@ -230,21 +228,21 @@ It is not just new {% term integrations %} that have been added; existing
 integrations are also being constantly improved. Here are some of the noteworthy
 changes to existing integrations:
 
-- Love that song? [@marcelveldt] added a button entity to [Music Assistant] that lets you add the currently playing item to your favorites with a single click. It works with queues, external sources, and even radio stations!
-- [ESPHome] now support sub devices! Thanks to [@bdraco], you can now represent multiple logical devices with a single ESP device in Home Assistant. This is particularly useful for RF bridges, modbus gateways, and other devices that can control multiple devices. Awesome addition!
-- [Paperless-ngx] now includes an update entity to keep your document management system up to date. Thanks, [@fvgarrel]!
-- Battery management control has been added to [HomeWizard] with [@DCSBL] implementing battery group mode, allowing you to modify the charging and discharging behavior of your HW batteries!
+- Love that song? [@marcelveldt] added a button {% term entity %} to [Music Assistant] that lets you add the currently playing item to your favorites with a single click. It works with queues, external sources, and even radio stations!
+- [ESPHome] now supports sub devices! Thanks to [@bdraco], you can now represent multiple logical devices with a single ESP device in Home Assistant. This is particularly useful for RF bridges, modbus gateways, and other devices that can control multiple devices. This feature requires the soon-to-be-released ESPHome 2025.7. Awesome addition!
+- [Paperless-ngx] now includes an update {% term entity %} to keep your document management system up to date. Thanks, [@fvgarrel]!
+- Battery management control has been added to [HomeWizard] with [@DCSBL] implementing battery group mode, allowing you to modify the charging and discharging behavior of your HomeWizard batteries!
 - [Reolink] cameras received a ton of love (again) from [@starkillerOG]! New features include IR brightness control, baby cry sensitivity adjustment, privacy mask switches, and full support for both PoE and WiFi floodlights with multiple command ID pushes. Impressive!
-- [@mib1185] added an update entity to the [Immich] integration Nice!
-- The [Homee] integration expanded significantly! [@Taraman17] added a siren platform for security alerts and support for the HeatIt Thermostat TF056. Nice!
+- [@mib1185] added an update {% term entity %} to the [Immich] {% term integration %}. Nice!
+- The [Homee] {% term integration %} expanded significantly! [@Taraman17] added a siren platform for security alerts and support for the HeatIt Thermostat TF056. Nice!
 - Energy monitoring got better in [Adax] with [@parholmdahl] adding energy sensors, so you can track your heating consumption!
 - [@ViViDboarder] made [Ollama] more flexible by adding a config option for controlling the think parameter. More control over your local AI!
-- Samsung refrigerator owners! [@mswilson] added ice bites control and water filter replacement/usage sensors to the [SmartThings] integration.
-- [Russound RIO] got a major upgrade from [@noahhusby], adding sub-device support plus new number and switch entities for enhanced zone control.
+- Samsung refrigerator owners! [@mswilson] added ice bites control and water filter replacement/usage sensors to the [SmartThings] {% term integration %}.
+- [Russound RIO] got a major upgrade from [@noahhusby], adding sub-device support plus new number and switch {% term entities %} for enhanced zone control.
 - [@chemelli74] expanded [Alexa Devices] with sensor platforms and additional binary sensors. Now you can get more data from your Echo devices!
 - [Matter] keeps growing! [@lboue] added dishwasher alarm support and battery storage capabilities. Thanks!
-- YAML fans will appreciate [@frenck] adding unique ID support to [Trend] integration configuration.
-- The [LaMetric] Time got an update entity now as well, thanks [@joostlek]!
+- YAML fans will appreciate [@frenck] adding unique ID support to [Trend] {% term integration %} configuration.
+- The [LaMetric] Time got an update {% term entity %} as well, thanks [@joostlek]!
 - [Google Generative AI] now defaults to the newer, faster Gemini 2.5 Flash model. A noteworthy performance boost by [@tronikos]!
 - [Enphase Envoy] users get detailed DC voltage and current readings from their solar panels thanks to [@Bidski]. This is perfect for monitoring individual panel health and optimizing production!
 - [@zerzhang] brought evaporative humidifier support to [SwitchBot], expanding your climate control options.
@@ -296,8 +294,9 @@ user experience.
 This release, we celebrate several {% term integrations %} that have improved
 their quality scale:
 
-- **1 integration reached platinum** 🏆
-  - [Bosch Smart Home], thanks to [@sanjay900]
+- **2 integrations reached platinum** 🏆
+  - [Bosch Alarm], thanks to [@sanjay900]
+  - [Home Connect], thanks to [@Diegorro98]
 
 - **1 integration reached gold** 🥇
   - [ista EcoTrend], thanks to [@tr4nt0r]
@@ -318,11 +317,13 @@ A big thank you to all the contributors involved! 👏
 
 [integration quality scale]: https://www.home-assistant.io/docs/quality_scale/
 [@chemelli74]: https://github.com/chemelli74
+[@Diegorro98]: https://github.com/Diegorro98
 [@farmio]: https://github.com/farmio
 [@hanwg]: https://github.com/hanwg
 [@sanjay900]: https://github.com/sanjay900
 [@tr4nt0r]: https://github.com/tr4nt0r
-[Bosch Smart Home]: /integrations/bosch_shc
+[Bosch Alarm]: /integrations/bosch_alarm
+[Home Connect]: /integrations/home_connect
 [ista EcoTrend]: /integrations/ista_ecotrend
 [KNX]: /integrations/knx
 [Samsung TV]: /integrations/samsungtv
@@ -350,11 +351,11 @@ of this release:
 
 There are many more improvements in this release; here are some of the other noteworthy changes:
 
-- [Shopping list] now has a complete intent function that allows you to check off/mark items on your shopping list completed, making it easier to interact with your shopping lists using voice commands. Thanks, [@Lesekater]!
-- Device and entity management got better! [@emontnemery] made it so Home Assistant now restores user customizations when you re-add deleted devices or entities. No more losing your carefully crafted names and settings!
-- The [Template] integration received a major boost from [@Petro31]! You can now use variables, icons, and pictures across all compatible template platforms, create trigger-based template alarm control panels, locks, vacuum entities, and fans. Plus, there's a new `label_description` template method that allows you to dynamically fetch the description you've added to a label from your templates. This is a noteworthy enhancement for better template organization.
-- Camera snapshots just got better! [@edenhaus] added support for taking snapshots via [go2rtc], and this happens automagically for better out-of-the-box experience.
-- [Object selectors] now support fields and multiple selections, thanks to [@piitaya]. These additions are particularly interesting for integration and blueprint developers, as they provide much more flexibility in your UI representations.
+- [Shopping list] now has a complete intent function that allows you to check off or mark items on your shopping list as completed, making it easier to interact with your shopping lists using voice commands. Thanks, [@Lesekater]!
+- Device and {% term entity %} management got better! [@emontnemery] made it so Home Assistant now restores user customizations when you re-add deleted devices or {% term entities %}. No more losing your carefully crafted names and settings!
+- The [Template] {% term integration %} received a major boost from [@Petro31]! You can now use variables, icons, and pictures across all compatible template platforms, create trigger-based template alarm control panels, locks, vacuum {% term entities %}, and fans. Plus, there's a new `label_description` template method that allows you to dynamically fetch the description you've added to a label from your templates. This is a noteworthy enhancement for better template organization.
+- Camera snapshots just got better! [@edenhaus] added support for taking snapshots via [go2rtc]. There is nothing for you to do on this one, it works out of the box, but it is nice to know snapshots are now faster and take fewer resources from your system.
+- [Object selectors] now support fields and multiple selections, thanks to [@piitaya]. These additions are particularly interesting for {% term integration %} and blueprint developers, as they provide much more flexibility in your UI representations.
 - Wind direction sensors got a visual upgrade with [@edenhaus] adding range icons for the `wind_direction` sensor device class. Different icons are now shown depending on the state of wind direction sensors, which is indeed a nice visual upgrade!
 
 [@Lesekater]: https://github.com/Lesekater
@@ -384,29 +385,29 @@ This makes building a more complex and advanced smart home more comfortable and 
 Home Assistant has a great community of users who are all more than willing
 to help each other out. So, join us!
 
-Our very active [Discord chat server](/join-chat) is an excellent place to be
-at, and don't forget to join our amazing [forums](https://community.home-assistant.io/).
+Our very active [Discord chat server](/join-chat) is an excellent place to be,
+and don't forget to join our amazing [forums](https://community.home-assistant.io/).
 
-Found a bug or issue? Please report it in our [issue tracker](https://github.com/home-assistant/core/issues),
-to get it fixed! Or, check [our help page](/help) for guidance for more
+Found a bug or issue? Please report it in our [issue tracker](https://github.com/home-assistant/core/issues)
+to get it fixed! Or check [our help page](/help) for guidance on more
 places you can go.
 
-Are you more into email? [Sign-up for our Building the Open Home Newsletter](/newsletter)
-to get the latest news about features, things happening in our community and
-other news about building an Open Home; straight into your inbox.
+Are you more into email? [Sign up for our Building the Open Home Newsletter](/newsletter)
+to get the latest news about features, things happening in our community, and
+other news about building an Open Home straight into your inbox.
 
 ## Backward-incompatible changes
 
-We do our best to avoid making changes to existing functionality that might
-unexpectedly impact your Home Assistant installation. Unfortunately, sometimes,
-it is inevitable.
+We do our best to avoid making changes to existing functionality that might unexpectedly impact your Home Assistant installation. Unfortunately, sometimes, it is inevitable.
 
 We always make sure to document these changes to make the transition as easy as
 possible for you. This release has the following backward-incompatible changes:
 
 {% details "Google Calendar" %}
 
-The previously deprecated Google Calendar `add_event` service has been removed and replaced by the `create_event` entity-based service.
+The previously deprecated Google Calendar `add_event` {% term action %} has been removed and replaced by the `create_event` entity-based {% term action %}.
+
+If you use the `add_event` {% term action %} in your automations or scripts, you will need to update them to use the new `create_event` {% term action %} instead.
 
 ([@epenet] - [#146432]) ([google docs])
 
@@ -418,7 +419,7 @@ The previously deprecated Google Calendar `add_event` service has been removed a
 
 {% details "Meater" %}
 
-The states of the Meater probe cook state have been changed, in order to
+The states of the Meater probe cook state have been changed to
 support translations and make them more consistent with other integrations.
 
 The following states have been changed:
@@ -449,19 +450,19 @@ The internal representation of states for hob plates has changed. This is a brea
 
 No user action is needed if these hob state sensors are used for visual display only.
 
-Please review and update applicable automations and templates according to this table:
+Please review and update applicable automations and templates according to the following state changes:
 
-|  Old state  |  New state  |
-|-------------|--------------|
-|  "0"   |  "plate_step_0"  |
-|  "1"   |  "plate_step_1"  |
-|  ...  |  ...  |
-|  "18"   |  "plate_step_18"  |
-|  "110"  |  "plate_step_warm"  |
-|  "117"  |  "plate_step_boost"  |
-|  "118"  |  "plate_step_boost"  |
-|  "217"  |  "plate_step_boost"  |
-|  "220"  |  "plate_step_warm"  |
+- `0` -> `plate_step_0`
+- `1` -> `plate_step_1`
+- ...
+- `18` -> `plate_step_18`
+- `110` -> `plate_step_warm`
+- `117` -> `plate_step_boost`
+- `118` -> `plate_step_boost`
+- `217` -> `plate_step_boost`
+- `220` -> `plate_step_warm`
+
+If you use these states in your automations or scripts, you will need to update them to use the new state values.
 
 ([@astrandb] - [#144992]) ([miele docs])
 
@@ -473,7 +474,7 @@ Please review and update applicable automations and templates according to this 
 
 {% details "Plex Media Server" %}
 
-The previously deprecated `plex.scan_for_clients` service has been removed in favor of the "Scan Clients" `button` entity. If you use this service in your automations or scripts, you will need to update them to use the new entity instead.
+The previously deprecated `plex.scan_for_clients` {% term action %} has been removed in favor of the "Scan Clients" `button` {% term entity %}. If you use this {% term action %} in your automations or scripts, you will need to update them to use the new {% term entity %} instead.
 
 ([@epenet] - [#146608]) ([plex docs])
 
