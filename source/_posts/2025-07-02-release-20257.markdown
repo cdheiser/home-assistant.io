@@ -100,7 +100,12 @@ Until now, Assist was mostly transactional: say something, get a response, done 
 
 This lets you build custom conversations from the comfort of our automation engine. Ask a question, handle the answer, and keep the interaction going.
 
-This action even allows you to define expected answers so that our extremely fast speech engine Speech-to-Phrase can train on them. Yes! Fully local, custom conversations!
+**TODO**: Screenshot of the ask question block in an automation
+
+This action even allows you to define expected answers so that our extremely fast speech engine Speech-to-Phrase can train on them.
+Yes! Fully local, custom conversations! Here is a video of what this allows you to build.
+
+**TODO:** Video of Ask Question in action
 
 {% details "Example YAML automation actions" %}
 
@@ -153,6 +158,8 @@ Originally introduced a few years ago, the [Area card](/dashboards/area/) offere
 
 The card has now been completely redesigned with a look and feel similar to the [Tile card](/dashboards/tile/). It integrates seamlessly into Sections thanks to its flexible layouts. You can choose between a compact version that shows only an icon and the area name, or a more detailed view featuring elements like your camera feed and buttons to toggle your lights or fans.
 
+<img class="no-shadow" alt="TODO: Replace screenshot." src="/images/blog/2025-07/temp-area-card.png" />
+
 The control section itself has also been revamped, giving you the ability to choose which controls to include and to rearrange them as you want. As a result of these changes, you'll need to reconfigure the controls for your existing area cards.
 
 Additionally, the card now supports controlling [cover](/integrations/cover/) {% term entities %}.
@@ -184,8 +191,11 @@ This release solves that with the introduction of integration sub entries. This 
 The following {% term integrations %} now support sub entries as of this release: [Anthropic], [Google Generative AI], [MQTT], [Ollama], [OpenAI Conversation], and [Telegram Bot].
 
 [Anthropic]: /integrations/anthropic
+[Google Generative AI]: /integrations/google_generative_ai_conversation
 [MQTT]: /integrations/mqtt
+[Ollama]: /integrations/ollama
 [OpenAI Conversation]: /integrations/openai_conversation
+[Telegram Bot]: /integrations/telegram_bot
 
 ## Integration page has seen an overhaul
 
