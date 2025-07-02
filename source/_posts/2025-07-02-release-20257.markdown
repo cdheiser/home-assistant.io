@@ -19,7 +19,7 @@ Home Assistant 2025.7! 🎉
 
 Whew! It's hot out there! 🌡️ While most of Europe is dealing with a heat wave right now, we're here to cool things down with an exciting July release that's packed with features I'm genuinely excited about.
 
-Before we dive in, if you missed it, we recently published [Voice Chapter 10](/blog/2025/06/25/voice-chapter-10/) where we explored moving beyond reactive voice assistants that only respond when you talk to them. Instead, we envisioned a future where your voice assistant can be proactive and initiate conversations based on context. Speaking of proactive, this release delivers on that vision in a big way!
+Before we dive in, if you missed it, we recently published [Voice Chapter 10](/blog/2025/06/25/voice-chapter-10/) where we explored moving beyond reactive voice assistants that only respond when you talk to them. Instead, we envisioned a future where your voice assistant can be conversational and initiate conversations. Speaking of that, this release delivers on that vision in a big way!
 
 I'm absolutely stoked about the new Ask Question action for Assist! 🗣️ This is something that sets Home Assistant apart from every other voice assistant out there. Finally, your voice assistant can take the initiative and ask *you* what your smart home should do. No more waiting for wake words, your assistant can start the conversation when it makes sense. It's the kind of feature that gets me really excited thinking about all the possibilities.
 
