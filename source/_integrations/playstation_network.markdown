@@ -7,15 +7,19 @@ ha_release: 2025.7
 ha_iot_class: Cloud Polling
 ha_domain: playstation_network
 ha_platforms:
+  - diagnostics
   - media_player
+  - sensor
 ha_codeowners:
   - '@jackjpowell'
+  - '@tr4nt0r'
 ha_config_flow: true
 ha_quality_scale: bronze
-ha_integration_type: integration
+ha_integration_type: service
 related:
   - url: https://playstation.com/
     title: Playstation
+ha_dhcp: true
 ---
 
 The **PlayStation Network** {% term integration %} enables you to seamlessly integrate information from your currently playing game in Home Assistant.
