@@ -132,7 +132,8 @@ While your Z-Wave mesh is permanently stored on your dongle, the additional meta
 ### Adding a new device to the Z-Wave network
 
 1. In Home Assistant, go to {% my integrations title="**Settings** > **Devices & services**" %}.
-2. Select the Z-Wave integration. Then select **Configure**.
+2. Select the Z-Wave integration.
+   - Then, on the entry of the hub, select {% icon "ic:baseline-arrow-forward-ios" %} to open the device info page.
 3. Select **Add device**.
    - The Z-Wave controller is now in inclusion mode.
 4. Check, if your device supports SmartStart:
@@ -161,8 +162,9 @@ While your Z-Wave mesh is permanently stored on your dongle, the additional meta
 Do this before using the device with another controller, or when you don't use the device anymore. It removes the device from the Z-Wave network stored on the controller. It also removes the device and all its entities from Home Assistant. You can not join a device to a new network if it is still paired with a controller.
 
 1. In Home Assistant, go to {% my integrations title="**Settings** > **Devices & services**" %}.
-2. Select the **Z-Wave** integration. Then, select **Configure**.
-3. Select **Remove device**, then **Start exclusion**.
+2. Select the **Z-Wave** integration.
+   - Then, select the cogwheel {% icon "mdi:cog-outline" %}.
+3. Select **Remove a device**, then **Start exclusion**.
    - The Z-Wave controller is now in exclusion mode.
 4. Put the device you want to remove in exclusion mode. Refer to its manual how this is done.
 5. The UI should confirm that the device was removed and the device and entities will be removed from Home Assistant.
@@ -181,7 +183,8 @@ Do this if you have an existing Z-Wave network and want to use a new controller.
 ### To migrate a Z-Wave network to a new controller
 
 1. In Home Assistant, go to {% my integrations title="**Settings** > **Devices & services**" %}.
-2. Select the **Z-Wave** integration. Then, select **Configure**.
+2. Select the **Z-Wave** integration.
+   - Then, select the cogwheel {% icon "mdi:cog-outline" %}.
 3. Under **Backup and restore**, select **Migrate controller**.
 4. Select **Migrate to a new controller**.
    - To confirm device reset, select **Submit**.
@@ -223,7 +226,8 @@ It's recommended to create a backup before making any major changes to your Z-Wa
 ### To backup your Z-Wave network
 
 1. In Home Assistant, go to {% my integrations title="**Settings** > **Devices & services**" %}.
-2. Select the **Z-Wave** integration. Then, select **Configure**.
+2. Select the **Z-Wave** integration.
+   - Then, select the cogwheel {% icon "mdi:cog-outline" %}.
 3. Under **Backup and restore**, select **Download backup**.
    - **Result**: The backup file is downloaded to the device from which you initiated the download.
 4. Done! Store the backup file somewhere safe in case you need it later to restore your Z-Wave network.
@@ -232,7 +236,7 @@ It's recommended to create a backup before making any major changes to your Z-Wa
 
 Controllers and devices with the Firmware Update Metadata Command Class allow you to update the firmware by uploading a firmware file. In those cases, you can start the firmware update from the device page in Home Assistant. Refer to the documentation of the device manufacturer to find the corresponding firmware file. An example is the [firmware page by Zooz](https://www.support.getzooz.com/kb/article/1158-zooz-ota-firmware-files/).
 
-{% caution %}
+{% note %}
 **Risk of damage to the device due to firmware update**
 
 A firmware update can damage your Z-Wave device.
@@ -241,7 +245,7 @@ A firmware update can damage your Z-Wave device.
 - Once you have started the update process, you must not interrupt the update process but let it complete.
 
 The Home Assistant and Z-Wave JS teams do not take any responsibility for any damages to your device as a result of the firmware update and will not be able to help you if you render your device useless due to firmware update.
-{% endcaution %}
+{% endnote %}
 
 ### Prerequisites
 
@@ -251,10 +255,11 @@ The Home Assistant and Z-Wave JS teams do not take any responsibility for any da
 ### To update firmware of a Z-Wave device
 
 1. In Home Assistant, go to {% my integrations title="**Settings** > **Devices & services**" %}.
-2. Select the **Z-Wave** integration. Then, select **Configure** and select the controller.
+2. Select the **Z-Wave** integration.
+   - Then, on the entry of the hub, select {% icon "ic:baseline-arrow-forward-ios" %} to open the device info page.
 3. Under **Device info**, select **Update**.
 4. Select the firmware file that you previously downloaded to your computer.
-   - **Caution: Risk of damage to the device**
+   - **Notice: Risk of damage to the device**
      - Make sure you select the correct firmware file.
        - An incorrect firmware file can damage your device.
      - Once you start the update process, you must wait for the update to complete.
@@ -267,12 +272,15 @@ It is recommended to back up your Z-Wave network before resetting the device.
 
 - The controller will forget all devices it is paired with.
 - All Z-Wave devices for this network will be removed from Home Assistant.
-- If there are any devices still paired with the controller when it is reset, they will have to go through the exclusion process before they can be re-paired.
+- If there are any devices still paired with the controller when it is reset, they will have to be removed from their old network before they can be re-paired.
 - The device firmware will remain on the device.
 
 ### Prerequisites
 
 - Administrator rights on Home Assistant
+- [Backup your Z-Wave network](#backing-up-your-z-wave-network)
+- [Remove all devices that are paired with your controller from the network](#removing-a-device-from-the-z-wave-network).
+  - Removing can be done by any controller, not just the one that originally managed the network. In theory, this could also be done later.
 
 ### To reset a Z-Wave controller
 
