@@ -212,13 +212,13 @@ and improvements to existing ones! You’re all awesome 🥰
 We welcome the following new integrations in this release:
 
 - **[Altruist]**, added by [@LoSk-p]  
-  Connect to your Altruist account to monitor your charitable giving and impact.
+  Monitor air quality and environmental conditions with the Altruist sensor, providing local data for temperature, humidity, PM2.5/PM10, CO2, noise levels, and more.
 - **[PlayStation Network]**, added by [@JackJPowell]  
   Integrate with the PlayStation Network to track your currently playing games and display game information on your dashboard.
 - **[Tilt Pi]**, added by [@michaelheyman]  
   Monitor your Tilt Pi hydrometer for brewing temperature and specific gravity measurements during your brewing process.
 - **[VegeHub]**, added by [@Thulrus]  
-  Connect to your VegeHub system to monitor and control your hydroponic garden and growing conditions.
+  Monitor and control your garden with the Vegetronix VegeHub, gathering sensor data and controlling irrigation relays for automated plant care.
 
 [@JackJPowell]: https://github.com/JackJPowell
 [@LoSk-p]: https://github.com/LoSk-p
