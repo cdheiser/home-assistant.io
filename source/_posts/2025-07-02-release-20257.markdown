@@ -140,7 +140,7 @@ This release introduces an all-new overview that leverages the redesigned Area c
 
 Ever wondered why you had to enter your API keys for every AI agent you created, even though they all used the same key? Or why you had to authenticate for every calendar you added, regardless of the fact that they all shared the same account? Or why you couldn’t add MQTT devices from the UI?
 
-This release solves that with the introduction of integration sub-entries. This allows you to add a sub-entry to an existing {% term integration %} entry. In practice, this means that your {% term integration %} entry has your credentials, and all the sub-entries use these credentials. In the sub-entry, you can then configure what should be done with these credentials, such as fetching a specific calendar, adding three AI agents with different prompts using the same OpenAI account, or in the case of MQTT, configuring devices that are connected to your broker.
+This release solves that with the introduction of integration sub-entries. This allows you to add a sub-entry to an existing {% term integration %} entry. In practice, this means that your {% term integration %} entry has your credentials, and all the sub-entries use these credentials. In the sub-entry, you can then configure what should be done with these credentials, such as fetching a specific calendar, adding three AI agents with different prompts using the same OpenAI account, or in the case of MQTT, configuring devices that are connected to your MQTT broker.
 
 <img class="no-shadow" alt="Screenshot showing how you can now add MQTT devices directly through the user interface." src="/images/blog/2025-07/add-mqtt-device-using-sub-entry.png" />
 
