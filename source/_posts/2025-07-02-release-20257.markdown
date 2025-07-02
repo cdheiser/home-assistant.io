@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "2025.7 Beta: That's the question"
-description: "Beta release notes for Home Assistant 2025.7"
-date: 2025-06-25 00:00:00
+title: "2025.7: That's the question"
+description: "Assist can now ask you questions! Enjoy the completely redesigned Area card with flexible layouts, the birth of integration sub-entries, full-screen code editors for better YAML and template editing, an overhauled integration page, and the improved Areas dashboard overview. Of course, tons of quality-of-life improvements!"
+date: 2025-07-02 00:00:00
 date_formatted: "July 2, 2025"
 author: Franck Nijhof
 author_twitter: frenck
@@ -15,61 +15,19 @@ og_image: /images/blog/2025-07/social.png
 
 <lite-youtube videoid="3MlaIzfRxCg" videotitle="Home Assistant 2025.7 Release Party"></lite-youtube>
 
-{% note %}
-
-**Welcome to the beta release notes for Home Assistant 2025.7** 🎉
-
-<br />
-
-Please note that these release notes are a work in progress. 👷‍♀️ We will be
-completing them over the next couple of days. Not all features might be final
-yet, and some features _**may not** make it into the final release_.
-
-<br />
-
-**Want to help test the beta?** Awesome! ❤️ We have documented how you
-[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
-
-<br />
-
-While running the beta, we highly recommend joining our _#beta_ channel on
-the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
-testers are in this channel during the beta period to share experiences, ideas,
-and iterate over new features, fine-tuning them before the final release.
-It's a really fun place to hang out. 😎
-
-<br />
-
-**Reporting issues**: As this is a beta test, you might encounter unexpected
-behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
-You can find our issue trackers and the reported issues during beta here:
-
-<br />
-
-- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/133)
-- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/747)
-- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/140)
-
-🙏 When reporting issues, **make sure to mention the exact beta version you are
-running** in the issue description. This will help us identify and track the
-issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
-
-<br />
-
-Issues introduced in the beta are processed with priority. 🔝
-
-{% endnote %}
-
-{% tip %}
-
-Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=3MlaIzfRxCg) on
-July 2, 2025, at 20:00 GMT / 12:00 PT / 21:00 CEST!
-
-{% endtip %}
-
 Home Assistant 2025.7! 🎉
 
-Enjoy the (beta) release!
+Whew! It's hot out there! 🌡️ While most of Europe is dealing with a heat wave right now, we're here to cool things down with an exciting July release that's packed with features I'm genuinely excited about.
+
+Before we dive in, if you missed it, we recently published [Voice Chapter 10](/blog/2025/06/25/voice-chapter-10/) where we explored moving beyond reactive voice assistants that only respond when you talk to them. Instead, we envisioned a future where your voice assistant can be proactive and initiate conversations based on context. Speaking of proactive, this release delivers on that vision in a big way!
+
+I'm absolutely stoked about the new Ask Question action for Assist! 🗣️ This is something that sets Home Assistant apart from every other voice assistant out there. Finally, your voice assistant can take the initiative and ask *you* what your smart home should do. No more waiting for wake words, your assistant can start the conversation when it makes sense. It's the kind of feature that gets me really excited thinking about all the possibilities.
+
+The redesigned Area card is another winner! 🏠 I'll probably be replacing a few tile cards I've been using to navigate to my area dashboards with this new, more flexible version. It integrates beautifully with the Sections dashboard and gives you so many more options for controlling your spaces.
+
+And that's just the beginning! We've got integration sub-entries making integrations even more extensible, full-screen code editors for those lengthy YAML and template edits, and tons of quality-of-life improvements throughout.
+
+Stay cool, and enjoy the release!
 
 ../Frenck
 
@@ -88,6 +46,7 @@ Enjoy the (beta) release!
   - [Farewell to the following](#farewell-to-the-following)
 - [Other noteworthy changes](#other-noteworthy-changes)
 - [Full-screen code editors](#full-screen-code-editors)
+- [Improved dashboard creation experience](#improved-dashboard-creation-experience)
 - [Need help? Join the community!](#need-help-join-the-community)
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
@@ -251,7 +210,7 @@ changes to existing integrations:
 - YAML fans will appreciate [@frenck] adding unique ID support to [Trend] {% term integration %} configuration.
 - The [LaMetric] Time got an update {% term entity %} as well, thanks [@joostlek]!
 - [Google Generative AI] now defaults to the newer, faster Gemini 2.5 Flash model. A noteworthy performance boost by [@tronikos]!
-- [Google Generative AI] now supports text-to-speech (TTS) with 30 voices and 24 languages. It supports fine-grained control over style and sound, e.g. "Say cheerfully: Have a wonderful day!". Thanks [@lanthaler]!
+- [Google Generative AI] now supports text-to-speech (TTS) with 30 voices and 24 languages. It supports fine-grained control over style and sound, for example, "Say cheerfully: Have a wonderful day!". Thanks [@lanthaler]!
 - [Enphase Envoy] users get detailed DC voltage and current readings from their solar panels thanks to [@Bidski]. This is perfect for monitoring individual panel health and optimizing production!
 - [@zerzhang] brought evaporative humidifier support to [SwitchBot], expanding your climate control options.
 
@@ -388,6 +347,15 @@ Whether you're editing automations, scripts, templates, or any other YAML config
 Simply click the maximize button in the top-right corner of any code editor to enter full screen mode. Press the button again to return to the normal view.
 
 This makes building a more complex and advanced smart home more comfortable and productive, especially on smaller mobile or tablet screens where every pixel of editing space counts!
+
+## Improved dashboard creation experience
+
+The dialog for adding a new dashboard has been redesigned with a cleaner interface that matches recent redesigns we've seen to other dialogs. This improvement was designed by [@marcinbauer85] and implemented by [@quinnter]. Great teamwork!
+
+<img class="no-shadow" alt="Screenshot showing the new and improved add dashboard dialog" src="/images/blog/2025-07/improved-add-dashboard-dialog.png" />
+
+[@marcinbauer85]: https://github.com/marcinbauer85
+[@quinnter]: https://github.com/quinnter
 
 ## Need help? Join the community!
 
