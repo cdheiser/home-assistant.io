@@ -1016,6 +1016,26 @@ Switching does not require renaming your devices.
 7. Uninstall the official **Z-Wave JS** add-on.
    - You are asked if you want to delete the related data. Keep it if you think you might switch back to the **Z-Wave JS** add-on later.
 
+### How to migrate from one adapter to a new adapter using Z-Wave JS UI?
+
+If you are currently using [Z-Wave JS UI](https://zwave-js.github.io/zwave-js-ui/#/) instead of the official **Z-Wave JS** add-on and want to start using a new adapter, you can migrate your network inside **Z-Wave JS UI**.
+
+1. Before starting migration, disable the **Z-Wave** integration.
+   - Go to {% my integrations title="**Settings** > **Devices & services**" %} and select the Z-Wave integration and select the three dots {% icon "mdi:dots-vertical" %} menu and select **Disable**.
+2. Do the migration in Z-Wave JS UI.
+   - If you are using the **Z-Wave JS UI** add-on, go to {% my supervisor_addon addon="core_zwave_jsa0d7b954_zwavejs2mqtt" title="**Settings** > **Add-ons** > **Z-Wave JS UI**" %}
+   - Open the Z-Wave JS UI control panel and in the bottom-right corner, select the purple **Advanced actions** button.
+   - Under **NVM Management**, select **Backup**.
+   - Unplug the current adapter and connect the new adapter.
+   - Go to **Settings** > **UI** > **Z-Wave**.
+     - Under **Serial port**, update the device path to show your new device (for example, `/dev/serial/by-id/usb-XXXX`).
+     - Under **Default radio configuration** enter the region you're in and save.
+   - In the control panel, select the purple {% icon "mdi:magic" %} advanced actions button and under **NVM Management**, select **Restore**.
+3. Rebuild all routes.
+   - Select the purple {% icon "mdi:magic" %} advanced actions button and under **Rebuild routes**, select **Begin**.
+
+4. Enable the Z-Wave integration again.
+
 ### What's the benefit of using Z-Wave JS UI add-on?
 
 You might wonder what the benefit is of using the [Z-Wave JS UI](https://zwave-js.github.io/zwave-js-ui/#/README) add-on instead of the official **Z-Wave JS** add-on.
