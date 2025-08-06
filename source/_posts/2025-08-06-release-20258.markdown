@@ -530,6 +530,19 @@ Note that all values in this range are possible, but roughly the old values can 
 
 {% enddetails %}
 
+{% details "Roborock" %}
+
+The battery property on vacuum entities is being removed in Home Assistant. Therefore, this property is now removed from this integration and is replaced by a battery level sensor.
+
+Please review your automations, scripts or cards using the battery property and update the code to use the battery sensor instead.
+
+([@luca-angemi] - [#150126]) ([documentation](/integrations/roborock))
+
+[@luca-angemi]: https://github.com/luca-angemi
+[#150126]: https://github.com/home-assistant/core/pull/150126
+
+{% enddetails %}
+
 {% details "Roku" %}
 
 Roku media players entities now report to be off where they previously reported to be in standby state.
