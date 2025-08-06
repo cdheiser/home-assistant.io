@@ -137,7 +137,7 @@ Setting a default also does more: When a default is configured, and only then, a
 
 This button is not visible by default and will only appear if you enable it in the "AI suggestions" settings. For this release, the button has been added to the save dialog for automations and scripts. It helps users come up with a name, description, category, and label, while taking into account your current labels and other automation/script names. Keep in mind that generating this text sends the full contents of the automation or script, along with the names of your other automations/scripts and labels, to the LLM. So, this may be a task you will want to relegate to your shiny new local LLM.
 
-<img class="no-shadow" alt="Screenshot showing the new AI suggestions button in the save automation dialog and the suggestions it did for this automation" src="/images/blog/2025-08/save-automation.png" />
+<img class="no-shadow" alt="Screenshot showing the new AI suggestions button in the save automation dialog and the suggestions it made for this automation" src="/images/blog/2025-08/save-automation.png" />
 
 ## Area dashboard improvements
 
@@ -348,7 +348,7 @@ at once, but sometimes you want to control individual members of a group.
 
 So, for this release, [@piitaya] and [@MindFreeze] improved the entity information dialog to show the individual members of a light and cover group, allowing you to control them directly from that dialog. Super useful!
 
-<img class="no-shadow" alt="Screenshot that shows the control of the individual group members when viewing a group helper entity in Home Assistant" src="/images/blog/2025-08/group-control-more-info.png" />
+<img class="no-shadow" alt="Screenshot showing the control of the individual group members when viewing a group helper entity in Home Assistant" src="/images/blog/2025-08/group-control-more-info.png" />
 
 [@MindFreeze]: https://github.com/MindFreeze
 [@piitaya]: https://github.com/piitaya
@@ -358,8 +358,8 @@ So, for this release, [@piitaya] and [@MindFreeze] improved the entity informati
 The [time trigger](/docs/automation/trigger/#time-trigger) is already very
 useful, but [@hmmbob] had [a feature request] that could improve it even more.
 
-He suggested to add the ability to specify weekdays in the time trigger,
-allowing users to create automations that only trigger on a specific time
+He suggested adding the ability to specify weekdays in the time trigger,
+allowing users to create automations that only trigger at a specific time
 on specific days of the week.
 
 <img class="no-shadow" alt="Screenshot showing the new weekday option when using the time trigger" src="/images/blog/2025-08/time-trigger-weekday.png" />
@@ -373,13 +373,13 @@ that need to run on specific days, such as weekdays or weekends.
 
 ### Energy flow on your energy dashboard
 
-The Home Assistant energy dashboard is great, but as of this release even a little better!
+The Home Assistant energy dashboard is great, but as of this release it's even a little better!
   
 Inspired by the [Sankey Chart custom card], [@MindFreeze] added a new
-energy flow visualization for the energy dashboard, which exactly shows you
-where your energy is coming from and where it is going to.
+energy flow visualization for the energy dashboard, which shows exactly where
+your energy is coming from and where it is going to.
 
-<img class="no-shadow" alt="Screenshot the new energy flow on the Home Assistant energy dashboard" src="/images/blog/2025-08/energy-dashboard-energy-flow.png" />
+<img class="no-shadow" alt="Screenshot showing the new energy flow on the Home Assistant energy dashboard" src="/images/blog/2025-08/energy-dashboard-energy-flow.png" />
 
 Really cool addition to the energy dashboard [@MindFreeze]!
 
@@ -527,7 +527,7 @@ Please review your automations, scripts or cards using the battery property and 
 
 {% details "Reolink" %}
 
-The Reolink Wi-Fi signal strength sensor has changed from a indicator value between 0 and 4 (amount of bars) to a value in dBm between -85 dBm and -30 dBm.
+The Reolink Wi-Fi signal strength sensor has changed from an indicator value between 0 and 4 (amount of bars) to a value in dBm between -85 dBm and -30 dBm.
 
 Note that all values in this range are possible, but roughly the old values can be converted like this:
 
