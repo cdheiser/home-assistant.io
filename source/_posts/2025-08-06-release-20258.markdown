@@ -260,17 +260,17 @@ user experience.
 This release, we celebrate several {% term integrations %} that have improved
 their quality scale:
 
-- **4 integrations reached platinum** 🏆
+- **5 integrations reached platinum** 🏆
   - [AirGradient], thanks to [@joostlek]
   - [Discovergy], thanks to [@jpbede]
   - [EHEIM Digital], thanks to [@autinerd]
   - [Pegel Online], thanks to [@mib1185]
+  - [Tankerkönig], thanks to [@mib1185]
   
-- **4 integrations reached silver** 🥈
+- **3 integrations reached silver** 🥈
   - [Amazon Alexa Devices], thanks to [@chemelli74]
   - [Homee], thanks to [@Taraman17]
   - [Mealie], thanks to [@andrew-codechimp]
-  - [Tankerkönig], thanks to [@mib1185]
 
 - **2 integrations reached bronze** 🥉
   - [Onkyo], thanks to [@arturpragacz]
@@ -375,7 +375,7 @@ that need to run on specific days, such as weekdays or weekends.
 
 The Home Assistant energy dashboard is great, but as of this release it's even a little better!
   
-Inspired by the [Sankey Chart custom card], [@MindFreeze] added a new
+Based on the [Sankey Chart custom card], [@MindFreeze] added a new
 energy flow visualization for the energy dashboard, which shows exactly where
 your energy is coming from and where it is going to.
 
