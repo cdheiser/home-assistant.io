@@ -17,7 +17,7 @@ og_image: /images/blog/2025-08/social.png
 
 Home Assistant 2025.8! 🎉
 
-In most parts of the world, summer mode is in full effect! ☀️ Many at the [Open Home Foundation] and many of our contributors are enjoying a well-deserved break from work and open source. I hope that you are maybe enjoying a well-deserved break as well! 🏖️
+In most parts of the world, summer mode is in full effect! ☀️ Many at the [Open Home Foundation](https://www.openhomefoundation.org/) and many of our contributors are enjoying a well-deserved break from work and open source. I hope that you are maybe enjoying a well-deserved break as well! 🏖️
 
 Summer breaks or not, we are currently very busy with our next **product launch**! In case you have missed it, this upcoming Wednesday, August 13 (12:00 PM PT, 3:00 PM ET, 21:00 CEST), we will have [an extra live stream to announce the next big thing][zwa] in the Home Assistant Connect series! Be sure to [head over to YouTube to hit the reminder button][zwa] so you don't miss it! **Z-Wave is not dead!** 🌊
 
