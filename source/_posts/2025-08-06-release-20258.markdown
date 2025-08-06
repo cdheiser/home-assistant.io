@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "2025.8 Beta: A Betta title"
-description: "Beta release notes for Home Assistant Core 2025.8"
-date: 2025-07-29 00:00:00
+title: "2025.8 Beta: The summer of AI ☀️"
+description: "AI Tasks have arrived! Enjoy streaming Text-to-Speech for faster voice responses, control individual group members directly from dialogs, weekday support in time triggers, improved area dashboards camera preview options, and much more!"
+date: 2025-08-06 00:00:00
 date_formatted: "August 6, 2025"
 author: Franck Nijhof
 author_twitter: frenck
@@ -15,63 +15,25 @@ og_image: /images/blog/2025-08/social.png
 
 <lite-youtube videoid="gNtNOtsTH1w" videotitle="Home Assistant 2025.8 Release Party"></lite-youtube>
 
-{% note %}
-
-**Welcome to the beta release notes for Home Assistant 2025.8** 🎉
-
-<br />
-
-Please note that these release notes are a work in progress. 👷‍♀️ We will be
-completing them over the next couple of days. Not all features might be final
-yet, and some features _**may not** make it into the final release_.
-
-<br />
-
-**Want to help test the beta?** Awesome! ❤️ We have documented how you
-[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
-
-<br />
-
-While running the beta, we highly recommend joining our _#beta_ channel on
-the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
-testers are in this channel during the beta period to share experiences, ideas,
-and iterate over new features, fine-tuning them before the final release.
-It's a really fun place to hang out. 😎
-
-<br />
-
-**Reporting issues**: As this is a beta test, you might encounter unexpected
-behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
-You can find our issue trackers and the reported issues during beta here:
-
-<br />
-
-- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/134)
-- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/751)
-- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/141)
-
-🙏 When reporting issues, **make sure to mention the exact beta version you are
-running** in the issue description. This will help us identify and track the
-issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
-
-<br />
-
-Issues introduced in the beta are processed with priority. 🔝
-
-{% endnote %}
-
-{% tip %}
-
-Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=gNtNOtsTH1w) on
-August 6, 2025, at 20:00 GMT / 12:00 PT / 21:00 CEST!
-
-{% endtip %}
-
 Home Assistant 2025.8! 🎉
 
-Enjoy the (beta) release!
+In most parts of the world, summer mode is in full effect! ☀️ Many at the [Open Home Foundation] and many of our contributors are enjoying a well-deserved break from work and open source. I hope that you are maybe enjoying a well-deserved break as well! 🏖️
+
+Summer breaks or not, we are currently very busy with our next **product launch**! In case you have missed it, this upcoming Wednesday, August 13 (12:00 PM PT, 3:00 PM ET, 21:00 CEST), we will have [an extra live stream to announce the next big thing][zwa] in the Home Assistant Connect series! Be sure to [head over to YouTube to hit the reminder button][zwa] so you don't miss it! **Z-Wave is not dead!** 🌊
+
+Alright, on to the release! We keep moving during summer and are excited to bring you the August release of Home Assistant!
+
+Let's start with my personal favorite of this release: The improved experience when viewing a group, for example, a group helper with lights. 💡 When viewing such a group entity, you can now control the individual members of that group directly in that dialog. Super useful! I'm pretty sure that will be used a lot in our house.
+
+But as the release title suggests, this release brings in an important foundation for new AI opportunities in Home Assistant: **AI Tasks**.
+Think of it as a way to delegate tasks to AI and get back the result of that task in a structured way so it can be used. Sounds vague?
+Dive into the release notes below!
+
+Enjoy the release!
 
 ../Frenck
+
+[zwa]: https://www.youtube.com/watch?v=Z-pUkM6XIuA
 
 <!--more-->
 
@@ -464,7 +426,18 @@ If you have automations or scripts that rely on the Cambridge Audio media player
 
 {% details "Ecovacs" %}
 
-The `battery_level` state attribute of the Ecovacs vacuum entity was removed, as Home Assistant has decided to remove support for battery state attributes on vacuum entities in general. If you're using the `battery_level` state attribute in automations or scripts, please update them to use the separate Battery sensor entity instead.
+{% details "Ecovacs" %}
+
+The battery property on vacuum entities is being removed in Home Assistant. Therefore, this property is now removed from this integration and is replaced by a battery level sensor.
+
+Please review your automations, scripts or cards using the battery property and update the code to use the battery sensor instead.
+
+([@edenhaus] - [#149581]) ([documentation](/integrations/ecovacs))
+
+[@edenhaus]: https://github.com/edenhaus
+[#149581]: https://github.com/home-assistant/core/pull/149581
+
+{% enddetails %}
 
 ([@mib1185] - [#149084]) ([@edenhaus] - [#149581]) ([documentation](/integrations/ecovacs))
 
@@ -496,6 +469,19 @@ If you have automations or scripts that rely on the LOOKin media player reportin
 
 [@emontnemery]: https://github.com/emontnemery
 [#148134]: https://github.com/home-assistant/core/pull/148134
+
+{% enddetails %}
+
+{% details "Matter" %}
+
+The battery property on vacuum entities is being removed in Home Assistant. Therefore, this property is now removed from this integration and is replaced by a battery level sensor.
+
+Please review your automations, scripts or cards using the battery property and update the code to use the battery sensor instead.
+
+([@MartinHjelmare] - [#150061]) ([documentation](/integrations/matter))
+
+[@MartinHjelmare]: https://github.com/MartinHjelmare
+[#150061]: https://github.com/home-assistant/core/pull/150061
 
 {% enddetails %}
 
@@ -596,6 +582,19 @@ If this behavior is not desired, you need to adjust your templates to return `Fa
 
 {% enddetails %}
 
+{% details "Tuya" %}
+
+The battery property on vacuum entities is being removed in Home Assistant. Therefore, this property is now removed from this integration and is replaced by a battery level sensor.
+
+Please review your automations, scripts or cards using the battery property and update the code to use the battery sensor instead.
+
+([@epenet] - [#150086]) ([documentation](/integrations/tuya))
+
+[@epenet]: https://github.com/epenet
+[#150086]: https://github.com/home-assistant/core/pull/150086
+
+{% enddetails %}
+
 {% details "UniFi Protect" %}
 
 Support for UniFi Protect installations running on versions below 6.0.0 has been removed.
@@ -629,8 +628,6 @@ If you are already using version 6.0.0 or newer, and the user in use has suffici
 
 The door state for washer/dryer machines is now reported as a binary sensor instead of being part of the main machine state sensor, which now reports only the cycle states. Users relying on this state in automations or scripts will need to update their configurations to use the new binary sensor.
 
-- Remove door state from Whirlpool machine state sensor ([@abmantis] - [#144078]) ([whirlpool docs]) (breaking-change)
-
 ([@abmantis] - [#144078]) ([documentation](/integrations/whirlpool))
 
 [@abmantis]: https://github.com/abmantis
@@ -661,6 +658,7 @@ release:
 
 - [Handling open file limit in add-ons since OS 16](https://developers.home-assistant.io/blog/2025/07/14/home-assistant-os-16-open-file-limit/)
 - [The media player STANDBY state is deprecated](https://developers.home-assistant.io/blog/2025/07/16/media-player-standby-state-deprecated)
+- [The result attribute has been removed from the FlowResult typed dict](https://developers.home-assistant.io/blog/2025/07/31/result-removed-from-flowresult/)
 - [Updated guidelines for helper integrations linking to other integration's device](https://developers.home-assistant.io/blog/2025/07/18/updated-pattern-for-helpers-linking-to-devices)
 - [Vacuum battery properties are deprecated](https://developers.home-assistant.io/blog/2025/07/02/vacuum-battery-properties-deprecated/)
 
