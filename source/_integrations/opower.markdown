@@ -50,7 +50,6 @@ More than 175 utilities use Opower. Currently only the following utilities are s
   - National Grid NY Metro
   - National Grid NY Upstate
 - Pacific Gas & Electric (PG&E)
-  > **Note:** Currently only works with PG&E accounts created **before June 2025** that do not require multi-factor authentication (MFA).
 - Portland General Electric (PGE)
 - Puget Sound Energy (PSE)
 - Sacramento Municipal Utility District (SMUD)
@@ -87,6 +86,11 @@ Alternatively, you can create a new TOTP secret for your account and use the "no
 When using Opower with any of the Exelon subsidiaries, such as BGE, ComEd, PECO, Pepco, etc., you need to actively disable two-factor authentication.
 Before proceeding, make sure you understand the security implications of disabling 2FA.
 Log onto the website, select **Don't use 2FA** and **Don't ask me again**. If you have already enabled 2FA, you most likely cannot disable it, which unfortunately means you cannot use this integration.
+
+### Pacific Gas & Electric (PG&E)
+
+The integration properly supports Multi-Factor Authentication (MFA) for PG&E via either email or phone.
+You will be asked to re-authenticate via MFA every 180 days.
 
 {% include integrations/config_flow.md %}
 
