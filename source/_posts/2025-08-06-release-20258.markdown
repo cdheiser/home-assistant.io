@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "2025.8 Beta: The summer of AI ☀️"
+title: "2025.8: The summer of AI ☀️"
 description: "AI Tasks have arrived! Enjoy streaming Text-to-Speech for faster voice responses, control individual group members directly from dialogs, weekday support in time triggers, improved area dashboards camera preview options, and much more!"
 date: 2025-08-06 00:00:00
 date_formatted: "August 6, 2025"
@@ -50,6 +50,7 @@ Enjoy the release!
 - [Other noteworthy changes](#other-noteworthy-changes)
   - [Control individual members of a group](#control-individual-members-of-a-group)
   - [Weekdays in time trigger](#weekdays-in-time-trigger)
+  - [Energy flow on your energy dashboard](#energy-flow-on-your-energy-dashboard)
 - [Need help? Join the community!](#need-help-join-the-community)
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
@@ -369,6 +370,21 @@ that need to run on specific days, such as weekdays or weekends.
 
 [a feature request]: https://github.com/orgs/home-assistant/discussions/26
 [@hmmbob]: https://github.com/hmmbob
+
+### Energy flow on your energy dashboard
+
+The Home Assistant energy dashboard is great, but as of this release even a little better!
+  
+Inspired by the [Sankey Chart custom card], [@MindFreeze] added a new
+energy flow visualization for the energy dashboard, which exactly shows you
+where your energy is coming from and where it is going to.
+
+<img class="no-shadow" alt="Screenshot the new energy flow on the Home Assistant energy dashboard" src="/images/blog/2025-08/energy-dashboard-energy-flow.png" />
+
+Really cool addition to the energy dashboard [@MindFreeze]!
+
+[@MindFreeze]: https://github.com/MindFreeze
+[Sankey Chart custom card]: https://github.com/MindFreeze/ha-sankey-chart
 
 ## Need help? Join the community!
 
