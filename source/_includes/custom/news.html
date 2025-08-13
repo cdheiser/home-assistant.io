@@ -1,21 +1,20 @@
 <!--  Left column begins -->
 <div class="grid__item one-third lap-one-half palm-one-whole">
 
-  <a href="https://www.youtube.com/watch?v=Z-pUkM6XIuA" class="material-card picture-promo"
-    target="_blank" rel="noopener noreferrer" aria-label="Join our live stream on August 13th to see why Z-Wave isn't dead!" style="
-      background-image: url(/images/frontpage/feature-zwave.webp);
-      background-size: cover;
-      aspect-ratio: 900/600;
-    ">
-    <div class="caption">
+  {% assign video_id = "Z-pUkM6XIuA" %}
+  <a href="https://www.youtube.com/watch?v={{ video_id }}" class="material-card livestream-card" target="_blank" style="
+      background-image: url(/images/frontpage/zwa-2-livestream.webp);
+      aspect-ratio: 580/386;
+    " aria-label="State of the Open Home - Saturday April 12th 2025">
+    <div
+      style="position: absolute; pointer-events: none; inset: 0; opacity: 0; transition: opacity 1s; overflow: hidden; border-style: none;">
+      <iframe
+        style="aspect-ratio: 16/9; position: absolute; top:0; left: 50%; transform: translateX(-50%); height: 100%; border: 0; object-fit: cover;"
+        data-src="https://www.youtube-nocookie.com/embed/{{ video_id }}?autoplay=1&mute=1&fs=0&controls=0&modestbranding=1"></iframe>
+    </div>
+    <div class="livestream-card-banner">
       <div>
-        <div class="title">
-          Product launch incoming
-        </div>
-        <div class="subtitle">
-          Join our live stream to see why Z-Wave isn't dead! <br />
-          August 13th @ 12PM Pacific / 3PM Eastern / 21:00 CEST
-        </div>
+        <strong>We're live!</strong> Join the stream
       </div>
     </div>
   </a>
@@ -142,7 +141,8 @@
   {% assign pages_by_date = site.pages | sort: "date" | reverse %} {% for
   page in pages_by_date %} {% if page.layout == "landingpage" and
   page.frontpage != false %}
-  <a class="material-card picture-promo" href="{{page.url}}" style="
+  <a class="material-card picture-promo {% if page.frontpage_content_top %}picture-top{% endif %}" href="{{page.url}}"
+    style="
           background-image: url({{page.frontpage_image | default:page.og_image}});
           background-size: cover;
           background-color: #41bdf5;
@@ -218,4 +218,28 @@
     </div>
   </a>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let loaded = false;
+    const lazyLoadYouTube = () => {
+      if (loaded) return; // Prevent multiple loads
+      loaded = true;
+      const iframes = document.querySelectorAll('.livestream-card iframe[data-src]');
+      iframes.forEach(iframe => {
+        iframe.src = iframe.getAttribute('data-src');
+        iframe.removeAttribute('data-src');
+        setTimeout(() => {
+          iframe.parentElement.style.opacity = 1;
+        }, 500);
+      });
+    };
+
+    document.addEventListener('scroll', lazyLoadYouTube, { once: true });
+    document.addEventListener('click', lazyLoadYouTube, { once: true });
+    document.addEventListener('mousemove', lazyLoadYouTube, { once: true });
+    document.addEventListener('touchstart', lazyLoadYouTube, { once: true });
+    document.addEventListener('touchmove', lazyLoadYouTube, { once: true });
+  });
+</script>
 <!-- Right content ends -->
