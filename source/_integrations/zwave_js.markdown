@@ -44,6 +44,11 @@ ha_platforms:
   - update
 ha_integration_type: hub
 ha_zeroconf: true
+related:
+  - docs: /connect/zwa-2
+    title: Home Assistant Connect ZWA-2 Z-Wave adapter
+  - docs: /docs/z-wave/controllers/
+    title: Other Z-Wave adapters
 ---
 
 The **Z-Wave** {% term integration %} allows you to control a Z-Wave network from Home Assistant via the [Z-Wave JS](https://zwave-js.github.io/node-zwave-js/#/) driver.
