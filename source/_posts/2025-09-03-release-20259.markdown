@@ -75,8 +75,8 @@ Enjoy the (beta) release!
 
 <!--more-->
 
-- [Introducing the Home dashboard](#introducing-the-home-dashboard)
 - [Automation editor sidebar](#automation-editor-sidebar)
+- [Introducing the Home dashboard](#introducing-the-home-dashboard)
 - [New tile card features](#new-tile-card-features)
   - [History chart](#history-chart)
   - [Fan direction and oscillation controls](#fan-direction-and-oscillation-controls)
@@ -95,24 +95,6 @@ Enjoy the (beta) release!
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
 
-## Introducing the Home dashboard
-
-**TODO: The story below needs replacement, and was written for beta usage**
-
-Over the past year, we have focused on dashboards and their capabilities a lot. The goal? Making dashboards easier to create and customize.
-
-With this release, we are introducing a brand-new Home dashboard. While previous releases brought the Areas dashboard to help you view and manage devices by area, the Home dashboard provides a complete overview of your home in a single place. It allows you to see your home by areas, access key aspects such as lights, climate, security, and media players, and includes widgets such as weather and energy at the bottom of the page.
-
-At this stage, configuration options are limited (for example, you can display favorite entities at the top), but more customization will be added in future releases. The goal of the Home dashboard is to become the main entry point when you start Home Assistant, with upcoming features designed to help you get started quickly, such as encouraging the creation of your first automation and notifying you about newly discovered devices.
-
-For now, the Home dashboard is considered experimental. It will not appear automatically and needs to be added manually if you want to try it out.
-
-Got feedback on it? [Join the #beta channel in our Discord chat server](/join-chat)!
-
-<img class="no-shadow" alt="TODO: Replace screenshot" src="/images/blog/2025-09/temp-home-dashboard.png" />
-<img class="no-shadow" alt="TODO: Replace screenshot" src="/images/blog/2025-09/temp-home-dashboard-area.png" />
-<img class="no-shadow" alt="TODO: Replace screenshot" src="/images/blog/2025-09/temp-home-dashboard-lights.png" />
-
 ## Automation editor sidebar
 
 On the [Home Assistant roadmap of this year](/blog/2025/05/09/roadmap-2025h1/#and-thats-not-all-for-this-year), we have set the goal of making automations easier to create. We have lots of plans, have done tons of research at this point, and with this release... we are shipping the first bit of all the effort that is yet to come!
@@ -126,6 +108,28 @@ If you select an item in your automation, the settings of that selected item wil
 This allows you to keep an overview of your automation on the left side of your screen, while you can tweak its behavior on the right. Of course, we have thought of smaller screens as well. On mobile, instead of the sidebar, a sheet at the bottom will pop up.
 
 Besides the sidebar, we have made tons of other little improvements as well. Tiny layout and styling changes that you definitely will notice and are helping with the overall readability. For example, small lines and borders around grouped elements have been added, making it easier to distinguish between different parts of your automation.
+
+## Introducing the Home dashboard
+
+Over the past year, we have focused on dashboards and their capabilities a lot. The goal? Making dashboards easier to create and customize.
+
+With this release, we're introducing a brand-new Home dashboard. Its purpose is simple: give you easy access to the right information at the right time. The dashboard adapts to your experience: powerful enough for advanced users, yet approachable for newcomers. It should truly earn the name Home and become the default dashboard of Home Assistant. As always, it's optional, you can always pick your own dashboard.
+
+This is the first iteration, and we'll continue developing it in the open. It gives you a complete overview of your home in one place. You can browse by areas and quickly access key domains such as lights, climate, security, and media players.
+
+We're also introducing Favorites. You can pin any entity to the top, whether it's a light, climate, or a person. We'd love to see what you choose (more on this later).
+
+The Home dashboard is not just about quick control. It also brings insights and information about your home. This first release includes weather and energy cards. It's a simple start, and we have a lot of ideas to explore with you. For example, helping you create your first automation, or show discovered devices.
+
+For now, the Home dashboard is considered experimental. Configuration options are limited, and it's guaranteed to evolve. It won't appear automatically, you'll need to add it manually if you'd like to try it out.
+
+One of Home Assistant's greatest strengths is our community. We're building this dashboard together, and your input will shape where it goes next. There are two ways to get involved:
+
+Got feedback on it during our beta testing period? [Join the #beta channel in our Discord chat server](/join-chat)!
+
+<img class="no-shadow" alt="TODO: Replace screenshot" src="/images/blog/2025-09/temp-home-dashboard.png" />
+<img class="no-shadow" alt="TODO: Replace screenshot" src="/images/blog/2025-09/temp-home-dashboard-area.png" />
+<img class="no-shadow" alt="TODO: Replace screenshot" src="/images/blog/2025-09/temp-home-dashboard-lights.png" />
 
 ## New tile card features
 
@@ -249,9 +253,15 @@ their quality scale:
 - **2 integrations reached platinum** 🏆
   - [Network UPS Tools (NUT)], thanks to [@tdfountain]
   - [Uptime Kuma], thanks to [@tr4nt0r]
-  
+
+- **1 integration reached bronze** 🥉
+  - [Mastodon], thanks to [@andrew-codechimp]
+  - [Ring], thanks to [@sdb9696]
+
+[@andrew-codechimp]: https://github.com/andrew-codechimp
 [@tdfountain]: https://github.com/tdfountain
 [@tr4nt0r]: https://github.com/tr4nt0r
+[Mastodon]: /integrations/mastodon
 [Network UPS Tools (NUT)]: /integrations/nut
 [Uptime Kuma]: /integrations/uptime_kuma
 
@@ -281,6 +291,7 @@ The following integration is now available via the Home Assistant UI:
 There are many more improvements in this release; here are some of the other noteworthy changes:
 
 - Based on feature requests from the community, all modern [template entity] syntax now supports setting a default entity ID directly in YAML. Thanks [@Petro31] for implementing that!
+- [@Petro31] also added support for two new entity types to the template integration. You can now create your own templated [event entities](/integrations/template#event) and [update entities](/integrations/template#update). Awesome!
 - Home Assistant now supports `m³/min` as a volume flow rate unit. Nice addition [@fetzerch]!
 - Our voice guy [@synesthesiam] has been busy with some great QoL improvements this release as well.
   - The intent handling for the default agent (non-LLM) now supports fuzzy matching. The technique ensures voice pipelines recognize many more sentences. This improvement is available for English only, while we are looking for ways to extend this to other languages.
