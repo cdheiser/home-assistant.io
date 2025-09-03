@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "2025.9 Beta: A Betta title"
-description: "Beta release notes for Home Assistant Core 2025.9"
-date: 2025-08-27 00:00:00
+title: "2025.9: Features for tiles and automations for miles"
+description: "A sidebar for the automation editor, tons of new tile card features, a brand new experimental Home dashboard, analog clocks, storage insights, and much more!"
+date: 2025-09-03 00:00:00
 date_formatted: "September 3, 2025"
 author: Franck Nijhof
 author_twitter: frenck
@@ -78,7 +78,9 @@ Enjoy the (beta) release!
 - [Automation editor sidebar](#automation-editor-sidebar)
 - [Introducing the Home dashboard](#introducing-the-home-dashboard)
 - [New tile card features](#new-tile-card-features)
-  - [History chart](#history-chart)
+  - [Trend chart](#trend-chart)
+  - [Media player controls](#media-player-controls)
+  - [Bar gauge](#bar-gauge)
   - [Fan direction and oscillation controls](#fan-direction-and-oscillation-controls)
   - [Buttons](#buttons)
   - [Valve open/close and position controls](#valve-openclose-and-position-controls)
@@ -88,6 +90,7 @@ Enjoy the (beta) release!
   - [Noteworthy improvements to existing integrations](#noteworthy-improvements-to-existing-integrations)
   - [Integration quality scale achievements](#integration-quality-scale-achievements)
   - [Now available to set up from the UI](#now-available-to-set-up-from-the-ui)
+  - [Farewell to the following](#farewell-to-the-following)
 - [Other noteworthy changes](#other-noteworthy-changes)
   - [Analog clock](#analog-clock)
   - [Storage insights](#storage-insights)
@@ -101,11 +104,22 @@ On [this year's Home Assistant roadmap](/blog/2025/05/09/roadmap-2025h1/#and-tha
 
 This release tweaks the automation editor user interface experience by introducing a sidebar! If you select an item in your automation, instead of that item expanding, it will open a new sidebar to the right with the settings for that selected item.
 
-<img class="no-shadow" alt="TODO: Replace screenshot" src="/images/blog/2025-09/temp-automation-sidebar.png" />
+<img class="no-shadow" alt="Screenshot showcasing a sidebar in our automation editor." src="/images/blog/2025-09/automation-sidebar.png" />
 
 This allows you to keep an overview of your automation on the left side of your screen, while you can tweak its behavior on the right. Of course, we have thought of smaller screens as well. On mobile, instead of the sidebar, a sheet will pop up at the bottom of the screen. This pop-up is also resizable, making it easier than ever to edit an action while reviewing your triggers.
 
+<img class="no-shadow" alt="Screenshot showing how on a smaller screen device a sheet is shown from the bottom of the page." src="/images/blog/2025-09/automation-bottom-sheet.png" />
+
 Besides the sidebar, we have made tons of other little improvements as well. Tiny layout and styling changes that you will definitely notice as they really help with the overall readability. For example, small lines and borders around grouped elements have been added, making it easier to distinguish between different parts of your automation.
+
+{% tip %}
+
+One of Home Assistant's greatest strengths is our community. We're building the changes to our automations together, and your input will shape where it goes next. There are two ways to get involved:
+
+- [Share your thoughts in our survey](https://forms.gle/VFBQdYpmdWc8RDg18)
+- [Join the conversation in the automations & scripts development channel on Discord](https://discord.com/channels/330944238910963714/1351529028112224359)
+
+{% endtip %}
 
 ## Introducing the Home dashboard
 
@@ -123,9 +137,14 @@ The Home dashboard is not just about quick control. It also brings insights and 
 
 For now, the Home dashboard is considered experimental. Configuration options are limited, and it's guaranteed to evolve. It won’t appear automatically, and if you want to try it you’ll need to add it manually in the [dashboard settings](https://my.home-assistant.io/redirect/lovelace_dashboards/), by adding a new “Home” dashboard.
 
+{% tip %}
+
 One of Home Assistant's greatest strengths is our community. We're building this dashboard together, and your input will shape where it goes next. There are two ways to get involved:
 
-Got feedback on it during our beta testing period? [Join the #beta channel in our Discord chat server](/join-chat)!
+- [Share your thoughts in our survey](https://forms.gle/2Djeie5Cbwqmy8BR9)
+- [Join the conversation in the dashboard development channel on Discord](https://discord.com/channels/330944238910963714/1351536906437005313)
+
+{% endtip %}
 
 <img class="no-shadow" alt="TODO: Replace screenshot" src="/images/blog/2025-09/temp-home-dashboard.png" />
 <img class="no-shadow" alt="TODO: Replace screenshot" src="/images/blog/2025-09/temp-home-dashboard-area.png" />
@@ -138,13 +157,32 @@ of [cards for our dashboards](/dashboards/).
 
 One superpower of the tile card is its “features”, which are small additions where you can add quick interactions to these cards. For example, a slider to control the brightness of a light or buttons for the speed presets of a fan. Features have been extended quite a bit in this release by a dedicated group of community members.
 
-### History chart
+### Trend chart
 
-This release, an absolute banger is the addition of the history chart features for tile cards created by [@MindFreeze].
+This release, an absolute banger is the addition of the trend chart features for tile cards created by [@MindFreeze].
 
 This feature adds a handy quick graph to the tile card, showing the history of a specific entity over time. For this initial version, the time window shown is 24 hours.
 
 <img class="no-shadow" alt="TODO: Replace screenshot" src="/images/blog/2025-09/temp-tile-feature-history-chart.png" />
+
+[@MindFreeze]: https://github.com/MindFreeze
+
+### Media player controls
+
+[@timmo001], added tile card features for media player controls! This makes the tile card now a viable alternative to the media player card. Awesome!
+
+**TODO: Insert screenshot**
+
+[@timmo001]: https://github.com/timmo001
+
+### Bar gauge
+
+A new tile card feature, made by [@MindFreeze]: The bar gauge!
+
+For this initial version, it works with sensors that use a percentage (`%`) for their unit of measurement.
+This makes the card great, for example, for a battery overview dashboard. Nice work!
+
+**TODO: Insert screenshot**
 
 [@MindFreeze]: https://github.com/MindFreeze
 
@@ -191,6 +229,8 @@ and improvements to existing ones! You’re all awesome 🥰
 
 We welcome the following new integrations in this release:
 
+- **[Aladdin Connect]**, added by [@swcloudgenie]  
+  Control and monitor your [Genie Aladdin Connect garage doors] directly from Home Assistant.
 - **[SEKO PoolDose]**, added by [@lmaertin]  
   Integrate your [SEKO] water treatment system of your pool or spa to monitor temperature and chemical levels.
 - **[Sleep as Android]**, added by [@tr4nt0r]  
@@ -200,7 +240,10 @@ We welcome the following new integrations in this release:
 
 [@elupus]: https://github.com/elupus
 [@lmaertin]: https://github.com/lmaertin
+[@swcloudgenie]: https://github.com/swcloudgenie
 [@tr4nt0r]: https://github.com/tr4nt0r
+[Aladdin Connect]: /integrations/aladdin_connect
+[Genie Aladdin Connect garage doors]: https://www.geniecompany.com/aladdin-connect-by-genie
 [SEKO PoolDose]: /integrations/pooldose
 [SEKO]: https://www.seko.com/
 [Sleep as Android app]: https://sleep.urbandroid.org/
@@ -256,7 +299,6 @@ their quality scale:
 
 - **1 integration reached bronze** 🥉
   - [Mastodon], thanks to [@andrew-codechimp]
-  - [Ring], thanks to [@sdb9696]
 
 [@andrew-codechimp]: https://github.com/andrew-codechimp
 [@tdfountain]: https://github.com/tdfountain
@@ -286,6 +328,14 @@ The following integration is now available via the Home Assistant UI:
 [@HarvsG]: https://github.com/HarvsG
 [Bayesian]: /integrations/bayesian
 
+### Farewell to the following
+
+The following {% term integration %} is no longer available as
+of this release:
+
+- **Uonet+ Vulcan** has been removed. Vulcan has changed their API and their
+  policies forbid using the API from unofficial software.
+
 ## Other noteworthy changes
 
 There are many more improvements in this release; here are some of the other noteworthy changes:
@@ -309,17 +359,17 @@ In [Home Assistant 2025.4, we introduced the clock card](/blog/2025/04/02/releas
 
 For this release, [@timmo001] made this card more feature-rich by adding support for displaying the clock in a customizable analog clock style. Nice!
 
-<img class="no-shadow" alt="TODO: Replace screenshot" src="/images/blog/2025-09/temp-analog-clock.png" />
+<img class="no-shadow" alt="Screenshot showing multiple analog clocks in different sizes and styles" src="/images/blog/2025-09/analog-clock.png" />
 
 ### Storage insights
 
 Disk almost full? You might wonder where your storage space has gone...
 
-This release adds disk metrics to the [storage configuration panel](https://my.home-assistant.io/create-link/?redirect=storage), letting you see usage at a glance, helping you identify what is taking up space.
+This release adds disk metrics to the {% my storage title="storage configuration panel" %}, letting you see usage at a glance, helping you identify what is taking up space.
 
-<img class="no-shadow" alt="TODO: Replace screenshot" src="/images/blog/2025-09/temp-disk-metrics.png" />
+<img class="no-shadow" alt="Screenshot of the new disk metrics as shown in the storage configuration panel." src="/images/blog/2025-09/disk-metrics.png" />
 
-You can find these metrics by navigating to **Settings** > **System** > **Storage**, or by selecting the My Home Assistant button down below.
+You can find these metrics by navigating to {% my storage title="**Settings** > **System** > **Storage**" %}, or by selecting the My Home Assistant button down below.
 
 {% my storage badge %}
 
@@ -376,6 +426,20 @@ The `raw_value` attribute was previously deprecated and has now been removed.
 
 {% enddetails %}
 
+{% details "Alexa Devices" %}
+
+The sound list has been updated to match the one used by the Alexa Mobile app.
+The `variant` parameter is no longer required.
+
+Check your automations to ensure the selected sound is still present.
+
+([@chemelli74] - [#151317]) ([documentation](/integrations/alexa_devices))
+
+[@chemelli74]: https://github.com/chemelli74
+[#151317]: https://github.com/home-assistant/core/pull/151317
+
+{% enddetails %}
+
 {% details "Husqvarna Automower BLE" %}
 
 The integration now requires the Automower PIN when being set up. This ensures Home Assistant can communicate with more models of mowers and with higher security levels.
@@ -384,6 +448,17 @@ The integration now requires the Automower PIN when being set up. This ensures H
 
 [@alistair23]: https://github.com/alistair23
 [#135440]: https://github.com/home-assistant/core/pull/135440
+
+{% enddetails %}
+
+{% details "KNX" %}
+
+KNX scene entities now also change their state when a scene was activated externally (from bus). Previously they only updated when activated from within Home Assistant.
+
+([@farmio] - [#151218]) ([documentation](/integrations/knx))
+
+[@farmio]: https://github.com/farmio
+[#151218]: https://github.com/home-assistant/core/pull/151218
 
 {% enddetails %}
 
