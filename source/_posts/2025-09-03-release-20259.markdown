@@ -127,6 +127,8 @@ Over the past year, we have focused on dashboards and their capabilities a lot. 
 
 With this release, we’re introducing a brand-new *Home dashboard*. The purpose is simple: to give you easy access to the right information at the right time.
 
+<img class="no-shadow" alt="Screenshot of the new Home dashboard" src="/images/blog/2025-09/home-dashboard.png" />
+
 The dashboard adapts to your Home Assistant experience level: powerful enough for advanced users, yet approachable for newcomers. We’re working to have it earn its name, and hope it will eventually become your new *Home* page. As always, it’s optional; you can always pick your own dashboard. This is the first iteration, and we’ll continue developing it in the open.
 
 When you first open the Home dashboard, it gives you a quick way to navigate to useful summaries for your light, climate, security, and media devices. You can also browse by areas, getting an overview of all the devices and services associated with that part of your home.
@@ -134,6 +136,8 @@ When you first open the Home dashboard, it gives you a quick way to navigate to 
 We’re also introducing Favorites. You can pin any entity to the top, whether it’s a light, climate, or a person. We’d love to see what you choose (more on this in the future).
 
 The Home dashboard is not just about quick control. It also brings insights and information about your home. This first release includes weather and energy cards. It's a simple start, and we have a lot of ideas to explore with you. For example, helping you create your first automation, or show discovered devices.
+
+<img class="no-shadow" alt="Screenshot of the new Home dashboard viewing the living room area" src="/images/blog/2025-09/home-dashboard-area.png" />
 
 For now, the Home dashboard is considered experimental. Configuration options are limited, and it's guaranteed to evolve. It won’t appear automatically, and if you want to try it you’ll need to add it manually in the [dashboard settings](https://my.home-assistant.io/redirect/lovelace_dashboards/), by adding a new “Home” dashboard.
 
@@ -145,10 +149,6 @@ One of Home Assistant's greatest strengths is our community. We're building this
 - [Join the conversation in the dashboard development channel on Discord](https://discord.com/channels/330944238910963714/1351536906437005313)
 
 {% endtip %}
-
-<img class="no-shadow" alt="Home dashboard" src="/images/blog/2025-09/home-dashboard.png" />
-<img class="no-shadow" alt="Home dashboard: area view" src="/images/blog/2025-09/home-dashboard-area.png" />
-<img class="no-shadow" alt="Home dashboard: lights view" src="/images/blog/2025-09/home-dashboard-lights.png" />
 
 ## New tile card features
 
@@ -163,7 +163,7 @@ This release, an absolute banger is the addition of the trend chart features for
 
 This feature adds a handy quick graph to the tile card, showing the history of a specific entity over time. For this initial version, the time window shown is 24 hours.
 
-<img class="no-shadow" alt="Trend graph feature" src="/images/blog/2025-09/tile-features-trend-graph.png" />
+<img class="no-shadow" alt="Screenshot showing a tile card using the new trend graph feature" src="/images/blog/2025-09/tile-features-trend-graph.png" />
 
 [@MindFreeze]: https://github.com/MindFreeze
 
@@ -171,7 +171,7 @@ This feature adds a handy quick graph to the tile card, showing the history of a
 
 [@timmo001], added tile card features for media player controls and volume! This makes the tile card now a viable alternative to the media player card. Awesome!
 
-<img class="no-shadow" alt="Media player features" src="/images/blog/2025-09/tile-features-media-player.png" />
+<img class="no-shadow" alt="Screenshot showing a tile card using the new media player features" src="/images/blog/2025-09/tile-features-media-player.png" />
 
 [@timmo001]: https://github.com/timmo001
 
@@ -182,7 +182,7 @@ A new tile card feature, made by [@MindFreeze]: The bar gauge!
 For this initial version, it works with sensors that use a percentage (`%`) for their unit of measurement.
 This makes the card great, for example, for a battery overview dashboard. Nice work!
 
-<img class="no-shadow" alt="Bar gauge feature" src="/images/blog/2025-09/tile-features-bar-gauge.png" />
+<img class="no-shadow" alt="Screenshot showing a tile card using the new bar gauge feature" src="/images/blog/2025-09/tile-features-bar-gauge.png" />
 
 [@MindFreeze]: https://github.com/MindFreeze
 
@@ -190,7 +190,7 @@ This makes the card great, for example, for a battery overview dashboard. Nice w
 
 Thanks to [@pcan08] we now have a tile card feature to control fan direction and oscillation!
 
-<img class="no-shadow" alt="Fan direction and oscillation features" src="/images/blog/2025-09/tile-features-fan.png" />
+<img class="no-shadow" alt="Screenshot showing a tile card using the new fan direction and oscillation features" src="/images/blog/2025-09/tile-features-fan.png" />
 
 [@pcan08]: https://github.com/pcan08
 
@@ -198,7 +198,7 @@ Thanks to [@pcan08] we now have a tile card feature to control fan direction and
 
 Thanks to [@dhoeben] we now have a tile card feature for buttons! He added these buttons for automation, script, and button entities. The text can be changed to display standard button text or custom text.
 
-<img class="no-shadow" alt="Button feature" src="/images/blog/2025-09/tile-features-button.png" />
+<img class="no-shadow" alt="Screenshot showing a tile card using the new button feature" src="/images/blog/2025-09/tile-features-button.png" />
 
 [@dhoeben]: https://github.com/dhoeben
 
@@ -206,7 +206,7 @@ Thanks to [@dhoeben] we now have a tile card feature for buttons! He added these
 
 Thanks to [@timmo001] we now have a tile card feature to control the open/close and the position of valves.
 
-<img class="no-shadow" alt="Open/close and valve position features" src="/images/blog/2025-09/tile-features-valve.png" />
+<img class="no-shadow" alt="Screenshot showing a tile card using the new open/close and valve position features" src="/images/blog/2025-09/tile-features-valve.png" />
 
 [@timmo001]: https://github.com/timmo001
 
@@ -214,7 +214,7 @@ Thanks to [@timmo001] we now have a tile card feature to control the open/close 
 
 [@timmo001] continued and also added a new tile card feature to support date and datetime entities (including the input datetime helpers). It allows you to set a feature that allows for setting a date.
 
-<img class="no-shadow" alt="Date feature" src="/images/blog/2025-09/tile-features-date.png" />
+<img class="no-shadow" alt="Screenshot showing a tile card using the new date feature" src="/images/blog/2025-09/tile-features-date.png" />
 
 [@timmo001]: https://github.com/timmo001
 
@@ -258,28 +258,35 @@ changes to existing integrations:
 - The [Reolink] integration now includes speak and doorbell volume controls, plus a chime silent time number entity! Nice [@starkillerOG]!
 - You can now send notifications with the [PlayStation Network] integration! Send direct messages to your friends! Thanks, [@tr4nt0r]!
 - Network admins will love [@Tomeroeni] bringing individual (enable/disable) switch port control to [UniFi] switches!
+- The [OpenWeatherMap] integration now includes a wind gust sensor, thanks to [@gjohansson-ST]!
+- [@kizovinh] added support for battery status and online status sensors to the [EZVIZ] integration, making it easier to monitor your EZVIZ cameras. Nice!
+- If you own a [Russound Rio] device, you can now browse your device's saved presets directly from the media browser! Thanks, [@hanwg]!
+- [@mbo18] added an absolute humidity sensor to the [Awair] integration. Nice!
+- The [Teslemetry] integration added charging and preconditioning actions for your Tesla vehicle. Thanks, [@Bre77]!
+- [@catsmanac] added [IQ Meter Collar] and [C6 Combiner] support to the [Enphase Envoy] integration. Good work!
 
+[@Bre77]: https://github.com/Bre77
+[@catsmanac]: https://github.com/catsmanac
+[@gjohansson-ST]: https://github.com/gjohansson-ST
+[@hanwg]: https://github.com/hanwg
+[@kizovinh]: https://github.com/kizovinh
+[@mbo18]: https://github.com/mbo18
 [@starkillerOG]: https://github.com/starkillerOG
 [@Thomas55555]: https://github.com/Thomas55555
 [@Tomeroeni]: https://github.com/Tomeroeni
 [@tr4nt0r]: https://github.com/tr4nt0r
+[Awair]: /integrations/awair
+[C6 Combiner]: https://enphase.com/store/communication/iq-gateway-and-combiner/iq-combiner-6c
+[Enphase Envoy]: /integrations/enphase_envoy
+[EZVIZ]: /integrations/ezviz
 [Husqvarna Automower]: /integrations/husqvarna_automower
+[IQ Meter Collar]: https://enphase.com/store/storage/gen4/iq-meter-collar
+[OpenWeatherMap]: /integrations/openweathermap
 [PlayStation Network]: /integrations/playstation_network
 [Reolink]: /integrations/reolink
+[Russound Rio]: /integrations/russound_rio
+[Teslemetry]: /integrations/teslemetry
 [UniFi]: /integrations/unifi
-
-Other candidates:
-
-- Add EZVIZ battery camera power status and online status sensor ([@kizovinh] - [#146822]) ([ezviz docs])
-- Add absolute humidity sensor to Awair integration ([@mbo18] - [#150110]) ([awair docs])
-- Add charging and preconditioning actions to Teslemetry ([@Bre77] - [#144184]) ([teslemetry docs])
-- Add media browsing to Russound RIO ([@noahhusby] - [#148248]) ([russound_rio docs])
-- Add notify platform for Telegram bot ([@hanwg] - [#149853]) ([telegram_bot docs]) (new-platform)
-- Add party to Habitica ([@tr4nt0r] - [#149608]) ([habitica docs])
-- Add wind gust sensor to OpenWeatherMap ([@gjohansson-ST] - [#150607]) ([openweathermap docs])
-- Add cover platform for switchbot cloud ([@XiaoLing-git] - [#148993]) ([switchbot_cloud docs]) (new-platform)
-- Add IQ Meter Collar and C6 Combiner to enphase_envoy integration ([@catsmanac] - [#150649]) ([enphase_envoy docs])
-- Add switch for AC's air_clean, ventilator and washers to LG ([@LG-ThinQ-Integration] - [#140842]) ([lg_thinq docs])
 
 ### Integration quality scale achievements
 
