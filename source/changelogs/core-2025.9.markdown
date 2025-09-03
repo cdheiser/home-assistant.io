@@ -593,6 +593,11 @@ For a summary in a more readable format:
 - Handle colliding aliases for floors ([@emontnemery] - [#151614])
 - Bump device registry version to 1.12 ([@emontnemery] - [#151616])
 - Update frontend to 20250903.1 ([@bramkragten] - [#151617])
+- Fix for deCONZ issue - Detected that integration 'deconz' calls device_registry.async_get_or_create referencing a non existing via_device - #134539 ([@mattreim] - [#150355])
+- Simplify Modbus update methods ([@janiversen] - [#151494])
+- Fix naming of "State of charge" sensor in `growatt_server` ([@NoRi2909] - [#151619])
+- Bump intents ([@synesthesiam] - [#151627])
+- Update frontend to 20250903.2 ([@bramkragten] - [#151629])
 
 [#122552]: https://github.com/home-assistant/core/pull/122552
 [#128123]: https://github.com/home-assistant/core/pull/128123
@@ -807,6 +812,7 @@ For a summary in a more readable format:
 [#150341]: https://github.com/home-assistant/core/pull/150341
 [#150342]: https://github.com/home-assistant/core/pull/150342
 [#150349]: https://github.com/home-assistant/core/pull/150349
+[#150355]: https://github.com/home-assistant/core/pull/150355
 [#150358]: https://github.com/home-assistant/core/pull/150358
 [#150362]: https://github.com/home-assistant/core/pull/150362
 [#150364]: https://github.com/home-assistant/core/pull/150364
@@ -1151,6 +1157,7 @@ For a summary in a more readable format:
 [#151490]: https://github.com/home-assistant/core/pull/151490
 [#151491]: https://github.com/home-assistant/core/pull/151491
 [#151493]: https://github.com/home-assistant/core/pull/151493
+[#151494]: https://github.com/home-assistant/core/pull/151494
 [#151499]: https://github.com/home-assistant/core/pull/151499
 [#151504]: https://github.com/home-assistant/core/pull/151504
 [#151507]: https://github.com/home-assistant/core/pull/151507
@@ -1176,6 +1183,9 @@ For a summary in a more readable format:
 [#151614]: https://github.com/home-assistant/core/pull/151614
 [#151616]: https://github.com/home-assistant/core/pull/151616
 [#151617]: https://github.com/home-assistant/core/pull/151617
+[#151619]: https://github.com/home-assistant/core/pull/151619
+[#151627]: https://github.com/home-assistant/core/pull/151627
+[#151629]: https://github.com/home-assistant/core/pull/151629
 [@Antoni-Czaplicki]: https://github.com/Antoni-Czaplicki
 [@Bre77]: https://github.com/Bre77
 [@CFenner]: https://github.com/CFenner
@@ -1277,6 +1287,7 @@ For a summary in a more readable format:
 [@markhannon]: https://github.com/markhannon
 [@martindybal]: https://github.com/martindybal
 [@matrixd2]: https://github.com/matrixd2
+[@mattreim]: https://github.com/mattreim
 [@mbo18]: https://github.com/mbo18
 [@mdegat01]: https://github.com/mdegat01
 [@mib1185]: https://github.com/mib1185
