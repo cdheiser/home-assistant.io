@@ -72,7 +72,7 @@ This allows you to keep an overview of your automation on the left side of your 
 
 <img class="no-shadow" alt="Screenshot showing how on a smaller screen device a sheet is shown from the bottom of the page." src="/images/blog/2025-09/automation-bottom-sheet.png" />
 
-Besides the sidebar, we have made tons of other little improvements as well. Tiny layout and styling changes that you will definitely notice as they really help with the overall readability. For example, small lines and borders around grouped elements have been added, making it easier to distinguish between different parts of your automation.
+Besides the sidebar, we have made tons of other little improvements as well. Tiny layout and styling changes that you will definitely notice as they really help with the overall readability. For example, small lines and borders around grouped elements have been added, making it easier to distinguish between different parts of your automation. Oh! And drag-and-drop support is now available on mobile! 🎉
 
 {% tip %}
 
@@ -267,6 +267,7 @@ their quality scale:
 - **1 integration reached bronze** 🥉
   - [Mastodon], thanks to [@andrew-codechimp]
 
+[integration quality scale]: /docs/quality_scale/
 [@andrew-codechimp]: https://github.com/andrew-codechimp
 [@tdfountain]: https://github.com/tdfountain
 [@tr4nt0r]: https://github.com/tr4nt0r
