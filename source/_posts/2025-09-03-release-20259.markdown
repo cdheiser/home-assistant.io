@@ -25,7 +25,7 @@ It was a busy month, as we also had two new [Works with Home Assistant](https://
 
 While the above was happening this month, as if the project wasn't already busy enough, we kept on pushing to prepare for this release; and it is an absolute **massive** one! 🤯
 
-This month introduces a new experimental Home dashboard, which aims to become the new default dashboard for Home Assistant. A first iteration, of which we love to see your feedback and input on. As you know, we develop and iterate in the open. Give it a shot and let us know what you think!
+This month introduces a new experimental Home dashboard, which aims to become the new default dashboard for Home Assistant in a future release. A first iteration, of which we love to see your feedback and input on. As you know, we develop and iterate in the open. Give it a shot and let us know what you think!
 
 Talking about dashboards, my personal favorite card is definitely the [tile card](/dashboards/tile/); it is just so versatile. And this release brings in a staggering amount of new features for it! Most notably, the ability to add a trend graph to the tile card! 📈
 
