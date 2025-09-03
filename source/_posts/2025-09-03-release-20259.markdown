@@ -15,61 +15,23 @@ og_image: /images/blog/2025-09/social.png
 
 <lite-youtube videoid="4oeQZhxYUNk" videotitle="Home Assistant 2025.9 Release Party"></lite-youtube>
 
-{% note %}
-
-**Welcome to the beta release notes for Home Assistant 2025.9** 🎉
-
-<br />
-
-Please note that these release notes are a work in progress. 👷‍♀️ We will be
-completing them over the next couple of days. Not all features might be final
-yet, and some features _**may not** make it into the final release_.
-
-<br />
-
-**Want to help test the beta?** Awesome! ❤️ We have documented how you
-[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
-
-<br />
-
-While running the beta, we highly recommend joining our _#beta_ channel on
-the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
-testers are in this channel during the beta period to share experiences, ideas,
-and iterate over new features, fine-tuning them before the final release.
-It's a really fun place to hang out. 😎
-
-<br />
-
-**Reporting issues**: As this is a beta test, you might encounter unexpected
-behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
-You can find our issue trackers and the reported issues during beta here:
-
-<br />
-
-- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/135)
-- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/760)
-- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/142)
-
-🙏 When reporting issues, **make sure to mention the exact beta version you are
-running** in the issue description. This will help us identify and track the
-issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
-
-<br />
-
-Issues introduced in the beta are processed with priority. 🔝
-
-{% endnote %}
-
-{% tip %}
-
-Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=4oeQZhxYUNk) on
- September 3, 2025, at 20:00 GMT / 12:00 PT / 21:00 CEST!
-
-{% endtip %}
-
 Home Assistant 2025.9! 🎉
 
-Enjoy the (beta) release!
+But before we dive into this release: _Did you see we launched a new product?_ 👀
+
+We've introduced the [Home Assistant Connect ZWA-2](/connect/zwa-2/), the ultimate way to connect Z-Wave devices to Home Assistant. You can read all about it in our [announcement blog 📰](/blog/2025/08/13/home-assistant-connect-zwa-2/) or re-watch the [product launch live stream on YouTube 📺](https://www.youtube.com/watch?v=Z-pUkM6XIuA).
+
+It was a busy month, as we also had two new [Works with Home Assistant](https://works-with.home-assistant.io/) program partners joining this month as well: [AirGradient](/blog/2025/08/21/airgradient-joins-works-with-home-assistant/) and [Frient](/blog/2025/09/02/frient-joins-works-with-home-assistant/)! 🎉
+
+While the above was happening this month, as if the project wasn't already busy enough, we kept on pushing to prepare for this release; and it is an absolute **massive** one! 🤯
+
+This month introduces a new experimental Home dashboard, which aims to become the new default dashboard for Home Assistant. A first iteration, of which we love to see your feedback and input on. As you know, we develop and iterate in the open. Give it a shot and let us know what you think!
+
+Talking about dashboards, my personal favorite card is most definitely the [tile card](/dashboards/tile/); it is just so versatile. And this release brings in a staggering amount of new features for it! Most notably, the ability to add a trend graph to the tile card! 📈
+
+I'm the most excited about the visual changes to the automation editor this release brings: a sidebar. It is a huge and very visible change, that just makes so much sense. This release denotes the start of a whole series of improvements to the automation editor in this, and upcoming releases. As automations make a smart home feel magical, I personally can't wait to see how this evolves. 🤖
+
+Enjoy the release!
 
 ../Frenck
 
@@ -212,7 +174,7 @@ Thanks to [@timmo001] we now have a tile card feature to control the open/close 
 
 ### Setting the date
 
-[@timmo001] continued and also added a new tile card feature to support date and datetime entities (including the input datetime helpers). It allows you to set a feature that allows for setting a date.
+[@timmo001] continued and also added a new tile card feature to support date and datetime entities (including the input datetime helpers). It allows you to add a feature that allows for setting a date.
 
 <img class="no-shadow" alt="Screenshot showing a tile card using the new date feature" src="/images/blog/2025-09/tile-features-date.png" />
 
