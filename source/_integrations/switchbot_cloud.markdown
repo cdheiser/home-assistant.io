@@ -116,6 +116,8 @@ Please note, device names configured in the SwitchBot app are transferred into H
 ### Fans
 
 - [Circulator Fan](https://www.switch-bot.com/products/switchbot-battery-circulator-fan)
+- [Air Purifier](https://www.switch-bot.com/products/switchbot-air-purifier)
+- [Air Purifier Table](https://www.switch-bot.com/products/switchbot-air-purifier-table)
 
 ## Supported functionality
 
@@ -333,6 +335,23 @@ Features:
 - set speed, only applicable for [direct mode]
 - set mode
 - get battery, only applicable for [Battery Circulator Fan]
+
+
+#### Air Purifier
+
+Features:
+- get states
+- turn on
+- turn off
+- set mode
+
+#### Air Purifier Table
+
+Features:
+- get states
+- turn on
+- turn off
+- set mode
 
 
 ### Vacuums
