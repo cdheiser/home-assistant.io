@@ -58,6 +58,7 @@ Please note, device names configured in the SwitchBot app are transferred into H
 - [Relay Switch 1PM](https://www.switch-bot.com/products/switchbot-relay-switch-1pm)
 - [Plug Mini (WoPlug)](https://www.switch-bot.com/products/switchbot-plug-mini)
 - [Plug Mini (HomeKit Enabled)](https://www.switch-bot.com/products/switchbot-plug-mini-homekit-enabled)
+- [Plug Mini (EU)](https://www.switch-bot.com/products/switchbot-plug-mini-eu)
 - Plug (Wi-Fi only, only available in Japan)
 
 ### Cover
