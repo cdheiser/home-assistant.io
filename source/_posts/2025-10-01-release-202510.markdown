@@ -352,6 +352,10 @@ We welcome the following new integrations in this release:
   An internal integration that provides predictions of what entities the user is most likely to interact with. Used by our new Home dashboard.
 - **[Victron Remote Monitoring]**, added by [@AndyTempel]  
   The Victron Remote Monitoring (VRM) integration pulls site statistics, solar production and consumption forecasts from Victron Energy's VRM portal.
+- **[Smart Meter B Route]**, added by [@SeraphicRav]  
+  Connect your smart meter via the B Route protocol—designed for the Japanese market—to access real-time energy consumption data.
+- **[Cync]**, added by [@Kinachi249]
+  Connect your GE Lighting Cync smart devices—including smart lighting (formerly known as C by GE)—with Home Assistant.
 
 [@AndyTempel]: https://github.com/AndyTempel
 [@balloob]: https://github.com/balloob
@@ -361,6 +365,8 @@ We welcome the following new integrations in this release:
 [@Przemko92]: https://github.com/Przemko92
 [@Sab44]: https://github.com/Sab44
 [@sarahseidman]: https://github.com/sarahseidman
+[@SeraphicRav]: https://github.com/SeraphicRav
+[@Kinachi249]: https://github.com/Kinachi249
 [Compit]: /integrations/compit
 [Droplet]: /integrations/droplet
 [ekey bionyx]: /integrations/ekeybionyx
@@ -370,6 +376,8 @@ We welcome the following new integrations in this release:
 [SFTP Storage]: /integrations/sftp_storage
 [Usage Prediction]: /integrations/usage_prediction
 [Victron Remote Monitoring]: /integrations/victron_remote_monitoring
+[Smart Meter B Route]: /integrations/route_b_smart_meter
+[Cync]: /integrations/cync
 
 ### Noteworthy improvements to existing integrations
 
