@@ -298,7 +298,25 @@ In the last release, we introduced the Home dashboard, offering a simpler way to
 
 Now we’ve added a new concept - sections of suggested entities. For now, it follows a basic algorithm suggesting entities you have interacted with the most in the past 24 hours. It then shows these entities based on the hour of the day, with only relevant controls being suggested.
 
-<img class="no-shadow" alt="Temporary screenshot that might need replacement" src="/images/blog/2025-10/temp-home-dashboard-prediction-entities.png" />
+<img class="no-shadow" alt="Home Dashboard prediction entities" src="/images/blog/2025-10/temp-home-dashboard-prediction-entities.png" />
+
+
+{% details "Prediction entities on any dashboard" %}
+
+If you’re creating a manual dashboard with sections, you can integrate these prediction controls directly into it. The setup follows a section-based approach:
+
+1. Add a new section.
+2. Open and edit the YAML of that section.
+3. Replace the entire section YAML with the following snippet:
+
+```yaml
+strategy:
+  type: common-controls
+  title: Common controls
+```
+
+{% enddetails %}
+
 
 {% tip %}
 
