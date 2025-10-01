@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "2025.10 Beta: Undo, redo, and draw me too"
-description: "Beta release notes for Home Assistant Core 2025.10"
-date: 2025-09-24 00:00:00
+title: "2025.10: Undo, redo, and draw me too"
+description: "Undo/redo and resizable sidebar in the automation editor, smarter dashboards with predictions, AI image generation, dual wake words for voice assistants, code editor toolbar, and much more!"
+date: 2025-10-01 00:00:00
 date_formatted: "October 1, 2025"
 author: Franck Nijhof
 author_twitter: frenck
@@ -15,64 +15,31 @@ og_image: /images/blog/2025-10/social.png
 
 <lite-youtube videoid="0T23Co-E6Ew" videotitle="Home Assistant 2025.10 Release Party"></lite-youtube>
 
-{% note %}
+Boo! 👻
 
-**Welcome to the beta release notes for Home Assistant 2025.10** 🎉
+We just [celebrated our birthday](/blog/2025/09/17/home-assistant-turns-12/) 🥳, which means it is time for spooky season; get ready for Halloween! And, hello to the October release of Home Assistant 2025.10! 🎃
 
-<br />
+This release iterates on some of the features we introduced in the last couple of releases, but also introduces some brand-new ones!
 
-Please note that these release notes are a work in progress. 👷‍♀️ We will be
-completing them over the next couple of days. Not all features might be final
-yet, and some features _**may not** make it into the final release_.
+The highlight of this release is definitely the iterations of the automation editor, which gained a sidebar last release, and now has gained undo/redo functionality, a resizable sidebar, improved copy/paste, and more! Thanks for all the feedback you provided on the previous release; it made a massive difference in this release.
 
-<br />
+Using multiple wake words for voice assistants is now possible, which opens up a lot of possibilities, especially for dual-language households (like mine 😉). Dashboards get more intelligent by suggesting entities based on your usage patterns, and the AI Task can now generate images, which I'm curious to see what the community will do with it!
 
-**Want to help test the beta?** Awesome! ❤️ We have documented how you
-[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
-
-<br />
-
-While running the beta, we highly recommend joining our _#beta_ channel on
-the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
-testers are in this channel during the beta period to share experiences, ideas,
-and iterate over new features, fine-tuning them before the final release.
-It's a really fun place to hang out. 😎
-
-<br />
-
-**Reporting issues**: As this is a beta test, you might encounter unexpected
-behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
-You can find our issue trackers and the reported issues during beta here:
-
-<br />
-
-- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/136)
-- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/767)
-- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/143)
-
-🙏 When reporting issues, **make sure to mention the exact beta version you are
-running** in the issue description. This will help us identify and track the
-issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
-
-<br />
-
-Issues introduced in the beta are processed with priority. 🔝
-
-{% endnote %}
-
-{% tip %}
-
-Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=0T23Co-E6Ew) on October 1, 2025, at 20:00 GMT / 12:00 PT / 21:00 CEST!
-
-{% endtip %}
-
-Home Assistant 2025.10! 🎉
-
-Enjoy the (beta) release!
+Enjoy the release!
 
 ../Frenck
 
 <!--more-->
+
+_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@JLo], [@laupalombi], and [@piitaya] who helped write the release notes this release. Also, [@googanhiem], [@SeraphicRav], [@tronikos], and [@richardpolzer] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
+
+[@googanhiem]: https://github.com/googanhiem
+[@JLo]: https://github.com/jlpouffier
+[@laupalombi]: https://github.com/laupalombi
+[@piitaya]: https://github.com/piitaya
+[@richardpolzer]: https://github.com/richardpolzer
+[@SeraphicRav]: https://github.com/SeraphicRav
+[@tronikos]: https://github.com/tronikos
 
 - [Automation editor](#automation-editor)
   - [The sidebar is resizable](#the-sidebar-is-resizable)
@@ -94,7 +61,7 @@ Enjoy the (beta) release!
 - [Other noteworthy changes](#other-noteworthy-changes)
   - [New more information dialog for media player entities](#new-more-information-dialog-for-media-player-entities)
   - [Sync zooming charts in the history panel](#sync-zooming-charts-in-the-history-panel)
-  - [Template \& YAML editor gets a toolbar](#template--yaml-editor-gets-a-toolbar)
+  - [Template \& YAML editors get a toolbar](#template--yaml-editors-get-a-toolbar)
 - [Need help? Join the community](#need-help-join-the-community)
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
@@ -109,65 +76,62 @@ This release fixes a few of the most common issues we managed to gather from all
 
 Working on an action that is too complex for a small sidebar? Maybe one with a few YAML fields? You can now resize the sidebar to adapt the layout to your current task!
 
-<img class="no-shadow" alt="Temporary screenshot that might need replacement" src="/images/blog/2025-10/temp-automation-editor-resizable-sidebar.png" />
+<img class="no-shadow" alt="Screenshot showing the automation editor with the sidebar expanded on the right. The sidebar is larger in this screenshot, as it can now be resized." src="/images/blog/2025-10/automation-editor-resizable-sidebar.png" />
 
 ### CTRL+V
 
 We previously introduced keyboard shortcuts to copy and cut.
 
-Pasting was more complex to bring to life because you can paste a block (trigger, condition, action) in many different locations in your automation.
-In this release, we introduce a really simple pattern. If you previously copied a block, you can paste it below any block simply by selecting it and pressing CTRL+V.
+Pasting was more complex to bring to life because you can paste a block (trigger, condition, action) in many different locations in your automation. In this release, we introduce a really simple pattern. If you previously copied a block, you can paste it below any block simply by selecting it and pressing CTRL+V.
 
-Another very simple, but very welcome quality of life improvement to the automation editor!
+Another very simple, but very welcome, quality-of-life improvement to the automation editor!
 
-<img class="no-shadow" alt="Temporary screen recording that might need replacement" src="/images/blog/2025-10/temp-automation-editor-copy-paste.gif" />
+<img class="no-shadow" alt="Screen recording showing how to copy and paste blocks in the automation editor; it especially highlights how a pasted block is pasted after the block you've selected." src="/images/blog/2025-10/automation-editor-copy-paste.gif" />
 
 ### The overflow menu is back
 
 We initially relocated the overflow menu (the menu that appears when you click the `⋮`) with all the options related to a block on the sidebar, thinking this would make the flow cleaner.
 
-Due to popular demand and helpful feedback that some actions were more difficult to reach (such as testing a condition or running an action), we decided to bring it back to the main section of the editor too.
+Due to popular demand and helpful feedback that some actions were more difficult to reach (such as testing a condition or running an action), we decided to bring it back to the main section of the editor as well.
 
-<img class="no-shadow" alt="Temporary screenshot that might need replacement" src="/images/blog/2025-10/temp-automation-editor-overflow-menu.png" />
+<img class="no-shadow" alt="Screenshot showing the automation editor with the overflow menu open on an item in the automation editor flow. This showcases all items are back, including disabling, copy, and pasting parts." src="/images/blog/2025-10/automation-editor-overflow-menu.png" />
 
 ### Undo/Redo
 
-We’ve all been there, you’re building a complex automation, make a mistake, and want to revert it, only to find out that it’s really not simple.
-Up until now, the only way to revert some unsaved changes made to an automation was to close it and start over again… A very painful workflow.
+We've all been there: you're building a complex automation, make a mistake, and want to revert it, only to find out that it's really not simple. Up until now, the only way to revert some unsaved changes made to an automation was to close it and start over again… A very painful workflow.
 
-This release introduces an Undo functionality (And its associated Redo). You can now undo up to 75 steps back in your automation editing history (and redo them if you want).
-Standard keyboard shortcuts (CTRL+Z and CTRL+Y) are also available! An amazing contribution [@jpbede], thanks!
+This release introduces an Undo functionality (and its associated Redo). You can now undo up to 75 steps back in your automation editing history (and redo them if you want). Standard keyboard shortcuts (CTRL+Z and CTRL+Y) are also available! An amazing contribution from [@jpbede], thanks!
 
-<img class="no-shadow" alt="Temporary screen recording that might need replacement" src="/images/blog/2025-10/temp-automation-editor-redo-undo.gif" />
+<img class="no-shadow" alt="Screen recording showing how to undo and redo changes in the automation editor with the new back- and forward-arrows that are shown in the top right of the automation editor." src="/images/blog/2025-10/automation-editor-redo-undo.gif" />
 
 [@jpbede]: https://github.com/jpbede
 
 ### Repeat repeat repeat repeat
 
-Finally, we noticed some unwanted complexity in our `repeat` building block, which allows you to repeat one or multiple actions for as long as you need to.
+Finally, we noticed some unwanted complexity in our ["repeat" building block](/docs/scripts/#repeat-a-group-of-actions), which allows you to repeat one or multiple actions for as long as you need to.
 
-This complexity stemmed from the fact that we were trying to cover four main use-cases in a single block.
+This complexity stemmed from the fact that we were trying to cover four main use cases in a single block.
 
 We decided to split this building block into four smaller ones, with simpler descriptions explaining each use case. Nice!
 
-Here's how they were separated out,
+Here's how they were separated:
 
-- Repeat for each - Repeat a sequence for each element of a list.
-- Repeat multiple times - Repeat a sequence of actions a fixed number of times.
-- Repeat until - Repeat a sequence of actions until a condition is satisfied. The condition is checked after each run of the sequence.
-- Repeat while - Repeat a sequence of actions as long as a condition is satisfied. The condition is checked before each run of the sequence.
+- **Repeat for each** - Repeat a sequence for each element of a list.
+- **Repeat multiple times** - Repeat a sequence of actions a fixed number of times.
+- **Repeat until** - Repeat a sequence of actions until a condition is satisfied. The condition is checked after each run of the sequence.
+- **Repeat while** - Repeat a sequence of actions as long as a condition is satisfied. The condition is checked before each run of the sequence.
 
-<img class="no-shadow" alt="Temporary screenshot that might need replacement" src="/images/blog/2025-10/temp-automation-editor-split-repeat.png" />
+<img class="no-shadow" alt="Screenshot showing the repeat building block, now consisting of four distinct blocks for each use case." src="/images/blog/2025-10/automation-editor-split-repeat.png" />
 
 {% note %}
-For our advanced users: This evolution is only cosmetic. The YAML format of the repeat block does not change.
+For our advanced users: This evolution is only cosmetic. The YAML format of the repeat block does not change; this means your existing automations will not be affected by this change.
 {% endnote %}
 
 ### Automation editor feedback
 
 {% tip %}
 
-One of Home Assistant's greatest strengths is our community. We're building this dashboard together, and your input will shape where it goes next. There are two ways to get involved:
+One of Home Assistant's greatest strengths is our community. We're building this automation editor together, and your input will shape where it goes next. There are two ways to get involved:
 
 - [Share your thoughts in our survey](https://forms.gle/ATWcTAj8bMbiGfUE7)
 - [Join the conversation in the automations & scripts development channel on Discord](https://discord.com/channels/330944238910963714/1351529028112224359)
@@ -180,7 +144,7 @@ In [2025.8](/blog/2025/08/06/release-20258/), we introduced [a way to generate d
 
 In this release, we introduce a way to generate images!
 
-Now every time someone rings your doorbell, you can receive a notification with a cartoon version of the doorbell snapshot. [@JLo](https://github.com/jlpouffier) has made this example a reality, and here's his demo with the associated automation!
+Now every time someone rings your doorbell, you can receive a notification with a cartoon version of the doorbell snapshot. [@JLo] has made this example a reality, and here's his demo with the associated automation!
 
 <lite-youtube videoid="r6GyFSEpzg4" videotitle="Demo of image generation in Home Assistant 2025.10"></lite-youtube>
 
@@ -197,14 +161,12 @@ triggers:
     to: "on"
 actions:
   - action: notify.mobile_app_iphone
-    metadata: {}
     data:
       title: "🔔 Doorbell "
       message: Processing image ...
       data:
         tag: doorbell
   - action: ai_task.generate_data
-    metadata: {}
     data:
       task_name: Doorbell description
       instructions: |-
@@ -244,7 +206,6 @@ actions:
               media_content_id: media-source://media_source
     response_variable: ai
   - action: notify.mobile_app_iphone
-    metadata: {}
     data:
       title: >-
         🔔 Doorbell ({{ai.data.person_count}} 🧑🏻‍🦱 / {{ai.data.animal_count}}
@@ -253,7 +214,6 @@ actions:
       data:
         tag: doorbell
   - action: ai_task.generate_image
-    metadata: {}
     data:
       task_name: Manga
       instructions: Transform this image into a super cute manga!
@@ -273,7 +233,6 @@ actions:
     response_variable: ai_image
     enabled: true
   - action: notify.mobile_app_iphone
-    metadata: {}
     data:
       title: >-
         🔔 Doorbell ({{ai.data.person_count}} 🧑🏻‍🦱 / {{ai.data.animal_count}}
@@ -292,16 +251,17 @@ mode: single
 
 Image generation is already working great, and we cannot wait to see what you will build with this!
 
+[@JLo]: https://github.com/jlpouffier
+
 ## Dashboards get smarter - let your home suggest what to show
 
 In the last release, we introduced the Home dashboard, offering a simpler way to control and monitor your smart home if you don’t have the time, energy, or need to customize your own dashboard in detail.
 
-Now we’ve added a new concept - sections of suggested entities. For now, it follows a basic algorithm suggesting entities you have interacted with the most in the past 24 hours. It then shows these entities based on the hour of the day, with only relevant controls being suggested.
+Now we’ve added a new concept: sections of suggested entities. This follows a basic algorithm that suggests entities you have interacted with the most in the past 24 hours. It then shows these entities based on the hour of the day, with only relevant controls being suggested.
 
-<img class="no-shadow" alt="Home Dashboard prediction entities" src="/images/blog/2025-10/temp-home-dashboard-prediction-entities.png" />
+<img class="no-shadow" alt="Screenshot showing the new prediction entities that are now put onto the experimental home dashboard. These are common entities you often interact with." src="/images/blog/2025-10/home-dashboard-prediction-entities.png" />
 
-
-{% details "Prediction entities on any dashboard" %}
+{% details "Adding prediction entities to any dashboard" %}
 
 If you’re creating a manual dashboard with sections, you can integrate these prediction controls directly into it. The setup follows a section-based approach:
 
@@ -317,37 +277,36 @@ strategy:
 
 {% enddetails %}
 
-
 {% tip %}
 
 One of Home Assistant's greatest strengths is our community. We're building this dashboard together, and your input will shape where it goes next. There are two ways to get involved:
 
-- **Awaiting link for this item**
+- [Share your thoughts in our survey](https://docs.google.com/forms/d/e/1FAIpQLSd2pOf7WWNxmvcC8lH3NM5Ssf63y2pN3xP9HdlY09pr9goPqQ/viewform?usp=dialog)
 - [Join the conversation in the dashboard development channel on Discord](https://discord.com/channels/330944238910963714/1351536906437005313)
 
 {% endtip %}
 
 ## Voice
 
-### Hello, Hola
+### Hello, hola
 
-For a very long time, ESPHome-based voice assistants (even the tiny Atom Echo) secretly [supported multiple wake words](/blog/2024/06/26/voice-chapter-7/#3x-wake-words-and-2x-accuracy) under the hood. With this release, we are finally opening up this feature to you!
+For a very long time, ESPHome-based voice assistants (even the tiny Atom Echo) secretly [supported multiple wake words](/blog/2024/06/26/voice-chapter-7/#3x-wake-words-and-2x-accuracy) under the hood. With this release, we're finally opening up this feature to you!
 
 You can now define two wake words and two assistants for every voice assistant in your home!
 
-<img class="no-shadow" alt="Temporary screenshot that might need replacement" src="/images/blog/2025-10/temp-voice-2-wake-words.png" />
+<img class="no-shadow" alt="Screenshot showing the device page of a Home Assistant Voice PE, showcasing the new entities for setting the second wake word and voice pipelines associated with it." src="/images/blog/2025-10/voice-2-wake-words.png" />
 
-This makes it straightforward to support dual-language households by assigning different wake words to different languages. For example, “Okay Nabu” could be used for French while “Hey Jarvis” is used for English.
+This makes it straightforward to support dual-language households by assigning different wake words to different languages. For example, _“Okay Nabu”_ could be used for French, while _“Hey Jarvis”_ is used for English.
 
-Multiple wake words and assistants can be used for other purposes as well. Want to keep your local and cloud-based voice assistants separate? Easy! “Okay Nabu” could be used for a cloud-based assistant while “Hey Jarvis” is used for a local one.
+Multiple wake words and assistants can be used for other purposes as well. Want to keep your local and cloud-based voice assistants separate? Easy! _“Okay Nabu”_ could be used for a cloud-based assistant while _“Hey Jarvis”_ is used for a local one.
 
 We’d love to hear feedback on how you plan to use multiple wake words in your home!
 
 ### Beep boop
 
-After a voice command, Assist responds with a short confirmation like “Turned on the lights” or “Brightness set”. This lets you know that it understood your command and took the appropriate actions. However, if you’re in the same room as the voice assistant, this confirmation is redundant, as you can see or hear that the appropriate actions were taken.
+After a voice command, Assist responds with a short confirmation like _“Turned on the lights”_ or _“Brightness set”_. This lets you know that it understood your command and took the appropriate actions. However, if you’re in the same room as the voice assistant, this confirmation can feel redundant since you can see or hear that the appropriate actions were taken.
 
-Starting with this release, Assist will detect if the voice command’s actions all took place within the same area as the satellite device. If so, a short confirmation “beep” will be played instead of the full verbal response. Besides being less verbose, this also serves as a reminder that your voice command only affected the current area.
+Starting with this release, Assist will detect if your voice command’s actions all took place within the same area as the satellite device. If so, a short confirmation “beep” will be played instead of the full verbal response. Besides being less verbose, this also serves as a quick reminder that your voice command only affected the current area.
 
 ## Integrations
 
@@ -360,72 +319,70 @@ We welcome the following new integrations in this release:
 
 - **[Compit]**, added by [@Przemko92]  
   The Compit integration allows you to integrate air conditioning, ventilation, and heating controllers with Home Assistant.
+- **[Cync]**, added by [@Kinachi249]  
+  Connect your GE Lighting Cync smart devices—including smart lighting (formerly known as C by GE)—with Home Assistant.
 - **[Droplet]**, added by [@sarahseidman]  
-  Connect your Droplet devices to Home Assistant. Droplet accurately monitors your home’s water usage in real time.
+  Connect your Droplet devices to Home Assistant. Droplet accurately monitors your home's water usage in real time.
 - **[ekey bionyx]**, added by [@richardpolzer]  
   Integrate your ekey bionyx biometric access control systems to receive events for individual finger scans and digital inputs in your smart home.
 - **[IRM KMI]**, added by [@jdejaegh]  
   Get accurate weather data from Belgium's Royal Meteorological Institute (IRM-KMI) for precise local forecasting.
 - **[Libre Hardware Monitor]**, added by [@Sab44]  
-  Monitor your computer's hardware sensors including CPU temperature, GPU usage, fan speeds, and system performance metrics.
+  Monitor your computer's hardware sensors, including CPU temperature, GPU usage, fan speeds, and system performance metrics.
 - **[Portainer]**, added by [@erwindouna]  
-  Manage and monitor your Docker, keeping track of the status of your running containers.
+  Manage and monitor your Docker containers, keeping track of the status of your running containers.
+- **[Smart Meter B Route]**, added by [@SeraphicRav]  
+  Connect your smart meter via the B Route protocol—designed for the Japanese market—to access real-time energy consumption data.
 - **[SFTP Storage]**, added by [@maretodoric]  
   Set up secure remote backup locations using SFTP/SSH protocols for your Home Assistant backups and data storage.
 - **[Usage Prediction]**, added by [@balloob]  
-  An internal integration that provides predictions of what entities the user is most likely to interact with. Used by our new Home dashboard.
+  An internal integration that provides predictions of what entities you are most likely to interact with. Used by our new Home dashboard.
 - **[Victron Remote Monitoring]**, added by [@AndyTempel]  
-  The Victron Remote Monitoring (VRM) integration pulls site statistics, solar production and consumption forecasts from Victron Energy's VRM portal.
-- **[Smart Meter B Route]**, added by [@SeraphicRav]  
-  Connect your smart meter via the B Route protocol—designed for the Japanese market—to access real-time energy consumption data.
-- **[Cync]**, added by [@Kinachi249]
-  Connect your GE Lighting Cync smart devices—including smart lighting (formerly known as C by GE)—with Home Assistant.
+  The Victron Remote Monitoring (VRM) integration pulls site statistics and solar production and consumption forecasts from Victron Energy's VRM portal.
 
 [@AndyTempel]: https://github.com/AndyTempel
 [@balloob]: https://github.com/balloob
 [@erwindouna]: https://github.com/erwindouna
 [@jdejaegh]: https://github.com/jdejaegh
+[@Kinachi249]: https://github.com/Kinachi249
 [@maretodoric]: https://github.com/maretodoric
 [@Przemko92]: https://github.com/Przemko92
 [@Sab44]: https://github.com/Sab44
 [@sarahseidman]: https://github.com/sarahseidman
 [@SeraphicRav]: https://github.com/SeraphicRav
-[@Kinachi249]: https://github.com/Kinachi249
 [Compit]: /integrations/compit
+[Cync]: /integrations/cync
 [Droplet]: /integrations/droplet
 [ekey bionyx]: /integrations/ekeybionyx
 [IRM KMI]: /integrations/irm_kmi
 [Libre Hardware Monitor]: /integrations/libre_hardware_monitor
 [Portainer]: /integrations/portainer
 [SFTP Storage]: /integrations/sftp_storage
+[Smart Meter B Route]: /integrations/route_b_smart_meter
 [Usage Prediction]: /integrations/usage_prediction
 [Victron Remote Monitoring]: /integrations/victron_remote_monitoring
-[Smart Meter B Route]: /integrations/route_b_smart_meter
-[Cync]: /integrations/cync
 
 ### Noteworthy improvements to existing integrations
 
-It is not just new {% term integrations %} that have been added; existing
-integrations are also being constantly improved. Here are some of the noteworthy
-changes to existing integrations:
+It is not just new {% term integrations %} that have been added; existing integrations are also being constantly improved. Here are some of the noteworthy changes to existing integrations:
 
 - [Philips Hue] expanded with support for MotionAware sensors on the new [Hue Bridge Pro]! Thanks, [@marcelveldt]!
-- [LG] added support to the [LG ThinQ] integration to now provide energy usage sensors for better energy monitoring for your devices! Nice!
+- [LG] added support to the [LG ThinQ] integration to now provide energy usage sensors for better energy monitoring of your devices! Nice!
 - Amazing work from [@natekspencer]: [Litter-Robot] got several enhancements: last feeding sensors, food dispensed today tracking, next feeding sensors, gravity mode switch, and globe light settings for Litter-Robot 4!
 - [AccuWeather] now provides hourly forecasts, giving you more detailed weather predictions throughout the day! Thanks, [@bieniu]!
 - The [Blue Current] integration got a new start charge session action for managing your EV charging! Nice work, [@NickKoepr]!
-- The [Ecowitt] integration now supports the LDS01 sensor support! Great addition [@GSzabados]!
-- [Reolink] cameras got several new features: encoding select entity, Home Hub siren support, and color temperature support for light entities! Awesome work from [@starkillerOG]!
+- The [Ecowitt] integration now supports the LDS01 sensor! Great addition, [@GSzabados]!
+- [Reolink] cameras got several new features including encoding select entity, Home Hub siren support, and color temperature support for light entities! Awesome work from [@starkillerOG]!
 - Geocaching enthusiasts will love the new cache sensors added to the [Geocaching] integration by [@marc7s]! Nice if you have hidden one!
 - [Lutron Caseta] now supports multi-tap actions for more advanced button control! Thanks, [@rlopezdiez]!
 - Thanks to [@alexqzd], [SmartThings] air conditioners can now control the AC display light!
-- [Shelly] devices received massive updates: illuminance sensor for Plug US Gen4, presence component entities, virtual buttons support, object-based entities, presence zone component support, and cable unplugged sensor for Flood Gen4! Great work from [@chemelli74], [@bieniu], and [@thecode]!
+- [Shelly] devices received massive updates including illuminance sensor for Plug US Gen4, presence component entities, virtual buttons support, object-based entities, presence zone component support, and cable unplugged sensor for Flood Gen4! Great work from [@chemelli74], [@bieniu], and [@thecode]!
 - The [SwitchBot] integration expanded device support with Plug Mini EU, RelaySwitch 2PM, and K11+ Vacuum! Thanks, [@zerzhang]!
-- While the [SwitchBot Cloud] integration got several improvements: AC off support, humidifier platform, Plug-Mini-EU support, and Climate Panel support! Great work from [@SeraphicRav] and [@XiaoLing-git]!
+- While the [SwitchBot Cloud] integration got several improvements including AC off support, humidifier platform, Plug-Mini-EU support, and Climate Panel support! Great work from [@SeraphicRav] and [@XiaoLing-git]!
 - Thanks to [@timmo001], the [System Bridge] integration now includes a power usage sensor for better system monitoring!
 - Exciting to see that the [Tasmota] integration now supports camera functionality! Nice addition from [@anishsane]!
-- Using the [Tibber] integration? It now provides 15-minute price data, which goes into effect on October 1st. Good timing [@Danielhiversen]!
-- The [Tuya] integration received extensive updates! With support for various new device categories and sensors: energy sensors for TDQ devices, missing sensors for Metering_3PN_ZB devices, power sensors for ZNDB devices, energy sensors for DLQ devices, solar inverter support, energy consumption for smart switches, PM10 air quality monitoring, motor rotation mode for curtains, charge state for siren alarms, cooking thermometer support, cat toilet support, electric desk support, white noise machine support, and water quality sensors support! What an impressive list! Thanks [@zzysszzy], [@rokam], and [@mhalano]!
+- Using the [Tibber] integration? It now provides 15-minute price data, which goes into effect on October 1st. Good timing, [@Danielhiversen]!
+- The [Tuya] integration received extensive updates with support for various new device categories and sensors: energy sensors for TDQ devices, power sensors for ZNDB devices, energy sensors for DLQ devices, solar inverter support, energy consumption for several smart switches, PM10 air quality monitoring, motor rotation mode for curtains that support it, charge state for siren alarms, cooking thermometer support, cat toilet support, electric desk support, white noise machine support, and water quality sensor support! What an impressive list! Thanks, [@zzysszzy], [@rokam], and [@mhalano]!
 - The [Workday] integration now has a calendar that you can view from the calendar sidebar! Thanks, [@gjohansson-ST]!
 - The [ntfy] integration got a big upgrade! You can now send richer, customizable notifications with tags, icons, URLs, and attachments. Plus, with the new event platform, you can subscribe to topics and trigger automations from incoming messages. Thanks, [@tr4nt0r]!
 
@@ -475,13 +432,9 @@ changes to existing integrations:
 
 ### Integration quality scale achievements
 
-One thing we are incredibly proud of in Home Assistant is our
-[integration quality scale]. This scale helps us and our contributors to ensure
-integrations are of high quality, maintainable, and provide the best possible
-user experience.
+One thing we are incredibly proud of in Home Assistant is our [integration quality scale]. This scale helps us and our contributors to ensure integrations are of high quality, maintainable, and provide the best possible user experience.
 
-This release, we celebrate several {% term integrations %} that have improved
-their quality scale:
+This release, we celebrate several {% term integrations %} that have improved their quality scale:
 
 - **3 integrations reached platinum** 🏆
   - [Android TV Remote], thanks to [@tronikos]
@@ -497,10 +450,7 @@ their quality scale:
   - [Opower], thanks to [@tronikos]
   - [Sonos], thanks to [@PeteRager]
 
-This is a huge achievement for these integrations and their maintainers. The
-effort and dedication required to reach these quality levels is significant,
-as it involves extensive testing, documentation, error handling, and often
-complete rewrites of parts of the integration.
+This is a huge achievement for these integrations and their maintainers. The effort and dedication required to reach these quality levels is significant, as it involves extensive testing, documentation, error handling, and often complete rewrites of parts of the integration.
 
 A big thank you to all the contributors involved! 👏
 
@@ -544,15 +494,15 @@ The following integrations are now available via the Home Assistant UI:
 There are many more improvements in this release; here are some of the other noteworthy changes:
 
 - The "Logbook" has been renamed to "Activity" in the UI. This better reflects its purpose of showing a timeline of activities and events in your Home Assistant instance.
-- [Matter] continues to expand with occupancy sensing hold time, climate running state for heat/cool fans, vacuum area service actions, and thermostat outdoor temperature sensors! Great contributions from [@lboue] and [@virtualbitzz]!
+- [Matter] continues to expand with occupancy sensing hold time, climate running state for heat/cool fans, and thermostat outdoor temperature sensors! Great contributions from [@lboue] and [@virtualbitzz]!
 - Lawn mower entities now support start mowing and dock intents for better voice control! Thanks, [@piitaya]!
-- We now have secondary wake word and pipeline support for ESPHome voice satellites. This means you can assign different pipelines (for example, different language or personalities) to a different wake word. Super nice [@synesthesiam]!
-- The [analog clock] we introduced last release got some more options! You can now enable a smooth motion for the seconds hand. Beautiful [@timmo001]!
-- Need the version of the [Home Assistant Mobile Companion App] you are using? The version is now shown in the about page in the settings menu! Nice one [@TimoPtr]!
-- The [thermostat card] now supports [water heater entities]. Thanks [@karwosts]!
+- We now have secondary wake word and pipeline support for ESPHome voice satellites. This means you can assign different pipelines (for example, different languages or personalities) to different wake words. Super nice, [@synesthesiam]!
+- The [analog clock] we introduced last release got some more options! You can now enable a smooth motion for the seconds hand. Beautiful, [@timmo001]!
+- Need the version of the [Home Assistant Mobile Companion App] you are using? If you have installed the latest versions of our apps, the version is now shown on the about page in the settings menu! Nice one, [@TimoPtr]!
+- The [thermostat card] now supports [water heater entities]. Thanks, [@karwosts]!
 - Thanks to [@cr7pt0gr4ph7], the add-on configuration UI has gotten support for more complex configurations; this means you will get a better experience when configuring add-ons with more complex options (like lists or user accounts). Well done!
 - Talking about add-ons, we now include switch entities for those, making it easier to control your add-ons. Thanks, [@felipecrs]!
-- Using a [webhook trigger] in your automation? You can now make it even more dynamic by using a template for the `webhook_id`. Thanks [@RoboMagus]!
+- Using a [webhook trigger] in your automation? You can now make it even more dynamic by using a template for the `webhook_id`. Thanks, [@RoboMagus]!
 - We now have support for `MCF` (1000 Cubic Feet) as an alternate unit of measure for volume, thanks to [@ekobres], [@xtimmy86x] added `m/min` for speed sensors, `mg/m³` was added for carbon monoxide sensors by [@jbouwh], and [@pioto] added `inH₂O` pressure unit support. Nice!
 
 [@cr7pt0gr4ph7]: https://github.com/cr7pt0gr4ph7
@@ -578,26 +528,28 @@ There are many more improvements in this release; here are some of the other not
 
 ### New more information dialog for media player entities
 
-This one, we have [@jpbede] & [@matthiasdebaat] to thank for! The 'more information' dialogs for media players have a revamped design, offering a cleaner and more intuitive interface.
+This one, we have [@jpbede] and [@matthiasdebaat] to thank for! The 'more information' dialogs for media players have a revamped design, offering a cleaner and more intuitive interface.
 
-<img class="no-shadow" alt="Temporary screenshot that might need replacement" src="/images/blog/2025-10/temp-more-info-media-player.png" />
+<img class="no-shadow" alt="Screenshot showing the new more information dialog when you click on a media player entity. It now features album art and great controls over your media player." src="/images/blog/2025-10/more-info-media-player.png" />
 
 [@jpbede]: https://github.com/jpbede
 [@matthiasdebaat]: https://github.com/matthiasdebaat
 
 ### Sync zooming charts in the history panel
 
-When you have multiple charts in the history panel, zooming in on one chart will now automatically zoom in on all other charts as well. This makes it easier to compare data across different entities. Well done [@birrejan]!
+When you have multiple charts in the history panel, zooming in on one chart will now automatically zoom in on all other charts as well. This makes it easier to compare data across different entities. Well done, [@birrejan]!
 
-<img class="no-shadow" alt="Temporary screenshot that might need replacement" src="/images/blog/2025-10/temp-history-sync-zoom.gif" />
+<img class="no-shadow" alt="Screen recording showing the effect of all charts being in sync when scrolling or zooming. The recording shows how a change in one graph, affects all the others in the same way." src="/images/blog/2025-10/history-sync-zoom.gif" />
 
 [@birrejan]: https://github.com/birrejan
 
-### Template & YAML editor gets a toolbar
+### Template & YAML editors get a toolbar
 
-[@TCWORLD] has contributed a toolbar for the YAML and template code editors in our UI. This solves an issue where the previous floating button would float over the content of the editor and obscure it from view, and now provides a nice little copy button as well. Nice!
+[@TCWORLD] has contributed a toolbar for the YAML and template code editors in our UI. This solves an issue where the previous floating button would float over the content of the editor and obscure it from view.
 
-<img class="no-shadow" alt="Temporary screenshot that might need replacement" src="/images/blog/2025-10/temp-template-editor-toolbar.png" />
+The new toolbar also includes undo and redo buttons, bringing [the same convenient undo and redo functionality](#undoredo) we introduced for the automation editor to these code editors as well. Plus, there's a nice little copy button to quickly copy your code! Nice!
+
+<img class="no-shadow" alt="Screenshot showing a YAML editor in our UI with the brand new toolbar that now additionally provides undo, redo, and copy buttons!" src="/images/blog/2025-10/template-yaml-editor-toolbar.png" />
 
 [@TCWORLD]: https://github.com/TCWORLD
 
@@ -639,7 +591,7 @@ If you have an automation or script with an action targeting a label, make sure 
 
 {% details "HERE Travel Time" %}
 
-HERE deprecated the previous free tier. The new Base Plan has 5000 free requests per month. The automatic update interval of the here_travel_time integration changed from 5min to 30min so 1 route can be supported without costs.
+HERE deprecated the previous free tier. The new Base Plan has 5000 free requests per month. The automatic update interval of the HERE Travel Time integration changed from 5 minutes to 30 minutes, so one route can be supported without costs.
 
 ([@eifinger] - [#147222]) ([here_travel_time docs])
 
@@ -651,7 +603,7 @@ HERE deprecated the previous free tier. The new Base Plan has 5000 free requests
 
 {% details "Home Connect" %}
 
-The Home Connect Alarm clock entity has been removed from the time platform, please, use the number entity instead.
+The Home Connect Alarm clock entity has been removed from the time platform, please use the number entity instead.
 
 ([@Diegorro98] - [#152188]) ([home_connect docs])
 
@@ -684,7 +636,7 @@ Removed previously deprecated extra attributes, please review your automations.
 
 {% details "Slide Local" %}
 
-The effect of the property "invert position" is extended from the position itself to the status (open or closed). With this adjustment, it is not necessary anymore to use cover templates to invert the position to correct the status. If you have covers with inverted position and are using the state in automations, you must adjust the automations accordingly.
+The effect of the property "invert position" is extended from the position itself to the status (open or closed). With this adjustment, it is no longer necessary to use cover templates to invert the position to correct the status. If you have covers with inverted position and are using the state in automations, you must adjust the automations accordingly.
 
 ([@dontinelli] - [#150418]) ([slide_local docs])
 
@@ -696,7 +648,7 @@ The effect of the property "invert position" is extended from the position itsel
 
 {% details "SmartThings" %}
 
-The `windFree` preset mode for the AC has been renamed to `wind_free` to allow translation to happen. Please adapt automations accordingly.
+The `windFree` preset mode for the air conditioner has been renamed to `wind_free` to allow translation to happen. Please adapt automations accordingly.
 
 ([@joostlek] - [#152833]) ([smartthings docs])
 
@@ -710,9 +662,9 @@ The `windFree` preset mode for the AC has been renamed to `wind_free` to allow t
 
 Switch Tibber electricity pricing to 15-minute intervals.
 
-- The `tibber.get_prices` action now return 15min data instead of hourly.
+- The `tibber.get_prices` action now returns 15-minute data instead of hourly.
 - The `price_level` attribute is removed and no longer supported.
-- The `intraday_price_ranking` attribute is now scaled to (0,1) to better support 15 min prices
+- The `intraday_price_ranking` attribute is now scaled to (0,1) to better support 15-minute prices.
 
 ([@Danielhiversen] - [#151881]) ([tibber docs])
 
@@ -753,13 +705,9 @@ Removes the extra ZHA specific cover entity attributes, their values were no lon
 
 ZhongHong's climate entities `set_fan_mode` action behavior has changed.
 
-- The fan mode values are now converted to **lowercase** instead of uppercase.
-- This change ensures compliance with the standard convention.
+The fan mode values are now converted to lowercase instead of uppercase to ensure compliance with the standard convention.
 
-As a result of this change:
-
-- Any existing integrations or automations relying on uppercase fan mode values may break.
-- You may need to update their configurations to use lowercase fan mode values.
+If you have automations relying on uppercase fan mode values, you will need to update them to use lowercase values instead.
 
 ([@Blear] - [#151559]) ([zhong_hong docs])
 
@@ -775,6 +723,7 @@ new features available for your integration: Be sure to follow our
 release:
 
 - [Deprecate hass argument in service helpers](https://developers.home-assistant.io/blog/2025/09/22/deprecate-hass-argument-service-helpers)
+- [Improved API for registering platform entity services](https://developers.home-assistant.io/blog/2025/09/25/entity-services-api-changes/)
 
 [devblog]: https://developers.home-assistant.io/blog/
 
