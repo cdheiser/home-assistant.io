@@ -31,16 +31,6 @@ Enjoy the release!
 
 <!--more-->
 
-_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@JLo], [@laupalombi], and [@piitaya] who helped write the release notes this release. Also, [@googanhiem], [@SeraphicRav], [@tronikos], and [@richardpolzer] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
-
-[@googanhiem]: https://github.com/googanhiem
-[@JLo]: https://github.com/jlpouffier
-[@laupalombi]: https://github.com/laupalombi
-[@piitaya]: https://github.com/piitaya
-[@richardpolzer]: https://github.com/richardpolzer
-[@SeraphicRav]: https://github.com/SeraphicRav
-[@tronikos]: https://github.com/tronikos
-
 - [Automation editor](#automation-editor)
   - [The sidebar is resizable](#the-sidebar-is-resizable)
   - [CTRL+V](#ctrlv)
@@ -65,6 +55,16 @@ _A huge thank you to all the contributors who made this release possible! And a 
 - [Need help? Join the community](#need-help-join-the-community)
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
+
+_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@JLo], [@laupalombi], and [@piitaya] who helped write the release notes this release. Also, [@googanhiem], [@SeraphicRav], [@tronikos], and [@richardpolzer] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
+
+[@googanhiem]: https://github.com/googanhiem
+[@JLo]: https://github.com/jlpouffier
+[@laupalombi]: https://github.com/laupalombi
+[@piitaya]: https://github.com/piitaya
+[@richardpolzer]: https://github.com/richardpolzer
+[@SeraphicRav]: https://github.com/SeraphicRav
+[@tronikos]: https://github.com/tronikos
 
 ## Automation editor
 
