@@ -257,7 +257,7 @@ Image generation is already working great, and we cannot wait to see what you wi
 
 In the last release, we introduced the Home dashboard, offering a simpler way to control and monitor your smart home if you don’t have the time, energy, or need to customize your own dashboard in detail.
 
-Now we’ve added a new concept: sections of suggested entities. This follows a basic algorithm that suggests entities you have interacted with the most in the past (up to) 30 days. It then shows these entities based on the hour of the day, with only relevant controls being suggested.
+Now we’ve added a new concept: sections of suggested entities. This follows a basic algorithm that suggests entities you have interacted with the most in the past. It then shows these entities based on the hour of the day, with only relevant controls being suggested.
 
 <img class="no-shadow" alt="Screenshot showing the new prediction entities that are now put onto the experimental home dashboard. These are common entities you often interact with." src="/images/blog/2025-10/home-dashboard-prediction-entities.png" />
 
@@ -309,7 +309,7 @@ After a voice command, Assist responds with a short confirmation like _“Turned
 Starting with this release, Assist will detect if your voice command’s actions all took place within the same area as the satellite device. If so, a short confirmation “beep” will be played instead of the full verbal response. Besides being less verbose, this also serves as a quick reminder that your voice command only affected the current area.
 
 {% note %}
-This feature does not work for voice pipelines that use LLMs, as they can generate arbitrary responses.
+This feature does not work for AI-enabled Assistants, as they can generate a wide variety of responses that can’t be replaced with a simple beep.
 {% endnote %}
 
 ## Integrations
