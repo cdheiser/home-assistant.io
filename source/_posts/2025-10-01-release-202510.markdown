@@ -116,10 +116,10 @@ We decided to split this building block into four smaller ones, with simpler des
 
 Here's how they were separated:
 
-- **Repeat for each** - Repeat a sequence for each element of a list.
 - **Repeat multiple times** - Repeat a sequence of actions a fixed number of times.
 - **Repeat until** - Repeat a sequence of actions until a condition is satisfied. The condition is checked after each run of the sequence.
 - **Repeat while** - Repeat a sequence of actions as long as a condition is satisfied. The condition is checked before each run of the sequence.
+- **Repeat for each** - Repeat a sequence for each element of a list.
 
 <img class="no-shadow" alt="Screenshot showing the repeat building block, now consisting of four distinct blocks for each use case." src="/images/blog/2025-10/automation-editor-split-repeat.png" />
 
@@ -257,7 +257,7 @@ Image generation is already working great, and we cannot wait to see what you wi
 
 In the last release, we introduced the Home dashboard, offering a simpler way to control and monitor your smart home if you don’t have the time, energy, or need to customize your own dashboard in detail.
 
-Now we’ve added a new concept: sections of suggested entities. This follows a basic algorithm that suggests entities you have interacted with the most in the past 24 hours. It then shows these entities based on the hour of the day, with only relevant controls being suggested.
+Now we’ve added a new concept: sections of suggested entities. This follows a basic algorithm that suggests entities you have interacted with the most in the past (up to) 30 days. It then shows these entities based on the hour of the day, with only relevant controls being suggested.
 
 <img class="no-shadow" alt="Screenshot showing the new prediction entities that are now put onto the experimental home dashboard. These are common entities you often interact with." src="/images/blog/2025-10/home-dashboard-prediction-entities.png" />
 
@@ -308,6 +308,10 @@ After a voice command, Assist responds with a short confirmation like _“Turned
 
 Starting with this release, Assist will detect if your voice command’s actions all took place within the same area as the satellite device. If so, a short confirmation “beep” will be played instead of the full verbal response. Besides being less verbose, this also serves as a quick reminder that your voice command only affected the current area.
 
+{% note %}
+This feature does not work for voice pipelines that use LLMs, as they can generate arbitrary responses.
+{% endnote %}
+
 ## Integrations
 
 Thanks to our community for keeping pace with the new {% term integrations %}
@@ -326,7 +330,7 @@ We welcome the following new integrations in this release:
 - **[ekey bionyx]**, added by [@richardpolzer]  
   Integrate your ekey bionyx biometric access control systems to receive events for individual finger scans and digital inputs in your smart home.
 - **[IRM KMI]**, added by [@jdejaegh]  
-  Get accurate weather data from Belgium's Royal Meteorological Institute (IRM-KMI) for precise local forecasting.
+  Get accurate weather data from Belgium's Royal Meteorological Institute (IRM-KMI) for precise regional forecasting.
 - **[Libre Hardware Monitor]**, added by [@Sab44]  
   Monitor your computer's hardware sensors, including CPU temperature, GPU usage, fan speeds, and system performance metrics.
 - **[Portainer]**, added by [@erwindouna]  
@@ -378,7 +382,7 @@ It is not just new {% term integrations %} that have been added; existing integr
 - Thanks to [@alexqzd], [SmartThings] air conditioners can now control the AC display light!
 - [Shelly] devices received massive updates including illuminance sensor for Plug US Gen4, presence component entities, virtual buttons support, object-based entities, presence zone component support, and cable unplugged sensor for Flood Gen4! Great work from [@chemelli74], [@bieniu], and [@thecode]!
 - The [SwitchBot] integration expanded device support with Plug Mini EU, RelaySwitch 2PM, and K11+ Vacuum! Thanks, [@zerzhang]!
-- While the [SwitchBot Cloud] integration got several improvements including AC off support, humidifier platform, Plug-Mini-EU support, and Climate Panel support! Great work from [@SeraphicRav] and [@XiaoLing-git]!
+- The [SwitchBot Cloud] integration got several improvements including AC off support, humidifier platform, Plug-Mini-EU support, and Climate Panel support! Great work from [@SeraphicRav] and [@XiaoLing-git]!
 - Thanks to [@timmo001], the [System Bridge] integration now includes a power usage sensor for better system monitoring!
 - Exciting to see that the [Tasmota] integration now supports camera functionality! Nice addition from [@anishsane]!
 - Using the [Tibber] integration? It now provides 15-minute price data, which goes into effect on October 1st. Good timing, [@Danielhiversen]!
@@ -496,7 +500,6 @@ There are many more improvements in this release; here are some of the other not
 - The "Logbook" has been renamed to "Activity" in the UI. This better reflects its purpose of showing a timeline of activities and events in your Home Assistant instance.
 - [Matter] continues to expand with occupancy sensing hold time, climate running state for heat/cool fans, and thermostat outdoor temperature sensors! Great contributions from [@lboue] and [@virtualbitzz]!
 - Lawn mower entities now support start mowing and dock intents for better voice control! Thanks, [@piitaya]!
-- We now have secondary wake word and pipeline support for ESPHome voice satellites. This means you can assign different pipelines (for example, different languages or personalities) to different wake words. Super nice, [@synesthesiam]!
 - The [analog clock] we introduced last release got some more options! You can now enable a smooth motion for the seconds hand. Beautiful, [@timmo001]!
 - Need the version of the [Home Assistant Mobile Companion App] you are using? If you have installed the latest versions of our apps, the version is now shown on the about page in the settings menu! Nice one, [@TimoPtr]!
 - The [thermostat card] now supports [water heater entities]. Thanks, [@karwosts]!
@@ -719,7 +722,7 @@ If you have automations relying on uppercase fan mode values, you will need to u
 
 If you are a custom integration developer and want to learn about changes and
 new features available for your integration: Be sure to follow our
-[developer blog][devblog]. The following change is the most notable for this
+[developer blog][devblog]. The following changes are the most notable for this
 release:
 
 - [Deprecate hass argument in service helpers](https://developers.home-assistant.io/blog/2025/09/22/deprecate-hass-argument-service-helpers)
