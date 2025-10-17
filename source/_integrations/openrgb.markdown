@@ -57,6 +57,17 @@ For each RGB device connected to OpenRGB, the integration creates a light entity
 
 The **OpenRGB** integration {% term polling polls %} data from the OpenRGB SDK server **every 15 seconds**.
 
+## Reconfiguration
+
+If you need to update your OpenRGB SDK server connection details, you can reconfigure the integration:
+
+1. Go to **{% my integrations title="Settings > Devices & Services" %}**.
+2. Select **OpenRGB**. Select the three dots {% icon "mdi:dots-vertical" %} menu and then select **Reconfigure**.
+3. Update the hostname/IP address and port number as needed.
+4. Select **Submit**.
+
+The integration will then reconnect to the OpenRGB SDK server with the new settings.
+
 ## Known limitations
 
 - Changes made directly in the OpenRGB application may not be immediately reflected in Home Assistant (the integration polls for updates every 15 seconds).
