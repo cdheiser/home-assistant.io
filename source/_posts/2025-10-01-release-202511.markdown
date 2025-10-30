@@ -85,7 +85,6 @@ Enjoy the (beta) release!
   - [Integration quality scale achievements](#integration-quality-scale-achievements)
   - [Now available to set up from the UI](#now-available-to-set-up-from-the-ui)
 - [Other noteworthy changes](#other-noteworthy-changes)
-  - [Lorem ipsum](#lorem-ipsum-1)
 - [Need help? Join the community](#need-help-join-the-community)
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
@@ -249,9 +248,6 @@ It is not just new {% term integrations %} that have been added; existing integr
 - Add event entity for Telegram bot ([@hanwg] - [#154383]) ([telegram_bot docs]) (new-platform)
 - Add image platform to Xbox integration ([@tr4nt0r] - [#155369]) ([xbox docs]) (new-platform)
 
-[@frenck]: https://github.com/frenck
-[Lorem ipsum]: /integrations/lorem_ipsum
-
 
 ### Now available to set up from the UI
 
@@ -274,11 +270,7 @@ The following integrations are now available via the Home Assistant UI:
 
 There are many more improvements in this release; here are some of the other noteworthy changes:
 
-- The [lorem ipsum card] now supports [slipsum entities]. Thanks, [@frenck]!
-
-[@frenck]: https://github.com/frenck
-[lorem ipsum card]: /dashboards/lorem_ipsum/
-[slipsum entities]: /integrations/slipsum/
+- TODO
 
 ### The new Home Dashboard keeps getting smarter.
 
