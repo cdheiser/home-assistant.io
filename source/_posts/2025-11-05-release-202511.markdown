@@ -2,7 +2,7 @@
 layout: post
 title: "2025.11 Beta: A Betta title"
 description: "Beta release notes for Home Assistant Core 2025.11"
-date: 2025-10-02 00:00:00
+date: 2025-10-29 00:00:00
 date_formatted: "November 5, 2025"
 author: Franck Nijhof
 author_twitter: frenck
@@ -82,9 +82,11 @@ Enjoy the (beta) release!
 - [Integrations](#integrations)
   - [New integrations](#new-integrations)
   - [Noteworthy improvements to existing integrations](#noteworthy-improvements-to-existing-integrations)
-  - [Integration quality scale achievements](#integration-quality-scale-achievements)
   - [Now available to set up from the UI](#now-available-to-set-up-from-the-ui)
+  - [Integration quality scale achievements](#integration-quality-scale-achievements)
+  - [Farewell to the following](#farewell-to-the-following)
 - [Other noteworthy changes](#other-noteworthy-changes)
+  - [The new Home Dashboard keeps getting smarter.](#the-new-home-dashboard-keeps-getting-smarter)
 - [Need help? Join the community](#need-help-join-the-community)
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
@@ -100,10 +102,7 @@ _A huge thank you to all the contributors who made this release possible! And a 
 
 ## A brand new target picker
 
-When researching issues with the current automation editor, we surfaced a few issues with our current target picker, the element used to select which areas, devices, or entities an action is targeting.
-The issues can be summarized as: Lack of context and lack of trust.
-
-We were not displaying the context of entities, devices, and areas. For example, from which device an entity is coming from, or on which area it is assigned to. This led to confusion, as it is fairly common to have multiple devices named the same way but simply in different areas (Presence sensor, for example), or multiple entities named the same way, but coming from different devices (Battery level, for example).
+Previously, we did not display the context of entities, devices, and areas—for example, which device an entity belongs to or which area it is assigned to. This could cause confusion, especially when multiple devices shared the same name but were located in different areas (for example, Presence sensor), or when multiple entities had the same name but belonged to different devices (for example, Battery level).
 
 On top of this missing context, we were unable to provide the scope of a particular target. How many lights will you turn on if you target a floor? Is it what you expect?
 
@@ -119,7 +118,6 @@ You can even dig deeper into a floor, area, or device in order to understand whe
 <img class="no-shadow" alt="Screenshot of the details of a target." src="/images/blog/2025-11/target-details.png" />
 
 We hope that this revision of our target picker will help you create more long lasting and durable automations. An automation targeting an area or a floor is dynamic, and scales as you add or remove devices in your home, which is one of the great advantages of using larger targets.
-
 
 ## A brand new way to add triggers, conditions, and actions in your automations
 
@@ -260,16 +258,51 @@ user interface, some were only available using YAML configuration. We keep movin
 more integrations to the UI, making them more accessible for everyone
 to set up and use.
 
-The following integrations are now available via the Home Assistant UI:
+The following integration is now available via the Home Assistant UI:
 
 - **[London Underground]** by [@HarvsG]
-- **[Satel Integra]** by [@Tommatheussen]
 
 [@HarvsG]: https://github.com/HarvsG
-[@Tommatheussen]: https://github.com/Tommatheussen
 [London Underground]: /integrations/london_underground
-[Satel Integra]: /integrations/satel_integra
 
+### Integration quality scale achievements
+
+One thing we are incredibly proud of in Home Assistant is our [integration quality scale]. This scale helps us and our contributors to ensure integrations are of high quality, maintainable, and provide the best possible user experience.
+
+This release, we celebrate several {% term integrations %} that have improved their quality scale:
+
+- **4 integrations reached platinum** 🏆
+  - [APC UPS Daemon], thanks to [@yuxincs]
+  - [Mealie], thanks to [@andrew-codechimp]
+  - [Volvo], thanks to [@thomasddn]
+  - [IMGW-PIB], thanks to [@bieniu]
+
+- **3 integrations reached silver** 🥈
+  - [airOS], thanks to [@CoMPaTech]
+  - [LetPot], thanks to [@jpelgrom]
+  - [1-wire], thanks to [@epenet]
+
+
+This is a huge achievement for these integrations and their maintainers. The effort and dedication required to reach these quality levels is significant, as it involves extensive testing, documentation, error handling, and often complete rewrites of parts of the integration.
+
+A big thank you to all the contributors involved! 👏
+
+[integration quality scale]: /docs/quality_scale/
+
+[@yuxincs]: https://github.com/yuxincs
+[@CoMPaTech]: https://github.com/CoMPaTech
+[@jpelgrom]: https://github.com/jpelgrom
+[@andrew-codechimp]: https://github.com/andrew-codechimp
+[@thomasddn]: https://github.com/thomasddn
+[@bieniu]: https://github.com/bieniu
+[@epenet]: https://github.com/epenet
+[APC UPS Daemon]:[/integrations/apcupsd
+[airOS]: /integrations/airos
+[LetPot]: /integrations/letpot
+[Mealie]: /integrations/mealie
+[Volvo]: /integrations/volvo
+[IMGW-PIB]: /integrations/imgw_pib
+[1-wire]: /integrations/onewire
 
 ### Farewell to the following
 
@@ -304,17 +337,6 @@ The servers have been shutdown, which made the integration non functional.
 ([@tr4nt0r] - [#153590]) ([plum_lightpad docs])
 
 {% enddetails %}
-
-{% details "Neato" %}
-
-The `neato` integration has been removed from Home Assistant.
-
-Vorwerk announced the shutdown of all neato cloud services. Because of this shutdown, the integration will no longer be able to control any neato devices, thus becoming dis-functional.
-
-([@mib1185] - [#154902]) ([neato docs])
-
-{% enddetails %}
-
 
 ## Other noteworthy changes
 
