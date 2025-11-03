@@ -309,7 +309,7 @@ possible for you. This release has the following backward-incompatible changes:
 
 {% details "Stop writing to config dir log file on supervised install" %}
 
-The Supervisor will no longer write log files directly to the configuration directory. This change improves separation between managed and user-controlled files.
+On supervised installations (such as Home Assistant OS), the logs will no longer be written directly to the configuration directory. The logs are sent to systemd journal, and can be found in the UI. This change reduces the ammount of writes to disk.
 
 ([@abmantis] - [#146675])
 
@@ -350,6 +350,7 @@ The deprecated entity feature constants in the `vacuum` integration have been re
 {% details "Remove Vultr integration" %}
 
 The `vultr` integration has been removed and is no longer available.
+The integraiton has not been working since the API v1 that was used was taken offline in September 2023.
 
 ([@mib1185] - [#153560]) ([vultr docs])
 
@@ -357,15 +358,48 @@ The `vultr` integration has been removed and is no longer available.
 
 {% details "Remove IBM Watson IoT Platform integration" %}
 
-The `watson_iot` integration has been removed due to lack of maintenance and usage.
+The `watson_iot` integration has been removed.
+
+On September 8th 2020 IBM announced the withdrawal of it's support for the IBM Watson IoT Platform and successively discontinued all versions until September 30th 2022.
 
 ([@tr4nt0r] - [#153567]) ([watson_iot docs])
 
 {% enddetails %}
 
-{% details "Add translations and icons to OralB integration" %}
+{% details "OralB integration states and attributes changed" %}
 
-This change updates the `oralb` integration with translations and icons. Some entity IDs or display attributes may have changed.
+In multiple places, spaces have been replaced with underscores: 
+
+- Toothbrush state:
+
+  - `flight menu` → `flight_menu`
+  - `selection menu` → `selection_menu`
+  - `final test` → `final_test`
+  - `pcb test` → `pcb_test`
+  
+- Brushing mode:
+
+  - `daily clean` → `daily_clean`
+  - `gum care` → `gum_care`
+  - `tongue cleaning` → `tongue_cleaning`
+  - `super sensitive` → `super_sensitive`
+  - `deep clean` → `deep_clean`
+
+- Pressure:
+
+  - `power button pressed` → `power_button_pressed`
+  - `button pressed` → `button_pressed`
+
+- Sector:
+
+  - `no sector` → `no_sector`
+  - `sector 1` → `sector_1`
+  - `sector 2` → `sector_2`
+  - `sector 3` → `sector_3`
+  - `sector 4` → `sector_4`
+
+
+Automations should be updated to use the new states and attributes.
 
 ([@tr4nt0r] - [#153605]) ([oralb docs])
 
@@ -375,6 +409,8 @@ This change updates the `oralb` integration with translations and icons. Some en
 
 The `plum_lightpad` integration has been removed.
 
+The servers have been shutdown, which made the integration non functional.
+
 ([@tr4nt0r] - [#153590]) ([plum_lightpad docs])
 
 {% enddetails %}
@@ -383,13 +419,18 @@ The `plum_lightpad` integration has been removed.
 
 Schemas must now be validated within the event loop. Validations performed outside will raise errors.
 
+Was previously deprecated and logged, and is now changed to failing.
+
 ([@gjohansson-ST] - [#153472])
 
 {% enddetails %}
 
-{% details "Bump aiomealie to 1.0.0, update min Mealie instance version to v2" %}
+{% details "Mealie version 1 is no longer supported" %}
 
-The `mealie` integration now requires Mealie v2 or later and uses `aiomealie` 1.0.0.
+The `mealie` integration now requires Mealie version 2 or later.
+
+Mealie version 1 is no longer supported, version 2 was released in October 2024 so over a year ago.
+Given the differences between versions 1 and 2 we are no longer able to support/test backward compatibility with version 1.
 
 ([@andrew-codechimp] - [#153203]) ([mealie docs])
 
@@ -407,6 +448,20 @@ The previously deprecated template attach function has been removed. Update cust
 
 The tilt direction for `motion_blinds` has been reversed to align with standard behavior. Adjust automations as necessary.
 
+The tilt position of Motion Blinds devices has been corrected to allign with the Home Assistant standards.
+The new tilt position will be: 0 = closed/covering the window opening, 100 = open/letting light through.
+The previous tilt position can be converted to the new tilt postion as follows:
+ - new = 100 - old
+ - current_tilt_position 100 -> 0
+ - current_tilt_position 75 -> 25
+ - current_tilt_position 50 -> 50
+ - current_tilt_position 25 -> 75
+ - current_tilt_position 0 -> 100
+ - open_cover_tilt -> close_cover_tilt
+ - close_cover_tilt -> open_cover_tilt
+
+Any automations concerning Motion Blinds devices that use the current_tilt_position attribute or use tilt open/close will need to be adjusted.
+
 ([@starkillerOG] - [#149777]) ([motion_blinds docs])
 
 {% enddetails %}
@@ -421,7 +476,7 @@ The tilt direction for `motion_blinds` has been reversed to align with standard 
 
 {% details "Migrate Nederlandse Spoorwegen sensor to timestamp" %}
 
-The `nederlandse_spoorwegen` integration now reports departure and arrival times as timestamps.
+The Nederlandse Spoorwegen entity is now displayed as a timestamp entity, rather than a string. Please adapt your automations and scripts.
 
 ([@joostlek] - [#154011]) ([nederlandse_spoorwegen docs])
 
@@ -437,7 +492,7 @@ Deprecated cover state constants have been removed. Update references accordingl
 
 {% details "Remove deprecated set state directly in alarm_control_panel" %}
 
-Directly setting state in the `alarm_control_panel` integration is no longer supported.
+Directly setting state in the `alarm_control_panel` integration is no longer supported. Use the `alarm_state` property instead.
 
 ([@gjohansson-ST] - [#154038]) ([alarm_control_panel docs])
 
@@ -453,15 +508,16 @@ Deprecated extra attributes in the `fritzbox` climate integration have been remo
 
 {% details "Remove deprecated ConfigSource from core" %}
 
-`ConfigSource` has been removed from the core system. Ensure any custom integrations no longer reference it.
+`ConfigSource` was deprecated as it was moved to core_config and has now been removed.
 
 ([@gjohansson-ST] - [#154112])
 
 {% enddetails %}
 
-{% details "Bump renault-api to 0.4.4" %}
+{% details "Renault integration no longer created non-functional entities" %}
 
-The `renault` integration has been updated to use `renault-api` 0.4.4.
+The discovery of Renault functionality was previously based on assumptions that may have created invalid and non-functional entities.
+These will no longer be created.
 
 ([@epenet] - [#154137]) ([renault docs])
 
@@ -475,9 +531,10 @@ The `renault` integration has been updated to use `renault-api` 0.4.4.
 
 {% enddetails %}
 
-{% details "Remove Asuswrt device tracker last_time_reachable extra attribute" %}
+{% details "Asuswrt `last_time_reachable` attribute was removed" %}
 
-The `last_time_reachable` extra attribute has been removed from the `asuswrt` device tracker.
+The `last_time_reachable` attribute has been removed from the `asuswrt` device tracker.
+Use the `last_changed` attribute instead in your automations.
 
 ([@ollo69] - [#154219]) ([asuswrt docs])
 
@@ -485,7 +542,13 @@ The `last_time_reachable` extra attribute has been removed from the `asuswrt` de
 
 {% details "Set assumed state to group if at least one child has assumed state" %}
 
-Groups now reflect an assumed state if any member entity has an assumed state.
+Previously, the group’s assumed state was always false, regardless of the state of its child entities.
+
+This is now changed so that:
+
+The group will now have an assumed state of `true` if at least one child entity has an assumed state.
+This makes the group’s assumed state reflect the uncertainty of its children more accurately.
+These domains have been added: switch, fan, light and cover.
 
 ([@piitaya] - [#154163]) ([group docs])
 
@@ -495,21 +558,37 @@ Groups now reflect an assumed state if any member entity has an assumed state.
 
 Home Assistant now supports Python 3.14. Custom integrations should be verified for compatibility.
 
+The following integrations won't work with Python 3.14 initially. Support will be added back once the dependencies are updated.
+
+- `AppleTV`
+- `Jabber (XMPP)`
+- `Logitech Harmony Hub`
+
+The `profiler.memory` service is not available when using Python 3.14. It will return if and when `guppy3` becomes Python 3.14 compatible.
+
 ([@cdce8p] - [#153939])
 
 {% enddetails %}
 
-{% details "Fix friendly names of zones with mobile_app" %}
+{% details "Mobile app: name of zone is used instead of the ID" %}
 
-Zone entities created via the `mobile_app` integration now correctly handle friendly names.
+The `mobile_app` integration, which has support for the iPhone and Android companion apps, has been updated to set the device tracker state to the friendly name of the zone when the companion app is set to send only the zone name instead of the exact coordinates.
+
+This means the `person` entity states of custom zones will now be the zone's name instead of the zone's object ID, and might hence break existing automation which trigger on the person state.
+
+As an example, given a zone `zone.kids_school` named `School`.
+_Before_ this change: The state of the corresponding `person` and `device_tracker` entities would be `kids_school` when the "Location Sent" in the companion app was set to send "Zone Name Only" and `School` when the  the "Location Sent" in the companion app was set to "Exact".
+_After_  this change: The state of the corresponding `person` and `device_tracker` entities is `School` both when the  the "Location Sent" in the companion app is set to "Exact" and when it is set to "Zone Name Only".
 
 ([@Ashus] - [#149453]) ([mobile_app docs])
 
 {% enddetails %}
 
-{% details "Make Speed optional for GoToPreset ONVIF command" %}
+{% details "ONVIF Make Speed optional for GoToPreset action" %}
 
-The `Speed` parameter in ONVIF `GoToPreset` commands is now optional.
+The `Speed` parameter in the ONVIF `GoToPreset` action is now optional.
+
+The default of `0.5` is no longer set. If you want to restore the previous behavior you have to set `speed` to `0.5` in your action.
 
 ([@carlos-sarmiento] - [#149636]) ([onvif docs])
 
@@ -525,31 +604,35 @@ Creating config entries during reauthentication or reconfiguration flows will no
 
 {% details "Fix LG webOS TV entity availability status" %}
 
-Entity availability for `webostv` devices has been corrected to better reflect actual device status.
+The state of LG webOS TV media player entities that do not have an automation trigger to turn on the device will set to `unavailable` instead of `off`.
 
 ([@thecode] - [#155164]) ([webostv docs])
 
 {% enddetails %}
 
-{% details "Bump renault-api to 0.5.0" %}
-
-The `renault` integration now uses `renault-api` version 0.5.0.
-
-([@epenet] - [#155263]) ([renault docs])
-
-{% enddetails %}
-
 {% details "Remove neato integration" %}
 
-The `neato` integration and related analytics have been removed from Home Assistant.
+The `neato` integration has been removed from Home Assistant.
 
-([@mib1185] - [#154902]) ([neato docs]) ([homeassistant_alerts docs]) ([analytics_insights docs])
+Vorwerk announced the shutdown of all neato cloud services. Because of this shutdown, the integration will no longer be able to control any neato devices, thus becoming dis-functional.
+
+([@mib1185] - [#154902]) ([neato docs])
 
 {% enddetails %}
 
 {% details "Use API token authentication in traccar_server" %}
 
-The `traccar_server` integration now uses API token authentication instead of legacy credentials.
+The Traccar integration has been updated to use a more secure API Token for authentication. This is a required, one-time breaking change to align with Traccar's security recommendations and ensure the integration continues to work.
+
+This release migrates the integration away from the older username/password method, ensuring continued stability and security for all users while also allowing users with SSO based setups to use the integration.
+
+When you update Home Assistant, the existing Traccar integration will need to be re-authenticated:
+
+1. Generate an API Token on your Traccar server. (You'll find this option in your Traccar server's user settings.)
+2. Go to Settings → Devices & Services → Traccar Server.
+3. Click "Reconfigure" and enter your new API Token when prompted.
+
+Once you've done this, your Traccar devices and entities will work exactly as they did before.
 
 ([@pantherale0] - [#155297]) ([traccar_server docs])
 
