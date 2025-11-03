@@ -315,37 +315,6 @@ On supervised installations (such as Home Assistant OS), the logs will no longer
 
 {% enddetails %}
 
-{% details "Remove deprecated state constants from lock" %}
-
-Deprecated state constants in the `lock` integration have been removed. Update any custom components or automations using these constants.
-
-([@gjohansson-ST] - [#153367]) ([lock docs])
-
-{% enddetails %}
-
-{% details "Remove deprecated constants from media_player" %}
-
-All deprecated constants from the `media_player` integration have been removed. Custom components referencing these must update accordingly.
-
-([@gjohansson-ST] - [#153366]) ([media_player docs])
-
-{% enddetails %}
-
-{% details "Remove deprecated constants in camera" %}
-
-Deprecated constants within the `camera` integration have been removed. Update any references in custom integrations.
-
-([@gjohansson-ST] - [#153363]) ([camera docs])
-
-{% enddetails %}
-
-{% details "Remove deprecated entity feature constants in vacuum" %}
-
-The deprecated entity feature constants in the `vacuum` integration have been removed.
-
-([@gjohansson-ST] - [#153364]) ([vacuum docs])
-
-{% enddetails %}
 
 {% details "Remove Vultr integration" %}
 
@@ -415,15 +384,6 @@ The servers have been shutdown, which made the integration non functional.
 
 {% enddetails %}
 
-{% details "Validating schema outside the event loop will now fail" %}
-
-Schemas must now be validated within the event loop. Validations performed outside will raise errors.
-
-Was previously deprecated and logged, and is now changed to failing.
-
-([@gjohansson-ST] - [#153472])
-
-{% enddetails %}
 
 {% details "Mealie version 1 is no longer supported" %}
 
@@ -436,13 +396,6 @@ Given the differences between versions 1 and 2 we are no longer able to support/
 
 {% enddetails %}
 
-{% details "Remove previously deprecated template attach function" %}
-
-The previously deprecated template attach function has been removed. Update custom templates using the new attach API.
-
-([@gjohansson-ST] - [#153370])
-
-{% enddetails %}
 
 {% details "Reverse Motion Blinds tilt direction" %}
 
@@ -466,13 +419,6 @@ Any automations concerning Motion Blinds devices that use the current_tilt_posit
 
 {% enddetails %}
 
-{% details "Call async_track_template_result with template without hass now fails" %}
-
-`async_track_template_result` now requires a `hass` instance when called with a template.
-
-([@gjohansson-ST] - [#153473])
-
-{% enddetails %}
 
 {% details "Migrate Nederlandse Spoorwegen sensor to timestamp" %}
 
@@ -482,37 +428,6 @@ The Nederlandse Spoorwegen entity is now displayed as a timestamp entity, rather
 
 {% enddetails %}
 
-{% details "Remove deprecated cover state constants" %}
-
-Deprecated cover state constants have been removed. Update references accordingly.
-
-([@gjohansson-ST] - [#154037]) ([cover docs])
-
-{% enddetails %}
-
-{% details "Remove deprecated set state directly in alarm_control_panel" %}
-
-Directly setting state in the `alarm_control_panel` integration is no longer supported. Use the `alarm_state` property instead.
-
-([@gjohansson-ST] - [#154038]) ([alarm_control_panel docs])
-
-{% enddetails %}
-
-{% details "Remove deprecated extra attributes from fritzbox climate" %}
-
-Deprecated extra attributes in the `fritzbox` climate integration have been removed.
-
-([@flabbamann] - [#154152]) ([fritzbox docs])
-
-{% enddetails %}
-
-{% details "Remove deprecated ConfigSource from core" %}
-
-`ConfigSource` was deprecated as it was moved to core_config and has now been removed.
-
-([@gjohansson-ST] - [#154112])
-
-{% enddetails %}
 
 {% details "Renault integration no longer created non-functional entities" %}
 
@@ -523,13 +438,6 @@ These will no longer be created.
 
 {% enddetails %}
 
-{% details "async_config_entry_first_refresh in update coordinator requires a config entry" %}
-
-`async_config_entry_first_refresh` now mandates a valid config entry. Custom components using it must be updated.
-
-([@gjohansson-ST] - [#154114])
-
-{% enddetails %}
 
 {% details "Asuswrt `last_time_reachable` attribute was removed" %}
 
@@ -591,14 +499,6 @@ The `Speed` parameter in the ONVIF `GoToPreset` action is now optional.
 The default of `0.5` is no longer set. If you want to restore the previous behavior you have to set `speed` to `0.5` in your action.
 
 ([@carlos-sarmiento] - [#149636]) ([onvif docs])
-
-{% enddetails %}
-
-{% details "Fail creating config entry in reauth or reconfigure flows" %}
-
-Creating config entries during reauthentication or reconfiguration flows will now fail if invalid.
-
-([@gjohansson-ST] - [#154035])
 
 {% enddetails %}
 
