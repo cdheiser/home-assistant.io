@@ -15,6 +15,8 @@ ha_category:
 ha_platforms:
   - binary_sensor
   - button
+  - device_tracker
+  - diagnostics
   - sensor
 ha_quality_scale: platinum
 related:
