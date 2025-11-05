@@ -15,60 +15,21 @@ og_image: /images/blog/2025-11/social.png
 
 <lite-youtube videoid="aFsINNDTPjU" videotitle="Home Assistant 2025.11 Release Party"></lite-youtube>
 
-{% note %}
-
-**Welcome to the beta release notes for Home Assistant 2025.11** 🎉
-
-<br />
-
-Please note that these release notes are a work in progress. 👷‍♀️ We will be
-completing them over the next couple of days. Not all features might be final
-yet, and some features _**may not** make it into the final release_.
-
-<br />
-
-**Want to help test the beta?** Awesome! ❤️ We have documented how you
-[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
-
-<br />
-
-While running the beta, we highly recommend joining our _#beta_ channel on
-the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
-testers are in this channel during the beta period to share experiences, ideas,
-and iterate over new features, fine-tuning them before the final release.
-It's a really fun place to hang out. 😎
-
-<br />
-
-**Reporting issues**: As this is a beta test, you might encounter unexpected
-behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
-You can find our issue trackers and the reported issues during beta here:
-
-<br />
-
-- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/137)
-- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/773)
-- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/144)
-
-🙏 When reporting issues, **make sure to mention the exact beta version you are
-running** in the issue description. This will help us identify and track the
-issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
-
-<br />
-
-Issues introduced in the beta are processed with priority. 🔝
-
-{% endnote %}
-
-{% tip %}
-
-Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=aFsINNDTPjU) on November 5, 2025, at 20:00 GMT / 12:00 PT / 21:00 CET!
-
-{% endtip %}
-
 Home Assistant 2025.11! 🎉
 
-Enjoy the (beta) release!
+November is here, and we've been hard at work refining some of the main experiences that you interact with every day, and I think you're going to love what we've built.
+
+My personal favorite this release? The brand new target picker. 🎯
+
+It's one of those changes that seems simple on the surface, but makes such a huge difference in how you build automations. You can finally see exactly what you're targeting, with full context about which device an entity belongs to and which area it's in. No more guessing whether you're controlling the right ceiling light when you have three of them!
+
+But that's just the beginning. Continuing with the automation editor improvements, this time with a completely redesigned dialog for adding triggers, conditions, and actions. It's cleaner, easier to read, and sets the foundation for some really exciting stuff coming in future releases 🤫
+
+And speaking of making things clearer, you can now control exactly how entity names appear on your dashboard cards. Want to show just the entity name? The device name? The area? Or combine them? Even if you rename things, your dashboards will stay perfectly in sync. No more manual updates needed!
+
+Oh, and energy dashboard fans will appreciate the new pie chart view for device energy, complete with totals displayed in the corner of every energy card. 🥧
+
+Enjoy the release!
 
 ../Frenck
 
