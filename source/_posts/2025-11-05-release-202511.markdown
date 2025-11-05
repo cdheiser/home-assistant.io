@@ -226,18 +226,16 @@ We welcome the following new integrations in this release:
 
 It is not just new {% term integrations %} that have been added, existing integrations are also being constantly improved. Here are some of the noteworthy changes:
 
-- Add garage door opener for SwitchBot integration ([@zerzhang] - [#148460]) ([switchbot docs]) (new-platform)
+- The SwitchBot integration now supports garage door openers thanks [@zerzhang]!
 - SNOO: add button entity for calling start_snoo ([@falconindy] - [#151052]) ([snoo docs]) (new-platform)
 - Add notify platform to Habitica ([@tr4nt0r] - [#150553]) ([habitica docs]) (new-platform)
 - Add switch domain to VegeHub integration ([@Thulrus] - [#148436]) ([vegehub docs]) (new-platform)
 - Portainer add switch platform ([@erwindouna] - [#153485]) ([portainer docs]) (new-platform)
 - Portainer add button platform ([@erwindouna] - [#153063]) ([portainer docs]) (new-platform)
 - Portainer add sensor platform ([@erwindouna] - [#153059]) ([portainer docs]) (new-platform)
-- Add time platform to nintendo_parental integration ([@pantherale0] - [#153866]) ([nintendo_parental docs]) (new-platform)
 - Add device_tracker platform to Volvo integration ([@thomasddn] - [#153437]) ([volvo docs]) (new-platform)
 - Add buttons to Volvo integration ([@thomasddn] - [#153272]) ([volvo docs]) (new-platform)
 - Add Speech-to-Text (STT) to ElevenLabs ([@ehendrix23] - [#147838]) ([elevenlabs docs]) (new-platform)
-- Add switch platform to Nintendo Parental controls integration ([@pantherale0] - [#154179]) ([nintendo_parental_controls docs]) (new-platform)
 - Add switch platform and grid charge enable to Growatt Server integration ([@johanzander] - [#153960]) ([growatt_server docs]) (new-platform)
 - Add LED control for supported UniFi network devices ([@Sese-Schneider] - [#152649]) ([unifi docs]) (new-platform)
 - Add valve group support ([@thecode] - [#154749]) ([group docs]) (new-platform)
@@ -249,6 +247,9 @@ It is not just new {% term integrations %} that have been added, existing integr
 - Adds support for controlling Growatt MIN/TLX inverters through number platform and entities ([@johanzander] - [#153886]) ([growatt_server docs]) (new-platform)
 - Add event entity to Telegram bot ([@hanwg] - [#154383]) ([telegram_bot docs]) (new-platform)
 - Add image platform to Xbox integration ([@tr4nt0r] - [#155369]) ([xbox docs]) (new-platform)
+- Add energy platform to Victron Remote Monitoring ([@AndyTempel] - [#155046])
+- The Shelly integration now supports climate and valve entities [@thecode]
+- The Reolink integration can now report bicycles, adn the type of person, vehicle and animal. [@starkillerOG]
 
 
 ### Now available to set up from the UI
@@ -342,8 +343,9 @@ The servers have been shutdown, which made the integration non functional.
 
 There are many more improvements in this release; here are some of the other noteworthy changes:
 
-- Searching in data tables got a lot better, you can now search over multiple columns at once.
-- TODO
+- Searching in data tables got a lot better, you can now search over multiple columns at once. Thanks [@wendevlin]!
+- Energy graphs now show the total of the period in the top right corner. Great addition [@MindFreeze]!
+- You can now use images from any integration providing images for your dashboard background. [@karwosts]
 
 ### Logging
 
