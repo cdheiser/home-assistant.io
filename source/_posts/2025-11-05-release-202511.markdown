@@ -92,7 +92,7 @@ Enjoy the (beta) release!
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
 
-_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@bramkragten], [@JLo], [@MindFreeze], [@agners] and [@piitaya] who helped write the release notes this release. Also, [@frenck], [@frenck], [@frenck], and [@frenck] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
+_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@bramkragten], [@JLo], [@MindFreeze], [@agners] and [@piitaya] who helped write the release notes this release. Also, [@silamon], [@frenck], [@frenck], and [@frenck] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
 
 [@frenck]: https://github.com/frenck
 [@JLo]: https://github.com/jlpouffier
@@ -100,6 +100,7 @@ _A huge thank you to all the contributors who made this release possible! And a 
 [@piitaya]: https://github.com/piitaya
 [@MindFreeze]: https://github.com/MindFreeze
 [@agners]: https://github.com/agners
+[@silamon]: https://github.com/silamon
 
 ## A brand new target picker
 
@@ -226,31 +227,57 @@ We welcome the following new integrations in this release:
 
 It is not just new {% term integrations %} that have been added, existing integrations are also being constantly improved. Here are some of the noteworthy changes:
 
-- The SwitchBot integration now supports garage door openers thanks [@zerzhang]!
-- SNOO: add button entity for calling start_snoo ([@falconindy] - [#151052]) ([snoo docs]) (new-platform)
-- Add notify platform to Habitica ([@tr4nt0r] - [#150553]) ([habitica docs]) (new-platform)
-- Add switch domain to VegeHub integration ([@Thulrus] - [#148436]) ([vegehub docs]) (new-platform)
-- Portainer add switch platform ([@erwindouna] - [#153485]) ([portainer docs]) (new-platform)
-- Portainer add button platform ([@erwindouna] - [#153063]) ([portainer docs]) (new-platform)
-- Portainer add sensor platform ([@erwindouna] - [#153059]) ([portainer docs]) (new-platform)
-- Add device_tracker platform to Volvo integration ([@thomasddn] - [#153437]) ([volvo docs]) (new-platform)
-- Add buttons to Volvo integration ([@thomasddn] - [#153272]) ([volvo docs]) (new-platform)
-- Add Speech-to-Text (STT) to ElevenLabs ([@ehendrix23] - [#147838]) ([elevenlabs docs]) (new-platform)
-- Add switch platform and grid charge enable to Growatt Server integration ([@johanzander] - [#153960]) ([growatt_server docs]) (new-platform)
-- Add LED control for supported UniFi network devices ([@Sese-Schneider] - [#152649]) ([unifi docs]) (new-platform)
-- Add valve group support ([@thecode] - [#154749]) ([group docs]) (new-platform)
-- Add number platform to nintendo_parental_controls integration ([@pantherale0] - [#154548]) ([nintendo_parental_controls docs]) (new-platform)
-- Add binary sensor to Yardian ([@barneyonline] - [#152654]) ([yardian docs]) (new-platform)
-- Add temperature number entity to set Tool and Bed temperatures to OctoPrint ([@AmadeusW] - [#153712]) ([octoprint docs]) (new-platform)
-- Add scene platform support to Niko Home Control integration ([@VandeurenGlenn] - [#152712]) ([niko_home_control docs]) (new-platform)
-- Add support for climate devices (e.g. thermostats) to the Control4 component ([@davidrecordon] - [#154502]) ([control4 docs]) (new-platform)
-- Adds support for controlling Growatt MIN/TLX inverters through number platform and entities ([@johanzander] - [#153886]) ([growatt_server docs]) (new-platform)
-- Add event entity to Telegram bot ([@hanwg] - [#154383]) ([telegram_bot docs]) (new-platform)
-- Add image platform to Xbox integration ([@tr4nt0r] - [#155369]) ([xbox docs]) (new-platform)
-- Add energy platform to Victron Remote Monitoring ([@AndyTempel] - [#155046])
-- The Shelly integration now supports climate and valve entities [@thecode]
-- The Reolink integration can now report bicycles, adn the type of person, vehicle and animal. [@starkillerOG]
+- [@thecode] added [group] support for valves, so you can group multiple valves into one. 
+- The [SwitchBot] integration now supports garage door openers thanks [@zerzhang]!
+- [@tr4nt0r] added support for notifications to the [Habitica] integration.
+- The [VegeHub] integration now has support for switched to control actuators [@Thulrus]
+- The [Portainer] integration gained support for switches, buttons and sensors! [@erwindouna]
+- The [Volvo] integration can now show the location of your car and has buttons to control it [@thomasddn]
+- [ElevenLabs] can now be used for Speech-to-Text thanks to [@ehendrix23]!
+- You can now control the LED's of supported [UniFi] network devices [@Sese-Schneider]
+- Add binary sensor to [Yardian] [@barneyonline]
+- Add temperature number entity to set Tool and Bed temperatures to [OctoPrint] [@AmadeusW] 
+- Add scene platform support to [Niko Home Control] integration [@VandeurenGlenn] 
+- Add support for climate devices (e.g. thermostats) to the [Control4] integration [@davidrecordon] 
+- Add support for controlling [Growatt] MIN/TLX inverters through number platform and entities switch platform and grid charge enable [@johanzander]
+- Add event entity to [Telegram] bot [@hanwg] 
+- Add image platform to [Xbox] integration [@tr4nt0r] 
+- Add energy platform to [Victron Remote Monitoring] [@AndyTempel]
+- The [Shelly] integration now supports climate and valve entities [@thecode]
+- The [Reolink] integration can now report bicycles, adn the type of person, vehicle and animal. [@starkillerOG]
 
+[group]: /integrations/group
+[SwitchBot]: /integrations/switchbot
+[Habitica]: /integrations/habitica
+[VegeHub]: /integrations/vegehub
+[Portainer]: /integrations/portainer
+[Volvo]: /integrations/volvo
+[ElevenLabs]: /integrations/elevenlabs
+[Growatt]: /integrations/growatt_server
+[UniFi]: /integrations/unifi
+[Yardian]: /integrations/yardian
+[OctoPrint]: /integrations/octoprint
+[Control4]: /integrations/control4
+[Niko Home Control]: /integrations/niko_home_control
+[Telegram]: /integrations/telegram_bot
+[Xbox]: /integrations/xbox
+[Victron Remote Monitoring]: /integrations/victron_remote_monitoring
+[Shelly]: /integrations/shelly
+[Reolink]: /integrations/reolink
+[@zerzhang]: https://github.com/zerzhang
+[@AndyTempel]: https://github.com/AndyTempel
+[@tr4nt0r]: https://github.com/tr4nt0r
+[@Thulrus]: https://github.com/Thulrus
+[@erwindouna]: https://github.com/erwindouna
+[@thomasddn]: https://github.com/thomasddn
+[@ehendrix23]: https://github.com/ehendrix23
+[@barneyonline]: https://github.com/barneyonline
+[@Sese-Schneider]: https://github.com/Sese-Schneider
+[@AmadeusW]: https://github.com/AmadeusW
+[@VandeurenGlenn]: https://github.com/VandeurenGlenn
+[@davidrecordon]: https://github.com/davidrecordon
+[@johanzander]: https://github.com/johanzander
+[@hanwg]: https://github.com/hanwg
 
 ### Now available to set up from the UI
 
@@ -346,6 +373,9 @@ There are many more improvements in this release; here are some of the other not
 - Searching in data tables got a lot better, you can now search over multiple columns at once. Thanks [@wendevlin]!
 - Energy graphs now show the total of the period in the top right corner. Great addition [@MindFreeze]!
 - You can now use images from any integration providing images for your dashboard background. [@karwosts]
+
+[@wendevlin]: https://github.com/wendevlin
+[@karwosts]: https://github.com/karwosts
 
 ### Logging
 
