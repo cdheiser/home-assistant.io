@@ -47,7 +47,7 @@ Enjoy the release!
   - [Integration quality scale achievements](#integration-quality-scale-achievements)
   - [Farewell to the following](#farewell-to-the-following)
 - [Other noteworthy changes](#other-noteworthy-changes)
-  - [Logging](#logging)
+  - [Improved logging efficiency](#improved-logging-efficiency)
   - [The new Home Dashboard keeps getting smarter](#the-new-home-dashboard-keeps-getting-smarter)
 - [Need help? Join the community](#need-help-join-the-community)
 - [Backward-incompatible changes](#backward-incompatible-changes)
@@ -65,27 +65,24 @@ _A huge thank you to all the contributors who made this release possible! And a 
 
 ## A brand new target picker
 
-Previously, we did not display the context of entities, devices, and areas: for example, which device an entity belongs to or which area it is assigned to. This could cause confusion, especially when multiple devices shared the same name but were located in different areas (for example, Presence sensor), or when multiple entities had the same name but belonged to different devices (for example, Battery level).
+Have you ever been building an automation and wondered, "Wait, which ceiling light is this?" when you see three entities all named "Ceiling light"? Or tried to figure out how many lights you're actually controlling when you target an entire floor or area?
 
-On top of this missing context, we were unable to provide the scope of a particular target. How many lights will you turn on if you target a floor? Is it what you expect?
+We've all been there. Until now, the target picker didn't show you the full picture. You couldn't see which device an entity belonged to or which area it was assigned to. And when you selected a floor or area as your target, you had no idea how many entities you were actually affecting. This uncertainty meant many of you stuck with targeting individual entities, even though larger targets like areas and floors can make your automations much more flexible.
 
-These two issues led to a low usage of complex targets, with many of you falling back to targeting entities because it is what you trust and understand the most.
-
-The new version of the target picker fixes these two issues.
-Context is clearly displayed, as well as how many entities will be targeted.
+The new target picker changes all that. Now you get full context for everything you're targeting, and you can see exactly how many entities will be affected by your action.
 
 <img class="no-shadow" alt="Screenshot of a light action configuration with targets picked." src="/images/blog/2025-11/target-picker.png" />
 
-You can even dig deeper into a floor, area, or device in order to understand where these entities are coming from.
+Want to dig deeper? You can expand any floor, area, or device to see exactly which entities are included and where they're coming from.
 
 <img class="no-shadow" alt="Screenshot of the details of a target." src="/images/blog/2025-11/target-details.png" />
 
-We hope this revision of our target picker will help you create longer lasting and more durable automations. An automation targeting an area or a floor is dynamic, and scales as you add or remove devices in your home, which is one of the great advantages of using larger targets.
+This makes it so much easier to build automations that scale with your home. When you target an area or floor, your automation automatically adapts as you add or remove devices. No more updating your automations every time you add a new light or sensor. Your automations just work, which is exactly how it should be.
 
 ## A brand new way to add triggers, conditions, and actions in your automations
 
 It is no secret that we're currently working hard on making automation easier to create.
-After the release of the automation sidebar [two releases ago](https://www.home-assistant.io/blog/2025/09/03/release-20259/#automation-editor-sidebar), we are now introducing a new dialog to add triggers, conditions, and actions.
+After the release of the automation sidebar [two releases ago](/blog/2025/09/03/release-20259/#automation-editor-sidebar), we are now introducing a new dialog to add triggers, conditions, and actions.
 
 The changes are purely cosmetic: the dialog is bigger, so the description of each block is simpler to read, with a two-pane layout to ease both navigation and block selection.
 
@@ -314,15 +311,27 @@ There are many more improvements in this release; here are some of the other not
 - [@thecode] added [group] support for valves, so you can group multiple valves into one.
 - Searching in data tables got a lot better, you can now search over multiple columns at once. Thanks [@wendevlin]!
 - Energy graphs now show the total of the period in the top right corner. Great addition [@MindFreeze]!
-- You can now use images from any integration providing images for your dashboard background. [@karwosts]
+- Thanks to [@karwosts], you can now use images from any integration providing images for your dashboard background.
 
-[group]: /integrations/group
-[@wendevlin]: https://github.com/wendevlin
 [@karwosts]: https://github.com/karwosts
+[@wendevlin]: https://github.com/wendevlin
+[group]: /integrations/group
 
-### Logging
+### Improved logging efficiency
 
-On supervised installations (such as Home Assistant OS), we used to save logs twice — once in a log file in your configuration directory, and once in the OS in the systemd journal. All these extra writes to disk would cause more wear on drives, or even worse SD cards, than needed. We have now stopped doing this, and logs are now only saved on the OS level, and can be found in the UI.
+If you are using the Home Assistant Operating System, we have some great news for you! We've made our logging system way more efficient. 🚀
+
+You might not realize it, but all those Home Assistant logs you can find in **Settings** > **System** > **Logs** were actually being stored on your disk twice. 🙈
+
+Home Assistant OS keeps all logs for everything, including Home Assistant itself, in a very efficient way; even across restarts! But on top of that, we were also writing them to a log file in your Home Assistant configuration folder.
+
+That's not ideal. It takes twice the disk space, but more importantly, it causes unnecessary wear on your storage medium, which means it will fail sooner. This is especially concerning if you're using an SD card in, for example, a Raspberry Pi.
+
+As of this release, we've stopped writing logs to the configuration folder. You can still view and download all logs from the Home Assistant settings page, just like before. We've adapted that page to read the logs from the OS directly instead.
+
+{% tip %}
+Are you more into the command line? No worries, our Home Assistant CLI has you covered. Check it out by running `ha core logs --help` for more information.
+{% endtip %}
 
 ### The new Home Dashboard keeps getting smarter
 
@@ -425,14 +434,6 @@ Any automations concerning Motion Blinds devices that use the `current_tilt_posi
 
 {% enddetails %}
 
-{% details "Nederlandse Spoorwegen" %}
-
-The Nederlandse Spoorwegen entity is now displayed as a timestamp entity, rather than a string. Please adapt your automations and scripts.
-
-([@joostlek] - [#154011]) ([nederlandse_spoorwegen docs])
-
-{% enddetails %}
-
 {% details "Mobile app" %}
 
 The `mobile_app` integration, which has support for the iPhone and Android companion apps, now handles zone-only updates better. When your companion app sends just the zone name (not the exact coordinates), the device tracker will show the zone's friendly name.
@@ -444,6 +445,14 @@ _Before_ this change, the state of the corresponding `person` and `device_tracke
 _After_ this change, the state of the corresponding `person` and `device_tracker` entities will be `School` for both the "Location Sent" settings in the companion app.
 
 ([@Ashus] - [#149453]) ([mobile_app docs])
+
+{% enddetails %}
+
+{% details "Nederlandse Spoorwegen" %}
+
+The Nederlandse Spoorwegen entity is now displayed as a timestamp entity, rather than a string. Please adapt your automations and scripts.
+
+([@joostlek] - [#154011]) ([nederlandse_spoorwegen docs])
 
 {% enddetails %}
 
