@@ -226,24 +226,24 @@ We welcome the following new integrations in this release:
 
 It is not just new {% term integrations %} that have been added, existing integrations are also being constantly improved. Here are some of the noteworthy changes:
 
-- [@thecode] added [group] support for valves, so you can group multiple valves into one. 
-- The [SwitchBot] integration now supports garage door openers thanks [@zerzhang]!
+- [@thecode] added [group] support for valves, so you can group multiple valves into one.
+- The [SwitchBot] integration now supports garage door openers, thanks [@zerzhang]!
 - [@tr4nt0r] added support for notifications to the [Habitica] integration.
-- The [VegeHub] integration now has support for switched to control actuators [@Thulrus]
-- The [Portainer] integration gained support for switches, buttons and sensors! [@erwindouna]
+- The [VegeHub] integration now has support for switches to control actuators [@Thulrus]
+- The [Portainer] integration gained support for switches, buttons and sensors, so you can control and monitor all your containers! [@erwindouna]
 - The [Volvo] integration can now show the location of your car and has buttons to control it [@thomasddn]
 - [ElevenLabs] can now be used for Speech-to-Text thanks to [@ehendrix23]!
-- You can now control the LED's of supported [UniFi] network devices [@Sese-Schneider]
-- Add binary sensor to [Yardian] [@barneyonline]
-- Add temperature number entity to set Tool and Bed temperatures to [OctoPrint] [@AmadeusW] 
-- Add scene platform support to [Niko Home Control] integration [@VandeurenGlenn] 
-- Add support for climate devices (e.g. thermostats) to the [Control4] integration [@davidrecordon] 
-- Add support for controlling [Growatt] MIN/TLX inverters through number platform and entities switch platform and grid charge enable [@johanzander]
-- Add event entity to [Telegram] bot [@hanwg] 
-- Add image platform to [Xbox] integration [@tr4nt0r] 
-- Add energy platform to [Victron Remote Monitoring] [@AndyTempel]
-- The [Shelly] integration now supports climate and valve entities [@thecode]
-- The [Reolink] integration can now report bicycles, adn the type of person, vehicle and animal. [@starkillerOG]
+- You can now control the LED's of supported [UniFi] network devices! Thanks [@Sese-Schneider]
+- [@barneyonline] added binary sensors to the [Yardian] integration
+- You can now set the temperature of your 3D printers tool and bed with the [OctoPrint] integration thanks to [@AmadeusW]!
+- The [Niko Home Control] integration now also adds your scenes into Home Assistant! Thanks [@VandeurenGlenn]
+- Your [Control4] climate devices (e.g. thermostats) are now supported in Home Assistant thanks to [@davidrecordon]
+- Support for controlling [Growatt] MIN/TLX inverters was added, and you can now enabled grid charge! Thanks [@johanzander]
+- [@hanwg] added event entities to the [Telegram] bot integration. You can use these entities to easier automate when you get a message for example!
+- The [Xbox] integration now has support for images! It show an image of the game you are currently playing, the avatar and the Gamerpic for yourself and your friends. Thanks [@tr4nt0r] 
+- [@AndyTempel] added support for solar production forecasting to [Victron Remote Monitoring], so you can now use this in the energy dashboard to see a forecast of how much solar energy you will produce today!
+- The [Shelly] integration now supports climate and valve entities thanks to [@thecode]
+- [@starkillerOG] improved the [Reolink] integration, it can now report bicycles, the type of person, vehicle and animal. So you now know if a men or a women is detected on your cameras.
 
 [group]: /integrations/group
 [SwitchBot]: /integrations/switchbot
