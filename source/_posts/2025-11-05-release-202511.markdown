@@ -505,22 +505,6 @@ These domains have been added: switch, fan, light and cover.
 
 {% enddetails %}
 
-{% details "Python 3.14 support" %}
-
-Home Assistant now supports Python 3.14. Custom integrations should be verified for compatibility.
-
-The following integrations won't work with Python 3.14 initially. Support will be added back once the dependencies are updated.
-
-- `AppleTV`
-- `Jabber (XMPP)`
-- `Logitech Harmony Hub`
-
-The `profiler.memory` service is not available when using Python 3.14. It will return if and when `guppy3` becomes Python 3.14 compatible.
-
-([@cdce8p] - [#153939])
-
-{% enddetails %}
-
 {% details "Mobile app" %}
 
 The `mobile_app` integration, which has support for the iPhone and Android companion apps, now handles zone-only updates better. When your companion app sends just the zone name (not the exact coordinates), the device tracker will show the zone’s friendly name.
