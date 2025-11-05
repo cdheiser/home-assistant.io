@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "2025.11: Pick, automate, and a slice of pie"
-description: "Beta release notes for Home Assistant Core 2025.11"
-date: 2025-10-29 00:00:00
+title: "2025.11: Pick, automate, and a slice of pie 🥧"
+description: "A brand new target picker with full context, redesigned dialog for adding automation blocks, flexible entity naming on dashboard cards, energy pie charts, and progress tracking for Home Assistant and add-on updates!"
+date: 2025-11-05 00:00:00
 date_formatted: "November 5, 2025"
 author: Franck Nijhof
 author_twitter: frenck
@@ -39,7 +39,7 @@ Enjoy the release!
 - [A brand new way to add triggers, conditions, and actions in your automations](#a-brand-new-way-to-add-triggers-conditions-and-actions-in-your-automations)
 - [Naming entities on your dashboard](#naming-entities-on-your-dashboard)
 - [Energy pie](#energy-pie)
-- [Progress for Home Assistant Core and Add-on updates](#progress-for-home-assistant-core-and-add-on-updates)
+- [Progress for Home Assistant and Add-on updates](#progress-for-home-assistant-and-add-on-updates)
 - [Integrations](#integrations)
   - [New integrations](#new-integrations)
   - [Noteworthy improvements to existing integrations](#noteworthy-improvements-to-existing-integrations)
@@ -120,9 +120,9 @@ We have added a new layout to the devices energy graph: "pie" 🥧. You can togg
 
 Doing this made the top-right corner of the other energy cards feel empty, so we used that space to display the total energy for the selected period. For example, if the date picker is set to today, the total solar energy for today will be displayed in the corner of the solar production graph card.
 
-## Progress for Home Assistant Core and Add-on updates
+## Progress for Home Assistant and Add-on updates
 
-With this release, you can now track the progress of updates to Home Assistant Core and Add-ons (managed by the Supervisor)! The progress includes the stages of downloading and unpacking, so the time required will vary based on your internet speed, CPU performance, and system load. As a result, the progress is not reflected as perfectly linear, but it does still provide a good estimate of how far along the update is.
+With this release, you can now track the progress of updates to Home Assistant and Add-ons (managed by the Supervisor)! The progress includes the stages of downloading and unpacking, so the time required will vary based on your internet speed, CPU performance, and system load. As a result, the progress is not reflected as perfectly linear, but it does still provide a good estimate of how far along the update is.
 
 <img class="no-shadow" alt="Screen recording showing an add-on update with progress reporting." src="/images/blog/2025-11/supervisor-progress-report.gif" />
 
@@ -301,37 +301,11 @@ A big thank-you to all the contributors involved! 👏
 
 ### Farewell to the following
 
-The following {% term integrations %} are no longer available as
-of this release:
+The following {% term integrations %} are no longer available as of this release:
 
-{% details "Vultr" %}
-
-The `vultr` integration has been removed and is no longer available.
-The integration has not been working since the API v1 that it used was taken offline in September 2023.
-
-([@mib1185] - [#153560]) ([vultr docs])
-
-{% enddetails %}
-
-{% details "IBM Watson IoT Platform" %}
-
-The `watson_iot` integration has been removed.
-
-On September 8, 2020 IBM announced the withdrawal of its support for the IBM Watson IoT Platform and successively discontinued all versions until September 30, 2022.
-
-([@tr4nt0r] - [#153567]) ([watson_iot docs])
-
-{% enddetails %}
-
-{% details "Plum Lightpad" %}
-
-The `plum_lightpad` integration has been removed.
-
-The servers have been shut down, which made the integration non-functional.
-
-([@tr4nt0r] - [#153590]) ([plum_lightpad docs])
-
-{% enddetails %}
+- **Vultr** has been removed. The integration has not been working since the API v1 that it used was taken offline in September 2023.
+- **IBM Watson IoT Platform** has been removed. On September 8, 2020 IBM announced the withdrawal of its support for the IBM Watson IoT Platform and successively discontinued all versions until September 30, 2022.
+- **Plum Lightpad** has been removed. Their servers have been shut down, which made the integration non-functional.
 
 ## Other noteworthy changes
 
