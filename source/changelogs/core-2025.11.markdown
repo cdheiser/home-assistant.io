@@ -11,954 +11,1024 @@ For a summary in a more readable format
 
 ## All changes
 
-
 - Bump version to 2025.11.0dev0 ([@frenck] - [#152915])
-- Quality: mark installation param doc as done ([@jimmy-zhening-luo] - [#152909]) ([litterrobot docs])
-- Bump actions/cache from 4.2.4 to 4.3.0 ([@dependabot] - [#152934])
-- Add return types and docstring to sonos component ([@KarstenBade] - [#152946]) ([sonos docs])
-- Bump hass-nabucasa from 1.1.1 to 1.1.2 ([@ludeeus] - [#152950]) ([cloud docs])
-- Add HassKey for hass.data in Squeezebox ([@peteS-UK] - [#149129]) ([squeezebox docs])
-- Move condition-specific fields into options ([@arturpragacz] - [#152635]) ([sun docs]) ([zone docs])
-- Correct filter of target selector in sonos services ([@emontnemery] - [#152972]) ([sonos docs])
-- Replace target selector with device selector in fully_kiosk services ([@emontnemery] - [#152959]) ([fully_kiosk docs])
-- Remove device filter from target selector in google_mail services ([@emontnemery] - [#152968]) ([google_mail docs])
-- Remove device and entity filter from target selector in homeassistant services ([@emontnemery] - [#152969]) ([homeassistant docs])
-- Remove device filter from target selector in lyric services ([@emontnemery] - [#152970]) ([lyric docs])
-- Add missing square brackets to references in `fully_kiosk` actions ([@NoRi2909] - [#152987]) ([fully_kiosk docs])
-- Remove deprecated zone and event condition keys ([@abmantis] - [#152986]) ([zone docs])
-- Improve tests for Alexa Devices ([@chemelli74] - [#152995]) ([alexa_devices docs])
-- Code optimization for Uptime Robot ([@chemelli74] - [#152993]) ([uptimerobot docs])
-- Bump aiohomeconnect to version 0.20.0 ([@Diegorro98] - [#153003]) ([home_connect docs])
-- Remove device filter from target selector in bang_olufsen services ([@emontnemery] - [#152957]) ([bang_olufsen docs])
-- Snapshot testing for Plugwise Sensor platform ([@bouwew] - [#153021]) ([plugwise docs])
-- Add garage door opener for switchbot integration ([@zerzhang] - [#148460]) ([switchbot docs]) (new-platform)
-- Code optimization for Uptime Robot ([@chemelli74] - [#153031]) ([uptimerobot docs])
-- Bump github/codeql-action from 3.30.3 to 3.30.4 ([@dependabot] - [#153015])
+- Quality: mark installation param doc as done ([@jimmy-zhening-luo] - [#152909])
+- Bump actions/cache from 4.2.4 to 4.3.0 (@dependabot - [#152934])
+- Add return types and docstring to sonos component ([@KarstenBade] - [#152946])
+- Bump hass-nabucasa from 1.1.1 to 1.1.2 ([@ludeeus] - [#152950])
+- Add HassKey for hass.data in Squeezebox ([@peteS-UK] - [#149129])
+- Move condition-specific fields into options ([@arturpragacz] - [#152635])
+- Correct filter of target selector in sonos services ([@emontnemery] - [#152972])
+- Replace target selector with device selector in fully_kiosk services ([@emontnemery] - [#152959])
+- Remove device filter from target selector in google_mail services ([@emontnemery] - [#152968])
+- Remove device and entity filter from target selector in homeassistant services ([@emontnemery] - [#152969])
+- Remove device filter from target selector in lyric services ([@emontnemery] - [#152970])
+- Add missing square brackets to references in `fully_kiosk` actions ([@NoRi2909] - [#152987])
+- Remove deprecated zone and event condition keys ([@abmantis] - [#152986])
+- Improve tests for Alexa Devices ([@chemelli74] - [#152995])
+- Code optimization for Uptime Robot ([@chemelli74] - [#152993])
+- Bump aiohomeconnect to version 0.20.0 ([@Diegorro98] - [#153003])
+- Remove device filter from target selector in bang_olufsen services ([@emontnemery] - [#152957])
+- Snapshot testing for Plugwise Sensor platform ([@bouwew] - [#153021])
+- Add garage door opener for switchbot integration ([@zerzhang] - [#148460])
+- Code optimization for Uptime Robot ([@chemelli74] - [#153031])
+- Bump github/codeql-action from 3.30.3 to 3.30.4 (@dependabot - [#153015])
 - Fix typing in ObjectSelectorConfig ([@emontnemery] - [#153043])
-- Add discovery to Mealie ([@andrew-codechimp] - [#151773]) ([mealie docs])
-- Replace platform setup functions with fixtures with autouse in Squeezebox tests ([@peteS-UK] - [#153057]) ([squeezebox docs])
-- Snapshot testing for Plugwise Switch platform ([@bouwew] - [#153030]) ([plugwise docs])
-- Correct filter of target selector in motioneye services ([@emontnemery] - [#152971]) ([motioneye docs])
-- Replace patch of entity_registry in test_config_flow for Squeezebox ([@peteS-UK] - [#153039]) ([squeezebox docs])
-- nmap_tracker: Optimize default scan options ([@Eskander] - [#153047]) ([nmap_tracker docs])
-- Bump nibe dependency to 2.19.0 ([@bj00rn] - [#153062]) ([nibe_heatpump docs])
-- Squeezebox: Proxy all the thumbnails ([@Hypfer] - [#147199]) ([squeezebox docs])
-- Add IMAP fetch message part feature ([@jbouwh] - [#152845]) ([imap docs])
-- Use automatic reload options flow in generic_hygrostat ([@gjohansson-ST] - [#153102]) ([generic_hygrostat docs])
-- Extend squeezebox config_flow test to completion ([@peteS-UK] - [#153000]) ([squeezebox docs])
-- Use automatic reload options flow in trend ([@gjohansson-ST] - [#153117]) ([trend docs])
-- Use automatic reload options flow in tod ([@gjohansson-ST] - [#153113]) ([tod docs])
-- Use automatic reload options flow in local_file ([@gjohansson-ST] - [#153114]) ([local_file docs])
-- Use automatic reload options flow in systemmonitor ([@gjohansson-ST] - [#153107]) ([systemmonitor docs])
-- Add reauthentication flow to airOS ([@CoMPaTech] - [#153076]) ([airos docs])
-- Use automatic reload options flow in group ([@gjohansson-ST] - [#153116]) ([group docs])
-- Use automatic reload options flow in template ([@gjohansson-ST] - [#153110]) ([template docs])
-- Use automatic reload options flow in switch_as_x ([@gjohansson-ST] - [#153109]) ([switch_as_x docs])
-- Use automatic reload options flow in generic_thermostat ([@gjohansson-ST] - [#153108]) ([generic_thermostat docs])
-- Use automatic reload options flow in worldclock ([@gjohansson-ST] - [#153105]) ([worldclock docs])
-- Use automatic reload options flow in derivative ([@gjohansson-ST] - [#153112]) ([derivative docs])
-- Use automatic reload options flow in utility_meter ([@gjohansson-ST] - [#153111]) ([utility_meter docs])
-- Use automatic reload options flow in mold_indicator ([@gjohansson-ST] - [#153106]) ([mold_indicator docs])
-- Use automatic reload options flow in history_stats ([@gjohansson-ST] - [#153115]) ([history_stats docs])
-- Use automatic reload options flow in filter ([@gjohansson-ST] - [#153104]) ([filter docs])
-- Use automatic reload options flow in random ([@gjohansson-ST] - [#153103]) ([random docs])
-- Extend timeout test in test_config_flow for Squeezebox to completion ([@peteS-UK] - [#153080]) ([squeezebox docs])
-- Improve interview logging in Onkyo ([@arturpragacz] - [#153095]) ([onkyo docs])
-- Portainer add re-auth flow ([@erwindouna] - [#153077]) ([portainer docs])
-- Refactor SQL integration ([@tronikos] - [#153135]) ([sql docs])
-- Add Reolink AI bicycle detection entity ([@starkillerOG] - [#153163]) ([reolink docs])
-- Add Reolink siren state ([@starkillerOG] - [#153169]) ([reolink docs])
-- Rework devolo Home Control config flow tests ([@Shutgun] - [#147083]) ([devolo_home_control docs])
-- Bump aiomealie to 0.11.0 adding times to recipes ([@andrew-codechimp] - [#153183]) ([mealie docs])
-- Bump github/codeql-action from 3.30.4 to 3.30.5 ([@dependabot] - [#153179])
-- Bump actions/dependency-review-action from 4.7.3 to 4.8.0 ([@dependabot] - [#153180])
-- Add Reolink Ai person type, vehicle type and animal type ([@starkillerOG] - [#153170]) ([reolink docs])
-- Add async_iterator util ([@emontnemery] - [#153194]) ([backup docs])
-- Matter DoorLock attributes ([@lboue] - [#151418]) ([matter docs])
-- Add test which fails on duplicated statistics units ([@emontnemery] - [#153202]) ([recorder docs])
-- Add Reolink bicycle sensitivity and delay ([@starkillerOG] - [#153217]) ([reolink docs])
+- Add discovery to Mealie ([@andrew-codechimp] - [#151773])
+- Replace platform setup functions with fixtures with autouse in Squeezebox tests ([@peteS-UK] - [#153057])
+- Snapshot testing for Plugwise Switch platform ([@bouwew] - [#153030])
+- Correct filter of target selector in motioneye services ([@emontnemery] - [#152971])
+- Replace patch of entity_registry in test_config_flow for Squeezebox ([@peteS-UK] - [#153039])
+- nmap_tracker: Optimize default scan options ([@Eskander] - [#153047])
+- Bump nibe dependency to 2.19.0 ([@bj00rn] - [#153062])
+- Squeezebox: Proxy all the thumbnails ([@Hypfer] - [#147199])
+- Add IMAP fetch message part feature ([@jbouwh] - [#152845])
+- Use automatic reload options flow in generic_hygrostat ([@gjohansson-ST] - [#153102])
+- Extend squeezebox config_flow test to completion ([@peteS-UK] - [#153000])
+- Use automatic reload options flow in trend ([@gjohansson-ST] - [#153117])
+- Use automatic reload options flow in tod ([@gjohansson-ST] - [#153113])
+- Use automatic reload options flow in local_file ([@gjohansson-ST] - [#153114])
+- Use automatic reload options flow in systemmonitor ([@gjohansson-ST] - [#153107])
+- Add reauthentication flow to airOS ([@CoMPaTech] - [#153076])
+- Use automatic reload options flow in group ([@gjohansson-ST] - [#153116])
+- Use automatic reload options flow in template ([@gjohansson-ST] - [#153110])
+- Use automatic reload options flow in switch_as_x ([@gjohansson-ST] - [#153109])
+- Use automatic reload options flow in generic_thermostat ([@gjohansson-ST] - [#153108])
+- Use automatic reload options flow in worldclock ([@gjohansson-ST] - [#153105])
+- Use automatic reload options flow in derivative ([@gjohansson-ST] - [#153112])
+- Use automatic reload options flow in utility_meter ([@gjohansson-ST] - [#153111])
+- Use automatic reload options flow in mold_indicator ([@gjohansson-ST] - [#153106])
+- Use automatic reload options flow in history_stats ([@gjohansson-ST] - [#153115])
+- Use automatic reload options flow in filter ([@gjohansson-ST] - [#153104])
+- Use automatic reload options flow in random ([@gjohansson-ST] - [#153103])
+- Extend timeout test in test_config_flow for Squeezebox to completion ([@peteS-UK] - [#153080])
+- Improve interview logging in Onkyo ([@arturpragacz] - [#153095])
+- Portainer add re-auth flow ([@erwindouna] - [#153077])
+- Refactor SQL integration ([@tronikos] - [#153135])
+- Add Reolink AI bicycle detection entity ([@starkillerOG] - [#153163])
+- Add Reolink siren state ([@starkillerOG] - [#153169])
+- Rework devolo Home Control config flow tests ([@Shutgun] - [#147083])
+- Bump aiomealie to 0.11.0 adding times to recipes ([@andrew-codechimp] - [#153183])
+- Bump github/codeql-action from 3.30.4 to 3.30.5 (@dependabot - [#153179])
+- Bump actions/dependency-review-action from 4.7.3 to 4.8.0 (@dependabot - [#153180])
+- Add Reolink Ai person type, vehicle type and animal type ([@starkillerOG] - [#153170])
+- Add async_iterator util ([@emontnemery] - [#153194])
+- Matter DoorLock attributes ([@lboue] - [#151418])
+- Add test which fails on duplicated statistics units ([@emontnemery] - [#153202])
+- Add Reolink bicycle sensitivity and delay ([@starkillerOG] - [#153217])
 - Replace legacy hass icons to mdi icons ([@piitaya] - [#153204])
-- Bump pysmhi to 1.1.0 ([@gjohansson-ST] - [#153222]) ([smhi docs])
-- Rework test split for airOS reauthentication flow ([@CoMPaTech] - [#153221]) ([airos docs])
-- Use attribute names for match class ([@cdce8p] - [#153191]) ([onkyo docs])
-- Correct target filter in ecovacs services ([@emontnemery] - [#153241]) ([ecovacs docs])
-- Rename resolver to nameserver in dnsip ([@gjohansson-ST] - [#153223]) ([dnsip docs])
-- Bump docker/login-action from 3.5.0 to 3.6.0 ([@dependabot] - [#153239])
-- Record current quality scale of Electricity Maps ([@jpbede] - [#149241]) ([co2signal docs])
-- Use initial received WebSocket state in Bang & Olufsen ([@mj23000] - [#152432]) ([bang_olufsen docs])
-- Add forecast energy sensor to Imeon inverter integration ([@Imeon-Energy] - [#152176]) ([imeon_inverter docs])
-- Correct homekit service definition ([@emontnemery] - [#153242]) ([homekit docs])
-- Correct target filter in litterrobot services ([@emontnemery] - [#153243]) ([litterrobot docs])
-- Correct target filter in osoenergy services ([@emontnemery] - [#153244]) ([osoenergy docs])
-- Skip unserializable flows in WS config_entries/flow/subscribe ([@emontnemery] - [#153259]) ([config docs])
-- Handle errors in WS manifest/list ([@emontnemery] - [#153256]) ([websocket_api docs])
+- Bump pysmhi to 1.1.0 ([@gjohansson-ST] - [#153222])
+- Rework test split for airOS reauthentication flow ([@CoMPaTech] - [#153221])
+- Use attribute names for match class ([@cdce8p] - [#153191])
+- Correct target filter in ecovacs services ([@emontnemery] - [#153241])
+- Rename resolver to nameserver in dnsip ([@gjohansson-ST] - [#153223])
+- Bump docker/login-action from 3.5.0 to 3.6.0 (@dependabot - [#153239])
+- Record current quality scale of Electricity Maps ([@jpbede] - [#149241])
+- Use initial received WebSocket state in Bang & Olufsen ([@mj23000] - [#152432])
+- Add forecast energy sensor to Imeon inverter integration ([@Imeon-Energy] - [#152176])
+- Correct homekit service definition ([@emontnemery] - [#153242])
+- Correct target filter in litterrobot services ([@emontnemery] - [#153243])
+- Correct target filter in osoenergy services ([@emontnemery] - [#153244])
+- Skip unserializable flows in WS config_entries/flow/subscribe ([@emontnemery] - [#153259])
+- Handle errors in WS manifest/list ([@emontnemery] - [#153256])
 - Add device class filter to entity services ([@emontnemery] - [#153247])
-- Bump hass-nabucasa from 1.1.2 to 1.2.0 ([@ludeeus] - [#153250]) ([cloud docs])
-- snoo: add button entity for calling start_snoo ([@falconindy] - [#151052]) ([snoo docs]) (new-platform)
+- Bump hass-nabucasa from 1.1.2 to 1.2.0 ([@ludeeus] - [#153250])
+- snoo: add button entity for calling start_snoo ([@falconindy] - [#151052])
 - Update pandas to 2.3.3 ([@cdce8p] - [#153251])
-- Add release url to Litter-Robot 4 update entity ([@natekspencer] - [#152504]) ([litterrobot docs])
-- Add lock support to Switchbot Cloud ([@XiaoLing-git] - [#148310]) ([switchbot_cloud docs])
-- Add support model [relay switch 2pm] for switchbot cloud ([@XiaoLing-git] - [#148381]) ([switchbot_cloud docs])
-- Add Reolink floodlight event entities ([@starkillerOG] - [#152564]) ([reolink docs])
+- Add release url to Litter-Robot 4 update entity ([@natekspencer] - [#152504])
+- Add lock support to Switchbot Cloud ([@XiaoLing-git] - [#148310])
+- Add support model [relay switch 2pm] for switchbot cloud ([@XiaoLing-git] - [#148381])
+- Add Reolink floodlight event entities ([@starkillerOG] - [#152564])
 - Use pytest_unordered in additional service helper tests ([@emontnemery] - [#153255])
-- Improve saved state of RestoreSensor when using freezegun ([@emontnemery] - [#152740]) ([sensor docs])
-- Add Roomba J9 compatibility to the roomba integration ([@rokam] - [#145913]) ([roomba docs])
-- Add tests for Sonos media metadata ([@PeteRager] - [#152622]) ([sonos docs])
-- Add air/water filter state in percent to LG ThinQ ([@LG-ThinQ-Integration] - [#152150]) ([lg_thinq docs])
-- Update quality scale of ntfy integration to platinum 🏆️ ([@tr4nt0r] - [#151785]) ([ntfy docs])
-- Fix sentence-casing in two title strings of `roomba` ([@NoRi2909] - [#153281]) ([roomba docs])
-- Add support for Media player Mute/Unmute intents ([@anishsane] - [#150508]) ([media_player docs])
-- Add meteo_lt integration ([@xE1H] - [#152948]) ([meteo_lt docs]) (new-integration)
-- Add notify platform to Habitica ([@tr4nt0r] - [#150553]) ([habitica docs]) (new-platform)
-- Add switch domain to VegeHub integration ([@Thulrus] - [#148436]) ([vegehub docs]) (new-platform)
-- Add support for errored torrents in qBittorrent sensor ([@aviadlevy] - [#153120]) ([qbittorrent docs])
-- Add Firefly III integration ([@erwindouna] - [#147062]) ([firefly_iii docs]) (new-integration)
-- Add device class filter to switcher_kis services ([@emontnemery] - [#153248]) ([switcher_kis docs])
-- Add new cover fixture for Tuya ([@epenet] - [#153310]) ([tuya docs])
-- Stop writing to config dir log file on supervised install ([@abmantis] - [#146675]) (breaking-change)
-- Fix device_automation RuntimeWarning in tests ([@cdce8p] - [#153319]) ([device_automation docs])
-- Add test for full device snapshot for Shelly Wall Display XL ([@bieniu] - [#153305]) ([shelly docs])
-- Use pytest.mark.usefixtures in some recorder tests ([@emontnemery] - [#153313]) ([recorder docs])
-- Bayesian - add config entry tests ([@HarvsG] - [#153316]) ([bayesian docs])
-- Use pytest.mark.usefixtures in history tests ([@emontnemery] - [#153306]) ([history docs])
-- Bump pyfirefly 0.1.6 ([@erwindouna] - [#153335]) ([firefly_iii docs])
+- Improve saved state of RestoreSensor when using freezegun ([@emontnemery] - [#152740])
+- Add Roomba J9 compatibility to the roomba integration ([@rokam] - [#145913])
+- Add tests for Sonos media metadata ([@PeteRager] - [#152622])
+- Add air/water filter state in percent to LG ThinQ ([@LG-ThinQ-Integration] - [#152150])
+- Update quality scale of ntfy integration to platinum 🏆️ ([@tr4nt0r] - [#151785])
+- Fix sentence-casing in two title strings of `roomba` ([@NoRi2909] - [#153281])
+- Add support for Media player Mute/Unmute intents ([@anishsane] - [#150508])
+- Add meteo_lt integration ([@xE1H] - [#152948])
+- Add notify platform to Habitica ([@tr4nt0r] - [#150553])
+- Add switch domain to VegeHub integration ([@Thulrus] - [#148436])
+- Add support for errored torrents in qBittorrent sensor ([@aviadlevy] - [#153120])
+- Add Firefly III integration ([@erwindouna] - [#147062])
+- Add device class filter to switcher_kis services ([@emontnemery] - [#153248])
+- Add new cover fixture for Tuya ([@epenet] - [#153310])
+- Stop writing to config dir log file on supervised install ([@abmantis] - [#146675])
+- Fix device_automation RuntimeWarning in tests ([@cdce8p] - [#153319])
+- Add test for full device snapshot for Shelly Wall Display XL ([@bieniu] - [#153305])
+- Use pytest.mark.usefixtures in some recorder tests ([@emontnemery] - [#153313])
+- Bayesian - add config entry tests ([@HarvsG] - [#153316])
+- Use pytest.mark.usefixtures in history tests ([@emontnemery] - [#153306])
+- Bump pyfirefly 0.1.6 ([@erwindouna] - [#153335])
 - Update pyOpenSSL to 25.3.0 ([@cdce8p] - [#153329])
-- Add missing test for Shelly config flow ([@bieniu] - [#153346]) ([shelly docs])
-- Add water heater fixture for Tuya tests ([@epenet] - [#153336]) ([tuya docs])
+- Add missing test for Shelly config flow ([@bieniu] - [#153346])
+- Add water heater fixture for Tuya tests ([@epenet] - [#153336])
 - Update bcrpyt to 5.0.0 ([@cdce8p] - [#153325])
 - Misc typing improvements ([@cdce8p] - [#153322])
-- Update types packages ([@cdce8p] - [#153330]) ([pandora docs])
+- Update types packages ([@cdce8p] - [#153330])
 - Update cryptography to 46.0.2 ([@cdce8p] - [#153327])
-- Add parallel updates to airthings_ble ([@LaStrada] - [#153315]) ([airthings_ble docs])
-- Remove to_native method from recorder database schemas ([@emontnemery] - [#153334]) ([recorder docs])
-- Remove legacy history queries from recorder ([@emontnemery] - [#153324]) ([recorder docs])
-- Remove deprecated state constants from lock ([@gjohansson-ST] - [#153367]) ([lock docs]) (breaking-change)
-- Remove deprecated constants from media_player ([@gjohansson-ST] - [#153366]) ([media_player docs]) (breaking-change)
-- Remove deprecated constants in camera ([@gjohansson-ST] - [#153363]) ([camera docs]) (breaking-change)
-- Improve recorder migration tests ([@emontnemery] - [#153388]) ([recorder docs])
-- Add test fixture for new Tuya jsq category ([@epenet] - [#153412]) ([tuya docs])
-- Add test fixture for new Tuya cjkg category ([@epenet] - [#153411]) ([tuya docs])
-- Improve recorder migration test ([@emontnemery] - [#153405]) ([recorder docs])
-- Remove deprecated entity feature constants in vacuum ([@gjohansson-ST] - [#153364]) ([vacuum docs]) (breaking-change)
-- Add more sensors to Tuya weather monitor ([@epenet] - [#153420]) ([tuya docs])
-- Add last check-in sensor to Habitica integration ([@tr4nt0r] - [#153293]) ([habitica docs])
-- Cleanup sync_callback in devolo Home Control ([@Shutgun] - [#153321]) ([devolo_home_control docs])
-- Adds token authentication and usage of official API for Growatt MIN/TLX inverters ([@johanzander] - [#149783]) ([growatt_server docs])
-- Use walrus and combine conditions in Tuya alarm control panel ([@epenet] - [#153426]) ([tuya docs])
-- Move common Uptime Robot new device check logic to helper ([@abmantis] - [#153094]) ([uptimerobot docs])
-- Firefly III add re-auth flow ([@erwindouna] - [#153303]) ([firefly_iii docs])
-- Add new dehumidifier fixture for Tuya ([@epenet] - [#153407]) ([tuya docs])
-- Add Quality Scale to Satel Integra ([@Tommatheussen] - [#153122]) ([satel_integra docs])
-- Fix spelling error in logbook tests ([@dollaransh17] - [#153417]) ([logbook docs])
-- Add Lunatone gateway integration ([@MoonDevLT] - [#149182]) ([lunatone docs]) (new-integration)
-- Move entities to the end of devices in analytics payload ([@arturpragacz] - [#153449]) ([analytics docs])
-- Add new test fixture for Tuya wk category ([@epenet] - [#153457]) ([tuya docs])
-- Bump aioshelly 13.11.0 ([@thecode] - [#153458]) ([shelly docs])
-- Add light, security and climate panel ([@piitaya] - [#153261]) ([frontend docs])
-- Portainer add configuration URL's ([@erwindouna] - [#153466]) ([portainer docs])
-- Add serial number to the list of discovered devices ([@LaStrada] - [#153448]) ([airthings_ble docs])
-- Add data_description field for Airthings BLE ([@LaStrada] - [#153442]) ([airthings_ble docs])
-- Improve recorder migration tests dropping indices ([@emontnemery] - [#153456]) ([recorder docs])
-- Add PARALLEL_UPDATES to Squeezebox switch platform ([@peteS-UK] - [#153477]) ([squeezebox docs])
-- Fix Airthings config flow description ([@LaStrada] - [#153452]) ([airthings docs])
-- Add relative humidity to matter climate entities ([@MrEbbinghaus] - [#152554]) ([matter docs])
-- Improve enable_migrate_event_ids recorder test fixture ([@emontnemery] - [#153470]) ([recorder docs])
-- Remove state attributes from Firefly 3 ([@joostlek] - [#153285]) ([firefly_iii docs])
-- Respect filtering of WS subscribe_entities when there are unserializalizable states ([@emontnemery] - [#153262]) ([websocket_api docs])
-- Start recorder data migration after schema migration ([@emontnemery] - [#153471]) ([recorder docs])
-- Remove deprication code for reolink Hub switches ([@dollaransh17] - [#153483]) ([reolink docs])
-- Bump recorder live schema migration to schema version 48 ([@emontnemery] - [#153404]) ([recorder docs])
-- Cleanup reolink update entity migration ([@starkillerOG] - [#153492]) ([reolink docs])
-- Allign naming of Reolink host switch entities ([@starkillerOG] - [#153494]) ([reolink docs])
-- Use new Reolink rec_enable flag ([@starkillerOG] - [#153496]) ([reolink docs])
-- Improve Reolink docstrings ([@starkillerOG] - [#153498]) ([reolink docs])
-- Remove runtime support for recorder DB without States.last_reported_ts ([@emontnemery] - [#153495]) ([recorder docs])
-- Update ovoenergy to 3.0.2 ([@timmo001] - [#153488]) ([ovo_energy docs])
-- Remove module recorder.history.modern ([@emontnemery] - [#153502]) ([recorder docs])
-- Fix typo in Airthings BLE config flow ([@LaStrada] - [#153512]) ([airthings docs])
-- Add num open fds sensor to systemmonitor ([@agners] - [#152441]) ([systemmonitor docs])
+- Add parallel updates to airthings_ble ([@LaStrada] - [#153315])
+- Remove to_native method from recorder database schemas ([@emontnemery] - [#153334])
+- Remove legacy history queries from recorder ([@emontnemery] - [#153324])
+- Remove deprecated state constants from lock ([@gjohansson-ST] - [#153367])
+- Remove deprecated constants from media_player ([@gjohansson-ST] - [#153366])
+- Remove deprecated constants in camera ([@gjohansson-ST] - [#153363])
+- Improve recorder migration tests ([@emontnemery] - [#153388])
+- Add test fixture for new Tuya jsq category ([@epenet] - [#153412])
+- Add test fixture for new Tuya cjkg category ([@epenet] - [#153411])
+- Improve recorder migration test ([@emontnemery] - [#153405])
+- Remove deprecated entity feature constants in vacuum ([@gjohansson-ST] - [#153364])
+- Add more sensors to Tuya weather monitor ([@epenet] - [#153420])
+- Add last check-in sensor to Habitica integration ([@tr4nt0r] - [#153293])
+- Cleanup sync_callback in devolo Home Control ([@Shutgun] - [#153321])
+- Adds token authentication and usage of official API for Growatt MIN/TLX inverters ([@johanzander] - [#149783])
+- Use walrus and combine conditions in Tuya alarm control panel ([@epenet] - [#153426])
+- Move common Uptime Robot new device check logic to helper ([@abmantis] - [#153094])
+- Firefly III add re-auth flow ([@erwindouna] - [#153303])
+- Add new dehumidifier fixture for Tuya ([@epenet] - [#153407])
+- Add Quality Scale to Satel Integra ([@Tommatheussen] - [#153122])
+- Fix spelling error in logbook tests ([@dollaransh17] - [#153417])
+- Add Lunatone gateway integration ([@MoonDevLT] - [#149182])
+- Move entities to the end of devices in analytics payload ([@arturpragacz] - [#153449])
+- Add new test fixture for Tuya wk category ([@epenet] - [#153457])
+- Bump aioshelly 13.11.0 ([@thecode] - [#153458])
+- Add light, security and climate panel ([@piitaya] - [#153261])
+- Portainer add configuration URL's ([@erwindouna] - [#153466])
+- Add serial number to the list of discovered devices ([@LaStrada] - [#153448])
+- Add data_description field for Airthings BLE ([@LaStrada] - [#153442])
+- Improve recorder migration tests dropping indices ([@emontnemery] - [#153456])
+- Add PARALLEL_UPDATES to Squeezebox switch platform ([@peteS-UK] - [#153477])
+- Fix Airthings config flow description ([@LaStrada] - [#153452])
+- Add relative humidity to matter climate entities ([@MrEbbinghaus] - [#152554])
+- Improve enable_migrate_event_ids recorder test fixture ([@emontnemery] - [#153470])
+- Remove state attributes from Firefly 3 ([@joostlek] - [#153285])
+- Respect filtering of WS subscribe_entities when there are unserializalizable states ([@emontnemery] - [#153262])
+- Start recorder data migration after schema migration ([@emontnemery] - [#153471])
+- Remove deprication code for reolink Hub switches ([@dollaransh17] - [#153483])
+- Bump recorder live schema migration to schema version 48 ([@emontnemery] - [#153404])
+- Cleanup reolink update entity migration ([@starkillerOG] - [#153492])
+- Allign naming of Reolink host switch entities ([@starkillerOG] - [#153494])
+- Use new Reolink rec_enable flag ([@starkillerOG] - [#153496])
+- Improve Reolink docstrings ([@starkillerOG] - [#153498])
+- Remove runtime support for recorder DB without States.last_reported_ts ([@emontnemery] - [#153495])
+- Update ovoenergy to 3.0.2 ([@timmo001] - [#153488])
+- Remove module recorder.history.modern ([@emontnemery] - [#153502])
+- Fix typo in Airthings BLE config flow ([@LaStrada] - [#153512])
+- Add num open fds sensor to systemmonitor ([@agners] - [#152441])
 - Fix awair integration AttributeError when update listener accesses runtime_data ([@Copilot] - [#153521])
-- Add Shelly support for valve entities ([@thecode] - [#153348]) ([shelly docs])
-- Bump Airthings BLE to 1.1.1 ([@LaStrada] - [#153529]) ([airthings_ble docs])
-- Remove Vultr integration ([@mib1185] - [#153560]) ([vultr docs]) (breaking-change)
-- Bump pyenphase to 2.4.0 ([@catsmanac] - [#153583]) ([enphase_envoy docs])
-- Portainer add switch platform ([@erwindouna] - [#153485]) ([portainer docs]) (new-platform)
-- Improve Habitica tests ([@tr4nt0r] - [#153573]) ([habitica docs])
-- Bump github/codeql-action from 3.30.5 to 3.30.6 ([@dependabot] - [#153524])
-- Remove IBM Watson IoT Platform integration ([@tr4nt0r] - [#153567]) ([watson_iot docs]) (breaking-change)
-- Portainer follow-up points ([@erwindouna] - [#153594]) ([portainer docs])
-- Bump pynordpool to 0.3.1 ([@gjohansson-ST] - [#153599]) ([nordpool docs])
-- Extend enphase_envoy test data with new library data fields ([@catsmanac] - [#153591]) ([enphase_envoy docs])
-- Use SensorDescription for GoogleTravelTimeSensor ([@eifinger] - [#153585]) ([google_travel_time docs])
-- Address comments for the add-on switch entity ([@felipecrs] - [#153518]) ([hassio docs])
-- Add two new consumable sensors to Roborock ([@Lash-L] - [#153606]) ([roborock docs])
-- Fix string interpolation in local_todo error messages ([@dollaransh17] - [#153580]) ([local_todo docs])
-- Update the map parser in Roborock vacuum to use coord parser. ([@Lash-L] - [#153520]) ([roborock docs])
-- Raise repairs on platform setup for sql ([@gjohansson-ST] - [#153581]) ([sql docs])
-- Setup platform services during integration start in sensibo ([@gjohansson-ST] - [#153571]) ([sensibo docs])
-- Add Matter Thermostat OccupancySensor ([@lboue] - [#153166]) ([matter docs])
-- Fix sql repair string ([@gjohansson-ST] - [#153619]) ([sql docs])
-- Correct kraken test issues ([@elupus] - [#153601]) ([kraken docs])
-- Fix blue current mocking out platform with empty string ([@elupus] - [#153604]) ([blue_current docs])
+- Add Shelly support for valve entities ([@thecode] - [#153348])
+- Bump Airthings BLE to 1.1.1 ([@LaStrada] - [#153529])
+- Remove Vultr integration ([@mib1185] - [#153560])
+- Bump pyenphase to 2.4.0 ([@catsmanac] - [#153583])
+- Portainer add switch platform ([@erwindouna] - [#153485])
+- Improve Habitica tests ([@tr4nt0r] - [#153573])
+- Bump github/codeql-action from 3.30.5 to 3.30.6 (@dependabot - [#153524])
+- Remove IBM Watson IoT Platform integration ([@tr4nt0r] - [#153567])
+- Portainer follow-up points ([@erwindouna] - [#153594])
+- Bump pynordpool to 0.3.1 ([@gjohansson-ST] - [#153599])
+- Extend enphase_envoy test data with new library data fields ([@catsmanac] - [#153591])
+- Use SensorDescription for GoogleTravelTimeSensor ([@eifinger] - [#153585])
+- Address comments for the add-on switch entity ([@felipecrs] - [#153518])
+- Add two new consumable sensors to Roborock ([@Lash-L] - [#153606])
+- Fix string interpolation in local_todo error messages ([@dollaransh17] - [#153580])
+- Update the map parser in Roborock vacuum to use coord parser. ([@Lash-L] - [#153520])
+- Raise repairs on platform setup for sql ([@gjohansson-ST] - [#153581])
+- Setup platform services during integration start in sensibo ([@gjohansson-ST] - [#153571])
+- Add Matter Thermostat OccupancySensor ([@lboue] - [#153166])
+- Fix sql repair string ([@gjohansson-ST] - [#153619])
+- Correct kraken test issues ([@elupus] - [#153601])
+- Fix blue current mocking out platform with empty string ([@elupus] - [#153604])
 - Update grpcio to 1.75.1 ([@cdce8p] - [#153643])
-- Add translations and icons to OralB integration ([@tr4nt0r] - [#153605]) ([oralb docs]) (breaking-change)
+- Add translations and icons to OralB integration ([@tr4nt0r] - [#153605])
 - Update PyYAML to 6.0.3 ([@cdce8p] - [#153626])
-- Bump libpyvivotek to 0.6.1 and add strict typing for Vivotek integration ([@HarlemSquirrel] - [#153342]) ([vivotek docs])
-- Remove Plum Lightpad integration ([@tr4nt0r] - [#153590]) ([plum_lightpad docs]) (breaking-change)
+- Bump libpyvivotek to 0.6.1 and add strict typing for Vivotek integration ([@HarlemSquirrel] - [#153342])
+- Remove Plum Lightpad integration ([@tr4nt0r] - [#153590])
 - Bump annotatedyaml to 1.0.2 ([@bdraco] - [#153651])
-- Bump bluetooth-data-tools to 1.28.3 ([@bdraco] - [#153653]) ([bluetooth docs]) ([led_ble docs]) ([ld2410_ble docs]) ([private_ble_device docs])
+- Bump bluetooth-data-tools to 1.28.3 ([@bdraco] - [#153653])
 - Fix flaky template test ([@cdce8p] - [#153624])
-- Bump habluetooth to 5.7.0 ([@bdraco] - [#153665]) ([bluetooth docs])
-- Bump bleak-esphome to 3.4.0 ([@bdraco] - [#153669]) ([esphome docs])
-- Bump cached-ipaddress to 1.0.1 ([@bdraco] - [#153670]) ([dhcp docs])
-- Limit shelly tests to single platform ([@elupus] - [#153681]) ([shelly docs])
-- Smarter calculation of chunk size in onedrive ([@zweckj] - [#153679]) ([onedrive docs])
+- Bump habluetooth to 5.7.0 ([@bdraco] - [#153665])
+- Bump bleak-esphome to 3.4.0 ([@bdraco] - [#153669])
+- Bump cached-ipaddress to 1.0.1 ([@bdraco] - [#153670])
+- Limit shelly tests to single platform ([@elupus] - [#153681])
+- Smarter calculation of chunk size in onedrive ([@zweckj] - [#153679])
 - Schedule update coordinator again if it is active ([@elupus] - [#153596])
-- Bump fnv-hash-fast to 1.6.0 ([@bdraco] - [#153682]) ([recorder docs]) ([homekit docs])
-- Bump dbus-fast to 2.44.5 ([@bdraco] - [#153686]) ([bluetooth docs])
+- Bump fnv-hash-fast to 1.6.0 ([@bdraco] - [#153682])
+- Bump dbus-fast to 2.44.5 ([@bdraco] - [#153686])
 - Bump ulid-transform to 1.5.2 ([@bdraco] - [#153690])
 - Bump propcache to 0.4.0 ([@bdraco] - [#153694])
-- Bump aioesphomeapi to 41.12.0 ([@bdraco] - [#153698]) ([esphome docs])
-- Bump PyViCare to 2.52.0 ([@CFenner] - [#153629]) ([vicare docs])
+- Bump aioesphomeapi to 41.12.0 ([@bdraco] - [#153698])
+- Bump PyViCare to 2.52.0 ([@CFenner] - [#153629])
 - Add zeroconf to hassfest version requirements ([@cdce8p] - [#153703])
-- Bump zeroconf to 0.148.0 ([@bdraco] - [#153704]) ([zeroconf docs])
-- Bump Mill library ([@Danielhiversen] - [#153683]) ([mill docs])
-- Shelly code quality and cleanup ([@thecode] - [#153692]) ([shelly docs])
-- Double max retries in Google Drive ([@tronikos] - [#153717]) ([google_drive docs])
-- Clarify description for media player entity in Google Assistant SDK ([@tronikos] - [#153715]) ([google_assistant_sdk docs])
-- Portainer add button platform ([@erwindouna] - [#153063]) ([portainer docs]) (new-platform)
-- Add Shelly support for climate entities ([@thecode] - [#153450]) ([shelly docs])
-- Add debouncer to acaia ([@zweckj] - [#153725]) ([acaia docs])
-- Bump aiontfy to v0.6.1 ([@tr4nt0r] - [#153738]) ([ntfy docs])
-- Remove Shelly `presencezone` component from `VIRTUAL_COMPONENTS` tuple ([@bieniu] - [#153740]) ([shelly docs])
-- Upgrade upcloud-api to 2.9.0 ([@scop] - [#153727]) ([upcloud docs])
-- Update suggested display precision for ntfy attachment size to 2 ([@tr4nt0r] - [#153741]) ([ntfy docs])
-- Fix lamarzocco brewing start time sensor availability ([@zweckj] - [#153732]) ([lamarzocco docs])
-- Check if firmware is outdated when adding an Airthings BLE device ([@LaStrada] - [#153559]) ([airthings_ble docs])
-- Use full serial number when adding an Airthings device ([@LaStrada] - [#153499]) ([airthings_ble docs])
-- Bump aiohomekit to 3.2.20 ([@bdraco] - [#153750]) ([homekit_controller docs])
+- Bump zeroconf to 0.148.0 ([@bdraco] - [#153704])
+- Bump Mill library ([@Danielhiversen] - [#153683])
+- Shelly code quality and cleanup ([@thecode] - [#153692])
+- Double max retries in Google Drive ([@tronikos] - [#153717])
+- Clarify description for media player entity in Google Assistant SDK ([@tronikos] - [#153715])
+- Portainer add button platform ([@erwindouna] - [#153063])
+- Add Shelly support for climate entities ([@thecode] - [#153450])
+- Add debouncer to acaia ([@zweckj] - [#153725])
+- Bump aiontfy to v0.6.1 ([@tr4nt0r] - [#153738])
+- Remove Shelly `presencezone` component from `VIRTUAL_COMPONENTS` tuple ([@bieniu] - [#153740])
+- Upgrade upcloud-api to 2.9.0 ([@scop] - [#153727])
+- Update suggested display precision for ntfy attachment size to 2 ([@tr4nt0r] - [#153741])
+- Fix lamarzocco brewing start time sensor availability ([@zweckj] - [#153732])
+- Check if firmware is outdated when adding an Airthings BLE device ([@LaStrada] - [#153559])
+- Use full serial number when adding an Airthings device ([@LaStrada] - [#153499])
+- Bump aiohomekit to 3.2.20 ([@bdraco] - [#153750])
 - AGENTS.md ([@Shulyaka] - [#153680])
-- Fix crash when setting up Airthings BLE device ([@LaStrada] - [#153510]) ([airthings_ble docs])
-- Change style for critical number entities in ViCare integration ([@CFenner] - [#153634]) ([vicare docs])
-- Add sensors for battery charge amount to ViCare integration ([@CFenner] - [#153631]) ([vicare docs])
-- Migrate tolo to entry.runtime_data ([@zweckj] - [#153744]) ([tolo docs])
-- Bump anthropic to 0.69.0 ([@Shulyaka] - [#153764]) ([anthropic docs])
-- Add support for Anthropic Claude Sonnet 4.5 ([@Shulyaka] - [#153769]) ([anthropic docs])
+- Fix crash when setting up Airthings BLE device ([@LaStrada] - [#153510])
+- Change style for critical number entities in ViCare integration ([@CFenner] - [#153634])
+- Add sensors for battery charge amount to ViCare integration ([@CFenner] - [#153631])
+- Migrate tolo to entry.runtime_data ([@zweckj] - [#153744])
+- Bump anthropic to 0.69.0 ([@Shulyaka] - [#153764])
+- Add support for Anthropic Claude Sonnet 4.5 ([@Shulyaka] - [#153769])
 - Revert "AGENTS.md" ([@zweckj] - [#153777])
-- Daikin increase timeout ([@fredrike] - [#153722]) ([daikin docs])
-- Shelly's energy sensors naming paradigm standardization ([@davidrapan] - [#153729]) ([shelly docs])
-- ESPHome to set Z-Wave discovery as next_flow ([@balloob] - [#153706]) ([esphome docs])
+- Daikin increase timeout ([@fredrike] - [#153722])
+- Shelly's energy sensors naming paradigm standardization ([@davidrapan] - [#153729])
+- ESPHome to set Z-Wave discovery as next_flow ([@balloob] - [#153706])
 - Add pytest command line option to drop recorder db before test ([@emontnemery] - [#153527])
-- Validating schema outside the event loop will now fail ([@gjohansson-ST] - [#153472]) (breaking-change)
-- Cleanup process_fds addition in systemmonitor ([@gjohansson-ST] - [#153568]) ([systemmonitor docs])
-- Bump aiomealie to 1.0.0, update min Mealie instance version to v2. ([@andrew-codechimp] - [#153203]) ([mealie docs]) (breaking-change)
+- Validating schema outside the event loop will now fail ([@gjohansson-ST] - [#153472])
+- Cleanup process_fds addition in systemmonitor ([@gjohansson-ST] - [#153568])
+- Bump aiomealie to 1.0.0, update min Mealie instance version to v2. ([@andrew-codechimp] - [#153203])
 - Make hassfest fail on services with device filter on targets ([@emontnemery] - [#152794])
-- Add device class filter to hydrawise services ([@emontnemery] - [#153249]) ([hydrawise docs])
-- Allow to set the manufacturer in a MQTT device subentry setup ([@jbouwh] - [#153747]) ([mqtt docs])
-- Remove previously deprecated template attach function ([@gjohansson-ST] - [#153370]) (breaking-change)
-- Use automatic reload options flow in min_max ([@gjohansson-ST] - [#153143]) ([min_max docs])
+- Add device class filter to hydrawise services ([@emontnemery] - [#153249])
+- Allow to set the manufacturer in a MQTT device subentry setup ([@jbouwh] - [#153747])
+- Remove previously deprecated template attach function ([@gjohansson-ST] - [#153370])
+- Use automatic reload options flow in min_max ([@gjohansson-ST] - [#153143])
 - Use yaml anchors in ci workflow ([@cdce8p] - [#152586])
-- Ollama thinking content ([@Shulyaka] - [#150393]) ([ollama docs])
-- Update MCP server to support the newer HTTP protocol ([@allenporter] - [#153779]) ([mcp_server docs])
-- Add Shelly Wall Display XL to the list of devices without firmware changelog ([@bieniu] - [#153781]) ([shelly docs])
-- Translate reauthentication error message in Google Assistant SDK ([@tronikos] - [#153797]) ([google_assistant_sdk docs])
-- Use TEMPERATURE_SCALING_FACTOR for Matter sensors ([@lboue] - [#153807]) ([matter docs])
-- Update raspyrfm-client to 1.2.9 ([@cdce8p] - [#153789]) ([raspyrfm docs])
-- Google Assistant SDK: use setup_credentials in setup_integration ([@tronikos] - [#153793]) ([google_assistant_sdk docs])
-- Update LetPot integration quality scale to silver ([@jpelgrom] - [#153783]) ([letpot docs])
-- Fix stale docstring in recorder ([@emontnemery] - [#153811]) ([recorder docs])
-- Log when failing to remove foreign key in recorder EventIDPostMigration ([@emontnemery] - [#153812]) ([recorder docs])
-- Add Matter speaker mute toggle ([@lboue] - [#150104]) ([matter docs])
+- Ollama thinking content ([@Shulyaka] - [#150393])
+- Update MCP server to support the newer HTTP protocol ([@allenporter] - [#153779])
+- Add Shelly Wall Display XL to the list of devices without firmware changelog ([@bieniu] - [#153781])
+- Translate reauthentication error message in Google Assistant SDK ([@tronikos] - [#153797])
+- Use TEMPERATURE_SCALING_FACTOR for Matter sensors ([@lboue] - [#153807])
+- Update raspyrfm-client to 1.2.9 ([@cdce8p] - [#153789])
+- Google Assistant SDK: use setup_credentials in setup_integration ([@tronikos] - [#153793])
+- Update LetPot integration quality scale to silver ([@jpelgrom] - [#153783])
+- Fix stale docstring in recorder ([@emontnemery] - [#153811])
+- Log when failing to remove foreign key in recorder EventIDPostMigration ([@emontnemery] - [#153812])
+- Add Matter speaker mute toggle ([@lboue] - [#150104])
 - Re-add AGENTS.md as symlink ([@zweckj] - [#153804])
-- Bump actions/stale from 10.0.0 to 10.1.0 ([@dependabot] - [#153799])
-- Google Assistant SDK: improve init tests ([@tronikos] - [#153795]) ([google_assistant_sdk docs])
-- Add new test fixture for Tuya cl category ([@epenet] - [#153800]) ([tuya docs])
-- Update Mealie quality scale to platinum ([@andrew-codechimp] - [#153810]) ([mealie docs])
-- Use customized miele device name if set ([@astrandb] - [#153835]) ([miele docs])
-- Add Ecovacs active map select entity ([@edenhaus] - [#153748]) ([ecovacs docs])
-- Vesync add oscillation to fan ([@cdnninja] - [#153297]) ([vesync docs])
-- Refactor Telegram bot entity ([@hanwg] - [#153609]) ([telegram_bot docs])
-- Add support for Wave Enhance and Corentium Home 2 in Airthings BLE integration ([@LaStrada] - [#153780]) ([airthings_ble docs])
-- Expose climate current temp as dedicated sensor in FRITZ!SmartHome ([@mib1185] - [#153558]) ([fritzbox docs])
-- Add sensor for hydraulic separator temperature in ViCare integration ([@CFenner] - [#153696]) ([vicare docs])
-- Enphase_envoy to use alternate data source for current transformers ([@catsmanac] - [#153621]) ([enphase_envoy docs])
-- Add BME680 sensor support for Altruist Insight ([@PaTara43] - [#153463]) ([altruist docs])
-- Deduplicate ONVIF sensor and binary sensor entity names ([@felipecrs] - [#153505]) ([onvif docs])
+- Bump actions/stale from 10.0.0 to 10.1.0 (@dependabot - [#153799])
+- Google Assistant SDK: improve init tests ([@tronikos] - [#153795])
+- Add new test fixture for Tuya cl category ([@epenet] - [#153800])
+- Update Mealie quality scale to platinum ([@andrew-codechimp] - [#153810])
+- Use customized miele device name if set ([@astrandb] - [#153835])
+- Add Ecovacs active map select entity ([@edenhaus] - [#153748])
+- Vesync add oscillation to fan ([@cdnninja] - [#153297])
+- Refactor Telegram bot entity ([@hanwg] - [#153609])
+- Add support for Wave Enhance and Corentium Home 2 in Airthings BLE integration ([@LaStrada] - [#153780])
+- Expose climate current temp as dedicated sensor in FRITZ!SmartHome ([@mib1185] - [#153558])
+- Add sensor for hydraulic separator temperature in ViCare integration ([@CFenner] - [#153696])
+- Enphase_envoy to use alternate data source for current transformers ([@catsmanac] - [#153621])
+- Add BME680 sensor support for Altruist Insight ([@PaTara43] - [#153463])
+- Deduplicate ONVIF sensor and binary sensor entity names ([@felipecrs] - [#153505])
 - Remove log file write check ([@abmantis] - [#153842])
-- Add MQTT number subentry support ([@jbouwh] - [#153358]) ([mqtt docs])
-- Update the MCP Server API endpoint to `mcp` ([@allenporter] - [#153845]) ([mcp_server docs])
+- Add MQTT number subentry support ([@jbouwh] - [#153358])
+- Update the MCP Server API endpoint to `mcp` ([@allenporter] - [#153845])
 - Update attrs to 25.4.0 ([@cdce8p] - [#153849])
-- Add new Nintendo Parental Controls integration ([@pantherale0] - [#145343]) ([nintendo_parental docs]) (new-integration)
-- Change translation of `box` in `number` to "Input field" for consistency ([@NoRi2909] - [#153850]) ([number docs])
-- Update water heater max temperature ([@w1ll1am23] - [#150970]) ([water_heater docs])
-- Avoid storing entities list in ONVIF binary_sensor and sensor ([@felipecrs] - [#153857]) ([onvif docs])
+- Add new Nintendo Parental Controls integration ([@pantherale0] - [#145343])
+- Change translation of `box` in `number` to "Input field" for consistency ([@NoRi2909] - [#153850])
+- Update water heater max temperature ([@w1ll1am23] - [#150970])
+- Avoid storing entities list in ONVIF binary_sensor and sensor ([@felipecrs] - [#153857])
 - Bump yarl to 1.22.0 ([@bdraco] - [#153860])
-- Replace inner function with lambda in Idasen Desk ([@abmantis] - [#153862]) ([idasen_desk docs])
-- Add Model Context Protocol support for OAuth scopes ([@allenporter] - [#153150]) ([mcp docs])
+- Replace inner function with lambda in Idasen Desk ([@abmantis] - [#153862])
+- Add Model Context Protocol support for OAuth scopes ([@allenporter] - [#153150])
 - Update aiohttp to 3.13.0 ([@cdce8p] - [#153875])
-- Migrate Shelly virtual component unique IDs to include roles ([@thecode] - [#153844]) ([shelly docs])
+- Migrate Shelly virtual component unique IDs to include roles ([@thecode] - [#153844])
 - Remove deprecated alarm panel constants ([@davet2001] - [#153876])
-- Shelly's current sensors naming paradigm standardization ([@davidrapan] - [#153827]) ([shelly docs])
-- Shelly's power sensors naming paradigm standardization ([@davidrapan] - [#153822]) ([shelly docs])
-- Clean up core references in conversation ([@arturpragacz] - [#153880]) ([conversation docs])
-- Fix nintendo_parental RuntimeWarning in tests ([@cdce8p] - [#153884]) ([nintendo_parental docs])
-- Remove Z-Wave JS voltage sensor overriding suggested precision ([@TheJulianJES] - [#153882]) ([zwave_js docs])
+- Shelly's current sensors naming paradigm standardization ([@davidrapan] - [#153827])
+- Shelly's power sensors naming paradigm standardization ([@davidrapan] - [#153822])
+- Clean up core references in conversation ([@arturpragacz] - [#153880])
+- Fix nintendo_parental RuntimeWarning in tests ([@cdce8p] - [#153884])
+- Remove Z-Wave JS voltage sensor overriding suggested precision ([@TheJulianJES] - [#153882])
 - Update pytest warnings filter ([@cdce8p] - [#153881])
-- Set display precision for sensors in OpenWeatherMap integration ([@CFenner] - [#153858]) ([openweathermap docs])
-- Add language and location selector to OpenWeatherMap config flow ([@CFenner] - [#153645]) ([openweathermap docs])
-- Code optimization for Comelit SimpleHome ([@chemelli74] - [#153029]) ([comelit docs])
-- Bump `aioshelly` to version 13.12.0 ([@bieniu] - [#153899]) ([shelly docs])
-- Update SmartThings comments ([@joostlek] - [#153903]) ([smartthings docs])
-- Add fixture to SmartThings ([@joostlek] - [#153902]) ([smartthings docs])
-- Add support for gas detector status to SmartThings ([@FMKaiba] - [#153831]) ([smartthings docs])
-- Bump pynintendoparental to 1.1.1 ([@pantherale0] - [#153874]) ([nintendo_parental docs])
-- Use aioshelly methods for switches ([@bieniu] - [#153746]) ([shelly docs])
-- Remove unused test fixtures from nintendo_parental ([@emontnemery] - [#153894]) ([nintendo_parental docs])
-- Change smart preset name to smart saver ([@mbo18] - [#153916]) ([smartthings docs])
-- Move agent functionality from http ([@arturpragacz] - [#153917]) ([conversation docs])
-- Add new sensors for Airthings Wave Enhance ([@LaStrada] - [#153879]) ([airthings_ble docs])
-- Bump openai to 2.2.0 ([@Shulyaka] - [#153926]) ([openai_conversation docs]) ([open_router docs])
-- Update pydantic to 2.12.0 ([@cdce8p] - [#153937]) ([youtube docs])
-- Add icons for SmartThings climate presets ([@mbo18] - [#153929]) ([smartthings docs])
-- Reverse Motion Blinds tilt direction ([@starkillerOG] - [#149777]) ([motion_blinds docs]) (breaking-change)
-- Migrate Shelly virtual button platfrom unique IDs to include roles ([@thecode] - [#153865]) ([shelly docs])
-- Update nhc to 0.6.1 ([@VandeurenGlenn] - [#153962]) ([niko_home_control docs])
-- Bump psutil 7.1.0 ([@gjohansson-ST] - [#153954]) ([systemmonitor docs])
+- Set display precision for sensors in OpenWeatherMap integration ([@CFenner] - [#153858])
+- Add language and location selector to OpenWeatherMap config flow ([@CFenner] - [#153645])
+- Code optimization for Comelit SimpleHome ([@chemelli74] - [#153029])
+- Bump `aioshelly` to version 13.12.0 ([@bieniu] - [#153899])
+- Update SmartThings comments ([@joostlek] - [#153903])
+- Add fixture to SmartThings ([@joostlek] - [#153902])
+- Add support for gas detector status to SmartThings ([@FMKaiba] - [#153831])
+- Bump pynintendoparental to 1.1.1 ([@pantherale0] - [#153874])
+- Use aioshelly methods for switches ([@bieniu] - [#153746])
+- Remove unused test fixtures from nintendo_parental ([@emontnemery] - [#153894])
+- Change smart preset name to smart saver ([@mbo18] - [#153916])
+- Move agent functionality from http ([@arturpragacz] - [#153917])
+- Add new sensors for Airthings Wave Enhance ([@LaStrada] - [#153879])
+- Bump openai to 2.2.0 ([@Shulyaka] - [#153926])
+- Update pydantic to 2.12.0 ([@cdce8p] - [#153937])
+- Add icons for SmartThings climate presets ([@mbo18] - [#153929])
+- Reverse Motion Blinds tilt direction ([@starkillerOG] - [#149777])
+- Migrate Shelly virtual button platfrom unique IDs to include roles ([@thecode] - [#153865])
+- Update nhc to 0.6.1 ([@VandeurenGlenn] - [#153962])
+- Bump psutil 7.1.0 ([@gjohansson-ST] - [#153954])
 - Remove deprecated conductivity constants ([@davet2001] - [#153942])
-- Bump aioesphomeapi to 41.13.0 ([@jesserockz] - [#153974]) ([esphome docs])
-- Add GPT-5 Pro and GPT-5 Codex support ([@Shulyaka] - [#153936]) ([openai_conversation docs])
-- FIx brightness always 100% when toggling the light ([@VandeurenGlenn] - [#153765]) ([niko_home_control docs])
-- Remove has_mean from suez_water external statistics ([@emontnemery] - [#153986]) ([suez_water docs])
-- Replace has_mean with mean_type in mill external statistics ([@emontnemery] - [#153985]) ([mill docs])
-- Call async_track_template_result with template without hass now fails ([@gjohansson-ST] - [#153473]) (breaking-change)
-- Portainer add sensor platform ([@erwindouna] - [#153059]) ([portainer docs]) (new-platform)
-- Update mypy dev to 1.19.0a4 ([@cdce8p] - [#153995]) ([homekit docs]) ([mcp_server docs])
-- Update Tuya fixture for product ID IAYz2WK1th0cMLmL ([@epenet] - [#154000]) ([tuya docs])
-- Enable Shelly binary input sensors by default ([@thecode] - [#154001]) ([shelly docs])
-- Bump github/codeql-action from 3.30.6 to 4.30.7 ([@dependabot] - [#153979])
-- Add 3rd maintainer to `sharkiq` ([@funkybunch] - [#153961]) ([sharkiq docs])
-- Use contants in climate set_temperature ([@epenet] - [#154008]) ([tuya docs]) ([evohome docs]) ([melcloud docs]) ([aprilaire docs]) ([bryant_evolution docs])
-- Adds ConfigFlow for London Underground ([@HarvsG] - [#152050]) ([london_underground docs])
-- Add diagnostics to Volvo integration ([@thomasddn] - [#153997]) ([volvo docs])
+- Bump aioesphomeapi to 41.13.0 ([@jesserockz] - [#153974])
+- Add GPT-5 Pro and GPT-5 Codex support ([@Shulyaka] - [#153936])
+- FIx brightness always 100% when toggling the light ([@VandeurenGlenn] - [#153765])
+- Remove has_mean from suez_water external statistics ([@emontnemery] - [#153986])
+- Replace has_mean with mean_type in mill external statistics ([@emontnemery] - [#153985])
+- Call async_track_template_result with template without hass now fails ([@gjohansson-ST] - [#153473])
+- Portainer add sensor platform ([@erwindouna] - [#153059])
+- Update mypy dev to 1.19.0a4 ([@cdce8p] - [#153995])
+- Update Tuya fixture for product ID IAYz2WK1th0cMLmL ([@epenet] - [#154000])
+- Enable Shelly binary input sensors by default ([@thecode] - [#154001])
+- Bump github/codeql-action from 3.30.6 to 4.30.7 (@dependabot - [#153979])
+- Add 3rd maintainer to `sharkiq` ([@funkybunch] - [#153961])
+- Use contants in climate set_temperature ([@epenet] - [#154008])
+- Adds ConfigFlow for London Underground ([@HarvsG] - [#152050])
+- Add diagnostics to Volvo integration ([@thomasddn] - [#153997])
 - Correct homeassistant.helpers.trigger._trigger_action_wrapper ([@emontnemery] - [#153983])
-- Add entities for Shely cury component ([@bieniu] - [#153918]) ([shelly docs])
-- Update IQS for IMGW-PIB integration ([@bieniu] - [#153870]) ([imgw_pib docs])
-- Add webhook tests for Telegram bot ([@hanwg] - [#153998]) ([telegram_bot docs])
-- Simplify firing of trigger actions ([@abmantis] - [#152772]) ([zwave_js docs])
-- Add new ZBT-2 VID:PID pair for discovery ([@puddly] - [#154036]) ([homeassistant_connect_zbt2 docs])
-- Fix Shelly virtual components roles migration ([@thecode] - [#153987]) ([shelly docs])
-- Bump autarco to v3.2.0 ([@klaasnicolaas] - [#154039]) ([autarco docs])
-- Migrate Nederlandse Spoorwegen sensor to timestamp ([@joostlek] - [#154011]) ([nederlandse_spoorwegen docs]) (breaking-change)
-- Make sensor names translatable in OpenWeatherMap integration ([@CFenner] - [#153872]) ([openweathermap docs])
-- Mark Shelly docs-troubleshooting as done ([@davidrapan] - [#154066]) ([shelly docs])
-- Improve unit handling in recorder ([@emontnemery] - [#153941]) ([recorder docs]) ([sensor docs])
-- Update Shelly block valve platform to use entity description ([@thecode] - [#154068]) ([shelly docs])
-- Fix Shelly orphaned entity removal logic ([@thecode] - [#154031]) ([shelly docs])
+- Add entities for Shely cury component ([@bieniu] - [#153918])
+- Update IQS for IMGW-PIB integration ([@bieniu] - [#153870])
+- Add webhook tests for Telegram bot ([@hanwg] - [#153998])
+- Simplify firing of trigger actions ([@abmantis] - [#152772])
+- Add new ZBT-2 VID:PID pair for discovery ([@puddly] - [#154036])
+- Fix Shelly virtual components roles migration ([@thecode] - [#153987])
+- Bump autarco to v3.2.0 ([@klaasnicolaas] - [#154039])
+- Migrate Nederlandse Spoorwegen sensor to timestamp ([@joostlek] - [#154011])
+- Make sensor names translatable in OpenWeatherMap integration ([@CFenner] - [#153872])
+- Mark Shelly docs-troubleshooting as done ([@davidrapan] - [#154066])
+- Improve unit handling in recorder ([@emontnemery] - [#153941])
+- Update Shelly block valve platform to use entity description ([@thecode] - [#154068])
+- Fix Shelly orphaned entity removal logic ([@thecode] - [#154031])
 - Fix devcontainer mistakenly using Python 3.14 ([@felipecrs] - [#154046])
-- Update Citybikes component with third-party library and fields ([@eskerda] - [#151009]) ([citybikes docs])
-- Add switchbot_cloud climate TURN_OFF, TURN_ON support. ([@danada] - [#154017]) ([switchbot_cloud docs])
-- Add jet lag prevention event support to Sleep as Android integration ([@tr4nt0r] - [#154075]) ([sleep_as_android docs])
-- Enable strict typing for GitHub integration ([@HarlemSquirrel] - [#154048]) ([github docs])
-- Remove deprecated cover state constants ([@gjohansson-ST] - [#154037]) ([cover docs]) (breaking-change)
-- Remove deprecated set state directly in alarmcontrolpanel ([@gjohansson-ST] - [#154038]) ([alarm_control_panel docs]) (breaking-change)
-- Bump dependency for Volvo integration ([@thomasddn] - [#154084]) ([volvo docs])
-- Add diagnostics for Telegram bot ([@hanwg] - [#154016]) ([telegram_bot docs])
-- Add unique id to nederlandse spoorwegen ([@joostlek] - [#154013]) ([nederlandse_spoorwegen docs])
-- Use Entity Description in Shelly cover platform ([@thecode] - [#154085]) ([shelly docs])
+- Update Citybikes component with third-party library and fields ([@eskerda] - [#151009])
+- Add switchbot_cloud climate TURN_OFF, TURN_ON support. ([@danada] - [#154017])
+- Add jet lag prevention event support to Sleep as Android integration ([@tr4nt0r] - [#154075])
+- Enable strict typing for GitHub integration ([@HarlemSquirrel] - [#154048])
+- Remove deprecated cover state constants ([@gjohansson-ST] - [#154037])
+- Remove deprecated set state directly in alarmcontrolpanel ([@gjohansson-ST] - [#154038])
+- Bump dependency for Volvo integration ([@thomasddn] - [#154084])
+- Add diagnostics for Telegram bot ([@hanwg] - [#154016])
+- Add unique id to nederlandse spoorwegen ([@joostlek] - [#154013])
+- Use Entity Description in Shelly cover platform ([@thecode] - [#154085])
 - Improve comments in the core config ([@arturpragacz] - [#154096])
 - Add validation for ObjectSelector ([@gjohansson-ST] - [#153081])
-- Bump reolink-aio to 0.16.2 ([@starkillerOG] - [#154117]) ([reolink docs])
-- Portainer fix offline endpoint ([@erwindouna] - [#154101]) ([portainer docs])
-- Use Entity Description in Shelly BLU TRV button ([@thecode] - [#154118]) ([shelly docs])
-- Add ConfigFlow to Prowl integration ([@mgust] - [#133771]) ([prowl docs])
-- Include unit class in `units_changed` statistics issue ([@emontnemery] - [#154069]) ([sensor docs])
-- Add mg/m³ as a valid UOM for sensor/number Carbon Monoxide device class ([@emontnemery] - [#154074]) ([recorder docs]) ([sensor docs]) ([number docs])
-- Add reauthentication to Nintendo Switch Parental controls integration ([@pantherale0] - [#154077]) ([nintendo_parental docs])
+- Bump reolink-aio to 0.16.2 ([@starkillerOG] - [#154117])
+- Portainer fix offline endpoint ([@erwindouna] - [#154101])
+- Use Entity Description in Shelly BLU TRV button ([@thecode] - [#154118])
+- Add ConfigFlow to Prowl integration ([@mgust] - [#133771])
+- Include unit class in `units_changed` statistics issue ([@emontnemery] - [#154069])
+- Add mg/m³ as a valid UOM for sensor/number Carbon Monoxide device class ([@emontnemery] - [#154074])
+- Add reauthentication to Nintendo Switch Parental controls integration ([@pantherale0] - [#154077])
 - Bump propcache to 0.4.1 ([@bdraco] - [#154033])
-- Update quality scale for Telegram bot ([@hanwg] - [#154122]) ([telegram_bot docs])
-- Add Spotless series features to Home Connect integration ([@Diegorro98] - [#153016]) ([home_connect docs])
-- Add module-level statistics to SolarEdge ([@tronikos] - [#152581]) ([solaredge docs])
-- Add Reolink survaillance rule switch entities ([@starkillerOG] - [#154132]) ([reolink docs])
-- Add MQTT select subentry support ([@jbouwh] - [#153637]) ([mqtt docs])
+- Update quality scale for Telegram bot ([@hanwg] - [#154122])
+- Add Spotless series features to Home Connect integration ([@Diegorro98] - [#153016])
+- Add module-level statistics to SolarEdge ([@tronikos] - [#152581])
+- Add Reolink survaillance rule switch entities ([@starkillerOG] - [#154132])
+- Add MQTT select subentry support ([@jbouwh] - [#153637])
 - use a consistent python version for `uv` ([@jkt628] - [#154022])
 - Use SI constants in CO unit converter ([@epenet] - [#153187])
-- Inherit `MatterEntityDescription` in Matter entities ([@jvmahon] - [#154083]) ([matter docs])
-- Add time platform to nintendo_parental integration ([@pantherale0] - [#153866]) ([nintendo_parental docs]) (new-platform)
-- Add configured number to Satel Integra subentry titles ([@Tommatheussen] - [#154155]) ([satel_integra docs])
-- Update xknx to 3.9.1 ([@farmio] - [#154146]) ([knx docs])
-- Pooldose update api ([@lmaertin] - [#153497]) ([pooldose docs])
-- Add attachments support to OpenRouter AI task ([@sairon] - [#154161]) ([open_router docs])
-- Remove deprecated extra attributes from fritzbox climate ([@flabbamann] - [#154152]) ([fritzbox docs]) (breaking-change)
-- Add edit message media feature for Telegram bot ([@hanwg] - [#151034]) ([telegram_bot docs])
-- Anthropic web search support ([@Shulyaka] - [#153753]) ([anthropic docs])
-- Add device_tracker platform to Volvo integration ([@thomasddn] - [#153437]) ([volvo docs]) (new-platform)
-- Update knx-frontend to 2025.10.9.185845 ([@farmio] - [#154103]) ([knx docs])
-- Add reconfigure flow in Google Assistant SDK ([@tronikos] - [#153802]) ([google_assistant_sdk docs])
-- Add buttons to Volvo integration ([@thomasddn] - [#153272]) ([volvo docs]) (new-platform)
-- Add Speech-to-Text (stt) to elevenlabs ([@ehendrix23] - [#147838]) ([elevenlabs docs]) (new-platform)
-- Change domain and name of Nintendo Switch parental controls integration ([@emontnemery] - [#153893]) ([nintendo_parental docs]) ([nintendo_parental_controls docs])
-- Remove deprecated ConfigSource from core ([@gjohansson-ST] - [#154112]) (breaking-change)
-- Use custom string for Oral-B no-devices-found message ([@abmantis] - [#154183]) ([oralb docs])
-- Record `last_reported` for KNX sensor entitiy states ([@farmio] - [#154169]) ([knx docs])
-- Update pylint to 3.3.9 ([@cdce8p] - [#154194]) ([homeassistant_hardware docs]) ([roborock docs])
-- Rename Matter `SolarPower` fixture to `Solar inverter` ([@lboue] - [#154201]) ([matter docs])
-- Use Entity Description in Shelly light platform ([@thecode] - [#154102]) ([shelly docs])
+- Inherit `MatterEntityDescription` in Matter entities ([@jvmahon] - [#154083])
+- Add time platform to nintendo_parental integration ([@pantherale0] - [#153866])
+- Add configured number to Satel Integra subentry titles ([@Tommatheussen] - [#154155])
+- Update xknx to 3.9.1 ([@farmio] - [#154146])
+- Pooldose update api ([@lmaertin] - [#153497])
+- Add attachments support to OpenRouter AI task ([@sairon] - [#154161])
+- Remove deprecated extra attributes from fritzbox climate ([@flabbamann] - [#154152])
+- Add edit message media feature for Telegram bot ([@hanwg] - [#151034])
+- Anthropic web search support ([@Shulyaka] - [#153753])
+- Add device_tracker platform to Volvo integration ([@thomasddn] - [#153437])
+- Update knx-frontend to 2025.10.9.185845 ([@farmio] - [#154103])
+- Add reconfigure flow in Google Assistant SDK ([@tronikos] - [#153802])
+- Add buttons to Volvo integration ([@thomasddn] - [#153272])
+- Add Speech-to-Text (stt) to elevenlabs ([@ehendrix23] - [#147838])
+- Change domain and name of Nintendo Switch parental controls integration ([@emontnemery] - [#153893])
+- Remove deprecated ConfigSource from core ([@gjohansson-ST] - [#154112])
+- Use custom string for Oral-B no-devices-found message ([@abmantis] - [#154183])
+- Record `last_reported` for KNX sensor entitiy states ([@farmio] - [#154169])
+- Update pylint to 3.3.9 ([@cdce8p] - [#154194])
+- Rename Matter `SolarPower` fixture to `Solar inverter` ([@lboue] - [#154201])
+- Use Entity Description in Shelly light platform ([@thecode] - [#154102])
 - [ci] No longer install setuptools + wheel by default ([@cdce8p] - [#154212])
-- Bump kegtron-ble to 1.0.2 ([@Ernst79] - [#154207]) ([kegtron docs])
-- Fix inconsistent naming of MQTT test config globals ([@jbouwh] - [#154221]) ([mqtt docs])
-- Move URL out of Aemet strings.json ([@joostlek] - [#154225]) ([aemet docs])
-- Fix multiple definition of DEFAULT_PORT and DEFAULT_RETAIN constants ([@kennedyshead] - [#154255]) ([mqtt docs])
-- Move developer registration url out of strings.json file ([@ogruendel] - [#154261]) ([airly docs])
-- Update config flow strings for Environment Canada ([@michaeldavie] - [#154242]) ([environment_canada docs])
-- Handle Wyoming config entries with missing info ([@synesthesiam] - [#154186]) ([wyoming docs])
-- Align Shelly `async_setup_entry` in platforms ([@thecode] - [#154142]) ([shelly docs])
-- Bump pyOverkiz to 1.19.0 in Overkiz ([@iMicknl] - [#154310]) ([overkiz docs])
-- Add gpt-image-1-mini support ([@Shulyaka] - [#154316]) ([openai_conversation docs])
+- Bump kegtron-ble to 1.0.2 ([@Ernst79] - [#154207])
+- Fix inconsistent naming of MQTT test config globals ([@jbouwh] - [#154221])
+- Move URL out of Aemet strings.json ([@joostlek] - [#154225])
+- Fix multiple definition of DEFAULT_PORT and DEFAULT_RETAIN constants ([@kennedyshead] - [#154255])
+- Move developer registration url out of strings.json file ([@ogruendel] - [#154261])
+- Update config flow strings for Environment Canada ([@michaeldavie] - [#154242])
+- Handle Wyoming config entries with missing info ([@synesthesiam] - [#154186])
+- Align Shelly `async_setup_entry` in platforms ([@thecode] - [#154142])
+- Bump pyOverkiz to 1.19.0 in Overkiz ([@iMicknl] - [#154310])
+- Add gpt-image-1-mini support ([@Shulyaka] - [#154316])
 - Update pylint to 4.0.0 + astroid to 4.0.1 ([@cdce8p] - [#154311])
-- Fix Environment Canada camera entity initialization ([@michaeldavie] - [#154302]) ([environment_canada docs])
-- Bump plugwise to v1.8.0 - add initial support for Emma ([@bouwew] - [#154277]) ([plugwise docs])
-- Bump aioesphomeapi to 41.14.0 ([@bdraco] - [#154275]) ([esphome docs])
-- Bump env-canada to v0.12.1 ([@michaeldavie] - [#154303]) ([environment_canada docs])
-- bump tilt-ble to 1.0.1 ([@Ernst79] - [#154320]) ([tilt_ble docs])
-- Updated prowlpy to 1.1.1 and changed the usage to do asynchronous calls ([@mgust] - [#154193]) ([prowl docs])
-- Add model_id to Husqvarna Automower ([@Thomas55555] - [#154335]) ([husqvarna_automower docs])
-- Update nhc requirement to version 0.7.0 ([@VandeurenGlenn] - [#154250]) ([niko_home_control docs])
-- Bump aioshelly to 13.13.0 ([@thecode] - [#154337]) ([shelly docs])
-- Simplify generic camera tests ([@davet2001] - [#154313]) ([generic docs])
-- Environment Canada station selector ([@michaeldavie] - [#154307]) ([environment_canada docs])
-- Update pyControl4 to v1.5.0 ([@davidrecordon] - [#154341]) ([control4 docs])
-- Update pyheos to 1.0.6 ([@cdce8p] - [#154346]) ([heos docs])
-- Fix identifier generation for sub devices in ViCare ([@CFenner] - [#154330]) ([vicare docs])
-- Bump github/codeql-action from 4.30.7 to 4.30.8 ([@dependabot] - [#154357])
-- Add support for μg/m³ for Carbon Monoxide ([@wittypluck] - [#153158]) ([sensor docs]) ([number docs])
-- Add Reolink IO input binary sensor ([@starkillerOG] - [#154133]) ([reolink docs])
-- Bump PyViCare to 2.54.0 ([@CFenner] - [#154336]) ([vicare docs])
-- Bump actions/dependency-review-action from 4.8.0 to 4.8.1 ([@dependabot] - [#154356])
-- Bump renault-api to 0.4.4 ([@epenet] - [#154137]) ([renault docs]) (breaking-change)
-- Add support to sensor statistics for changing unit_class ([@emontnemery] - [#154130]) ([sensor docs])
-- Set model_id in miele integration ([@astrandb] - [#154367]) ([miele docs])
-- Implement MAC address exclude list in nmap_tracker ([@tedvdb] - [#142724]) ([nmap_tracker docs])
-- Fix stale docstring in nmap_tracker ([@emontnemery] - [#154380]) ([nmap_tracker docs])
-- Automatically setup hardware integrations when firmware info is published by an integration ([@puddly] - [#154030]) ([homeassistant_sky_connect docs]) ([homeassistant_hardware docs]) ([homeassistant_connect_zbt2 docs])
-- Bump hass-nabucasa from 1.2.0 to 1.3.0 ([@klejejs] - [#154376]) ([cloud docs])
-- Store nmap tracker options as lists ([@emontnemery] - [#154378]) ([nmap_tracker docs])
-- Bump momonga to 0.2.0 ([@SeraphicRav] - [#154371]) ([route_b_smart_meter docs])
-- Set integration type for Satel Integra to device ([@Tommatheussen] - [#154372]) ([satel_integra docs])
-- Bump airOS preparing for model_id matching ([@CoMPaTech] - [#154370]) ([airos docs])
-- Update xknx to 3.10.0 ([@farmio] - [#154361]) ([knx docs])
-- Add Bluetooth API to clear address from match history ([@bdraco] - [#154355]) ([bluetooth docs])
+- Fix Environment Canada camera entity initialization ([@michaeldavie] - [#154302])
+- Bump plugwise to v1.8.0 - add initial support for Emma ([@bouwew] - [#154277])
+- Bump aioesphomeapi to 41.14.0 ([@bdraco] - [#154275])
+- Bump env-canada to v0.12.1 ([@michaeldavie] - [#154303])
+- bump tilt-ble to 1.0.1 ([@Ernst79] - [#154320])
+- Updated prowlpy to 1.1.1 and changed the usage to do asynchronous calls ([@mgust] - [#154193])
+- Add model_id to Husqvarna Automower ([@Thomas55555] - [#154335])
+- Update nhc requirement to version 0.7.0 ([@VandeurenGlenn] - [#154250])
+- Bump aioshelly to 13.13.0 ([@thecode] - [#154337])
+- Simplify generic camera tests ([@davet2001] - [#154313])
+- Environment Canada station selector ([@michaeldavie] - [#154307])
+- Update pyControl4 to v1.5.0 ([@davidrecordon] - [#154341])
+- Update pyheos to 1.0.6 ([@cdce8p] - [#154346])
+- Fix identifier generation for sub devices in ViCare ([@CFenner] - [#154330])
+- Bump github/codeql-action from 4.30.7 to 4.30.8 (@dependabot - [#154357])
+- Add support for μg/m³ for Carbon Monoxide ([@wittypluck] - [#153158])
+- Add Reolink IO input binary sensor ([@starkillerOG] - [#154133])
+- Bump PyViCare to 2.54.0 ([@CFenner] - [#154336])
+- Bump actions/dependency-review-action from 4.8.0 to 4.8.1 (@dependabot - [#154356])
+- Bump renault-api to 0.4.4 ([@epenet] - [#154137])
+- Add support to sensor statistics for changing unit_class ([@emontnemery] - [#154130])
+- Set model_id in miele integration ([@astrandb] - [#154367])
+- Implement MAC address exclude list in nmap_tracker ([@tedvdb] - [#142724])
+- Fix stale docstring in nmap_tracker ([@emontnemery] - [#154380])
+- Automatically setup hardware integrations when firmware info is published by an integration ([@puddly] - [#154030])
+- Bump hass-nabucasa from 1.2.0 to 1.3.0 ([@klejejs] - [#154376])
+- Store nmap tracker options as lists ([@emontnemery] - [#154378])
+- Bump momonga to 0.2.0 ([@SeraphicRav] - [#154371])
+- Set integration type for Satel Integra to device ([@Tommatheussen] - [#154372])
+- Bump airOS preparing for model_id matching ([@CoMPaTech] - [#154370])
+- Update xknx to 3.10.0 ([@farmio] - [#154361])
+- Add Bluetooth API to clear address from match history ([@bdraco] - [#154355])
 - Add config flow title placeholder update infrastructure ([@bdraco] - [#154353])
-- New Foscam switch ([@Foscam-wangzhengyu] - [#152732]) ([foscam docs])
-- Set model_id on device for Volvo integration ([@thomasddn] - [#154385]) ([volvo docs])
-- Add integration_type to airOS ([@CoMPaTech] - [#154390]) ([airos docs])
-- Add model_id support to airOS ([@CoMPaTech] - [#154388]) ([airos docs])
-- Fix switch platform for Comelit SimpleHome ([@chemelli74] - [#154227]) ([comelit docs])
-- Add switch platform to Nintendo Parental controls integration ([@pantherale0] - [#154179]) ([nintendo_parental_controls docs]) (new-platform)
-- Add switch platform and grid charge enable for Growatt Server integration ([@johanzander] - [#153960]) ([growatt_server docs]) (new-platform)
+- New Foscam switch ([@Foscam-wangzhengyu] - [#152732])
+- Set model_id on device for Volvo integration ([@thomasddn] - [#154385])
+- Add integration_type to airOS ([@CoMPaTech] - [#154390])
+- Add model_id support to airOS ([@CoMPaTech] - [#154388])
+- Fix switch platform for Comelit SimpleHome ([@chemelli74] - [#154227])
+- Add switch platform to Nintendo Parental controls integration ([@pantherale0] - [#154179])
+- Add switch platform and grid charge enable for Growatt Server integration ([@johanzander] - [#153960])
 - Add Python version file ([@balloob] - [#154267])
-- Add actron_air climate integration ([@kclif9] - [#134740]) ([actronair_neo docs]) (new-integration)
-- Add 14 additional sensor entities for Growatt TLX/MIN inverters ([@johanzander] - [#153964]) ([growatt_server docs])
-- async_config_entry_first_refresh in update coordinator requires a config entry ([@gjohansson-ST] - [#154114]) (breaking-change)
-- Record `last_reported` for KNX BinarySensor entitiy states ([@farmio] - [#154392]) ([knx docs])
-- Migrate Matter descriptions to be `kw_only` ([@TheJulianJES] - [#154398]) ([matter docs])
+- Add actron_air climate integration ([@kclif9] - [#134740])
+- Add 14 additional sensor entities for Growatt TLX/MIN inverters ([@johanzander] - [#153964])
+- async_config_entry_first_refresh in update coordinator requires a config entry ([@gjohansson-ST] - [#154114])
+- Record `last_reported` for KNX BinarySensor entitiy states ([@farmio] - [#154392])
+- Migrate Matter descriptions to be `kw_only` ([@TheJulianJES] - [#154398])
 - Enable pylint consider-math-not-float check ([@cdce8p] - [#154338])
 - Add async_update_and_abort method to config flow ([@gjohansson-ST] - [#153146])
-- Prepare to move out URL's from MQTT translation strings ([@jbouwh] - [#154391]) ([mqtt docs])
-- Fix Improv BLE factory reset rediscovery ([@bdraco] - [#154354]) ([improv_ble docs])
-- Allow following of 302 redirects in generic camera ([@davet2001] - [#154308]) ([generic docs])
-- Update Improv BLE discovery notification when device name changes ([@bdraco] - [#154352]) ([improv_ble docs])
-- Bump aioesphomeapi to 41.15.0 ([@bdraco] - [#154407]) ([esphome docs])
-- Google Assistant SDK: improve config flow tests ([@tronikos] - [#153794]) ([google_assistant_sdk docs])
-- Restore KNX sensor entity states ([@farmio] - [#154318]) ([knx docs])
-- VOIP Integration Type ([@jaminh] - [#154418]) ([voip docs])
-- Set integration_type explicitly in miele manifest ([@astrandb] - [#154375]) ([miele docs])
-- Make Snapcast snapshot action async ([@mill1000] - [#153132]) ([snapcast docs])
-- Bump pyiCloud to 2.1.0 ([@PaulCavill] - [#154365]) ([icloud docs])
-- Bump aioshelly to 13.14.0 ([@thecode] - [#154421]) ([shelly docs])
-- Bump aioesphomeapi to 41.16.0 ([@bdraco] - [#154427]) ([esphome docs])
+- Prepare to move out URL's from MQTT translation strings ([@jbouwh] - [#154391])
+- Fix Improv BLE factory reset rediscovery ([@bdraco] - [#154354])
+- Allow following of 302 redirects in generic camera ([@davet2001] - [#154308])
+- Update Improv BLE discovery notification when device name changes ([@bdraco] - [#154352])
+- Bump aioesphomeapi to 41.15.0 ([@bdraco] - [#154407])
+- Google Assistant SDK: improve config flow tests ([@tronikos] - [#153794])
+- Restore KNX sensor entity states ([@farmio] - [#154318])
+- VOIP Integration Type ([@jaminh] - [#154418])
+- Set integration_type explicitly in miele manifest ([@astrandb] - [#154375])
+- Make Snapcast snapshot action async ([@mill1000] - [#153132])
+- Bump pyiCloud to 2.1.0 ([@PaulCavill] - [#154365])
+- Bump aioshelly to 13.14.0 ([@thecode] - [#154421])
+- Bump aioesphomeapi to 41.16.0 ([@bdraco] - [#154427])
 - Update pydantic to 2.12.1 ([@cdce8p] - [#154424])
-- Use aioshelly methods for climate platform ([@chemelli74] - [#154384]) ([shelly docs])
-- Add K11+ vacuum support to Switchbot Cloud ([@XiaoLing-git] - [#154363]) ([switchbot_cloud docs])
-- Add boost switches for Shelly cury component ([@bieniu] - [#154387]) ([shelly docs])
-- Rename security panel to safety panel ([@piitaya] - [#154435]) ([frontend docs])
-- Dependency update py-melissa-climate to 3.0.2 ([@kennedyshead] - [#154285]) ([melissa docs])
-- Use Shelly RPC cover methods from upstream and fix cover status update ([@thecode] - [#154345]) ([shelly docs])
-- Move state conversion from library to nasweb integration code ([@nasWebio] - [#153208]) ([nasweb docs])
-- Simplify DPType lookup in Tuya ([@epenet] - [#150117]) ([tuya docs])
-- Deprecate has_mean in favor of mean_type in recorder statistic API ([@emontnemery] - [#154093]) ([recorder docs]) ([sensor docs])
+- Use aioshelly methods for climate platform ([@chemelli74] - [#154384])
+- Add K11+ vacuum support to Switchbot Cloud ([@XiaoLing-git] - [#154363])
+- Add boost switches for Shelly cury component ([@bieniu] - [#154387])
+- Rename security panel to safety panel ([@piitaya] - [#154435])
+- Dependency update py-melissa-climate to 3.0.2 ([@kennedyshead] - [#154285])
+- Use Shelly RPC cover methods from upstream and fix cover status update ([@thecode] - [#154345])
+- Move state conversion from library to nasweb integration code ([@nasWebio] - [#153208])
+- Simplify DPType lookup in Tuya ([@epenet] - [#150117])
+- Deprecate has_mean in favor of mean_type in recorder statistic API ([@emontnemery] - [#154093])
 - Always run install of packages with same python as script ([@elupus] - [#154253])
-- Add milliPascal (mPa) as unit of measurement for Pressure ([@Domochip] - [#153087]) ([sensor docs]) ([number docs])
-- Prevent AttributeError in luci device tracker ([@mmstano] - [#148357]) ([luci docs])
-- Fix reconfigure flow in esphome uses create_entry ([@gjohansson-ST] - [#154107]) ([esphome docs])
-- Change device identifier and binary_sensor unique_id for airOS ([@CoMPaTech] - [#153085]) ([airos docs])
+- Add milliPascal (mPa) as unit of measurement for Pressure ([@Domochip] - [#153087])
+- Prevent AttributeError in luci device tracker ([@mmstano] - [#148357])
+- Fix reconfigure flow in esphome uses create_entry ([@gjohansson-ST] - [#154107])
+- Change device identifier and binary_sensor unique_id for airOS ([@CoMPaTech] - [#153085])
 - Simplify current ids callback in config entries ([@arturpragacz] - [#154082])
 - Shut down core event loop on unrecoverable errors ([@akx] - [#144806])
-- Get Enphase_envoy collar grid status from admin_state_str rather then from grid_state ([@catsmanac] - [#153766]) ([enphase_envoy docs])
+- Get Enphase_envoy collar grid status from admin_state_str rather then from grid_state ([@catsmanac] - [#153766])
 - Protect internal coordinator state ([@elupus] - [#153685])
-- Update WLED Select Options after update ([@mik-laj] - [#154205]) ([wled docs])
-- Set initial integration_hub in manifest for Squeezebox ([@peteS-UK] - [#154438]) ([squeezebox docs])
-- Use contact header for outgoing call transport ([@jaminh] - [#151847]) ([voip docs])
+- Update WLED Select Options after update ([@mik-laj] - [#154205])
+- Set initial integration_hub in manifest for Squeezebox ([@peteS-UK] - [#154438])
+- Use contact header for outgoing call transport ([@jaminh] - [#151847])
 - Machine container: Remove codenotary configuration ([@agners] - [#153855])
-- auth: add required issuer to OAuth ([@ptu14] - [#152385]) ([auth docs])
-- Add reconfigure flow to airOS ([@CoMPaTech] - [#154447]) ([airos docs])
-- Skip adding Control4 rooms with no audio/video sources as media player devices ([@davidrecordon] - [#154348]) ([control4 docs])
-- Add the coordinator pattern to the NS integration ([@heindrichpaul] - [#154149]) ([nederlandse_spoorwegen docs])
-- Add sensor description for switchbot cloud's device(plug) small changes ([@XiaoLing-git] - [#148551]) ([switchbot_cloud docs])
-- Add derivative tests exhibiting unit issues ([@karwosts] - [#153051]) ([derivative docs])
-- Add extract_from_target websocket command ([@abmantis] - [#150124]) ([websocket_api docs])
+- auth: add required issuer to OAuth ([@ptu14] - [#152385])
+- Add reconfigure flow to airOS ([@CoMPaTech] - [#154447])
+- Skip adding Control4 rooms with no audio/video sources as media player devices ([@davidrecordon] - [#154348])
+- Add the coordinator pattern to the NS integration ([@heindrichpaul] - [#154149])
+- Add sensor description for switchbot cloud's device(plug) small changes ([@XiaoLing-git] - [#148551])
+- Add derivative tests exhibiting unit issues ([@karwosts] - [#153051])
+- Add extract_from_target websocket command ([@abmantis] - [#150124])
 - Add gallons per hour as volume flow rate unit ([@autinerd] - [#154246])
-- Allow more device types for Vodafone Station ([@chemelli74] - [#153990]) ([vodafone_station docs])
-- Remove vesync unused extra attributes, refine enums ([@cdnninja] - [#153171]) ([vesync docs])
-- Fix capitalization of RADIUS in Uptime Kuma ([@tr4nt0r] - [#154456]) ([uptime_kuma docs])
+- Allow more device types for Vodafone Station ([@chemelli74] - [#153990])
+- Remove vesync unused extra attributes, refine enums ([@cdnninja] - [#153171])
+- Fix capitalization of RADIUS in Uptime Kuma ([@tr4nt0r] - [#154456])
 - Fix device registry arg docstring ([@abmantis] - [#154453])
-- Add tyre pressure to Renault integration ([@kelyaenn] - [#154377]) ([renault docs])
-- Remove Asuwrt device tracker last_time_reachable extra attribute ([@ollo69] - [#154219]) ([asuswrt docs]) (breaking-change)
-- Add model name to Lunatone devices ([@MoonDevLT] - [#154432]) ([lunatone docs])
-- Add subentry support for MQTT siren device ([@jbouwh] - [#154220]) ([mqtt docs])
-- Update intellifire4py to 4.2.1 ([@cdce8p] - [#154454]) ([intellifire docs])
-- Migrate onewire to async library ([@epenet] - [#154439]) ([onewire docs])
-- Add LED control for supported UniFi network devices ([@Sese-Schneider] - [#152649]) ([unifi docs]) (new-platform)
+- Add tyre pressure to Renault integration ([@kelyaenn] - [#154377])
+- Remove Asuwrt device tracker last_time_reachable extra attribute ([@ollo69] - [#154219])
+- Add model name to Lunatone devices ([@MoonDevLT] - [#154432])
+- Add subentry support for MQTT siren device ([@jbouwh] - [#154220])
+- Update intellifire4py to 4.2.1 ([@cdce8p] - [#154454])
+- Migrate onewire to async library ([@epenet] - [#154439])
+- Add LED control for supported UniFi network devices ([@Sese-Schneider] - [#152649])
 - Bump pydantic to 2.12.2 ([@TheJulianJES] - [#154461])
-- Add Matter Zemismart Roller Motor fixture ([@lboue] - [#154458]) ([matter docs])
-- Update airOS IQS (completing silver) ([@CoMPaTech] - [#153675]) ([airos docs])
-- Revisit list of OpenAI models for tool support ([@Shulyaka] - [#154399]) ([openai_conversation docs])
-- Fix inconsistent use of StrEnum as index in MQTT subentry flow globals ([@jbouwh] - [#154210]) ([mqtt docs])
-- Set assumed state to group if at least one child has assumed state ([@piitaya] - [#154163]) ([group docs]) (breaking-change)
-- Introduce the OpenRGB integration ([@felipecrs] - [#153373]) ([openrgb docs]) (new-integration)
+- Add Matter Zemismart Roller Motor fixture ([@lboue] - [#154458])
+- Update airOS IQS (completing silver) ([@CoMPaTech] - [#153675])
+- Revisit list of OpenAI models for tool support ([@Shulyaka] - [#154399])
+- Fix inconsistent use of StrEnum as index in MQTT subentry flow globals ([@jbouwh] - [#154210])
+- Set assumed state to group if at least one child has assumed state ([@piitaya] - [#154163])
+- Introduce the OpenRGB integration ([@felipecrs] - [#153373])
 - Add next_flow parameter to async_abort for flow chaining ([@bdraco] - [#154416])
-- Add flow chaining from Improv BLE to integration config flows ([@bdraco] - [#154415]) ([esphome docs]) ([improv_ble docs])
-- Bump uiprotect to 7.22.0 ([@bdraco] - [#154494]) ([unifiprotect docs])
-- Move translatable URLs out of strings.json for vera ([@sonianuj287] - [#154475]) ([vera docs])
-- Add support for DS2401 ([@epenet] - [#154506]) ([onewire docs])
-- set integration type for velux to hub ([@wollew] - [#154510]) ([velux docs])
-- Bump libpyfoscamcgi to 0.0.8 ([@Foscam-wangzhengyu] - [#154505]) ([foscam docs])
-- Fix MQTT siren subentry translation string ([@jbouwh] - [#154483]) ([mqtt docs])
-- System Bridge to set unavailable entry state if host is not reachable ([@elnappo] - [#154177]) ([system_bridge docs])
-- Cleanup model/model_id in onewire ([@epenet] - [#154509]) ([onewire docs])
-- Mark tempres configuration as disabled by default in onewire ([@epenet] - [#154517]) ([onewire docs])
-- Typing for WrtDevice ([@kennedyshead] - [#154514]) ([asuswrt docs])
-- Add TEMPERATURE_DELTA device class to Number and Sensor entities ([@krahabb] - [#147358]) ([recorder docs]) ([sensor docs]) ([number docs])
-- Move out MQTT translation strings ([@jbouwh] - [#154406]) ([mqtt docs])
-- Add suggested units for Roborock Durations sensors ([@Lash-L] - [#153607]) ([roborock docs])
+- Add flow chaining from Improv BLE to integration config flows ([@bdraco] - [#154415])
+- Bump uiprotect to 7.22.0 ([@bdraco] - [#154494])
+- Move translatable URLs out of strings.json for vera ([@sonianuj287] - [#154475])
+- Add support for DS2401 ([@epenet] - [#154506])
+- set integration type for velux to hub ([@wollew] - [#154510])
+- Bump libpyfoscamcgi to 0.0.8 ([@Foscam-wangzhengyu] - [#154505])
+- Fix MQTT siren subentry translation string ([@jbouwh] - [#154483])
+- System Bridge to set unavailable entry state if host is not reachable ([@elnappo] - [#154177])
+- Cleanup model/model_id in onewire ([@epenet] - [#154509])
+- Mark tempres configuration as disabled by default in onewire ([@epenet] - [#154517])
+- Typing for WrtDevice ([@kennedyshead] - [#154514])
+- Add TEMPERATURE_DELTA device class to Number and Sensor entities ([@krahabb] - [#147358])
+- Move out MQTT translation strings ([@jbouwh] - [#154406])
+- Add suggested units for Roborock Durations sensors ([@Lash-L] - [#153607])
 - Allow use of Selector in ObjectSelector fields ([@gjohansson-ST] - [#147929])
-- Fix improv_ble provisioning futures type ([@bdraco] - [#154530]) ([improv_ble docs])
-- Adjust import of ATTR_GPS_ACCURACY in mobile_app ([@kennedyshead] - [#154528]) ([mobile_app docs])
-- Adjust import of ATTR_GPS_ACCURACY in mobile_app.webhook ([@kennedyshead] - [#154529]) ([mobile_app docs])
-- Adjust import of ATTR_GPS_ACCURACY in device_tracker tests ([@kennedyshead] - [#154531]) ([device_tracker docs]) ([mobile_app docs])
-- Adding __all__ export to device_tracker ([@kennedyshead] - [#154525]) ([device_tracker docs])
-- Bump pynintendoparental to 1.1.2 ([@pantherale0] - [#154527]) ([nintendo_parental_controls docs])
-- Bump aiorussound to 4.9.0 ([@noahhusby] - [#154545]) ([russound_rio docs])
-- Raise exceptions for Telegram bot when actions fail ([@hanwg] - [#148140]) ([telegram_bot docs])
-- Component asuswrt: Update SENSORS_DEFAULT in tests ([@kennedyshead] - [#154547]) ([asuswrt docs])
-- Recalculate derivative unit correctly when source or options change ([@karwosts] - [#147527]) ([derivative docs])
-- Automatically removing stale devices in Homee ([@Taraman17] - [#152680]) ([homee docs])
-- Ensure psn wait more than coordinator tick ([@elupus] - [#154549]) ([playstation_network docs])
-- Add integration type `device` to IronOS manifest ([@tr4nt0r] - [#154533]) ([iron_os docs])
-- Simplify onewire entity descriptions ([@epenet] - [#154513]) ([onewire docs])
+- Fix improv_ble provisioning futures type ([@bdraco] - [#154530])
+- Adjust import of ATTR_GPS_ACCURACY in mobile_app ([@kennedyshead] - [#154528])
+- Adjust import of ATTR_GPS_ACCURACY in mobile_app.webhook ([@kennedyshead] - [#154529])
+- Adjust import of ATTR_GPS_ACCURACY in device_tracker tests ([@kennedyshead] - [#154531])
+- Adding __all__ export to device_tracker ([@kennedyshead] - [#154525])
+- Bump pynintendoparental to 1.1.2 ([@pantherale0] - [#154527])
+- Bump aiorussound to 4.9.0 ([@noahhusby] - [#154545])
+- Raise exceptions for Telegram bot when actions fail ([@hanwg] - [#148140])
+- Component asuswrt: Update SENSORS_DEFAULT in tests ([@kennedyshead] - [#154547])
+- Recalculate derivative unit correctly when source or options change ([@karwosts] - [#147527])
+- Automatically removing stale devices in Homee ([@Taraman17] - [#152680])
+- Ensure psn wait more than coordinator tick ([@elupus] - [#154549])
+- Add integration type `device` to IronOS manifest ([@tr4nt0r] - [#154533])
+- Simplify onewire entity descriptions ([@epenet] - [#154513])
 - Move template-rendering test helpers to separate module ([@akx] - [#154366])
-- Remove zha from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154534]) ([homeassistant_hardware docs])
-- Firefly refactor entities ([@erwindouna] - [#153292]) ([firefly_iii docs])
-- Align Shelly entity names with device classes ([@bieniu] - [#154492]) ([shelly docs])
-- Add support for Python 3.14 ([@cdce8p] - [#153939]) (breaking-change)
-- Bump aio-ownet to 0.0.4 ([@epenet] - [#154520]) ([onewire docs])
+- Remove zha from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154534])
+- Firefly refactor entities ([@erwindouna] - [#153292])
+- Align Shelly entity names with device classes ([@bieniu] - [#154492])
+- Add support for Python 3.14 ([@cdce8p] - [#153939])
+- Bump aio-ownet to 0.0.4 ([@epenet] - [#154520])
 - Update pylint to 4.0.1 ([@cdce8p] - [#154526])
-- Import device_tracker classes from component root ([@epenet] - [#154524]) ([subaru docs]) ([tessie docs]) ([teslemetry docs]) ([tesla_fleet docs]) ([volvo docs])
+- Import device_tracker classes from component root ([@epenet] - [#154524])
 - Expose the entity_id of an entity to LLMs ([@jbkkd] - [#149428])
-- Fix typing issue in fritz ([@cdce8p] - [#154497]) ([fritz docs])
-- Revert "Expose the entity_id of an entity to LLMs" ([@balloob] - [#154561]) ([mcp_server docs])
-- Fix lingering todoist test by fixing its test time ([@jbouwh] - [#154511]) ([todoist docs])
-- Remove hardware from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154532]) ([hardware docs]) ([hardkernel docs]) ([raspberry_pi docs]) ([homeassistant_yellow docs]) ([homeassistant_sky_connect docs]) ([homeassistant_green docs]) ([homeassistant_connect_zbt2 docs])
-- Update onewire quality scale ([@epenet] - [#154515]) ([onewire docs])
-- Bump aiohomeconnect to version 0.22.0 ([@Diegorro98] - [#154572]) ([home_connect docs])
-- Add ability for CalDAV to create calendar events ([@grzesjam] - [#150030]) ([caldav docs])
-- Bump aioesphomeapi to 42.0.0 ([@kbx81] - [#154577]) ([esphome docs])
-- Add model information for probe_plus devices ([@pantherale0] - [#154262]) ([probe_plus docs])
-- Implement cync reauth flow ([@Kinachi249] - [#154257]) ([cync docs])
-- Improve mobile_app device_tracker tests ([@emontnemery] - [#154584]) ([mobile_app docs])
-- Fix flaky playstation_network test ([@emontnemery] - [#154559]) ([playstation_network docs])
-- Component asuswrt: import of ConnectionState corrected ([@kennedyshead] - [#154518]) ([asuswrt docs])
-- Component asuswrt: handle_errors_and_zip._wrapper returns dict[str, str] ([@kennedyshead] - [#154544]) ([asuswrt docs])
-- Bump pymonoprice to 0.5 ([@epenet] - [#146936]) ([monoprice docs])
-- Add Matter Inovelli VTM30 fixture ([@lboue] - [#154601]) ([matter docs])
-- Fix friendly names of zones with mobile_app ([@Ashus] - [#149453]) ([mobile_app docs]) (breaking-change)
-- Bump epson-projector to 0.6.0 ([@epenet] - [#154596]) ([epson docs])
-- Add new sensors for Zigbee based devices in ViCare ([@CFenner] - [#154271]) ([vicare docs])
-- Bump hass-nabucasa from 1.3.0 to 1.4.0 ([@ludeeus] - [#154599]) ([cloud docs])
-- Make Speed optional for GoToPreset ONVIF command ([@carlos-sarmiento] - [#149636]) ([onvif docs]) (breaking-change)
-- Remove sensor from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154602]) ([utility_meter docs]) ([template docs]) ([eq3btsmart docs]) ([energy docs]) ([eheimdigital docs]) ([firefly_iii docs])
-- Make Shelly deprecated firmware issue more general ([@bieniu] - [#154539]) ([shelly docs])
-- Add new Dryer fixture to SmartThings ([@joostlek] - [#154607]) ([smartthings docs])
-- The Volvo integration has now reached platinum on the quality scale ([@thomasddn] - [#154015]) ([volvo docs])
-- Remove assist_pipeline from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154600]) ([esphome docs]) ([voip docs]) ([assist_pipeline docs]) ([wyoming docs])
-- Add Matter Eve Energy 20ECN4101 fixture ([@lboue] - [#154608]) ([matter docs])
-- The 1-wire integration has now reached silver on the quality scale ([@epenet] - [#154614]) ([onewire docs])
-- Add config flow exceptions to IOMeter ([@jukrebs] - [#154604]) ([iometer docs])
-- Add support for Telegram message attachments ([@aviadlevy] - [#153216]) ([telegram_bot docs])
-- Add device diagnostics to onewire ([@epenet] - [#154617]) ([onewire docs])
-- Add subentries to WAQI ([@joostlek] - [#148966]) ([waqi docs])
-- Add Matter fixture for Aqara Smart Lock U200 ([@lboue] - [#154623]) ([matter docs])
-- Mock network calls in comfoconnect tests to fix timeouts ([@sairon] - [#154620]) ([comfoconnect docs])
-- Bump habiticalib to v0.4.6 ([@tr4nt0r] - [#154566]) ([habitica docs])
-- LLM prefix caching optimization using new GetDateTime tool ([@louis-pre] - [#152408]) ([conversation docs]) ([ollama docs]) ([anthropic docs])
-- Add service warning sensor to Volvo integration ([@thomasddn] - [#154613]) ([volvo docs])
+- Fix typing issue in fritz ([@cdce8p] - [#154497])
+- Revert "Expose the entity_id of an entity to LLMs" ([@balloob] - [#154561])
+- Fix lingering todoist test by fixing its test time ([@jbouwh] - [#154511])
+- Remove hardware from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154532])
+- Update onewire quality scale ([@epenet] - [#154515])
+- Bump aiohomeconnect to version 0.22.0 ([@Diegorro98] - [#154572])
+- Add ability for CalDAV to create calendar events ([@grzesjam] - [#150030])
+- Bump aioesphomeapi to 42.0.0 ([@kbx81] - [#154577])
+- Add model information for probe_plus devices ([@pantherale0] - [#154262])
+- Implement cync reauth flow ([@Kinachi249] - [#154257])
+- Improve mobile_app device_tracker tests ([@emontnemery] - [#154584])
+- Fix flaky playstation_network test ([@emontnemery] - [#154559])
+- Component asuswrt: import of ConnectionState corrected ([@kennedyshead] - [#154518])
+- Component asuswrt: handle_errors_and_zip._wrapper returns dict[str, str] ([@kennedyshead] - [#154544])
+- Bump pymonoprice to 0.5 ([@epenet] - [#146936])
+- Add Matter Inovelli VTM30 fixture ([@lboue] - [#154601])
+- Fix friendly names of zones with mobile_app ([@Ashus] - [#149453])
+- Bump epson-projector to 0.6.0 ([@epenet] - [#154596])
+- Add new sensors for Zigbee based devices in ViCare ([@CFenner] - [#154271])
+- Bump hass-nabucasa from 1.3.0 to 1.4.0 ([@ludeeus] - [#154599])
+- Make Speed optional for GoToPreset ONVIF command ([@carlos-sarmiento] - [#149636])
+- Remove sensor from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154602])
+- Make Shelly deprecated firmware issue more general ([@bieniu] - [#154539])
+- Add new Dryer fixture to SmartThings ([@joostlek] - [#154607])
+- The Volvo integration has now reached platinum on the quality scale ([@thomasddn] - [#154015])
+- Remove assist_pipeline from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154600])
+- Add Matter Eve Energy 20ECN4101 fixture ([@lboue] - [#154608])
+- The 1-wire integration has now reached silver on the quality scale ([@epenet] - [#154614])
+- Add config flow exceptions to IOMeter ([@jukrebs] - [#154604])
+- Add support for Telegram message attachments ([@aviadlevy] - [#153216])
+- Add device diagnostics to onewire ([@epenet] - [#154617])
+- Add subentries to WAQI ([@joostlek] - [#148966])
+- Add Matter fixture for Aqara Smart Lock U200 ([@lboue] - [#154623])
+- Mock network calls in comfoconnect tests to fix timeouts ([@sairon] - [#154620])
+- Bump habiticalib to v0.4.6 ([@tr4nt0r] - [#154566])
+- LLM prefix caching optimization using new GetDateTime tool ([@louis-pre] - [#152408])
+- Add service warning sensor to Volvo integration ([@thomasddn] - [#154613])
 - Remove more components from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154622])
 - Update Home Assistant base image to 2025.10.1 ([@sairon] - [#154609])
-- Allow ignored rapt_ble devices to be set up from the user flow ([@sairon] - [#154606]) ([rapt_ble docs])
-- Rename Mock Door Lock with unbolt fixture ([@lboue] - [#154627]) ([matter docs])
+- Allow ignored rapt_ble devices to be set up from the user flow ([@sairon] - [#154606])
+- Rename Mock Door Lock with unbolt fixture ([@lboue] - [#154627])
 - Update Pillow to 12.0.0 ([@cdce8p] - [#154637])
-- Fix demo cover set position action ([@thecode] - [#154641]) ([demo docs])
+- Fix demo cover set position action ([@thecode] - [#154641])
 - Bump colorlog to 6.10.1 ([@Thomas55555] - [#154643])
-- Add serial number to IPP ([@Thomas55555] - [#154648]) ([ipp docs])
-- Remove more components from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154660]) ([config docs]) ([cloud docs]) ([homekit docs]) ([freebox docs]) ([ffmpeg_noise docs])
-- Bump sigstore/cosign-installer from 3.10.0 to 4.0.0 ([@dependabot] - [#154661])
-- Migrate Xbox to runtime_data ([@tr4nt0r] - [#154652]) ([xbox docs])
-- Adjust onewire strings ([@epenet] - [#154664]) ([onewire docs])
-- Remove HomeAssistantRemoteScanner from __all__ in bluetooth ([@epenet] - [#154669]) ([bluetooth docs])
-- Remove more components from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154667]) ([config docs])
-- Improve metoffice typing ([@epenet] - [#154670]) ([metoffice docs])
-- Remove duplicated Matter powersource cluster from Mock device fixture files ([@lboue] - [#154668]) ([matter docs])
-- Fix behavior spelling for public facing strings ([@epenet] - [#154665]) ([knx docs]) ([bayesian docs]) ([airq docs])
-- Fix Telegram bot bug where message is sent to wrong recipient ([@hanwg] - [#154658]) ([telegram_bot docs])
+- Add serial number to IPP ([@Thomas55555] - [#154648])
+- Remove more components from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154660])
+- Bump sigstore/cosign-installer from 3.10.0 to 4.0.0 (@dependabot - [#154661])
+- Migrate Xbox to runtime_data ([@tr4nt0r] - [#154652])
+- Adjust onewire strings ([@epenet] - [#154664])
+- Remove HomeAssistantRemoteScanner from __all__ in bluetooth ([@epenet] - [#154669])
+- Remove more components from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154667])
+- Improve metoffice typing ([@epenet] - [#154670])
+- Remove duplicated Matter powersource cluster from Mock device fixture files ([@lboue] - [#154668])
+- Fix behavior spelling for public facing strings ([@epenet] - [#154665])
+- Fix Telegram bot bug where message is sent to wrong recipient ([@hanwg] - [#154658])
 - Add CODEOWNERS entry for Growatt Server integration ([@johanzander] - [#154647])
-- Bump aiomealie to 1.0.1 ([@andrew-codechimp] - [#154672]) ([mealie docs])
-- Add OpenRGB reconfiguration flow ([@felipecrs] - [#154478]) ([openrgb docs])
-- Bump plugwise to v1.8.1 ([@bouwew] - [#154679]) ([plugwise docs])
-- Add integration_type to Husqvarna Automower ([@Thomas55555] - [#154642]) ([husqvarna_automower docs])
-- Add additional unit tests for Growatt Server integration ([@johanzander] - [#154644]) ([growatt_server docs])
-- Component asuswrt: Type hint for aioasuswrt returns ([@kennedyshead] - [#154594]) ([asuswrt docs])
-- Bump automower-ble to 0.2.8 ([@alistair23] - [#154683]) ([husqvarna_automower_ble docs])
-- LLM: skip local handling of search media query ([@balloob] - [#154496]) ([media_player docs]) ([assist_pipeline docs])
-- Revert "Adding __all__ export to device_tracker" ([@epenet] - [#154675]) ([device_tracker docs])
-- Remove rest from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154662]) ([rest docs]) ([scrape docs])
-- Move translatable URLs out of strings.json for tautulli ([@sonianuj287] - [#154681]) ([tautulli docs])
-- Add snapshot tests of sensor platform to Xbox integration ([@tr4nt0r] - [#154684]) ([xbox docs])
-- husqvarna_automower_ble: Log errors if the mower isn't pairable ([@alistair23] - [#151768]) ([husqvarna_automower_ble docs])
-- Component asuswrt: Improve get_bridge parameters typing in asuswrt ([@kennedyshead] - [#154540]) ([asuswrt docs])
-- Remove async_setup/async_setup_entry/async_unload_entry from __all__ ([@epenet] - [#154674]) ([mqtt docs]) ([conversation docs]) ([assist_pipeline docs]) ([mcp_server docs]) ([mcp docs]) ([ai_task docs])
-- Add Matter fixture for Silabs light switch ([@lboue] - [#154701]) ([matter docs])
-- Add Matter SwitchBot K11+ fixture ([@lboue] - [#154691]) ([matter docs])
-- Bump uiprotect to version 7.23.0 ([@RaHehl] - [#154692]) ([unifiprotect docs])
-- Add snapshot tests for binary_sensor platform of Xbox integration ([@tr4nt0r] - [#154694]) ([xbox docs])
-- Fix test cases in ViCare integration ([@CFenner] - [#154687]) ([vicare docs])
-- Set integration type for tankerkoenig ([@mib1185] - [#154715]) ([tankerkoenig docs])
-- Set integration type for ecovacs ([@mib1185] - [#154713]) ([ecovacs docs])
-- Set integration type for nextcloud ([@mib1185] - [#154709]) ([nextcloud docs])
-- Set integration type for immich ([@mib1185] - [#154710]) ([immich docs])
-- Set integration type for Synology DSM ([@mib1185] - [#154714]) ([synology_dsm docs])
-- Update whirlpool-sixth-sense to 1.0.2 ([@vasililiev] - [#154704]) ([whirlpool docs])
+- Bump aiomealie to 1.0.1 ([@andrew-codechimp] - [#154672])
+- Add OpenRGB reconfiguration flow ([@felipecrs] - [#154478])
+- Bump plugwise to v1.8.1 ([@bouwew] - [#154679])
+- Add integration_type to Husqvarna Automower ([@Thomas55555] - [#154642])
+- Add additional unit tests for Growatt Server integration ([@johanzander] - [#154644])
+- Component asuswrt: Type hint for aioasuswrt returns ([@kennedyshead] - [#154594])
+- Bump automower-ble to 0.2.8 ([@alistair23] - [#154683])
+- LLM: skip local handling of search media query ([@balloob] - [#154496])
+- Revert "Adding __all__ export to device_tracker" ([@epenet] - [#154675])
+- Remove rest from _IGNORE_ROOT_IMPORT in pylint plugin ([@epenet] - [#154662])
+- Move translatable URLs out of strings.json for tautulli ([@sonianuj287] - [#154681])
+- Add snapshot tests of sensor platform to Xbox integration ([@tr4nt0r] - [#154684])
+- husqvarna_automower_ble: Log errors if the mower isn't pairable ([@alistair23] - [#151768])
+- Component asuswrt: Improve get_bridge parameters typing in asuswrt ([@kennedyshead] - [#154540])
+- Remove async_setup/async_setup_entry/async_unload_entry from __all__ ([@epenet] - [#154674])
+- Add Matter fixture for Silabs light switch ([@lboue] - [#154701])
+- Add Matter SwitchBot K11+ fixture ([@lboue] - [#154691])
+- Bump uiprotect to version 7.23.0 ([@RaHehl] - [#154692])
+- Add snapshot tests for binary_sensor platform of Xbox integration ([@tr4nt0r] - [#154694])
+- Fix test cases in ViCare integration ([@CFenner] - [#154687])
+- Set integration type for tankerkoenig ([@mib1185] - [#154715])
+- Set integration type for ecovacs ([@mib1185] - [#154713])
+- Set integration type for nextcloud ([@mib1185] - [#154709])
+- Set integration type for immich ([@mib1185] - [#154710])
+- Set integration type for Synology DSM ([@mib1185] - [#154714])
+- Update whirlpool-sixth-sense to 1.0.2 ([@vasililiev] - [#154704])
 - Bump aiohttp to 3.13.1 ([@bdraco] - [#154723])
-- ESPHome to subscribe Z-Wave Proxy HOME ID changes ([@balloob] - [#154696]) ([esphome docs])
-- Add Matter fixture for Six buttons Haijai Switch from DK-AI ([@lboue] - [#154734]) ([matter docs])
-- Allow to remove OpenRGB devices that are disconnected ([@felipecrs] - [#154730]) ([openrgb docs])
-- Bump Adax-local to 0.2.0 ([@steinmn] - [#154720]) ([adax docs])
-- Add the `dial` action to the FRITZ!Box Tools integration ([@Abestanis] - [#151095]) ([fritz docs])
-- Set integration type for FRITZ!Tools ([@mib1185] - [#154711]) ([fritz docs])
-- Set integration type for feedreader ([@mib1185] - [#154712]) ([feedreader docs])
-- Improve KNX config-UI group address labels and descriptions ([@farmio] - [#154716]) ([knx docs])
-- Portainer bump 1.0.4 ([@erwindouna] - [#154736]) ([portainer docs])
-- Fix bug where Roborock loading map in cleaning causes a crash ([@Lash-L] - [#153011]) ([roborock docs])
-- Set myuplink integration_type explicitly ([@astrandb] - [#154742]) ([myuplink docs])
-- Firefly III add diagnostics ([@erwindouna] - [#154743]) ([firefly_iii docs])
-- Remove workaround in togrill to trigger coordinator ([@elupus] - [#154784]) ([togrill docs])
-- Move translatable URL out of strings.json for compit ([@jbouwh] - [#154771]) ([compit docs])
-- Set integration_type to service in Uptime Kuma integration ([@tr4nt0r] - [#154764]) ([uptime_kuma docs])
-- Set integration_type to service in Habitica ([@tr4nt0r] - [#154763]) ([habitica docs])
-- Move URLs out of strings.json for androidtv_remote ([@jbouwh] - [#154739]) ([androidtv_remote docs])
-- Move url out of FreedomPro strings.json ([@andrew-codechimp] - [#154786]) ([freedompro docs])
-- Make sure user flow replace ignored in togrill ([@elupus] - [#154780]) ([togrill docs])
-- Make sure user flow replace ignored in gardena_blueooth ([@elupus] - [#154778]) ([gardena_bluetooth docs])
-- Set integration_type to service in ntfy integration ([@tr4nt0r] - [#154767]) ([ntfy docs])
-- Remove unused repair string and update quality scale in Habitica integration ([@tr4nt0r] - [#154775]) ([habitica docs])
+- ESPHome to subscribe Z-Wave Proxy HOME ID changes ([@balloob] - [#154696])
+- Add Matter fixture for Six buttons Haijai Switch from DK-AI ([@lboue] - [#154734])
+- Allow to remove OpenRGB devices that are disconnected ([@felipecrs] - [#154730])
+- Bump Adax-local to 0.2.0 ([@steinmn] - [#154720])
+- Add the `dial` action to the FRITZ!Box Tools integration ([@Abestanis] - [#151095])
+- Set integration type for FRITZ!Tools ([@mib1185] - [#154711])
+- Set integration type for feedreader ([@mib1185] - [#154712])
+- Improve KNX config-UI group address labels and descriptions ([@farmio] - [#154716])
+- Portainer bump 1.0.4 ([@erwindouna] - [#154736])
+- Fix bug where Roborock loading map in cleaning causes a crash ([@Lash-L] - [#153011])
+- Set myuplink integration_type explicitly ([@astrandb] - [#154742])
+- Firefly III add diagnostics ([@erwindouna] - [#154743])
+- Remove workaround in togrill to trigger coordinator ([@elupus] - [#154784])
+- Move translatable URL out of strings.json for compit ([@jbouwh] - [#154771])
+- Set integration_type to service in Uptime Kuma integration ([@tr4nt0r] - [#154764])
+- Set integration_type to service in Habitica ([@tr4nt0r] - [#154763])
+- Move URLs out of strings.json for androidtv_remote ([@jbouwh] - [#154739])
+- Move url out of FreedomPro strings.json ([@andrew-codechimp] - [#154786])
+- Make sure user flow replace ignored in togrill ([@elupus] - [#154780])
+- Make sure user flow replace ignored in gardena_blueooth ([@elupus] - [#154778])
+- Set integration_type to service in ntfy integration ([@tr4nt0r] - [#154767])
+- Remove unused repair string and update quality scale in Habitica integration ([@tr4nt0r] - [#154775])
 - Use yaml anchors in ci workflow (2) ([@cdce8p] - [#154680])
-- Correctly calculate average color for light groups in HS Color Mode ([@ogruendel] - [#154678]) ([group docs])
-- Set integration_type to service in Sleep as Android ([@tr4nt0r] - [#154765]) ([sleep_as_android docs])
-- Add support for tracking stats of party members in Habitica integration ([@tr4nt0r] - [#151885]) ([habitica docs])
-- Set xuid as unique_id and gamertag as title in Xbox config flow ([@tr4nt0r] - [#154693]) ([xbox docs])
-- [esphome] Implement feature_flags for `climate` ([@kbx81] - [#153507]) ([esphome docs])
-- Add streaming to Elevenlabs TTS ([@ehendrix23] - [#154663]) ([elevenlabs docs])
-- Add Demo valves with position support ([@thecode] - [#154657]) ([demo docs])
-- Add beufort as valid wind speed unit in weather ([@gjohansson-ST] - [#153572]) ([weather docs])
+- Correctly calculate average color for light groups in HS Color Mode ([@ogruendel] - [#154678])
+- Set integration_type to service in Sleep as Android ([@tr4nt0r] - [#154765])
+- Add support for tracking stats of party members in Habitica integration ([@tr4nt0r] - [#151885])
+- Set xuid as unique_id and gamertag as title in Xbox config flow ([@tr4nt0r] - [#154693])
+- [esphome] Implement feature_flags for `climate` ([@kbx81] - [#153507])
+- Add streaming to Elevenlabs TTS ([@ehendrix23] - [#154663])
+- Add Demo valves with position support ([@thecode] - [#154657])
+- Add beufort as valid wind speed unit in weather ([@gjohansson-ST] - [#153572])
 - Build wheels for Python 3.14 ([@cdce8p] - [#154794])
-- Improve entity names for powered by Shelly devices ([@bieniu] - [#154592]) ([shelly docs])
+- Improve entity names for powered by Shelly devices ([@bieniu] - [#154592])
 - Streamline template tests ([@akx] - [#154586])
-- Bump aioesphomeapi to 42.1.0 ([@bdraco] - [#154796]) ([esphome docs])
-- Add responses for action calls from ESPHome devices ([@jesserockz] - [#153233]) ([esphome docs])
-- Fix wrong `in game` sensor state in Xbox integration ([@tr4nt0r] - [#154799]) ([xbox docs])
-- Rename the Shelly switch from `Start Charging` to `Charging` ([@bieniu] - [#154815]) ([shelly docs])
-- Fix Shelly enum sensors ([@bieniu] - [#154814]) ([shelly docs])
-- Fix Todoist test failure ([@thecode] - [#154808]) ([todoist docs])
-- Bump aioesphomeapi to 42.2.0 ([@bdraco] - [#154803]) ([esphome docs])
-- Fix typo in test function name for invalid URL ([@ChrisCarini] - [#154810]) ([remote_calendar docs])
+- Bump aioesphomeapi to 42.1.0 ([@bdraco] - [#154796])
+- Add responses for action calls from ESPHome devices ([@jesserockz] - [#153233])
+- Fix wrong `in game` sensor state in Xbox integration ([@tr4nt0r] - [#154799])
+- Rename the Shelly switch from `Start Charging` to `Charging` ([@bieniu] - [#154815])
+- Fix Shelly enum sensors ([@bieniu] - [#154814])
+- Fix Todoist test failure ([@thecode] - [#154808])
+- Bump aioesphomeapi to 42.2.0 ([@bdraco] - [#154803])
+- Fix typo in test function name for invalid URL ([@ChrisCarini] - [#154810])
 - Build aarch64 wheels on ubuntu-arm ([@cdce8p] - [#154819])
-- Improve bluesound conftest function ([@cdce8p] - [#154828]) ([bluesound docs])
-- Bump OpenRGB to Silver ([@felipecrs] - [#154690]) ([openrgb docs])
-- Code quality followup to Homee stale devices ([@Taraman17] - [#154741]) ([homee docs])
-- Refactor sensors and binary sensors in Xbox integration ([@tr4nt0r] - [#154719]) ([xbox docs])
-- Moved non-translatable URL out of strings.json for plex ([@AJ-SM] - [#154826]) ([plex docs])
-- Add valve group support ([@thecode] - [#154749]) ([group docs]) (new-platform)
-- Fix incorrect forward header handling ([@0xFaul] - [#154793]) ([http docs])
-- Add reconfigure flow in SolarEdge ([@tronikos] - [#154189]) ([solaredge docs])
-- Add instance ID (mDNS) conflict detection and repair flow for zeroconf integration ([@jpbede] - [#151487]) ([zeroconf docs])
-- Allow overriding recipients per message in XMPP ([@gaaf] - [#149375]) ([xmpp docs])
+- Improve bluesound conftest function ([@cdce8p] - [#154828])
+- Bump OpenRGB to Silver ([@felipecrs] - [#154690])
+- Code quality followup to Homee stale devices ([@Taraman17] - [#154741])
+- Refactor sensors and binary sensors in Xbox integration ([@tr4nt0r] - [#154719])
+- Moved non-translatable URL out of strings.json for plex ([@AJ-SM] - [#154826])
+- Add valve group support ([@thecode] - [#154749])
+- Fix incorrect forward header handling ([@0xFaul] - [#154793])
+- Add reconfigure flow in SolarEdge ([@tronikos] - [#154189])
+- Add instance ID (mDNS) conflict detection and repair flow for zeroconf integration ([@jpbede] - [#151487])
+- Allow overriding recipients per message in XMPP ([@gaaf] - [#149375])
 - declaraing typing fixes handling for agents ([@johnmschoonover] - [#154833])
 - Enhance `check_config` script with JSON output and fail on warnings ([@BenjaminMichaelis] - [#152575])
-- OpenUV: Add protection window tests ([@wbyoung] - [#154498]) ([openuv docs])
-- Tuya Alarm-Control: Ignore low-battery warnings ([@asafhas] - [#152888]) ([tuya docs])
+- OpenUV: Add protection window tests ([@wbyoung] - [#154498])
+- Tuya Alarm-Control: Ignore low-battery warnings ([@asafhas] - [#152888])
 - Set Pyright level as `basic` by default for VS Code ([@felipecrs] - [#154495])
-- Remove brackets from decorator in Husqvarna Automower ([@Thomas55555] - [#154042]) ([husqvarna_automower docs])
-- Refactor Xbox integration setup and exception handling ([@tr4nt0r] - [#154823]) ([xbox docs])
-- Portainer add endoint sensors ([@erwindouna] - [#154676]) ([portainer docs])
-- Fix typos in exception translations of Xbox integration ([@tr4nt0r] - [#154849]) ([xbox docs])
-- Rename Xbox Live to Xbox Network in NextDNS ([@tr4nt0r] - [#154855]) ([nextdns docs])
-- Add number platform to nintendo_parental_controls integration ([@pantherale0] - [#154548]) ([nintendo_parental_controls docs]) (new-platform)
-- Bump github/codeql-action from 4.30.8 to 4.30.9 ([@dependabot] - [#154858])
-- Add device model information for Nintendo Parental Controls ([@pantherale0] - [#154867]) ([nintendo_parental_controls docs])
-- Disable parallel updates for Nintendo Parental Controls ([@pantherale0] - [#154866]) ([nintendo_parental_controls docs])
-- Update RestrictedPython to 8.1 ([@cdce8p] - [#154870]) ([python_script docs])
-- Add month order attributes to Jewish calendar sensor ([@aviadlevy] - [#154809]) ([jewish_calendar docs])
-- Cleanup code for UptimeRobot ([@chemelli74] - [#154892]) ([uptimerobot docs])
-- Use common variables in platform tests for UptimeRobot ([@chemelli74] - [#154909]) ([uptimerobot docs])
-- Fix Jewish calendar month semantic to "standard order" ([@aviadlevy] - [#154905]) ([jewish_calendar docs])
-- Add new entities to Xbox integration ([@tr4nt0r] - [#154911]) ([xbox docs])
-- Bump aioautomower to 2.5.0 ([@Thomas55555] - [#154900]) ([husqvarna_automower docs])
-- Group URL options for Telegram bot actions ([@hanwg] - [#154914]) ([telegram_bot docs])
-- Update mcstatus to 12.0.6 ([@cdce8p] - [#154910]) ([minecraft_server docs])
-- Update slixmpp to 1.12.0 ([@cdce8p] - [#154872]) ([harmony docs]) ([xmpp docs])
-- Refactor NextDNS tests ([@bieniu] - [#154901]) ([nextdns docs])
-- Refactor coordinator data update and exception handling in Xbox integration ([@tr4nt0r] - [#154848]) ([xbox docs])
-- Add discovery support to Xbox integration ([@tr4nt0r] - [#154912]) ([xbox docs])
+- Remove brackets from decorator in Husqvarna Automower ([@Thomas55555] - [#154042])
+- Refactor Xbox integration setup and exception handling ([@tr4nt0r] - [#154823])
+- Portainer add endoint sensors ([@erwindouna] - [#154676])
+- Fix typos in exception translations of Xbox integration ([@tr4nt0r] - [#154849])
+- Rename Xbox Live to Xbox Network in NextDNS ([@tr4nt0r] - [#154855])
+- Add number platform to nintendo_parental_controls integration ([@pantherale0] - [#154548])
+- Bump github/codeql-action from 4.30.8 to 4.30.9 (@dependabot - [#154858])
+- Add device model information for Nintendo Parental Controls ([@pantherale0] - [#154867])
+- Disable parallel updates for Nintendo Parental Controls ([@pantherale0] - [#154866])
+- Update RestrictedPython to 8.1 ([@cdce8p] - [#154870])
+- Add month order attributes to Jewish calendar sensor ([@aviadlevy] - [#154809])
+- Cleanup code for UptimeRobot ([@chemelli74] - [#154892])
+- Use common variables in platform tests for UptimeRobot ([@chemelli74] - [#154909])
+- Fix Jewish calendar month semantic to "standard order" ([@aviadlevy] - [#154905])
+- Add new entities to Xbox integration ([@tr4nt0r] - [#154911])
+- Bump aioautomower to 2.5.0 ([@Thomas55555] - [#154900])
+- Group URL options for Telegram bot actions ([@hanwg] - [#154914])
+- Update mcstatus to 12.0.6 ([@cdce8p] - [#154910])
+- Update slixmpp to 1.12.0 ([@cdce8p] - [#154872])
+- Refactor NextDNS tests ([@bieniu] - [#154901])
+- Refactor coordinator data update and exception handling in Xbox integration ([@tr4nt0r] - [#154848])
+- Add discovery support to Xbox integration ([@tr4nt0r] - [#154912])
 - Update syrupy to 5.0.0 ([@cdce8p] - [#154925])
-- Refactor the SMA integration to use a dedicated DataUpdateCoordinator ([@erwindouna] - [#154863]) ([sma docs])
-- Show underfloor heating devices in ViCare integration ([@CFenner] - [#154541]) ([vicare docs])
-- Replace duplicate strings with translation reference keys in Shelly integration ([@bieniu] - [#154940]) ([shelly docs])
-- Bump bthome-ble to 3.15.0 ([@thecode] - [#154956]) ([bthome docs])
-- SMA: add sensor availability and expand tests ([@erwindouna] - [#154953]) ([sma docs])
-- Add media_player and remote snapshot tests for Xbox integration ([@tr4nt0r] - [#154943]) ([xbox docs])
-- Remove unneded pylint disable in devolo Home Network ([@Shutgun] - [#154927]) ([devolo_home_network docs])
-- Add engine start/stop buttons to Volvo integration ([@thomasddn] - [#154610]) ([volvo docs])
-- Bump pylitterbot to 2024.2.6 ([@natekspencer] - [#154898]) ([litterrobot docs])
-- MCP remove translatable URL ([@erwindouna] - [#154995]) ([mcp docs])
-- Refactor media_player and remote platforms in Xbox integration ([@tr4nt0r] - [#154986]) ([xbox docs])
-- Add Matter entity labeling capabilities ([@jvmahon] - [#154173]) ([matter docs])
+- Refactor the SMA integration to use a dedicated DataUpdateCoordinator ([@erwindouna] - [#154863])
+- Show underfloor heating devices in ViCare integration ([@CFenner] - [#154541])
+- Replace duplicate strings with translation reference keys in Shelly integration ([@bieniu] - [#154940])
+- Bump bthome-ble to 3.15.0 ([@thecode] - [#154956])
+- SMA: add sensor availability and expand tests ([@erwindouna] - [#154953])
+- Add media_player and remote snapshot tests for Xbox integration ([@tr4nt0r] - [#154943])
+- Remove unneded pylint disable in devolo Home Network ([@Shutgun] - [#154927])
+- Add engine start/stop buttons to Volvo integration ([@thomasddn] - [#154610])
+- Bump pylitterbot to 2024.2.6 ([@natekspencer] - [#154898])
+- MCP remove translatable URL ([@erwindouna] - [#154995])
+- Refactor media_player and remote platforms in Xbox integration ([@tr4nt0r] - [#154986])
+- Add Matter entity labeling capabilities ([@jvmahon] - [#154173])
 - Update uv to 0.9.5 ([@cdce8p] - [#154990])
-- Remove UserLabelCluster from Matter mock devices fixtures ([@lboue] - [#154174]) ([matter docs])
-- Add Hebrew language support to Google Generative AI TTS ([@yohaybn] - [#154860]) ([google_generative_ai_conversation docs])
-- huawei_lte test cleanups ([@scop] - [#154961]) ([huawei_lte docs])
-- Bump pylitterbot to 2024.2.7 ([@natekspencer] - [#155017]) ([litterrobot docs])
-- Bump openrgb-python to 0.3.6 ([@felipecrs] - [#155009]) ([openrgb docs])
-- Adding test for IOmeter __init__.py ([@jukrebs] - [#155006]) ([iometer docs])
-- Bump pysma to 1.0.2 and enable type checking ([@kellerza] - [#154977]) ([sma docs])
-- Move PS4 URLs out of translatable strings ([@sairamsharan] - [#154969]) ([ps4 docs])
-- Set has_entity_name=True on Goodwe InverterSensor ([@ondras12345] - [#154209]) ([goodwe docs])
-- Starline: remove device_class for fuel level ([@ildar170975] - [#154964]) ([starline docs])
-- Bump go2rtc to 1.9.11 ([@edenhaus] - [#155028]) ([go2rtc docs])
-- Add sql.query action ([@tronikos] - [#147260]) ([sql docs])
-- Make NINA area filter accessible also in the config flow ([@DeerMaximum] - [#147514]) ([nina docs])
-- Update the quality scale rules list for NextDNS ([@bieniu] - [#155030]) ([nextdns docs])
-- Add exception handling for library calls in Squeezebox ([@peteS-UK] - [#154946]) ([squeezebox docs])
-- Add Shelly Irrigation controller weather sensors ([@thecode] - [#155041]) ([shelly docs])
+- Remove UserLabelCluster from Matter mock devices fixtures ([@lboue] - [#154174])
+- Add Hebrew language support to Google Generative AI TTS ([@yohaybn] - [#154860])
+- huawei_lte test cleanups ([@scop] - [#154961])
+- Bump pylitterbot to 2024.2.7 ([@natekspencer] - [#155017])
+- Bump openrgb-python to 0.3.6 ([@felipecrs] - [#155009])
+- Adding test for IOmeter __init__.py ([@jukrebs] - [#155006])
+- Bump pysma to 1.0.2 and enable type checking ([@kellerza] - [#154977])
+- Move PS4 URLs out of translatable strings ([@sairamsharan] - [#154969])
+- Set has_entity_name=True on Goodwe InverterSensor ([@ondras12345] - [#154209])
+- Starline: remove device_class for fuel level ([@ildar170975] - [#154964])
+- Bump go2rtc to 1.9.11 ([@edenhaus] - [#155028])
+- Add sql.query action ([@tronikos] - [#147260])
+- Make NINA area filter accessible also in the config flow ([@DeerMaximum] - [#147514])
+- Update the quality scale rules list for NextDNS ([@bieniu] - [#155030])
+- Add exception handling for library calls in Squeezebox ([@peteS-UK] - [#154946])
+- Add Shelly Irrigation controller weather sensors ([@thecode] - [#155041])
 - Container build: Remove codenotary configuration ([@agners] - [#155043])
-- Bump nsapi version to 3.1.3 ([@heindrichpaul] - [#155045]) ([nederlandse_spoorwegen docs])
-- Add iNELS integration ([@epdevlab] - [#125595]) ([inels docs]) (new-integration)
-- Improve client mock for NextDNS tests ([@bieniu] - [#155036]) ([nextdns docs])
+- Bump nsapi version to 3.1.3 ([@heindrichpaul] - [#155045])
+- Add iNELS integration ([@epdevlab] - [#125595])
+- Improve client mock for NextDNS tests ([@bieniu] - [#155036])
 - Remove translations from WS get_services and REST /api/services ([@emontnemery] - [#147120])
-- Fix empty via_device in ViCare integration ([@CFenner] - [#155032]) ([vicare docs])
-- Bump airOS version further preparing for v6 support ([@CoMPaTech] - [#155039]) ([airos docs])
-- Add energy platform to Victron Remote Monitoring ([@AndyTempel] - [#155046]) ([victron_remote_monitoring docs])
-- Add supply temperature for FHT devices in ViCare integration ([@CFenner] - [#155026]) ([vicare docs])
-- Add cavity-aware oven sensors for Whirlpool ([@MizterB] - [#145145]) ([whirlpool docs])
-- Fix variables in icon, picture, and name for state based template entities ([@Petro31] - [#154994]) ([template docs])
-- Bump aiovodafone to 3.0.0 ([@chemelli74] - [#154751]) ([vodafone_station docs])
-- Portainer fix ephemeral coordinator ID ([@erwindouna] - [#155056]) ([portainer docs])
-- Respect hdmi isActiveInput for chromecast devices ([@elupus] - [#149150]) ([cast docs])
-- Bump plugwise to v1.8.2 ([@bouwew] - [#155072]) ([plugwise docs])
-- Bump stream to 0.7.10 in Teslemetry ([@Bre77] - [#155071]) ([teslemetry docs])
-- Yardian: add binary sensors ([@barneyonline] - [#152654]) ([yardian docs]) (new-platform)
-- Bump PySwitchbot to 0.72.0 ([@zerzhang] - [#155073]) ([switchbot docs])
-- Correct serial number for Zigbee devices in ViCare integration ([@CFenner] - [#155057]) ([vicare docs])
-- Translate Z-Wave "Socket device path" in config flow ([@TheJulianJES] - [#154931]) ([zwave_js docs])
-- Use icon translations for system bridge entities ([@timmo001] - [#155090]) ([system_bridge docs])
-- Add tests for Yardian switch ([@joostlek] - [#155089]) ([yardian docs])
-- Add Fing integration ([@Lorenzo-Gasparini] - [#126058]) ([fing docs]) (new-integration)
-- Increase AI Task default tokens for Google Gemini ([@balloob] - [#155065]) ([google_generative_ai_conversation docs])
-- Fix OpenRGB tests failing CI ([@thecode] - [#155095]) ([openrgb docs])
-- Fix send_poll action for Telegram bot ([@hanwg] - [#155076]) ([telegram_bot docs])
+- Fix empty via_device in ViCare integration ([@CFenner] - [#155032])
+- Bump airOS version further preparing for v6 support ([@CoMPaTech] - [#155039])
+- Add energy platform to Victron Remote Monitoring ([@AndyTempel] - [#155046])
+- Add supply temperature for FHT devices in ViCare integration ([@CFenner] - [#155026])
+- Add cavity-aware oven sensors for Whirlpool ([@MizterB] - [#145145])
+- Fix variables in icon, picture, and name for state based template entities ([@Petro31] - [#154994])
+- Bump aiovodafone to 3.0.0 ([@chemelli74] - [#154751])
+- Portainer fix ephemeral coordinator ID ([@erwindouna] - [#155056])
+- Respect hdmi isActiveInput for chromecast devices ([@elupus] - [#149150])
+- Bump plugwise to v1.8.2 ([@bouwew] - [#155072])
+- Bump stream to 0.7.10 in Teslemetry ([@Bre77] - [#155071])
+- Yardian: add binary sensors ([@barneyonline] - [#152654])
+- Bump PySwitchbot to 0.72.0 ([@zerzhang] - [#155073])
+- Correct serial number for Zigbee devices in ViCare integration ([@CFenner] - [#155057])
+- Translate Z-Wave "Socket device path" in config flow ([@TheJulianJES] - [#154931])
+- Use icon translations for system bridge entities ([@timmo001] - [#155090])
+- Add tests for Yardian switch ([@joostlek] - [#155089])
+- Add Fing integration ([@Lorenzo-Gasparini] - [#126058])
+- Increase AI Task default tokens for Google Gemini ([@balloob] - [#155065])
+- Fix OpenRGB tests failing CI ([@thecode] - [#155095])
+- Fix send_poll action for Telegram bot ([@hanwg] - [#155076])
 - Set Prettier as default formatter in VS Code for JSON and YAML ([@felipecrs] - [#154484])
-- Add dimming functionality to the Lunatone light entity ([@MoonDevLT] - [#154508]) ([lunatone docs])
-- Add temperature number entity to set Tool and Bed temperatures to Octoprint ([@AmadeusW] - [#153712]) ([octoprint docs]) (new-platform)
-- Add scene platform support to Niko Home Control integration ([@VandeurenGlenn] - [#152712]) ([niko_home_control docs]) (new-platform)
+- Add dimming functionality to the Lunatone light entity ([@MoonDevLT] - [#154508])
+- Add temperature number entity to set Tool and Bed temperatures to Octoprint ([@AmadeusW] - [#153712])
+- Add scene platform support to Niko Home Control integration ([@VandeurenGlenn] - [#152712])
 - Log script condition warnings with the instance logger ([@karwosts] - [#154966])
-- Bump ttn_client to 1.2.2 ([@angelnu] - [#155100]) ([thethingsnetwork docs])
-- Add support for climate devices (e.g. thermostats) to the Control4 component ([@davidrecordon] - [#154502]) ([control4 docs]) (new-platform)
+- Bump ttn_client to 1.2.2 ([@angelnu] - [#155100])
+- Add support for climate devices (e.g. thermostats) to the Control4 component ([@davidrecordon] - [#154502])
 - Update hassfest for new selector translation schema ([@decompil3d] - [#155102])
 - Add .serena folder to gitignore ([@frenck] - [#155104])
-- Portainer bump to 1.0.6 ([@erwindouna] - [#155105]) ([portainer docs])
-- Add repair for deprecated addon issue ([@mdegat01] - [#151287]) ([hassio docs])
-- Add support for Matter thermostat `PIHeatingDemand` attribute ([@lboue] - [#154942]) ([matter docs])
-- Add Matter `OperationalError` sensor ([@lboue] - [#151991]) ([matter docs])
-- Fail creating config entry in reauth or reconfigure flows ([@gjohansson-ST] - [#154035]) (breaking-change)
-- Portainer bump 1.0.7 ([@erwindouna] - [#155111]) ([portainer docs])
-- Show current day/hour in metoffice forecasts ([@avee87] - [#152689]) ([metoffice docs])
-- Recreate resolver also on DNSError in dnsip ([@gjohansson-ST] - [#155120]) ([dnsip docs])
-- Bump subarulink to 0.7.15 ([@G-Two] - [#155121]) ([subaru docs])
-- Use async_update_and_abort in mqtt ([@gjohansson-ST] - [#155140]) ([mqtt docs])
-- Bump aioshelly to version 13.15.0 ([@bieniu] - [#155150]) ([shelly docs])
-- Bump israel-rail-api to 0.1.4 ([@shaiu] - [#155153]) ([israel_rail docs])
-- Support reconfigure flow in NextDNS integration ([@bieniu] - [#154936]) ([nextdns docs])
-- Portainer bump 1.0.8 ([@erwindouna] - [#155161]) ([portainer docs])
-- Catch `ConnectionResetError` when updating data in Cert expiry integration ([@bieniu] - [#155149]) ([cert_expiry docs])
-- Bump python-telegram-bot to 22.5 ([@hanwg] - [#155134]) ([telegram_bot docs])
-- Improve client mock for Brother tests ([@bieniu] - [#155037]) ([brother docs])
-- Fix double reloading in axis ([@gjohansson-ST] - [#155144]) ([axis docs])
-- Bump github/codeql-action from 4.30.9 to 4.31.0 ([@dependabot] - [#155139])
-- Bump actions/download-artifact from 5.0.0 to 6.0.0 ([@dependabot] - [#155138])
-- Bump actions/upload-artifact from 4.6.2 to 5.0.0 ([@dependabot] - [#155137])
-- Bump homematicip to 2.3.1 ([@hahn-th] - [#155165]) ([homematicip_cloud docs])
-- _abort_if_unique_id_configured no automatic reload in deconz ([@gjohansson-ST] - [#155141]) ([deconz docs])
-- Add DALI Center integration ([@niracler] - [#151479]) ([dali_center docs]) (new-integration)
-- Add zones support to Shelly Irrigation controller ([@thecode] - [#152382]) ([shelly docs])
-- Add support for switchbot climate panel ([@zerzhang] - [#155124]) ([switchbot docs])
-- Add product name to title of HomeWizard v2 API migration repair ([@DCSBL] - [#155097]) ([homewizard docs])
-- Add Matter service actions for `water_heater` ([@lboue] - [#153577]) ([matter docs])
+- Portainer bump to 1.0.6 ([@erwindouna] - [#155105])
+- Add repair for deprecated addon issue ([@mdegat01] - [#151287])
+- Add support for Matter thermostat `PIHeatingDemand` attribute ([@lboue] - [#154942])
+- Add Matter `OperationalError` sensor ([@lboue] - [#151991])
+- Fail creating config entry in reauth or reconfigure flows ([@gjohansson-ST] - [#154035])
+- Portainer bump 1.0.7 ([@erwindouna] - [#155111])
+- Show current day/hour in metoffice forecasts ([@avee87] - [#152689])
+- Recreate resolver also on DNSError in dnsip ([@gjohansson-ST] - [#155120])
+- Bump subarulink to 0.7.15 ([@G-Two] - [#155121])
+- Use async_update_and_abort in mqtt ([@gjohansson-ST] - [#155140])
+- Bump aioshelly to version 13.15.0 ([@bieniu] - [#155150])
+- Bump israel-rail-api to 0.1.4 ([@shaiu] - [#155153])
+- Support reconfigure flow in NextDNS integration ([@bieniu] - [#154936])
+- Portainer bump 1.0.8 ([@erwindouna] - [#155161])
+- Catch `ConnectionResetError` when updating data in Cert expiry integration ([@bieniu] - [#155149])
+- Bump python-telegram-bot to 22.5 ([@hanwg] - [#155134])
+- Improve client mock for Brother tests ([@bieniu] - [#155037])
+- Fix double reloading in axis ([@gjohansson-ST] - [#155144])
+- Bump github/codeql-action from 4.30.9 to 4.31.0 (@dependabot - [#155139])
+- Bump actions/download-artifact from 5.0.0 to 6.0.0 (@dependabot - [#155138])
+- Bump actions/upload-artifact from 4.6.2 to 5.0.0 (@dependabot - [#155137])
+- Bump homematicip to 2.3.1 ([@hahn-th] - [#155165])
+- _abort_if_unique_id_configured no automatic reload in deconz ([@gjohansson-ST] - [#155141])
+- Add DALI Center integration ([@niracler] - [#151479])
+- Add zones support to Shelly Irrigation controller ([@thecode] - [#152382])
+- Add support for switchbot climate panel ([@zerzhang] - [#155124])
+- Add product name to title of HomeWizard v2 API migration repair ([@DCSBL] - [#155097])
+- Add Matter service actions for `water_heater` ([@lboue] - [#153577])
 - Bump awesomeversion to 25.8.0 ([@chemelli74] - [#155172])
-- Bump Pyportainer to 1.0.9 ([@erwindouna] - [#155171]) ([portainer docs])
-- Allow KNX UI BinarySensors to disable state synchronisation ([@farmio] - [#155054]) ([knx docs])
-- Support KNX climate entity configuration from UI ([@farmio] - [#154162]) ([knx docs])
-- Adds support for controlling Growatt MIN/TLX inverters through number platform and entities ([@johanzander] - [#153886]) ([growatt_server docs]) (new-platform)
-- Bump yt-dlp to 2025.10.22 ([@joostlek] - [#155174]) ([media_extractor docs])
-- Raise an issue when the Roborock local api is unavailable. ([@Lash-L] - [#154576]) ([roborock docs])
-- Deprecate entities in Xbox integration ([@tr4nt0r] - [#154891]) ([xbox docs])
-- Fix LG webOS TV entity availability status ([@thecode] - [#155164]) ([webostv docs]) (breaking-change)
-- Update IQS for LG webOS TV integration ([@thecode] - [#155189]) ([webostv docs])
-- Update knx-frontend to 2025.10.26.81530 ([@farmio] - [#155186]) ([knx docs])
-- Add `mute alarm` button for Shelly Plus Smoke ([@bieniu] - [#154673]) ([shelly docs])
-- Bump deebot-client to 16.1.0 ([@edenhaus] - [#155168]) ([ecovacs docs])
-- Fix typo in Google Gen AI const ([@balloob] - [#155196]) ([google_generative_ai_conversation docs])
-- Bump python-roborock to 3.3.3 ([@allenporter] - [#155170]) ([roborock docs])
-- Add missing tests for Nintendo Parental controls integration ([@pantherale0] - [#154875]) ([nintendo_parental_controls docs])
-- Bump aioautomower to 2.6.0 ([@Thomas55555] - [#155200]) ([husqvarna_automower docs])
-- SMHI switch thunder icon to weather-lightning ([@VIKTORVAV99] - [#155205]) ([smhi docs])
-- update ttn_client to 1.2.3 ([@angelnu] - [#155204]) ([thethingsnetwork docs])
-- Support Shelly RGBCCT lights ([@bieniu] - [#155197]) ([shelly docs])
-- Bump pyfirefly 1.0.8 ([@erwindouna] - [#155226]) ([firefly_iii docs])
-- Fix missing Ecovacs station actions ([@edenhaus] - [#155237]) ([ecovacs docs])
-- Add thread and reaction support to Matrix ([@decompil3d] - [#147165]) ([matrix docs])
-- Update Matter boost duration description to specify units in seconds ([@lboue] - [#155185]) ([matter docs])
-- Firefly III add budgets sensor ([@erwindouna] - [#155222]) ([firefly_iii docs])
-- Abort add friend subentry flow for disabled config entry in PlayStation Network ([@tr4nt0r] - [#149784]) ([playstation_network docs])
+- Bump Pyportainer to 1.0.9 ([@erwindouna] - [#155171])
+- Allow KNX UI BinarySensors to disable state synchronisation ([@farmio] - [#155054])
+- Support KNX climate entity configuration from UI ([@farmio] - [#154162])
+- Adds support for controlling Growatt MIN/TLX inverters through number platform and entities ([@johanzander] - [#153886])
+- Bump yt-dlp to 2025.10.22 ([@joostlek] - [#155174])
+- Raise an issue when the Roborock local api is unavailable. ([@Lash-L] - [#154576])
+- Deprecate entities in Xbox integration ([@tr4nt0r] - [#154891])
+- Fix LG webOS TV entity availability status ([@thecode] - [#155164])
+- Update IQS for LG webOS TV integration ([@thecode] - [#155189])
+- Update knx-frontend to 2025.10.26.81530 ([@farmio] - [#155186])
+- Add `mute alarm` button for Shelly Plus Smoke ([@bieniu] - [#154673])
+- Bump deebot-client to 16.1.0 ([@edenhaus] - [#155168])
+- Fix typo in Google Gen AI const ([@balloob] - [#155196])
+- Bump python-roborock to 3.3.3 ([@allenporter] - [#155170])
+- Add missing tests for Nintendo Parental controls integration ([@pantherale0] - [#154875])
+- Bump aioautomower to 2.6.0 ([@Thomas55555] - [#155200])
+- SMHI switch thunder icon to weather-lightning ([@VIKTORVAV99] - [#155205])
+- update ttn_client to 1.2.3 ([@angelnu] - [#155204])
+- Support Shelly RGBCCT lights ([@bieniu] - [#155197])
+- Bump pyfirefly 1.0.8 ([@erwindouna] - [#155226])
+- Fix missing Ecovacs station actions ([@edenhaus] - [#155237])
+- Add thread and reaction support to Matrix ([@decompil3d] - [#147165])
+- Update Matter boost duration description to specify units in seconds ([@lboue] - [#155185])
+- Firefly III add budgets sensor ([@erwindouna] - [#155222])
+- Abort add friend subentry flow for disabled config entry in PlayStation Network ([@tr4nt0r] - [#149784])
 - Update pytest warnings filter ([@cdce8p] - [#155252])
-- Add support for tuya scene switches ([@giovannicimolin] - [#154821]) ([tuya docs])
-- Remove dead code and fixed a typo ([@cereal2nd] - [#155253]) ([velbus docs])
-- Add remaining charging time to Husqvarna Automower ([@Thomas55555] - [#154952]) ([husqvarna_automower docs])
-- Improve Control4's initiation logging and exception handling ([@davidrecordon] - [#155246]) ([control4 docs])
-- Update py-aosmith to 1.0.15 ([@bdr99] - [#155169]) ([aosmith docs])
-- Add data description to flows for NINA ([@DeerMaximum] - [#155192]) ([nina docs])
-- Set PARALLEL_UPDATES for Switcher ([@thecode] - [#155227]) ([switcher_kis docs])
-- Update IQS dependency-transparency comment for huawei_lte ([@scop] - [#155214]) ([huawei_lte docs])
-- Validate incorrect template trigger yaml ([@Petro31] - [#153919]) ([template docs])
-- Bump renault-api to 0.5.0 ([@epenet] - [#155263]) ([renault docs]) (breaking-change)
-- Refactor dynamic entity setup of Xbox integration ([@tr4nt0r] - [#155176]) ([xbox docs])
-- Add integration field to Matter water_heater_boost service ([@lboue] - [#155270]) ([matter docs])
-- Use snapshot assertion in switcher_kis diagnostics test ([@epenet] - [#155273]) ([switcher_kis docs])
-- Add diagnostics to portainer ([@erwindouna] - [#153126]) ([portainer docs])
-- Sort icons in Husqvarna Automower ([@Thomas55555] - [#155276]) ([husqvarna_automower docs])
-- Sort strings in Husqvarna Automower ([@Thomas55555] - [#155275]) ([husqvarna_automower docs])
-- Dont expose garbage entity in myuplink ([@astrandb] - [#155278]) ([myuplink docs])
-- Validate template binary sensor auto off has trigger ([@Petro31] - [#153953]) ([template docs])
-- Fix template entity preview when templates error ([@Petro31] - [#154029]) ([template docs])
-- Bump aiohomeconnect to version 0.23.0 ([@Diegorro98] - [#155269]) ([home_connect docs])
-- Bump AIOSomecomfort to 0.0.35 ([@mkmer] - [#155265]) ([honeywell docs])
+- Add support for tuya scene switches ([@giovannicimolin] - [#154821])
+- Remove dead code and fixed a typo ([@cereal2nd] - [#155253])
+- Add remaining charging time to Husqvarna Automower ([@Thomas55555] - [#154952])
+- Improve Control4's initiation logging and exception handling ([@davidrecordon] - [#155246])
+- Update py-aosmith to 1.0.15 ([@bdr99] - [#155169])
+- Add data description to flows for NINA ([@DeerMaximum] - [#155192])
+- Set PARALLEL_UPDATES for Switcher ([@thecode] - [#155227])
+- Update IQS dependency-transparency comment for huawei_lte ([@scop] - [#155214])
+- Validate incorrect template trigger yaml ([@Petro31] - [#153919])
+- Bump renault-api to 0.5.0 ([@epenet] - [#155263])
+- Refactor dynamic entity setup of Xbox integration ([@tr4nt0r] - [#155176])
+- Add integration field to Matter water_heater_boost service ([@lboue] - [#155270])
+- Use snapshot assertion in switcher_kis diagnostics test ([@epenet] - [#155273])
+- Add diagnostics to portainer ([@erwindouna] - [#153126])
+- Sort icons in Husqvarna Automower ([@Thomas55555] - [#155276])
+- Sort strings in Husqvarna Automower ([@Thomas55555] - [#155275])
+- Dont expose garbage entity in myuplink ([@astrandb] - [#155278])
+- Validate template binary sensor auto off has trigger ([@Petro31] - [#153953])
+- Fix template entity preview when templates error ([@Petro31] - [#154029])
+- Bump aiohomeconnect to version 0.23.0 ([@Diegorro98] - [#155269])
+- Bump AIOSomecomfort to 0.0.35 ([@mkmer] - [#155265])
 - Bump prettier to 3.6.2 ([@edenhaus] - [#155281])
-- Set icon for myuplink DM sensor ([@astrandb] - [#155274]) ([myuplink docs])
-- Fix Nord Pool sensor resolution for next/previous price ([@gjohansson-ST] - [#155119]) ([sun docs]) ([nordpool docs])
-- Add custom (external) wake words ([@synesthesiam] - [#152919]) ([esphome docs])
-- Do not exclude "repr" from motionblinds snapshots ([@epenet] - [#155271]) ([motionblinds_ble docs])
-- Enhance Switcher config flow tests ([@thecode] - [#155292]) ([switcher_kis docs])
-- Bump pymiele to v0.5.6 ([@astrandb] - [#155266]) ([miele docs])
-- Portainer bugfix add button platform ([@erwindouna] - [#155305]) ([portainer docs])
-- Bump hassil to 3.3.0 ([@synesthesiam] - [#155301]) ([conversation docs]) ([assist_satellite docs])
-- Add Presence Sensor support to Switchbot Cloud ([@XiaoLing-git] - [#155309]) ([switchbot_cloud docs])
-- Daikin improve config flow dialog message ([@fredrike] - [#155202]) ([daikin docs])
-- Add progress reporting for addon and core update entities ([@mdegat01] - [#153268]) ([hassio docs])
-- Fix unique IDs and migrate v1 entries ([@Sab44] - [#155319]) ([libre_hardware_monitor docs])
+- Set icon for myuplink DM sensor ([@astrandb] - [#155274])
+- Fix Nord Pool sensor resolution for next/previous price ([@gjohansson-ST] - [#155119])
+- Add custom (external) wake words ([@synesthesiam] - [#152919])
+- Do not exclude "repr" from motionblinds snapshots ([@epenet] - [#155271])
+- Enhance Switcher config flow tests ([@thecode] - [#155292])
+- Bump pymiele to v0.5.6 ([@astrandb] - [#155266])
+- Portainer bugfix add button platform ([@erwindouna] - [#155305])
+- Bump hassil to 3.3.0 ([@synesthesiam] - [#155301])
+- Add Presence Sensor support to Switchbot Cloud ([@XiaoLing-git] - [#155309])
+- Daikin improve config flow dialog message ([@fredrike] - [#155202])
+- Add progress reporting for addon and core update entities ([@mdegat01] - [#153268])
+- Fix unique IDs and migrate v1 entries ([@Sab44] - [#155319])
 - Sort homeassistant json files ([@edenhaus] - [#155285])
-- Fix Switcher `ConfigEntry` typing ([@thecode] - [#155320]) ([switcher_kis docs])
-- SMA add integration type ([@erwindouna] - [#155323]) ([sma docs])
-- Add integration type to fastdotcom ([@erwindouna] - [#155329]) ([fastdotcom docs])
-- Add integration type to melcloud ([@erwindouna] - [#155330]) ([melcloud docs])
-- Add integration type to downloader ([@erwindouna] - [#155328]) ([downloader docs])
-- Fix volume level of Music Assistant group players ([@OzGav] - [#155259]) ([music_assistant docs])
-- Handle cpd_enabled error in Tessie ([@Bre77] - [#155322]) ([tessie docs])
-- Add integration type to tado ([@erwindouna] - [#155327]) ([tado docs])
-- Portainer add integration type ([@erwindouna] - [#155324]) ([portainer docs])
-- Add integration type to DSMR Reader ([@erwindouna] - [#155325]) ([dsmr_reader docs])
-- Add support for Thread Integration to Display Icons for IKEA TBRs ([@wardmatter] - [#155299]) ([thread docs])
-- Migrate ZHA config entries to derive `unique_id` from the Zigbee EPID ([@puddly] - [#154489]) ([zha docs])
-- Add some Ecovacs lifespans entities ([@edenhaus] - [#155238]) ([ecovacs docs])
-- Bump python-roborock to 3.7.0 ([@allenporter] - [#155336]) ([roborock docs])
-- Fix Translation error in Home Connect "Add application credentials"-step ([@steinmn] - [#155233]) ([home_connect docs])
-- Add google sheet get service ([@luca-angemi] - [#150133]) ([google_sheets docs])
-- Add more information to music assistant get_queue ([@arturpragacz] - [#155242]) ([music_assistant docs])
-- Add event entity for Telegram bot ([@hanwg] - [#154383]) ([telegram_bot docs]) (new-platform)
-- Fix CI by sorting telegram_bot files ([@edenhaus] - [#155346]) ([telegram_bot docs])
+- Fix Switcher `ConfigEntry` typing ([@thecode] - [#155320])
+- SMA add integration type ([@erwindouna] - [#155323])
+- Add integration type to fastdotcom ([@erwindouna] - [#155329])
+- Add integration type to melcloud ([@erwindouna] - [#155330])
+- Add integration type to downloader ([@erwindouna] - [#155328])
+- Fix volume level of Music Assistant group players ([@OzGav] - [#155259])
+- Handle cpd_enabled error in Tessie ([@Bre77] - [#155322])
+- Add integration type to tado ([@erwindouna] - [#155327])
+- Portainer add integration type ([@erwindouna] - [#155324])
+- Add integration type to DSMR Reader ([@erwindouna] - [#155325])
+- Add support for Thread Integration to Display Icons for IKEA TBRs ([@wardmatter] - [#155299])
+- Migrate ZHA config entries to derive `unique_id` from the Zigbee EPID ([@puddly] - [#154489])
+- Add some Ecovacs lifespans entities ([@edenhaus] - [#155238])
+- Bump python-roborock to 3.7.0 ([@allenporter] - [#155336])
+- Fix Translation error in Home Connect "Add application credentials"-step ([@steinmn] - [#155233])
+- Add google sheet get service ([@luca-angemi] - [#150133])
+- Add more information to music assistant get_queue ([@arturpragacz] - [#155242])
+- Add event entity for Telegram bot ([@hanwg] - [#154383])
+- Fix CI by sorting telegram_bot files ([@edenhaus] - [#155346])
 - Show diff on pre-commit CI jobs ([@edenhaus] - [#155345])
-- Bump bluetooth-data-tools to 1.28.4 ([@bdraco] - [#155342]) ([bluetooth docs]) ([led_ble docs]) ([ld2410_ble docs]) ([private_ble_device docs])
-- Log exception details in sfr_box config flow ([@epenet] - [#155351]) ([sfr_box docs])
-- Fix Transmission Action Add Torrent ([@andrew-codechimp] - [#155350]) ([transmission docs])
-- Add new sensor and attributes to Xbox integration ([@tr4nt0r] - [#155098]) ([xbox docs])
-- Portainer remove unnecessary patch ([@erwindouna] - [#155317]) ([portainer docs])
-- Add integration type, descriptions and selector options to Transmission strings ([@andrew-codechimp] - [#155201]) ([transmission docs])
-- Bump sfrbox-api to 0.1.0 ([@epenet] - [#155349]) ([sfr_box docs])
-- Add api_server option to cloud ([@ludeeus] - [#155337]) ([cloud docs])
-- Bump letpot to 0.6.3 ([@jpelgrom] - [#155356]) ([letpot docs])
-- Portainer add dynamic devices ([@erwindouna] - [#155304]) ([portainer docs])
-- Change rain count state_class to 'Total' (ecowitt) ([@ogruendel] - [#155358]) ([ecowitt docs])
-- Bump fastdotcom to 0.0.6 ([@abmantis] - [#155354]) ([fastdotcom docs])
-- Add "Intelligent" program to Home Connect ([@RvV1979] - [#155243]) ([home_connect docs])
-- Handle new Blink login flow ([@KiraPC] - [#154632]) ([blink docs])
-- Reduce API calls in BSBlan ([@liudger] - [#152704]) ([bsblan docs])
-- Refactor diagnostics, create backup and green/yellow settings from handler ([@mdegat01] - [#154098]) ([hassio docs]) ([homeassistant_yellow docs]) ([homeassistant_green docs])
-- Fix browse media in Xbox integration ([@tr4nt0r] - [#155376]) ([xbox docs])
-- Add actions for Nintendo Parental Controls ([@pantherale0] - [#154886]) ([nintendo_parental_controls docs])
-- Portainer add reconfigure flow ([@erwindouna] - [#155289]) ([portainer docs])
-- Bump intents and fix for api change ([@synesthesiam] - [#155374]) ([conversation docs])
-- Bump psutil to 7.1.2 ([@gjohansson-ST] - [#155368]) ([systemmonitor docs])
-- Bump aioautomower to 2.7.0 ([@Thomas55555] - [#155363]) ([husqvarna_automower docs])
-- Move URL out of xiaomi_miio strings.json ([@eliasubz] - [#155357]) ([xiaomi_miio docs])
+- Bump bluetooth-data-tools to 1.28.4 ([@bdraco] - [#155342])
+- Log exception details in sfr_box config flow ([@epenet] - [#155351])
+- Fix Transmission Action Add Torrent ([@andrew-codechimp] - [#155350])
+- Add new sensor and attributes to Xbox integration ([@tr4nt0r] - [#155098])
+- Portainer remove unnecessary patch ([@erwindouna] - [#155317])
+- Add integration type, descriptions and selector options to Transmission strings ([@andrew-codechimp] - [#155201])
+- Bump sfrbox-api to 0.1.0 ([@epenet] - [#155349])
+- Add api_server option to cloud ([@ludeeus] - [#155337])
+- Bump letpot to 0.6.3 ([@jpelgrom] - [#155356])
+- Portainer add dynamic devices ([@erwindouna] - [#155304])
+- Change rain count state_class to 'Total' (ecowitt) ([@ogruendel] - [#155358])
+- Bump fastdotcom to 0.0.6 ([@abmantis] - [#155354])
+- Add "Intelligent" program to Home Connect ([@RvV1979] - [#155243])
+- Handle new Blink login flow ([@KiraPC] - [#154632])
+- Reduce API calls in BSBlan ([@liudger] - [#152704])
+- Refactor diagnostics, create backup and green/yellow settings from handler ([@mdegat01] - [#154098])
+- Fix browse media in Xbox integration ([@tr4nt0r] - [#155376])
+- Add actions for Nintendo Parental Controls ([@pantherale0] - [#154886])
+- Portainer add reconfigure flow ([@erwindouna] - [#155289])
+- Bump intents and fix for api change ([@synesthesiam] - [#155374])
+- Bump psutil to 7.1.2 ([@gjohansson-ST] - [#155368])
+- Bump aioautomower to 2.7.0 ([@Thomas55555] - [#155363])
+- Move URL out of xiaomi_miio strings.json ([@eliasubz] - [#155357])
 - Bump aiohttp to 3.13.2 ([@bdraco] - [#155372])
-- Remove indents and decrease long string in template config file ([@Petro31] - [#155340]) ([template docs])
-- Fix flakey ecovacs tests ([@bdraco] - [#155387]) ([ecovacs docs])
-- Update `denonavr` to 1.2.0 ([@ol-iver] - [#155385]) ([denonavr docs])
-- Spelling error found in strings.json for Rainmachine ([@mishmanners] - [#155381]) ([rainmachine docs])
-- Add translation for Shelly Fifth button ([@thecode] - [#155377]) ([shelly docs])
-- Fix device identifiers in ping and add migration ([@jpbede] - [#155343]) ([ping docs])
-- Bump aioesphomeapi to 42.4.0 ([@bdraco] - [#155383]) ([esphome docs])
-- Refactor Velux integration to use runtime_data ([@wollew] - [#155207]) ([velux docs])
-- Bump pyportainer 1.0.11 ([@erwindouna] - [#155394]) ([portainer docs])
-- Add Matter Aqara Floor Heating Thermostat W500 fixture ([@lboue] - [#155396]) ([matter docs])
-- Use a config entry migration instead of migrating in async_setup in Ping ([@jpbede] - [#155403]) ([ping docs])
-- Add sensors for Tuya cat toilet ([@epenet] - [#155245]) ([tuya docs])
-- Bump ZHA to 0.0.75 ([@TheJulianJES] - [#155389]) ([zha docs])
-- Bump aioamazondevices to 6.5.5 ([@chemelli74] - [#155408]) ([alexa_devices docs])
-- Add image platform to Xbox integration ([@tr4nt0r] - [#155369]) ([xbox docs]) (new-platform)
-- Bump Airthings BLE to 1.2.0 ([@LaStrada] - [#155386]) ([airthings_ble docs])
-- Add next alarm/reminder/timer sensors to Alexa Devices ([@chemelli74] - [#153576]) ([alexa_devices docs])
-- Use runtime_data in sfr_box ([@epenet] - [#155410]) ([sfr_box docs])
-- Update Switcher actions exceptions ([@thecode] - [#155296]) ([switcher_kis docs])
-- Auto refresh hardware integration firmware update entities on setup ([@puddly] - [#154562]) ([homeassistant_yellow docs]) ([homeassistant_sky_connect docs]) ([homeassistant_connect_zbt2 docs])
-- Remove neato integration ([@mib1185] - [#154902]) ([neato docs]) ([homeassistant_alerts docs]) ([analytics_insights docs]) (breaking-change)
-- Add support for translation_placeholders in zha ([@epenet] - [#155254]) ([zha docs])
+- Remove indents and decrease long string in template config file ([@Petro31] - [#155340])
+- Fix flakey ecovacs tests ([@bdraco] - [#155387])
+- Update `denonavr` to 1.2.0 ([@ol-iver] - [#155385])
+- Spelling error found in strings.json for Rainmachine ([@mishmanners] - [#155381])
+- Add translation for Shelly Fifth button ([@thecode] - [#155377])
+- Fix device identifiers in ping and add migration ([@jpbede] - [#155343])
+- Bump aioesphomeapi to 42.4.0 ([@bdraco] - [#155383])
+- Refactor Velux integration to use runtime_data ([@wollew] - [#155207])
+- Bump pyportainer 1.0.11 ([@erwindouna] - [#155394])
+- Add Matter Aqara Floor Heating Thermostat W500 fixture ([@lboue] - [#155396])
+- Use a config entry migration instead of migrating in async_setup in Ping ([@jpbede] - [#155403])
+- Add sensors for Tuya cat toilet ([@epenet] - [#155245])
+- Bump ZHA to 0.0.75 ([@TheJulianJES] - [#155389])
+- Bump aioamazondevices to 6.5.5 ([@chemelli74] - [#155408])
+- Add image platform to Xbox integration ([@tr4nt0r] - [#155369])
+- Bump Airthings BLE to 1.2.0 ([@LaStrada] - [#155386])
+- Add next alarm/reminder/timer sensors to Alexa Devices ([@chemelli74] - [#153576])
+- Use runtime_data in sfr_box ([@epenet] - [#155410])
+- Update Switcher actions exceptions ([@thecode] - [#155296])
+- Auto refresh hardware integration firmware update entities on setup ([@puddly] - [#154562])
+- Remove neato integration ([@mib1185] - [#154902])
+- Add support for translation_placeholders in zha ([@epenet] - [#155254])
 - Remove legacy platform support from translations ([@arturpragacz] - [#155178])
-- Update Watergate dependency to 2025.1.0 ([@adam-the-hero] - [#155393]) ([watergate docs])
-- Bump pySwitchbot to 0.72.1 ([@zerzhang] - [#155415]) ([switchbot docs])
-- Attach Ping device tracker to Ping device ([@jpbede] - [#155399]) ([ping docs])
+- Update Watergate dependency to 2025.1.0 ([@adam-the-hero] - [#155393])
+- Bump pySwitchbot to 0.72.1 ([@zerzhang] - [#155415])
+- Attach Ping device tracker to Ping device ([@jpbede] - [#155399])
 - Clear caplog in Ecovacs tests ([@edenhaus] - [#155404])
-- Beta firmware update switch for Connect integrations ([@puddly] - [#155370]) ([homeassistant_yellow docs]) ([homeassistant_sky_connect docs]) ([homeassistant_hardware docs]) ([homeassistant_connect_zbt2 docs])
-- Add reconfigure flow to nederlandse_spoorwegen ([@heindrichpaul] - [#155412]) ([nederlandse_spoorwegen docs])
-- Add base entity to sfr_box ([@epenet] - [#155418]) ([sfr_box docs])
-- Mark Switcher removal instructions as done ([@thecode] - [#155414]) ([switcher_kis docs])
-- Add missing data_description to sfr_box ([@epenet] - [#155420]) ([sfr_box docs])
-- Use API token authentiation in traccar_server ([@pantherale0] - [#155297]) ([traccar_server docs]) (breaking-change)
+- Beta firmware update switch for Connect integrations ([@puddly] - [#155370])
+- Add reconfigure flow to nederlandse_spoorwegen ([@heindrichpaul] - [#155412])
+- Add base entity to sfr_box ([@epenet] - [#155418])
+- Mark Switcher removal instructions as done ([@thecode] - [#155414])
+- Add missing data_description to sfr_box ([@epenet] - [#155420])
+- Use API token authentiation in traccar_server ([@pantherale0] - [#155297])
+- Fix ZBT and Yellow `switch` unit tests ([@puddly] - [#155426])
+- Update IQS for Switcher integration to silver ([@thecode] - [#155425])
+- Ensure api_server is defined in dev ([@ludeeus] - [#155422])
+- Hide HA Connect Zigbee adapters in Z-Wave serial port selector ([@TheJulianJES] - [#154923])
+- Bump universal-silabs-flasher to 0.0.37 ([@puddly] - [#155421])
+- Fix translation references to unverified translations ([@arturpragacz] - [#155314])
+- Use satellite area in fuzzy matcher ([@synesthesiam] - [#155347])
+- Update frontend to 20251029.0 ([@bramkragten] - [#155432])
+- Validate devices connected to Nintendo Parental Controls accounts ([@pantherale0] - [#154873])
+- Add configuration_url to iometer ([@torben-iometer] - [#155429])
+- Update library version for VegeHub integration ([@Thulrus] - [#155360])
+- Bump hass-nabucasa from 1.4.0 to 1.5.1 ([@ludeeus] - [#155424])
+- Deprecate legacy Telegram notify service ([@hanwg] - [#150720])
+- Miele RestoreSensor: restore native value rather than stringified state ([@aturri] - [#152750])
+- Mock async_setup_entry in BMW Connected Drive config flow test ([@abmantis] - [#155446])
+- Bump pyportainer 1.0.12 ([@erwindouna] - [#155468])
+- Bump PyCync to 0.4.3 ([@Kinachi249] - [#155477])
+- Bump librehardwaremonitor-api to 1.5.0 ([@Sab44] - [#155492])
+- Firefly fix config flow ([@erwindouna] - [#155503])
+- Update frontend to 20251029.1 ([@bramkragten] - [#155513])
+- Hassfest check for invalid localization placeholders ([@karwosts] - [#155216])
+- Addon progress reporting follow-up from feedback ([@mdegat01] - [#155464])
+- Bump opower to 0.15.9 ([@tronikos] - [#155473])
+- Update regions and voices used by Amazon Polly ([@jschlyter] - [#155501])
+- Fix event entity state update for Telegram bot ([@hanwg] - [#155510])
+- Fix Shelly irrigation zone ID retrieval with Sleepy devices ([@thecode] - [#155514])
+- Portainer refactor CONF_VERIFY_SSL ([@erwindouna] - [#155520])
+- Bump uv to 0.9.6 ([@edenhaus] - [#155521])
+- Bump pyvesync to 3.1.4 ([@cdnninja] - [#155533])
+- Bump eheimdigital to 1.4.0 ([@autinerd] - [#155539])
+- Bump onedrive-personal-sdk to 0.0.15 ([@zweckj] - [#155540])
+- Update pynintendoparental to version 1.1.3 ([@pantherale0] - [#155568])
+- Update knx-frontend to 2025.10.31.195356 ([@farmio] - [#155569])
+- vesync don't assume fan speed target ([@cdnninja] - [#155617])
+- Bump deebot-client to 16.2.0 ([@edenhaus] - [#155642])
+- Fix device tracker name & icon for Volvo integration ([@thomasddn] - [#155667])
+- Bump deebot-client to 16.3.0 ([@edenhaus] - [#155681])
+- Fix KNX climate loading min/max temp from UI config ([@farmio] - [#155682])
+- Revert "Remove neato integration (#154902)" ([@mib1185] - [#155685])
+- Bump reolink_aio to 0.16.3 ([@starkillerOG] - [#155692])
+- fix vesync mist level value ([@cdnninja] - [#155697])
+- Bump python-open-router to 0.3.2 ([@joostlek] - [#155700])
+- Bump aioamazondevices to 6.5.6 ([@chemelli74] - [#155723])
+- Update frontend to 20251103.0 ([@bramkragten] - [#155734])
+- Use character code in language matching (voice) ([@synesthesiam] - [#155738])
+- Disable deprecated addon repair ([@mdegat01] - [#155739])
+- Fix non-unique ZHA serial port paths and migrate USB integration to always list unique paths ([@puddly] - [#155019])
+- Remove Enmax Energy virtual integration ([@tronikos] - [#155475])
+- Add ZHA migration retry steps for unplugged adapters ([@TheJulianJES] - [#155537])
+- Correct Vesync Humidifier Mode ([@cdnninja] - [#155638])
+- Fix ZBT-2 Thread to Zigbee migration discovery failing ([@TheJulianJES] - [#155735])
+- Catch exception from libsoundtouch if device not available ([@FredrikM97] - [#155749])
+- Fix Ambient Weather incorrect state classes ([@karwosts] - [#155751])
+- Bump Tesla Fleet API to v1.2.5 ([@Bre77] - [#155763])
+- Bump ZHA to 0.0.77 ([@puddly] - [#155766])
+- Update python-smarttub to 0.0.45 ([@mdz] - [#155768])
+- Bump reolink-aio to 0.16.4 ([@starkillerOG] - [#155776])
+- Rename safety panel to security panel ([@piitaya] - [#155795])
+- Update frontend to 20251104.0 ([@bramkragten] - [#155799])
+- Bump ruuvitag-ble to 0.3.0 ([@akx] - [#155720])
+- Bugfix: implement RestoreState and bump backend for Plugwise climate ([@bouwew] - [#155126])
+- Add progress to ZHA migration steps ([@puddly] - [#155764])
+- Bump holidays to 0.84 ([@gjohansson-ST] - [#155802])
+- Set LG Thinq energy sensor state_class as total_increasing ([@steinmn] - [#155816])
+- Bump pylitterbot to 2025.0.0 ([@natekspencer] - [#155821])
+- Bump libpyfoscamcgi to 0.0.9 ([@Foscam-wangzhengyu] - [#155824])
+- Fix ESPHome config entry unload ([@emontnemery] - [#155830])
+- Create issue to warn against using http.server_host in supervised installs ([@emontnemery] - [#155837])
+- Update frontend to 20251105.0 ([@bramkragten] - [#155853])
+- Allow hardware integrations to specify TX power for ZHA ([@puddly] - [#155855])
+- Rename DALI Center to Sunricher DALI ([@balloob] - [#155865])
 
 [#125595]: https://github.com/home-assistant/core/pull/125595
 [#126058]: https://github.com/home-assistant/core/pull/126058
@@ -1009,6 +1079,7 @@ For a summary in a more readable format
 [#150393]: https://github.com/home-assistant/core/pull/150393
 [#150508]: https://github.com/home-assistant/core/pull/150508
 [#150553]: https://github.com/home-assistant/core/pull/150553
+[#150720]: https://github.com/home-assistant/core/pull/150720
 [#150970]: https://github.com/home-assistant/core/pull/150970
 [#151009]: https://github.com/home-assistant/core/pull/151009
 [#151034]: https://github.com/home-assistant/core/pull/151034
@@ -1048,6 +1119,7 @@ For a summary in a more readable format
 [#152712]: https://github.com/home-assistant/core/pull/152712
 [#152732]: https://github.com/home-assistant/core/pull/152732
 [#152740]: https://github.com/home-assistant/core/pull/152740
+[#152750]: https://github.com/home-assistant/core/pull/152750
 [#152772]: https://github.com/home-assistant/core/pull/152772
 [#152794]: https://github.com/home-assistant/core/pull/152794
 [#152845]: https://github.com/home-assistant/core/pull/152845
@@ -1715,6 +1787,7 @@ For a summary in a more readable format
 [#154867]: https://github.com/home-assistant/core/pull/154867
 [#154870]: https://github.com/home-assistant/core/pull/154870
 [#154872]: https://github.com/home-assistant/core/pull/154872
+[#154873]: https://github.com/home-assistant/core/pull/154873
 [#154875]: https://github.com/home-assistant/core/pull/154875
 [#154886]: https://github.com/home-assistant/core/pull/154886
 [#154891]: https://github.com/home-assistant/core/pull/154891
@@ -1729,6 +1802,7 @@ For a summary in a more readable format
 [#154911]: https://github.com/home-assistant/core/pull/154911
 [#154912]: https://github.com/home-assistant/core/pull/154912
 [#154914]: https://github.com/home-assistant/core/pull/154914
+[#154923]: https://github.com/home-assistant/core/pull/154923
 [#154925]: https://github.com/home-assistant/core/pull/154925
 [#154927]: https://github.com/home-assistant/core/pull/154927
 [#154931]: https://github.com/home-assistant/core/pull/154931
@@ -1752,6 +1826,7 @@ For a summary in a more readable format
 [#155006]: https://github.com/home-assistant/core/pull/155006
 [#155009]: https://github.com/home-assistant/core/pull/155009
 [#155017]: https://github.com/home-assistant/core/pull/155017
+[#155019]: https://github.com/home-assistant/core/pull/155019
 [#155026]: https://github.com/home-assistant/core/pull/155026
 [#155028]: https://github.com/home-assistant/core/pull/155028
 [#155030]: https://github.com/home-assistant/core/pull/155030
@@ -1785,6 +1860,7 @@ For a summary in a more readable format
 [#155120]: https://github.com/home-assistant/core/pull/155120
 [#155121]: https://github.com/home-assistant/core/pull/155121
 [#155124]: https://github.com/home-assistant/core/pull/155124
+[#155126]: https://github.com/home-assistant/core/pull/155126
 [#155134]: https://github.com/home-assistant/core/pull/155134
 [#155137]: https://github.com/home-assistant/core/pull/155137
 [#155138]: https://github.com/home-assistant/core/pull/155138
@@ -1819,6 +1895,7 @@ For a summary in a more readable format
 [#155205]: https://github.com/home-assistant/core/pull/155205
 [#155207]: https://github.com/home-assistant/core/pull/155207
 [#155214]: https://github.com/home-assistant/core/pull/155214
+[#155216]: https://github.com/home-assistant/core/pull/155216
 [#155222]: https://github.com/home-assistant/core/pull/155222
 [#155226]: https://github.com/home-assistant/core/pull/155226
 [#155227]: https://github.com/home-assistant/core/pull/155227
@@ -1855,6 +1932,7 @@ For a summary in a more readable format
 [#155304]: https://github.com/home-assistant/core/pull/155304
 [#155305]: https://github.com/home-assistant/core/pull/155305
 [#155309]: https://github.com/home-assistant/core/pull/155309
+[#155314]: https://github.com/home-assistant/core/pull/155314
 [#155317]: https://github.com/home-assistant/core/pull/155317
 [#155319]: https://github.com/home-assistant/core/pull/155319
 [#155320]: https://github.com/home-assistant/core/pull/155320
@@ -1873,6 +1951,7 @@ For a summary in a more readable format
 [#155343]: https://github.com/home-assistant/core/pull/155343
 [#155345]: https://github.com/home-assistant/core/pull/155345
 [#155346]: https://github.com/home-assistant/core/pull/155346
+[#155347]: https://github.com/home-assistant/core/pull/155347
 [#155349]: https://github.com/home-assistant/core/pull/155349
 [#155350]: https://github.com/home-assistant/core/pull/155350
 [#155351]: https://github.com/home-assistant/core/pull/155351
@@ -1880,6 +1959,7 @@ For a summary in a more readable format
 [#155356]: https://github.com/home-assistant/core/pull/155356
 [#155357]: https://github.com/home-assistant/core/pull/155357
 [#155358]: https://github.com/home-assistant/core/pull/155358
+[#155360]: https://github.com/home-assistant/core/pull/155360
 [#155363]: https://github.com/home-assistant/core/pull/155363
 [#155368]: https://github.com/home-assistant/core/pull/155368
 [#155369]: https://github.com/home-assistant/core/pull/155369
@@ -1907,6 +1987,67 @@ For a summary in a more readable format
 [#155415]: https://github.com/home-assistant/core/pull/155415
 [#155418]: https://github.com/home-assistant/core/pull/155418
 [#155420]: https://github.com/home-assistant/core/pull/155420
+[#155421]: https://github.com/home-assistant/core/pull/155421
+[#155422]: https://github.com/home-assistant/core/pull/155422
+[#155424]: https://github.com/home-assistant/core/pull/155424
+[#155425]: https://github.com/home-assistant/core/pull/155425
+[#155426]: https://github.com/home-assistant/core/pull/155426
+[#155429]: https://github.com/home-assistant/core/pull/155429
+[#155432]: https://github.com/home-assistant/core/pull/155432
+[#155446]: https://github.com/home-assistant/core/pull/155446
+[#155464]: https://github.com/home-assistant/core/pull/155464
+[#155468]: https://github.com/home-assistant/core/pull/155468
+[#155473]: https://github.com/home-assistant/core/pull/155473
+[#155475]: https://github.com/home-assistant/core/pull/155475
+[#155477]: https://github.com/home-assistant/core/pull/155477
+[#155492]: https://github.com/home-assistant/core/pull/155492
+[#155501]: https://github.com/home-assistant/core/pull/155501
+[#155503]: https://github.com/home-assistant/core/pull/155503
+[#155510]: https://github.com/home-assistant/core/pull/155510
+[#155513]: https://github.com/home-assistant/core/pull/155513
+[#155514]: https://github.com/home-assistant/core/pull/155514
+[#155520]: https://github.com/home-assistant/core/pull/155520
+[#155521]: https://github.com/home-assistant/core/pull/155521
+[#155533]: https://github.com/home-assistant/core/pull/155533
+[#155537]: https://github.com/home-assistant/core/pull/155537
+[#155539]: https://github.com/home-assistant/core/pull/155539
+[#155540]: https://github.com/home-assistant/core/pull/155540
+[#155568]: https://github.com/home-assistant/core/pull/155568
+[#155569]: https://github.com/home-assistant/core/pull/155569
+[#155617]: https://github.com/home-assistant/core/pull/155617
+[#155638]: https://github.com/home-assistant/core/pull/155638
+[#155642]: https://github.com/home-assistant/core/pull/155642
+[#155667]: https://github.com/home-assistant/core/pull/155667
+[#155681]: https://github.com/home-assistant/core/pull/155681
+[#155682]: https://github.com/home-assistant/core/pull/155682
+[#155685]: https://github.com/home-assistant/core/pull/155685
+[#155692]: https://github.com/home-assistant/core/pull/155692
+[#155697]: https://github.com/home-assistant/core/pull/155697
+[#155700]: https://github.com/home-assistant/core/pull/155700
+[#155720]: https://github.com/home-assistant/core/pull/155720
+[#155723]: https://github.com/home-assistant/core/pull/155723
+[#155734]: https://github.com/home-assistant/core/pull/155734
+[#155735]: https://github.com/home-assistant/core/pull/155735
+[#155738]: https://github.com/home-assistant/core/pull/155738
+[#155739]: https://github.com/home-assistant/core/pull/155739
+[#155749]: https://github.com/home-assistant/core/pull/155749
+[#155751]: https://github.com/home-assistant/core/pull/155751
+[#155763]: https://github.com/home-assistant/core/pull/155763
+[#155764]: https://github.com/home-assistant/core/pull/155764
+[#155766]: https://github.com/home-assistant/core/pull/155766
+[#155768]: https://github.com/home-assistant/core/pull/155768
+[#155776]: https://github.com/home-assistant/core/pull/155776
+[#155795]: https://github.com/home-assistant/core/pull/155795
+[#155799]: https://github.com/home-assistant/core/pull/155799
+[#155802]: https://github.com/home-assistant/core/pull/155802
+[#155816]: https://github.com/home-assistant/core/pull/155816
+[#155821]: https://github.com/home-assistant/core/pull/155821
+[#155824]: https://github.com/home-assistant/core/pull/155824
+[#155830]: https://github.com/home-assistant/core/pull/155830
+[#155837]: https://github.com/home-assistant/core/pull/155837
+[#155853]: https://github.com/home-assistant/core/pull/155853
+[#155855]: https://github.com/home-assistant/core/pull/155855
+[#155865]: https://github.com/home-assistant/core/pull/155865
 [@0xFaul]: https://github.com/0xFaul
 [@AJ-SM]: https://github.com/AJ-SM
 [@Abestanis]: https://github.com/Abestanis
@@ -1928,6 +2069,7 @@ For a summary in a more readable format
 [@Eskander]: https://github.com/Eskander
 [@FMKaiba]: https://github.com/FMKaiba
 [@Foscam-wangzhengyu]: https://github.com/Foscam-wangzhengyu
+[@FredrikM97]: https://github.com/FredrikM97
 [@G-Two]: https://github.com/G-Two
 [@HarlemSquirrel]: https://github.com/HarlemSquirrel
 [@HarvsG]: https://github.com/HarvsG
@@ -1976,6 +2118,7 @@ For a summary in a more readable format
 [@arturpragacz]: https://github.com/arturpragacz
 [@asafhas]: https://github.com/asafhas
 [@astrandb]: https://github.com/astrandb
+[@aturri]: https://github.com/aturri
 [@autinerd]: https://github.com/autinerd
 [@avee87]: https://github.com/avee87
 [@aviadlevy]: https://github.com/aviadlevy
@@ -1986,6 +2129,7 @@ For a summary in a more readable format
 [@bieniu]: https://github.com/bieniu
 [@bj00rn]: https://github.com/bj00rn
 [@bouwew]: https://github.com/bouwew
+[@bramkragten]: https://github.com/bramkragten
 [@carlos-sarmiento]: https://github.com/carlos-sarmiento
 [@catsmanac]: https://github.com/catsmanac
 [@cdce8p]: https://github.com/cdce8p
@@ -1997,7 +2141,6 @@ For a summary in a more readable format
 [@davidrapan]: https://github.com/davidrapan
 [@davidrecordon]: https://github.com/davidrecordon
 [@decompil3d]: https://github.com/decompil3d
-[@dependabot]: https://github.com/apps/dependabot
 [@dollaransh17]: https://github.com/dollaransh17
 [@edenhaus]: https://github.com/edenhaus
 [@ehendrix23]: https://github.com/ehendrix23
@@ -2037,6 +2180,7 @@ For a summary in a more readable format
 [@joostlek]: https://github.com/joostlek
 [@jpbede]: https://github.com/jpbede
 [@jpelgrom]: https://github.com/jpelgrom
+[@jschlyter]: https://github.com/jschlyter
 [@jukrebs]: https://github.com/jukrebs
 [@jvmahon]: https://github.com/jvmahon
 [@karwosts]: https://github.com/karwosts
@@ -2056,6 +2200,7 @@ For a summary in a more readable format
 [@ludeeus]: https://github.com/ludeeus
 [@mbo18]: https://github.com/mbo18
 [@mdegat01]: https://github.com/mdegat01
+[@mdz]: https://github.com/mdz
 [@mgust]: https://github.com/mgust
 [@mib1185]: https://github.com/mib1185
 [@michaeldavie]: https://github.com/michaeldavie
@@ -2091,6 +2236,7 @@ For a summary in a more readable format
 [@thecode]: https://github.com/thecode
 [@thomasddn]: https://github.com/thomasddn
 [@timmo001]: https://github.com/timmo001
+[@torben-iometer]: https://github.com/torben-iometer
 [@tr4nt0r]: https://github.com/tr4nt0r
 [@tronikos]: https://github.com/tronikos
 [@vasililiev]: https://github.com/vasililiev
@@ -2103,333 +2249,3 @@ For a summary in a more readable format
 [@yohaybn]: https://github.com/yohaybn
 [@zerzhang]: https://github.com/zerzhang
 [@zweckj]: https://github.com/zweckj
-[acaia docs]: /integrations/acaia/
-[actronair_neo docs]: /integrations/actronair_neo/
-[adax docs]: /integrations/adax/
-[aemet docs]: /integrations/aemet/
-[ai_task docs]: /integrations/ai_task/
-[airly docs]: /integrations/airly/
-[airos docs]: /integrations/airos/
-[airq docs]: /integrations/airq/
-[airthings docs]: /integrations/airthings/
-[airthings_ble docs]: /integrations/airthings_ble/
-[alarm_control_panel docs]: /integrations/alarm_control_panel/
-[alexa_devices docs]: /integrations/alexa_devices/
-[altruist docs]: /integrations/altruist/
-[analytics docs]: /integrations/analytics/
-[analytics_insights docs]: /integrations/analytics_insights/
-[androidtv_remote docs]: /integrations/androidtv_remote/
-[anthropic docs]: /integrations/anthropic/
-[aosmith docs]: /integrations/aosmith/
-[aprilaire docs]: /integrations/aprilaire/
-[assist_pipeline docs]: /integrations/assist_pipeline/
-[assist_satellite docs]: /integrations/assist_satellite/
-[asuswrt docs]: /integrations/asuswrt/
-[autarco docs]: /integrations/autarco/
-[auth docs]: /integrations/auth/
-[axis docs]: /integrations/axis/
-[backup docs]: /integrations/backup/
-[bang_olufsen docs]: /integrations/bang_olufsen/
-[bayesian docs]: /integrations/bayesian/
-[blink docs]: /integrations/blink/
-[blue_current docs]: /integrations/blue_current/
-[bluesound docs]: /integrations/bluesound/
-[bluetooth docs]: /integrations/bluetooth/
-[brother docs]: /integrations/brother/
-[bryant_evolution docs]: /integrations/bryant_evolution/
-[bsblan docs]: /integrations/bsblan/
-[bthome docs]: /integrations/bthome/
-[caldav docs]: /integrations/caldav/
-[camera docs]: /integrations/camera/
-[cast docs]: /integrations/cast/
-[cert_expiry docs]: /integrations/cert_expiry/
-[citybikes docs]: /integrations/citybikes/
-[cloud docs]: /integrations/cloud/
-[co2signal docs]: /integrations/co2signal/
-[comelit docs]: /integrations/comelit/
-[comfoconnect docs]: /integrations/comfoconnect/
-[compit docs]: /integrations/compit/
-[config docs]: /integrations/config/
-[control4 docs]: /integrations/control4/
-[conversation docs]: /integrations/conversation/
-[cover docs]: /integrations/cover/
-[cync docs]: /integrations/cync/
-[daikin docs]: /integrations/daikin/
-[dali_center docs]: /integrations/dali_center/
-[deconz docs]: /integrations/deconz/
-[demo docs]: /integrations/demo/
-[denonavr docs]: /integrations/denonavr/
-[derivative docs]: /integrations/derivative/
-[device_automation docs]: /integrations/device_automation/
-[device_tracker docs]: /integrations/device_tracker/
-[devolo_home_control docs]: /integrations/devolo_home_control/
-[devolo_home_network docs]: /integrations/devolo_home_network/
-[dhcp docs]: /integrations/dhcp/
-[dnsip docs]: /integrations/dnsip/
-[downloader docs]: /integrations/downloader/
-[dsmr_reader docs]: /integrations/dsmr_reader/
-[ecovacs docs]: /integrations/ecovacs/
-[ecowitt docs]: /integrations/ecowitt/
-[eheimdigital docs]: /integrations/eheimdigital/
-[elevenlabs docs]: /integrations/elevenlabs/
-[energy docs]: /integrations/energy/
-[enphase_envoy docs]: /integrations/enphase_envoy/
-[environment_canada docs]: /integrations/environment_canada/
-[epson docs]: /integrations/epson/
-[eq3btsmart docs]: /integrations/eq3btsmart/
-[esphome docs]: /integrations/esphome/
-[evohome docs]: /integrations/evohome/
-[fastdotcom docs]: /integrations/fastdotcom/
-[feedreader docs]: /integrations/feedreader/
-[ffmpeg_noise docs]: /integrations/ffmpeg_noise/
-[filter docs]: /integrations/filter/
-[fing docs]: /integrations/fing/
-[firefly_iii docs]: /integrations/firefly_iii/
-[foscam docs]: /integrations/foscam/
-[freebox docs]: /integrations/freebox/
-[freedompro docs]: /integrations/freedompro/
-[fritz docs]: /integrations/fritz/
-[fritzbox docs]: /integrations/fritzbox/
-[frontend docs]: /integrations/frontend/
-[fully_kiosk docs]: /integrations/fully_kiosk/
-[gardena_bluetooth docs]: /integrations/gardena_bluetooth/
-[generic docs]: /integrations/generic/
-[generic_hygrostat docs]: /integrations/generic_hygrostat/
-[generic_thermostat docs]: /integrations/generic_thermostat/
-[github docs]: /integrations/github/
-[go2rtc docs]: /integrations/go2rtc/
-[goodwe docs]: /integrations/goodwe/
-[google_assistant_sdk docs]: /integrations/google_assistant_sdk/
-[google_drive docs]: /integrations/google_drive/
-[google_generative_ai_conversation docs]: /integrations/google_generative_ai_conversation/
-[google_mail docs]: /integrations/google_mail/
-[google_sheets docs]: /integrations/google_sheets/
-[google_travel_time docs]: /integrations/google_travel_time/
-[group docs]: /integrations/group/
-[growatt_server docs]: /integrations/growatt_server/
-[habitica docs]: /integrations/habitica/
-[hardkernel docs]: /integrations/hardkernel/
-[hardware docs]: /integrations/hardware/
-[harmony docs]: /integrations/harmony/
-[hassio docs]: /integrations/hassio/
-[heos docs]: /integrations/heos/
-[history docs]: /integrations/history/
-[history_stats docs]: /integrations/history_stats/
-[home_connect docs]: /integrations/home_connect/
-[homeassistant docs]: /integrations/homeassistant/
-[homeassistant_alerts docs]: /integrations/homeassistant_alerts/
-[homeassistant_connect_zbt2 docs]: /integrations/homeassistant_connect_zbt2/
-[homeassistant_green docs]: /integrations/homeassistant_green/
-[homeassistant_hardware docs]: /integrations/homeassistant_hardware/
-[homeassistant_sky_connect docs]: /integrations/homeassistant_sky_connect/
-[homeassistant_yellow docs]: /integrations/homeassistant_yellow/
-[homee docs]: /integrations/homee/
-[homekit docs]: /integrations/homekit/
-[homekit_controller docs]: /integrations/homekit_controller/
-[homematicip_cloud docs]: /integrations/homematicip_cloud/
-[homewizard docs]: /integrations/homewizard/
-[honeywell docs]: /integrations/honeywell/
-[http docs]: /integrations/http/
-[huawei_lte docs]: /integrations/huawei_lte/
-[husqvarna_automower docs]: /integrations/husqvarna_automower/
-[husqvarna_automower_ble docs]: /integrations/husqvarna_automower_ble/
-[hydrawise docs]: /integrations/hydrawise/
-[icloud docs]: /integrations/icloud/
-[idasen_desk docs]: /integrations/idasen_desk/
-[imap docs]: /integrations/imap/
-[imeon_inverter docs]: /integrations/imeon_inverter/
-[imgw_pib docs]: /integrations/imgw_pib/
-[immich docs]: /integrations/immich/
-[improv_ble docs]: /integrations/improv_ble/
-[inels docs]: /integrations/inels/
-[intellifire docs]: /integrations/intellifire/
-[iometer docs]: /integrations/iometer/
-[ipp docs]: /integrations/ipp/
-[iron_os docs]: /integrations/iron_os/
-[israel_rail docs]: /integrations/israel_rail/
-[jewish_calendar docs]: /integrations/jewish_calendar/
-[kegtron docs]: /integrations/kegtron/
-[knx docs]: /integrations/knx/
-[kraken docs]: /integrations/kraken/
-[lamarzocco docs]: /integrations/lamarzocco/
-[ld2410_ble docs]: /integrations/ld2410_ble/
-[led_ble docs]: /integrations/led_ble/
-[letpot docs]: /integrations/letpot/
-[lg_thinq docs]: /integrations/lg_thinq/
-[libre_hardware_monitor docs]: /integrations/libre_hardware_monitor/
-[litterrobot docs]: /integrations/litterrobot/
-[local_file docs]: /integrations/local_file/
-[local_todo docs]: /integrations/local_todo/
-[lock docs]: /integrations/lock/
-[logbook docs]: /integrations/logbook/
-[london_underground docs]: /integrations/london_underground/
-[luci docs]: /integrations/luci/
-[lunatone docs]: /integrations/lunatone/
-[lyric docs]: /integrations/lyric/
-[matrix docs]: /integrations/matrix/
-[matter docs]: /integrations/matter/
-[mcp docs]: /integrations/mcp/
-[mcp_server docs]: /integrations/mcp_server/
-[mealie docs]: /integrations/mealie/
-[media_extractor docs]: /integrations/media_extractor/
-[media_player docs]: /integrations/media_player/
-[melcloud docs]: /integrations/melcloud/
-[melissa docs]: /integrations/melissa/
-[meteo_lt docs]: /integrations/meteo_lt/
-[metoffice docs]: /integrations/metoffice/
-[miele docs]: /integrations/miele/
-[mill docs]: /integrations/mill/
-[min_max docs]: /integrations/min_max/
-[minecraft_server docs]: /integrations/minecraft_server/
-[mobile_app docs]: /integrations/mobile_app/
-[mold_indicator docs]: /integrations/mold_indicator/
-[monoprice docs]: /integrations/monoprice/
-[motion_blinds docs]: /integrations/motion_blinds/
-[motionblinds_ble docs]: /integrations/motionblinds_ble/
-[motioneye docs]: /integrations/motioneye/
-[mqtt docs]: /integrations/mqtt/
-[music_assistant docs]: /integrations/music_assistant/
-[myuplink docs]: /integrations/myuplink/
-[nasweb docs]: /integrations/nasweb/
-[neato docs]: /integrations/neato/
-[nederlandse_spoorwegen docs]: /integrations/nederlandse_spoorwegen/
-[nextcloud docs]: /integrations/nextcloud/
-[nextdns docs]: /integrations/nextdns/
-[nibe_heatpump docs]: /integrations/nibe_heatpump/
-[niko_home_control docs]: /integrations/niko_home_control/
-[nina docs]: /integrations/nina/
-[nintendo_parental docs]: /integrations/nintendo_parental/
-[nintendo_parental_controls docs]: /integrations/nintendo_parental_controls/
-[nmap_tracker docs]: /integrations/nmap_tracker/
-[nordpool docs]: /integrations/nordpool/
-[ntfy docs]: /integrations/ntfy/
-[number docs]: /integrations/number/
-[octoprint docs]: /integrations/octoprint/
-[ollama docs]: /integrations/ollama/
-[onedrive docs]: /integrations/onedrive/
-[onewire docs]: /integrations/onewire/
-[onkyo docs]: /integrations/onkyo/
-[onvif docs]: /integrations/onvif/
-[open_router docs]: /integrations/open_router/
-[openai_conversation docs]: /integrations/openai_conversation/
-[openrgb docs]: /integrations/openrgb/
-[openuv docs]: /integrations/openuv/
-[openweathermap docs]: /integrations/openweathermap/
-[oralb docs]: /integrations/oralb/
-[osoenergy docs]: /integrations/osoenergy/
-[overkiz docs]: /integrations/overkiz/
-[ovo_energy docs]: /integrations/ovo_energy/
-[pandora docs]: /integrations/pandora/
-[ping docs]: /integrations/ping/
-[playstation_network docs]: /integrations/playstation_network/
-[plex docs]: /integrations/plex/
-[plugwise docs]: /integrations/plugwise/
-[plum_lightpad docs]: /integrations/plum_lightpad/
-[pooldose docs]: /integrations/pooldose/
-[portainer docs]: /integrations/portainer/
-[private_ble_device docs]: /integrations/private_ble_device/
-[probe_plus docs]: /integrations/probe_plus/
-[prowl docs]: /integrations/prowl/
-[ps4 docs]: /integrations/ps4/
-[python_script docs]: /integrations/python_script/
-[qbittorrent docs]: /integrations/qbittorrent/
-[rainmachine docs]: /integrations/rainmachine/
-[random docs]: /integrations/random/
-[rapt_ble docs]: /integrations/rapt_ble/
-[raspberry_pi docs]: /integrations/raspberry_pi/
-[raspyrfm docs]: /integrations/raspyrfm/
-[recorder docs]: /integrations/recorder/
-[remote_calendar docs]: /integrations/remote_calendar/
-[renault docs]: /integrations/renault/
-[reolink docs]: /integrations/reolink/
-[rest docs]: /integrations/rest/
-[roborock docs]: /integrations/roborock/
-[roomba docs]: /integrations/roomba/
-[route_b_smart_meter docs]: /integrations/route_b_smart_meter/
-[russound_rio docs]: /integrations/russound_rio/
-[satel_integra docs]: /integrations/satel_integra/
-[scrape docs]: /integrations/scrape/
-[sensibo docs]: /integrations/sensibo/
-[sensor docs]: /integrations/sensor/
-[sfr_box docs]: /integrations/sfr_box/
-[sharkiq docs]: /integrations/sharkiq/
-[shelly docs]: /integrations/shelly/
-[sleep_as_android docs]: /integrations/sleep_as_android/
-[sma docs]: /integrations/sma/
-[smartthings docs]: /integrations/smartthings/
-[smhi docs]: /integrations/smhi/
-[snapcast docs]: /integrations/snapcast/
-[snoo docs]: /integrations/snoo/
-[solaredge docs]: /integrations/solaredge/
-[sonos docs]: /integrations/sonos/
-[sql docs]: /integrations/sql/
-[squeezebox docs]: /integrations/squeezebox/
-[starline docs]: /integrations/starline/
-[subaru docs]: /integrations/subaru/
-[suez_water docs]: /integrations/suez_water/
-[sun docs]: /integrations/sun/
-[switch_as_x docs]: /integrations/switch_as_x/
-[switchbot docs]: /integrations/switchbot/
-[switchbot_cloud docs]: /integrations/switchbot_cloud/
-[switcher_kis docs]: /integrations/switcher_kis/
-[synology_dsm docs]: /integrations/synology_dsm/
-[system_bridge docs]: /integrations/system_bridge/
-[systemmonitor docs]: /integrations/systemmonitor/
-[tado docs]: /integrations/tado/
-[tankerkoenig docs]: /integrations/tankerkoenig/
-[tautulli docs]: /integrations/tautulli/
-[telegram_bot docs]: /integrations/telegram_bot/
-[template docs]: /integrations/template/
-[tesla_fleet docs]: /integrations/tesla_fleet/
-[teslemetry docs]: /integrations/teslemetry/
-[tessie docs]: /integrations/tessie/
-[thethingsnetwork docs]: /integrations/thethingsnetwork/
-[thread docs]: /integrations/thread/
-[tilt_ble docs]: /integrations/tilt_ble/
-[tod docs]: /integrations/tod/
-[todoist docs]: /integrations/todoist/
-[togrill docs]: /integrations/togrill/
-[tolo docs]: /integrations/tolo/
-[traccar_server docs]: /integrations/traccar_server/
-[transmission docs]: /integrations/transmission/
-[trend docs]: /integrations/trend/
-[tuya docs]: /integrations/tuya/
-[unifi docs]: /integrations/unifi/
-[unifiprotect docs]: /integrations/unifiprotect/
-[upcloud docs]: /integrations/upcloud/
-[uptime_kuma docs]: /integrations/uptime_kuma/
-[uptimerobot docs]: /integrations/uptimerobot/
-[utility_meter docs]: /integrations/utility_meter/
-[vacuum docs]: /integrations/vacuum/
-[vegehub docs]: /integrations/vegehub/
-[velbus docs]: /integrations/velbus/
-[velux docs]: /integrations/velux/
-[vera docs]: /integrations/vera/
-[vesync docs]: /integrations/vesync/
-[vicare docs]: /integrations/vicare/
-[victron_remote_monitoring docs]: /integrations/victron_remote_monitoring/
-[vivotek docs]: /integrations/vivotek/
-[vodafone_station docs]: /integrations/vodafone_station/
-[voip docs]: /integrations/voip/
-[volvo docs]: /integrations/volvo/
-[vultr docs]: /integrations/vultr/
-[waqi docs]: /integrations/waqi/
-[water_heater docs]: /integrations/water_heater/
-[watergate docs]: /integrations/watergate/
-[watson_iot docs]: /integrations/watson_iot/
-[weather docs]: /integrations/weather/
-[webostv docs]: /integrations/webostv/
-[websocket_api docs]: /integrations/websocket_api/
-[whirlpool docs]: /integrations/whirlpool/
-[wled docs]: /integrations/wled/
-[worldclock docs]: /integrations/worldclock/
-[wyoming docs]: /integrations/wyoming/
-[xbox docs]: /integrations/xbox/
-[xiaomi_miio docs]: /integrations/xiaomi_miio/
-[xmpp docs]: /integrations/xmpp/
-[yardian docs]: /integrations/yardian/
-[youtube docs]: /integrations/youtube/
-[zeroconf docs]: /integrations/zeroconf/
-[zha docs]: /integrations/zha/
-[zone docs]: /integrations/zone/
-[zwave_js docs]: /integrations/zwave_js/
