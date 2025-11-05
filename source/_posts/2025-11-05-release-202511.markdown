@@ -76,7 +76,7 @@ Context is clearly displayed, as well as how many entities will be targeted.
 
 <img class="no-shadow" alt="Screenshot of a light action configuration with targets picked." src="/images/blog/2025-11/target-picker.png" />
 
-You can even dig deeper into a floor, area, or device in order to understand where these entities are coming from
+You can even dig deeper into a floor, area, or device in order to understand where these entities are coming from.
 
 <img class="no-shadow" alt="Screenshot of the details of a target." src="/images/blog/2025-11/target-details.png" />
 
@@ -92,7 +92,7 @@ The changes are purely cosmetic: the dialog is bigger, so the description of eac
 <img class="no-shadow" alt="Screenshot of the new dialog to add an action." src="/images/blog/2025-11/add-automation-dialog.png" />
 
 The building blocks (which used to perform more complex conditions or sequences of actions, such as repeating actions, or branching out your sequence into multiple paths) have been moved into the main dialog on a second tab.
-There is now a single entry point to add something to an automation instead of two, greatly reducing the number of buttons in complex automation.
+There is now a single entry point to add something to an automation instead of two, greatly reducing the number of buttons in complex automations.
 
 <img class="no-shadow" alt="Screenshot of the new dialog to add a building block to an action." src="/images/blog/2025-11/add-automation-dialog-blocks.png" />
 
@@ -135,78 +135,76 @@ and improvements to existing ones! You’re all awesome 🥰
 
 We welcome the following new integrations in this release:
 
+- **[Actron Air]**, added by [@kclif9]  
+  The Actron Air integration allows you to control Actron Air air conditioning controllers in Home Assistant.
+
+- **[DALI Center]**, added by [@niracler]  
+  Integrate with [DALI Center], a platform for managing and monitoring DALI-based lighting systems.
+
+- **[Fing]**, added by [@Lorenzo-Gasparini]  
+  The [Fing] integration provides network scanning, device detection, and presence monitoring capabilities using the Fing platform.
+
 - **[Firefly III]**, added by [@erwindouna]  
   Integrate with the [Firefly III project], a free open source personal finance manager with full transaction management, budgets, categories, and reports.
+
+- **[iNELS]**, added by [@epdevlab]  
+  Integrate with the [iNELS] smart home system to manage lighting, heating, and automation components for enhanced home control.
+
+- **[Lunatone Gateway]**, added by [@MoonDevLT]  
+  Integrate with [Lunatone Gateway], enabling control and monitoring of DALI lighting systems through Lunatone's DALI gateway interface.
 
 - **[Meteo.lt]**, added by [@xE1H]  
   The Meteo.lt integration uses meteorological data from the [Lithuanian Hydrometeorological Service] (LHMT) to provide regional weather forecasts for locations in Lithuania.
 
-- **[Lunatone Gateway]**, added by [@MoonDevLT]
-  Integrate with [Lunatone Gateway], enabling control and monitoring of DALI lighting systems through Lunatone’s DALI gateway interface.
+- **[Nintendo Parental Controls]**, added by [@pantherale0]  
+  The [Nintendo Parental Controls] integration connects with Nintendo's parental management service, allowing you to monitor and manage device usage and restrictions.
 
-- **[Nintendo Parental Controls]**, added by [@pantherale0]
-  The [Nintendo Parental Controls] integration connects with Nintendo’s parental management service, allowing you to monitor and manage device usage and restrictions.
-
-- **[Actron Air]**, added by [@kclif9]
-  The Actron Air integration allows you to control Actron Air Air Conditioning controllers into Home Assistant.
-
-- **[OpenRGB]**, added by [@felipecrs]
+- **[OpenRGB]**, added by [@felipecrs]  
   The [OpenRGB] integration allows unified control of RGB lighting across various hardware brands and devices through the OpenRGB project.
 
-- **[iNELS]**, added by [@epdevlab]
-  Integrate with the [iNELS] smart home system to manage lighting, heating, and automation components for enhanced home control.
-
-- **[Fing]**, added by [@Lorenzo-Gasparini]
-  The [Fing] integration provides network scanning, device detection, and presence monitoring capabilities using the Fing platform.
-
-- **[DALI Center]**, added by [@niracler]
-  Integrate with [DALI Center], a platform for managing and monitoring DALI-based lighting systems.
-
-[@MoonDevLT]: https://github.com/MoonDevLT
-[@pantherale0]: https://github.com/pantherale0
-[@kclif9]: https://github.com/kclif9
-[@felipecrs]: https://github.com/felipecrs
 [@epdevlab]: https://github.com/epdevlab
-[@Lorenzo-Gasparini]: https://github.com/Lorenzo-Gasparini
-[@niracler]: https://github.com/niracler
-[Lunatone Gateway]: /integrations/lunatone
-[Nintendo Parental Controls]: /integrations/nintendo_parental_controls
-[Actron Air]: /integrations/actron_air
-[OpenRGB]: /integrations/openrgb
-[iNELS]: /integrations/inels
-[Fing]: /integrations/fing
-[DALI Center]: /integrations/sunricher_dali_center
 [@erwindouna]: https://github.com/erwindouna
+[@felipecrs]: https://github.com/felipecrs
+[@kclif9]: https://github.com/kclif9
+[@Lorenzo-Gasparini]: https://github.com/Lorenzo-Gasparini
+[@MoonDevLT]: https://github.com/MoonDevLT
+[@niracler]: https://github.com/niracler
+[@pantherale0]: https://github.com/pantherale0
 [@xE1H]: https://github.com/xE1H
+[Actron Air]: /integrations/actron_air
+[DALI Center]: /integrations/sunricher_dali_center
+[Fing]: /integrations/fing
 [Firefly III project]: https://www.firefly-iii.org/
 [Firefly III]: /integrations/firefly_iii
+[iNELS]: /integrations/inels
 [Lithuanian Hydrometeorological Service]: https://www.meteo.lt/en/
+[Lunatone Gateway]: /integrations/lunatone
 [Meteo.lt]: /integrations/meteo_lt
+[Nintendo Parental Controls]: /integrations/nintendo_parental_controls
+[OpenRGB]: /integrations/openrgb
 
 ### Noteworthy improvements to existing integrations
 
 It is not just new {% term integrations %} that have been added, existing integrations are also being constantly improved. Here are some of the noteworthy changes:
 
-- [@thecode] added [group] support for valves, so you can group multiple valves into one.
 - The [SwitchBot] integration now supports garage door openers, thanks [@zerzhang]!
-- [@tr4nt0r] added support for notifications to the [Habitica] integration.
-- The [VegeHub] integration now has support for switches to control actuators [@Thulrus]
-- The [Portainer] integration gained support for switches, buttons and sensors, so you can control and monitor all your containers! [@erwindouna]
-- The [Volvo] integration can now show the location of your car and has buttons to control it [@thomasddn]
-- [ElevenLabs] can now be used for Speech-to-Text thanks to [@ehendrix23]!
-- You can now control the LED's of supported [UniFi] network devices! Thanks [@Sese-Schneider]
-- [@barneyonline] added binary sensors to the [Yardian] integration
-- You can now set the temperature of your 3D printers tool and bed with the [OctoPrint] integration thanks to [@AmadeusW]!
-- The [Niko Home Control] integration now also adds your scenes into Home Assistant! Thanks [@VandeurenGlenn]
-- Your [Control4] climate devices (e.g. thermostats) are now supported in Home Assistant thanks to [@davidrecordon]
-- Support for controlling [Growatt] MIN/TLX inverters was added, and you can now enabled grid charge! Thanks [@johanzander]
-- [@hanwg] added event entities to the [Telegram] bot integration. You can use these entities to easier automate when you get a message for example!
-- The [Xbox] integration now has support for images! It show an image of the game you are currently playing, the avatar and the Gamerpic for yourself and your friends. Thanks [@tr4nt0r] 
-- [@AndyTempel] added support for solar production forecasting to [Victron Remote Monitoring], so you can now use this in the energy dashboard to see a forecast of how much solar energy you will produce today!
-- The [Shelly] integration now supports climate and valve entities thanks to [@thecode]
-- [@starkillerOG] improved the [Reolink] integration, it can now report bicycles, the type of person, vehicle and animal. So you now know if a men or a women is detected on your cameras.
+- [@tr4nt0r] added support for notifications to the [Habitica] integration. Nice work!
+- The [VegeHub] integration now has support for switches to control actuators, cool [@Thulrus]!
+- The [Portainer] integration gained support for switches, buttons, and sensors, so you can control and monitor all your containers! Well done [@erwindouna]!
+- The [Volvo] integration can now show the location of your car and has buttons to control it. We got [@thomasddn] to thank for that!
+- [ElevenLabs] can now be used for speech-to-text thanks to [@ehendrix23]!
+- You can now control the LEDs of supported [UniFi] network devices! Thanks [@Sese-Schneider]!
+- [@barneyonline] added binary sensors to the [Yardian] integration. Nice!
+- You can now set the temperature of your 3D printer's tool and bed with the [OctoPrint] integration thanks to [@AmadeusW]!
+- The [Niko Home Control] integration now also adds your scenes into Home Assistant! Thanks [@VandeurenGlenn]!
+- Your [Control4] climate devices (for example, thermostats) are now supported in Home Assistant thanks to [@davidrecordon]!
+- Support for controlling [Growatt] MIN/TLX inverters was added, and you can now enable grid charge! Thanks [@johanzander]!
+- [@hanwg] added event entities to the [Telegram] bot integration. You can use these entities to more easily automate when you get a message, for example! Cool!
+- The [Xbox] integration now has support for images! It shows an image of the game you are currently playing, the avatar, and the Gamerpic for yourself and your friends. Thanks [@tr4nt0r]!
+- [@AndyTempel] added support for solar production forecasting to [Victron Remote Monitoring], so you can now use it in the energy dashboard to see a forecast of how much solar energy you will produce today!
+- The [Shelly] integration now supports climate and valve entities thanks to [@thecode]!
+- [@starkillerOG] improved the [Reolink] integration; it can now report bicycles and the type of person, vehicle, and animal. So you now know if a man or a woman is detected on your cameras. Great work!
 
-[group]: /integrations/group
 [SwitchBot]: /integrations/switchbot
 [Habitica]: /integrations/habitica
 [VegeHub]: /integrations/vegehub
@@ -329,7 +327,7 @@ On September 8, 2020 IBM announced the withdrawal of its support for the IBM Wat
 
 The `plum_lightpad` integration has been removed.
 
-The servers have been shutdown, which made the integration non functional.
+The servers have been shut down, which made the integration non-functional.
 
 ([@tr4nt0r] - [#153590]) ([plum_lightpad docs])
 
@@ -339,10 +337,12 @@ The servers have been shutdown, which made the integration non functional.
 
 There are many more improvements in this release; here are some of the other noteworthy changes:
 
+- [@thecode] added [group] support for valves, so you can group multiple valves into one.
 - Searching in data tables got a lot better, you can now search over multiple columns at once. Thanks [@wendevlin]!
 - Energy graphs now show the total of the period in the top right corner. Great addition [@MindFreeze]!
 - You can now use images from any integration providing images for your dashboard background. [@karwosts]
 
+[group]: /integrations/group
 [@wendevlin]: https://github.com/wendevlin
 [@karwosts]: https://github.com/karwosts
 
@@ -388,6 +388,100 @@ possible for you. This release has the following backward-incompatible changes:
 
 ---
 
+{% details "Set assumed state to group if at least one child has assumed state" %}
+
+Previously, the group’s assumed state was always false, regardless of the state of its child entities.
+
+This has now changed:
+
+The group will now have an assumed state of `true` if at least one child entity has an assumed state.
+This makes the group's assumed state reflect the uncertainty of its children more accurately.
+These domains have been added: switch, fan, light, and cover.
+
+([@piitaya] - [#154163]) ([group docs])
+
+{% enddetails %}
+
+{% details "Asuswrt" %}
+
+The `last_time_reachable` attribute has been removed from the `asuswrt` device tracker.
+Use the `last_changed` attribute instead in your automations.
+
+([@ollo69] - [#154219]) ([asuswrt docs])
+
+{% enddetails %}
+
+{% details "LG webOS TV" %}
+
+The state of LG webOS TV media player entities that do not have an automation trigger to turn on the device will be set to `unavailable` instead of `off`.
+
+([@thecode] - [#155164]) ([webostv docs])
+
+{% enddetails %}
+
+{% details "Mealie" %}
+
+The `mealie` integration now requires Mealie version 2 or later.
+
+Mealie version 1 is no longer supported, version 2 was released in October 2024, so over a year ago.
+Given the differences between versions 1 and 2 we are no longer able to support/test backward compatibility with version 1.
+
+([@andrew-codechimp] - [#153203]) ([mealie docs])
+
+{% enddetails %}
+
+{% details "Motion Blinds" %}
+
+The tilt position of `motion_blinds` devices has been corrected to align with the Home Assistant standards.
+The new tilt position will be: 0 = closed/covering the window opening, 100 = open/letting light through.
+The previous tilt position can be converted to the new tilt position as follows:
+
+- `new` = `100 - old`
+- `current_tilt_position` = `100 -> 0`
+- `current_tilt_position` = `75 -> 25`
+- `current_tilt_position` = `50 -> 50`
+- `current_tilt_position` = `25 -> 75`
+- `current_tilt_position` = `0 -> 100`
+- `open_cover_tilt` -> `close_cover_tilt`
+- `close_cover_tilt` -> `open_cover_tilt`
+
+Any automations concerning Motion Blinds devices that use the `current_tilt_position` attribute or use tilt open/close will need to be adjusted.
+
+([@starkillerOG] - [#149777]) ([motion_blinds docs])
+
+{% enddetails %}
+
+{% details "Nederlandse Spoorwegen" %}
+
+The Nederlandse Spoorwegen entity is now displayed as a timestamp entity, rather than a string. Please adapt your automations and scripts.
+
+([@joostlek] - [#154011]) ([nederlandse_spoorwegen docs])
+
+{% enddetails %}
+
+{% details "Mobile app" %}
+
+The `mobile_app` integration, which has support for the iPhone and Android companion apps, now handles zone-only updates better. When your companion app sends just the zone name (not the exact coordinates), the device tracker will show the zone's friendly name.
+
+The `person` entity now shows the zone's friendly name (not its object ID) for custom zones. This might break existing automations that trigger on a person's state.
+
+As an example, if you have a zone named `zone.kids_school` with the friendly name `School`:
+_Before_ this change, the state of the corresponding `person` and `device_tracker` entities would be `kids_school` when the "Location Sent" in the companion app was set to send "Zone Name Only" and `School` when it was set to "Exact".
+_After_ this change, the state of the corresponding `person` and `device_tracker` entities will be `School` for both the "Location Sent" settings in the companion app.
+
+([@Ashus] - [#149453]) ([mobile_app docs])
+
+{% enddetails %}
+
+{% details "ONVIF" %}
+
+The `Speed` parameter in the ONVIF `GoToPreset` action is now optional.
+
+The default of `0.5` is no longer set. If you want to restore the previous behavior you have to set `speed` to `0.5` in your action.
+
+([@carlos-sarmiento] - [#149636]) ([onvif docs])
+
+{% enddetails %}
 
 {% details "OralB" %}
 
@@ -423,55 +517,11 @@ In multiple places, spaces have been replaced with underscores:
   - `sector 3` → `sector_3`
   - `sector 4` → `sector_4`
 
-
 Automations should be updated to use the new states and attributes.
 
 ([@tr4nt0r] - [#153605]) ([oralb docs])
 
 {% enddetails %}
-
-
-{% details "Mealie" %}
-
-The `mealie` integration now requires Mealie version 2 or later.
-
-Mealie version 1 is no longer supported, version 2 was released in October 2024, so over a year ago.
-Given the differences between versions 1 and 2 we are no longer able to support/test backward compatibility with version 1.
-
-([@andrew-codechimp] - [#153203]) ([mealie docs])
-
-{% enddetails %}
-
-
-{% details "Motion Blinds" %}
-
-The tilt position of `motion_blinds` devices has been corrected to align with the Home Assistant standards.
-The new tilt position will be: 0 = closed/covering the window opening, 100 = open/letting light through.
-The previous tilt position can be converted to the new tilt position as follows:
- - new = 100 - old
- - current_tilt_position 100 -> 0
- - current_tilt_position 75 -> 25
- - current_tilt_position 50 -> 50
- - current_tilt_position 25 -> 75
- - current_tilt_position 0 -> 100
- - open_cover_tilt -> close_cover_tilt
- - close_cover_tilt -> open_cover_tilt
-
-Any automations concerning Motion Blinds devices that use the current_tilt_position attribute or use tilt open/close will need to be adjusted.
-
-([@starkillerOG] - [#149777]) ([motion_blinds docs])
-
-{% enddetails %}
-
-
-{% details "Nederlandse Spoorwegen" %}
-
-The Nederlandse Spoorwegen entity is now displayed as a timestamp entity, rather than a string. Please adapt your automations and scripts.
-
-([@joostlek] - [#154011]) ([nederlandse_spoorwegen docs])
-
-{% enddetails %}
-
 
 {% details "Renault" %}
 
@@ -482,67 +532,11 @@ These will no longer be created.
 
 {% enddetails %}
 
-
-{% details "Asuswrt" %}
-
-The `last_time_reachable` attribute has been removed from the `asuswrt` device tracker.
-Use the `last_changed` attribute instead in your automations.
-
-([@ollo69] - [#154219]) ([asuswrt docs])
-
-{% enddetails %}
-
-{% details "Set assumed state to group if at least one child has assumed state" %}
-
-Previously, the group’s assumed state was always false, regardless of the state of its child entities.
-
-This is now changed so that:
-
-The group will now have an assumed state of `true` if at least one child entity has an assumed state.
-This makes the group’s assumed state reflect the uncertainty of its children more accurately.
-These domains have been added: switch, fan, light and cover.
-
-([@piitaya] - [#154163]) ([group docs])
-
-{% enddetails %}
-
-{% details "Mobile app" %}
-
-The `mobile_app` integration, which has support for the iPhone and Android companion apps, now handles zone-only updates better. When your companion app sends just the zone name (not the exact coordinates), the device tracker will show the zone’s friendly name.
-
-The `person` entity now shows the zone’s friendly name (not its object ID) for custom zones. This might break existing automations that trigger on a person's state.
-
-As an example, if you have a zone named `zone.kids_school` with the friendly name `School`.
-_Before_ this change, the state of the corresponding `person` and `device_tracker` entities would be `kids_school` when the "Location Sent" in the companion app was set to send "Zone Name Only" and `School` when it was set to "Exact".
-_After_  this change, the state of the corresponding `person` and `device_tracker` entities will be `School` for both the "Location Sent" settings in the companion app.
-
-([@Ashus] - [#149453]) ([mobile_app docs])
-
-{% enddetails %}
-
-{% details "ONVIF" %}
-
-The `Speed` parameter in the ONVIF `GoToPreset` action is now optional.
-
-The default of `0.5` is no longer set. If you want to restore the previous behavior you have to set `speed` to `0.5` in your action.
-
-([@carlos-sarmiento] - [#149636]) ([onvif docs])
-
-{% enddetails %}
-
-{% details "Fix LG webOS TV entity availability status" %}
-
-The state of LG webOS TV media player entities that do not have an automation trigger to turn on the device will set to `unavailable` instead of `off`.
-
-([@thecode] - [#155164]) ([webostv docs])
-
-{% enddetails %}
-
 {% details "Traccar Server" %}
 
 The Traccar integration has been updated to use a more secure API Token for authentication. This is a required, one-time breaking change to align with Traccar's security recommendations and ensure the integration continues to work.
 
-This release migrates the integration away from the older username/password method, ensuring continued stability and security for all users while also allowing users with SSO based setups to use the integration.
+This release migrates the integration away from the older username/password method, ensuring continued stability and security for all users while also allowing users with SSO-based setups to use the integration.
 
 When you update Home Assistant, the existing Traccar integration will need to be re-authenticated:
 
@@ -633,10 +627,11 @@ new features available for your integration, be sure to follow our
 [developer blog][devblog]. The following changes are the most notable for this
 release:
 
-- [Update coordinator now allows retriggering](https://developers.home-assistant.io/blog/2025/10/05/coordinator-retrigger)
-- [Device filter has been removed from target selector](https://developers.home-assistant.io/blog/2025/10/14/device-filter-removed-from-target-selector)
 - [Changes to the recorder statistics API](https://developers.home-assistant.io/blog/2025/10/16/recorder-statistics-api-changes)
+- [Device filter has been removed from target selector](https://developers.home-assistant.io/blog/2025/10/14/device-filter-removed-from-target-selector)
 - [Service translations removed from WebSocket get_services and REST /api/services](https://developers.home-assistant.io/blog/2025/10/24/service-web-api-changes)
+- [TemperatureConverter.convert_interval deprecation](https://developers.home-assistant.io/blog/2025/11/04/convert-interval-deprecation/)
+- [Update coordinator now allows retriggering](https://developers.home-assistant.io/blog/2025/10/05/coordinator-retrigger)
 
 [devblog]: https://developers.home-assistant.io/blog/
 
