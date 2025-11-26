@@ -1,0 +1,579 @@
+---
+layout: post
+title: "2025.12 Beta: A Betta title"
+description: "Beta release notes for Home Assistant Core 2025.12"
+date: 2025-11-26 00:00:00
+date_formatted: "December 3, 2025"
+author: Franck Nijhof
+author_twitter: frenck
+comments: true
+categories:
+  - Release-Notes
+  - Core
+og_image: /images/blog/2025-12/social.png
+---
+
+<lite-youtube videoid="8Zj0JiVoRNs" videotitle="Home Assistant 2025.12 Release Party"></lite-youtube>
+
+{% note %}
+
+**Welcome to the beta release notes for Home Assistant 2025.12** 🎉
+
+<br />
+
+Please note that these release notes are a work in progress. 👷‍♀️ We will be
+completing them over the next couple of days. Not all features might be final
+yet, and some features _**may not** make it into the final release_.
+
+<br />
+
+**Want to help test the beta?** Awesome! ❤️ We have documented how you
+[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
+
+<br />
+
+While running the beta, we highly recommend joining our _#beta_ channel on
+the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
+testers are in this channel during the beta period to share experiences, ideas,
+and iterate over new features, fine-tuning them before the final release.
+It's a really fun place to hang out. 😎
+
+<br />
+
+**Reporting issues**: As this is a beta test, you might encounter unexpected
+behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
+You can find our issue trackers and the reported issues during beta here:
+
+<br />
+
+- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/138)
+- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/778)
+- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/145)
+
+🙏 When reporting issues, **make sure to mention the exact beta version you are
+running** in the issue description. This will help us identify and track the
+issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
+
+<br />
+
+Issues introduced in the beta are processed with priority. 🔝
+
+{% endnote %}
+
+{% tip %}
+
+Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=8Zj0JiVoRNs) on December 3, 2025, at 20:00 GMT / 12:00 PT / 21:00 CET!
+
+{% endtip %}
+
+Home Assistant 2025.12! 🎄
+
+Enjoy the (beta) release!
+
+../Frenck
+
+<!--more-->
+
+- [Home Assistant Labs 🧪](#home-assistant-labs-)
+- [Intuitive triggers and conditions](#intuitive-triggers-and-conditions)
+- [More dashboard improvements!](#more-dashboard-improvements)
+  - [Set a system-wide default dashboard](#set-a-system-wide-default-dashboard)
+  - [Reorder areas and floors](#reorder-areas-and-floors)
+  - [Experimental dashboards have graduated](#experimental-dashboards-have-graduated)
+  - [Home dashboard improvements](#home-dashboard-improvements)
+- [Power and water in the Energy dashboard](#power-and-water-in-the-energy-dashboard)
+  - [Real-time power monitoring](#real-time-power-monitoring)
+  - [Downstream water meters](#downstream-water-meters)
+- [Integrations](#integrations)
+  - [New integrations](#new-integrations)
+  - [Noteworthy improvements to existing integrations](#noteworthy-improvements-to-existing-integrations)
+  - [Integration quality scale achievements](#integration-quality-scale-achievements)
+  - [Now available to set up from the UI](#now-available-to-set-up-from-the-ui)
+  - [Farewell to the following](#farewell-to-the-following)
+- [Other noteworthy changes](#other-noteworthy-changes)
+  - [Add entities to Android widgets and favorites](#add-entities-to-android-widgets-and-favorites)
+- [Need help? Join the community](#need-help-join-the-community)
+- [Backward-incompatible changes](#backward-incompatible-changes)
+- [All changes](#all-changes)
+
+_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@TimoPtr], [@laupalombi], and [@MindFreeze] who helped write the release notes this release. Also, [@frenck], [@frenck], [@frenck], and [@frenck] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
+
+[@frenck]: https://github.com/frenck
+[@laupalombi]: https://github.com/laupalombi
+[@MindFreeze]: https://github.com/MindFreeze
+[@TimoPtr]: https://github.com/TimoPtr
+
+## Home Assistant Labs 🧪
+
+When we develop new features for Home Assistant, we often find ourselves in a tricky spot. A feature might be fully built and tested, but we're not entirely sure if it's the right fit for everyone just yet. Maybe we want to gather some real-world feedback first, or perhaps we want to see how the community uses it before committing to keeping it around forever.
+
+That's where **Home Assistant Labs** comes in! 🧪
+
+Labs is a brand-new place in Home Assistant that gives you a sneak peek at features we're working on. These are not unfinished experiments or unstable beta features. They are fully functional and tested, but they might change or even disappear based on feedback. Think of it as a way for us to early share what we're excited about, while giving you the choice to try them out.
+
+<img class="no-shadow" alt="Screenshot showing the new Home Assistant Labs panel with preview features you can enable or disable." src="/images/blog/2025-12/temp-labs.png" />
+
+The very first preview feature available in Labs is **Winter mode** ❄️. Enable it, and watch your Home Assistant interface transform into a winter wonderland with falling snow. A fun way to get into the holiday spirit!
+
+<img class="no-shadow" alt="Screenshot showing the backup option when you enable a preview feature." src="/images/blog/2025-12/temp-labs-enable-with-backup.png" />
+
+When you enable a preview feature, you can also choose to create a backup first, just to be safe. And if you change your mind? Simply disable it again. No restart required!
+
+Preview features are off by default, and enabling them won't affect your existing setup. It's completely optional, so if you prefer to stick with the battle proven experience, that's totally fine. But if you're curious and want to explore what's coming next, Labs is the place to be.
+
+But what was the first Labs preview feature we put in there? Well, it's a big one...
+
+{% my labs badge %}
+
+## Intuitive triggers and conditions
+
+Almost [two years ago](/blog/2024/01/03/release-20241/), we released a new automation editor that unwrapped all our actions and made them easier to understand. Instead of a single, obscure "Call service" action, you now see clear options like "Light: Turn on" or "Media Player: Set Volume".
+
+Ever since, we've been wondering: could we do the same for triggers and conditions? Instead of relying on technical, state-based options, what if we could offer intuitive alternatives that just make sense? Things like "When a light turns on" or "If a light is on".
+
+That idea set a two-year plan in motion, and today it's finally becoming a reality.
+
+<img class="no-shadow" alt="Screenshot showing the new intuitive triggers and conditions in the automation editor." src="/images/blog/2025-12/temp-intuitive-triggers.png" />
+
+Along the way, we discovered something interesting: many of you take a "target-first" approach when building automations. You think about _what_ you want to automate (a device, an entity, or an area) before thinking about _how_ to automate it (which action to perform or which trigger to use).
+
+This release introduces a completely new way to build automations. Intuitive triggers and conditions are now provided directly by domains like [Light], [Climate], [Fan], and others, covering the most common automation use cases.
+
+[Light]: /integrations/light
+[Climate]: /integrations/climate
+[Fan]: /integrations/fan
+
+These new triggers and conditions fully support targeting. This means you can trigger an automation when _any_ light in your living room turns on, without having to list them one by one or create a group beforehand. Targeting an area keeps things simple: it's always aligned with how your home is organized, and you don't have to update anything when you add or remove devices.
+
+<img class="no-shadow" alt="Screenshot showing the new target-first picker for triggers, conditions, and actions." src="/images/blog/2025-12/temp-intuitive-picker.png" />
+
+Labels are supported too! You can now check if any of your Christmas lights are on. Perfect timing for the holidays! 🎄
+
+We've also introduced a new way to pick triggers, conditions, and actions that fits this target-first approach. You can navigate your home by floor, then area, then device, and see exactly which options are available for each target. It's a much more intuitive way to build automations.
+
+This feature is still being refined, so we've made it available as a preview feature in Labs. Head over to {% my labs title="**Settings** > **System** > **Labs**" %} to enable it and help us shape the future of automation building!
+
+## More dashboard improvements!
+
+Lots of improvements to report on the dashboard front this release! From better default dashboard management to an improved Home dashboard, we have been busy making your Home Assistant experience even better.
+
+### Set a system-wide default dashboard
+
+Picking a default dashboard is now a system-level setting that takes effect instantly for all users on your Home Assistant installation. The dashboard you choose will appear at the top of the sidebar, replacing the current default.
+
+But don't worry, personal preferences still matter! We added a new setting in your {% my profile title="**User profile**" %} where you can override the system default and set your own preferred dashboard.
+
+### Reorder areas and floors
+
+When using the built-in dashboard experiences (Home, Lights, Security, and others), one of the main pain points was the strict ordering of areas (alphabetically) and floors (numerically by level). This often didn't make sense in a real home, where your guest bathroom shouldn't appear before your living room, and the attic is rarely more relevant than the main floor.
+
+Now you can go to {% my areas title="**Settings** > **Areas, labels & zones**" %} and manually drag and drop any area or floor to reorder them. Your changes will instantly apply to all built-in dashboards that show areas and floors.
+
+### Experimental dashboards have graduated
+
+With the launch of Labs, we retired the experimental flag from the dashboard creation list. The **Home** dashboard can now be found in the dashboard list (still not visible by default), and the **Areas** dashboard has evolved into Home, so we've removed it for now.
+
+### Home dashboard improvements
+
+We added a new sidebar to the Home dashboard that gathers quick access links we think are useful for you. There's also a nicer area and floor layout that uses space more efficiently. On a more technical level, the Home dashboard is now a proper built-in dashboard and shows up in the dashboard list.
+
+{% note %}
+The sidebar can also be added to your manual dashboards via YAML.
+{% endnote %}
+
+{% important %}
+There is a chance your current favorites might disappear in this release and need to be re-added. This is due to the migration of this dashboard from a strategy to a built-in dashboard.
+{% endimportant %}
+
+## Power and water in the Energy dashboard
+
+The Energy dashboard has been helping you track your energy and gas usage for years now, and this release brings two great additions: **real-time power monitoring** and **downstream water tracking**.
+
+### Real-time power monitoring
+
+Until now, the Energy dashboard was all about energy: the cumulative kWh you've consumed or produced over time. But sometimes you want to know what's happening _right now_. How much power is that appliance actually pulling? Is your solar system producing at this very moment?
+
+With this release, you can now configure **power sensors** alongside your energy sensors. Track your real-time grid consumption, see how much you're exporting back to the grid, and watch those watts flow in real-time. The power configuration options now appear alongside energy settings for each source or device, and new power graphs let you see your power consumption throughout the day.
+
+<p class='img'>
+<img src='/images/dashboards/energy/power-sources.png' alt='Screenshot showing the power sources graph'>
+<img src='/images/dashboards/energy/sankey.png' alt='Screenshot showing the power sankey graph'>
+</p>
+
+### Downstream water meters
+
+The Energy dashboard has been tracking your water consumption for a while now, but it was missing something: the ability to see _where_ all that water is actually going. Just like you can track individual devices for energy consumption, you can now add **downstream water meters** to break down your water usage.
+
+Got a smart irrigation controller? A water softener with a flow meter? A separate meter for your pool? Now you can track them all and see exactly how your water consumption is distributed across different uses.
+
+There's also a brand-new **water sankey card** that visualizes your water flow, just like the energy sankey diagram you already know. It's a great way to see where your water is going at a glance.
+
+<p class='img'>
+<img src='/images/dashboards/energy/water-sankey.png' alt='Screenshot showing the water sankey card visualizing water consumption'>
+The new water sankey card shows where your water is going at a glance.
+</p>
+
+## Integrations
+
+Thanks to our community for keeping pace with the new {% term integrations %}
+and improvements to existing ones! You’re all awesome 🥰
+
+### New integrations
+
+We welcome the following new integrations in this release:
+
+- **[Airobot]**, added by [@mettolen]  
+  Control and monitor your Airobot smart thermostats for intelligent floor heating control via the local REST API.
+- **[Anglian Water]**, added by [@pantherale0]  
+  Integrate your Anglian Water smart water meter to track water usage and consumption costs.
+- **[Backblaze B2]**, added by [@ElCruncharino]  
+  Use a Backblaze B2 cloud storage bucket as a backup location for your Home Assistant backups.
+- **[Essent]**, added by [@jaapp]  
+  Monitor dynamic electricity and gas prices for Essent customers in the Netherlands with variable pricing contracts.
+- **[Google Air Quality]**, added by [@Thomas55555]  
+  Get real-time air quality data for your location using Google's Air Quality API.
+- **[Google Weather]**, added by [@tronikos]  
+  Use Google Weather as a source for weather data, providing current conditions, hourly forecasts for the next 24 hours, and daily forecasts for the next 10 days.
+- **[Hanna]**, added by [@bestycame]  
+  Fetch pool water quality data from your Hanna Pool Controller device, including pH, chlorine, ORP values, and water temperature.
+- **[Home Assistant Labs]**, added by [@frenck]  
+  A dedicated panel where you can preview and test new features before they become standard in Home Assistant.
+- **[Philips Hue BLE]**, added by [@flip-dots]  
+  Control your Philips Hue Bluetooth lights directly with Home Assistant, without the need for a Hue Bridge.
+- **[Saunum]**, added by [@mettolen]  
+  Integrate your Saunum Leil sauna control unit to precisely control temperature and monitor your sauna's operation.
+- **[Victron BLE]**, added by [@rajlaud]  
+  Integrate Victron Energy devices that support the Bluetooth Low Energy protocol for real-time monitoring.
+
+[@bestycame]: https://github.com/bestycame
+[@ElCruncharino]: https://github.com/ElCruncharino
+[@flip-dots]: https://github.com/flip-dots
+[@jaapp]: https://github.com/jaapp
+[@mettolen]: https://github.com/mettolen
+[@pantherale0]: https://github.com/pantherale0
+[@rajlaud]: https://github.com/rajlaud
+[@Thomas55555]: https://github.com/Thomas55555
+[@tronikos]: https://github.com/tronikos
+[Airobot]: /integrations/airobot
+[Anglian Water]: /integrations/anglian_water
+[Backblaze B2]: /integrations/backblaze_b2
+[Essent]: /integrations/essent
+[Google Air Quality]: /integrations/google_air_quality
+[Google Weather]: /integrations/google_weather
+[Hanna]: /integrations/hanna
+[Home Assistant Labs]: /integrations/labs
+[Philips Hue BLE]: /integrations/hue_ble
+[Saunum]: /integrations/saunum
+[Victron BLE]: /integrations/victron_ble
+
+This release also has new virtual integrations. Virtual integrations are stubs that are handled by other (existing) integrations to help with findability. These ones are new:
+
+- **[Cosori]**, provided by [VeSync], added by [@joostlek]
+- **[VÁGNER POOL]**, provided by [SEKO PoolDose], added by [@lmaertin]
+
+[@joostlek]: https://github.com/joostlek
+[@lmaertin]: https://github.com/lmaertin
+[Cosori]: /integrations/cosori
+[SEKO PoolDose]: /integrations/pooldose
+[VÁGNER POOL]: /integrations/vagner_pool
+[VeSync]: /integrations/vesync
+
+### Noteworthy improvements to existing integrations
+
+It is not just new {% term integrations %} that have been added; existing integrations are also being constantly improved. Here are some of the noteworthy changes to existing integrations:
+
+- [@piitaya] updated the [ESPHome] integration to let Home Assistant generate entity IDs using its standard rules, aligning it with how other integrations work.
+- [Shelly] now supports control modes for Shelly Cury devices. Nice work, [@bieniu]!
+- Thanks to [@gjohansson-ST], [System Monitor] now exposes fan sensors and battery sensors for your system.
+- The [Tuya] integration received a lot of love! Cat litter boxes now expose switches, buttons, lights, and sensors for controlling your pet's automated litter box. On top of that, doorbell events are now supported too. Thanks, [@heindrichpaul]!
+- [@starkillerOG] expanded the [Reolink] integration with an exposure mode select and audio noise reduction controls for supported cameras.
+- The [OpenAI Conversation] integration now supports GPT-5.1 models. Great work, [@Shulyaka]!
+- Air conditioner and microwave support have landed in the [Home Connect] integration, expanding the range of supported BSH appliances. Thanks, [@Diegorro98]!
+- [@zerzhang] added support for the SwitchBot smart thermostat radiator to the [SwitchBot] integration. Nice!
+- The [Xbox] integration got some love from [@tr4nt0r]! You can now track friend locations, see if your friend is in a party, and control more remote functions.
+- Got an Ecovacs robot? The [Ecovacs] integration now has a border spin switch (to reach those tricky edges while mopping) and an auto-empty sensor. Thanks, [@aronnebrivio]!
+- [@balloob] added a chat log subscription endpoint to the [Home Assistant] conversation agent, allowing you to subscribe to and receive real-time updates from ongoing conversations.
+- The [VeSync] integration gained a child lock switch, giving you control over this safety feature for your devices. Thanks, [@cdnninja]!
+- [@XiaoLing-git] added support for the SwitchBot smart radiator thermostat to the [SwitchBot Cloud] integration.
+- The [SQL] integration now supports using templates in your queries, giving you more flexibility when querying your databases. Great addition, [@gjohansson-ST]!
+- [@tomwilkie] expanded the [Prometheus] integration to export metrics for the water_heater domain.
+- The [Anthropic] integration now supports AI task entities. Thanks, [@Shulyaka]!
+- [Portainer] can now show you resource usage of your containers. Nice work, [@erwindouna]!
+- [@thomasddn] added a button to enable reduced guard mode for compatible vehicles to the [Volvo] integration.
+- The [Plugwise] integration now supports the new Anna P1 device and gained a select entity for zone profiles on Adam devices. Thanks, [@bouwew]!
+- [Bang & Olufsen] users can now use their Beoremote One with Home Assistant. The remote's buttons are exposed as event entities. Awesome, [@mj23000]!
+- [@VandeurenGlenn] added the climate platform to [Niko Home Control], letting you control your Niko heating zones.
+- The [Saunum] integration now supports fan control, giving you control over your sauna ventilation. Thanks, [@mettolen]!
+- [@nasWebio] added alarm control panel support to the [NASweb] integration, allowing you to arm and disarm your security system.
+- The [Nederlandse Spoorwegen] integration received a refactor to improve reliability and maintainability. Thanks, [@heindrichpaul]!
+
+[@aronnebrivio]: https://github.com/aronnebrivio
+[@balloob]: https://github.com/balloob
+[@bieniu]: https://github.com/bieniu
+[@bouwew]: https://github.com/bouwew
+[@cdnninja]: https://github.com/cdnninja
+[@Diegorro98]: https://github.com/Diegorro98
+[@erwindouna]: https://github.com/erwindouna
+[@gjohansson-ST]: https://github.com/gjohansson-ST
+[@heindrichpaul]: https://github.com/heindrichpaul
+[@mettolen]: https://github.com/mettolen
+[@mj23000]: https://github.com/mj23000
+[@nasWebio]: https://github.com/nasWebio
+[@piitaya]: https://github.com/piitaya
+[@Shulyaka]: https://github.com/Shulyaka
+[@starkillerOG]: https://github.com/starkillerOG
+[@thomasddn]: https://github.com/thomasddn
+[@tomwilkie]: https://github.com/tomwilkie
+[@tr4nt0r]: https://github.com/tr4nt0r
+[@VandeurenGlenn]: https://github.com/VandeurenGlenn
+[@XiaoLing-git]: https://github.com/XiaoLing-git
+[@zerzhang]: https://github.com/zerzhang
+[Anthropic]: /integrations/anthropic
+[Bang & Olufsen]: /integrations/bang_olufsen
+[Ecovacs]: /integrations/ecovacs
+[ESPHome]: /integrations/esphome
+[Home Assistant]: /integrations/conversation
+[Home Connect]: /integrations/home_connect
+[NASweb]: /integrations/nasweb
+[Nederlandse Spoorwegen]: /integrations/ns
+[Niko Home Control]: /integrations/niko_home_control
+[OpenAI Conversation]: /integrations/openai_conversation
+[Plugwise]: /integrations/plugwise
+[Portainer]: /integrations/portainer
+[Prometheus]: /integrations/prometheus
+[Reolink]: /integrations/reolink
+[Saunum]: /integrations/saunum
+[Shelly]: /integrations/shelly
+[SQL]: /integrations/sql
+[SwitchBot]: /integrations/switchbot
+[SwitchBot Cloud]: /integrations/switchbot_cloud
+[System Monitor]: /integrations/systemmonitor
+[Tuya]: /integrations/tuya
+[Volvo]: /integrations/volvo
+[Xbox]: /integrations/xbox
+
+### Integration quality scale achievements
+
+One thing we are incredibly proud of in Home Assistant is our [integration quality scale]. This scale helps us and our contributors to ensure integrations are of high quality, maintainable, and provide the best possible user experience.
+
+This release, we celebrate several {% term integrations %} that have improved their quality scale:
+
+- **2 integrations reached platinum** 🏆
+  - [Brother Printer], thanks to [@bieniu]
+  - [Shelly], thanks to [@davidrapan]
+
+- **1 integration reached gold** 🥇
+  - [Google Assistant SDK], thanks to [@tronikos]
+
+- **2 integrations reached silver** 🥈
+  - [LCN], thanks to [@alengwenus]
+  - [Telegram bot], thanks to [@hanwg]
+
+- **1 integration reached bronze** 🥉
+  - [Transmission], thanks to [@andrew-codechimp]
+
+This is a huge achievement for these integrations and their maintainers. The effort and dedication required to reach these quality levels is significant, as it involves extensive testing, documentation, error handling, and often complete rewrites of parts of the integration.
+
+A big thank you to all the contributors involved! 👏
+
+[integration quality scale]: /docs/quality_scale/
+
+[@alengwenus]: https://github.com/alengwenus
+[@andrew-codechimp]: https://github.com/andrew-codechimp
+[@bieniu]: https://github.com/bieniu
+[@davidrapan]: https://github.com/davidrapan
+[@hanwg]: https://github.com/hanwg
+[@tronikos]: https://github.com/tronikos
+[Brother Printer]: /integrations/brother
+[Google Assistant SDK]: /integrations/google_assistant_sdk
+[LCN]: /integrations/lcn
+[Shelly]: /integrations/shelly
+[Telegram bot]: /integrations/telegram_bot
+[Transmission]: /integrations/transmission
+
+### Now available to set up from the UI
+
+While most {% term integrations %} can be set up directly from the Home Assistant
+user interface, some were only available using YAML configuration. We keep moving
+more integrations to the UI, making them more accessible for everyone
+to set up and use.
+
+The following integration is now available via the Home Assistant UI:
+
+- **[DuckDNS]**, done by [@tr4nt0r]
+
+[@tr4nt0r]: https://github.com/tr4nt0r
+[DuckDNS]: /integrations/duckdns
+
+### Farewell to the following
+
+The following {% term integrations %} are no longer available as of this release:
+
+- **Dominos Pizza**: The Dominos Pizza integration has been removed. The integration no longer functions and its underlying source has been unmaintained since 2019.
+- **Flick Electric**: The Flick Electric integration has been removed. All customers of the Flick Electric company have already been moved to Meridian Energy. The service this integration used is already non-functional.
+- The following integrations have been removed as they cannot be used on, from now on, supported installations:
+  - **Bluetooth Tracker**
+  - **CUPS**
+  - **Decora**
+  - **dlib Face Detect**
+  - **dlib Face Identify**
+  - **Eddystone Temperature**
+  - **GStreamer**
+  - **Keyboard**
+  - **LIRC**
+  - **Pandora**
+  - **Raspberry Pi Camera**
+  - **SMS**
+  - **Snips**
+  - **TensorFlow**
+
+## Other noteworthy changes
+
+There are many more improvements in this release; here are some of the other noteworthy changes:
+
+- New template math functions! [@akx] added `clamp`, `wrap`, and `remap` to manipulate numbers in your templates. Awesome!
+- The [logbook card] now supports filtering by state, making it easier to see specific events. Nice one, [@karwosts]!
+- [@MindFreeze] added `min` and `max` options to the [bar gauge feature] for tile cards, giving you more control over the gauge range.
+- You can now delete [helpers] directly from the helpers panel, without having to open them first. Thanks, [@frenck]!
+- The [blueprints] panel now shows how many automations and scripts use each blueprint. Great for keeping track, [@EarMaster]!
+- [@timmo001] added a handy trick: double-click the automation editor sidebar to reset its width.
+- Labels now show up on the device information card, making it easier to see how your devices are organized. Thanks again, [@timmo001]!
+
+[@akx]: https://github.com/akx
+[@EarMaster]: https://github.com/EarMaster
+[@karwosts]: https://github.com/karwosts
+[@timmo001]: https://github.com/timmo001
+[bar gauge feature]: /dashboards/features/#bar-gauge
+[blueprints]: /docs/automation/using_blueprints/
+[helpers]: /docs/configuration/helpers/
+[logbook card]: /dashboards/logbook/
+
+### Get insight into your AI conversations
+
+Ever played around with AI in Home Assistant and wondered what data is actually being sent?
+
+[@balloob] upgraded the voice debug interface, and you can now inspect the system prompt that tells the AI how to behave, along with any tool calls it made to generate your answer.
+
+This makes it much easier to figure out why the AI decided to skip over that one entity, or why it called a specific tool. You can find the debug interface in the voice assistant configuration panel for your favorite assistant.
+
+<img class="no-shadow" src="/images/blog/2025-12/temp-debug-assistant.png" alt="Screenshot showing the new AI conversation debug interface with system prompt and tool calls visible." />
+
+[@balloob]: https://github.com/balloob
+
+### Add entities to Android widgets and favorites
+
+If you're using the [Home Assistant Companion app for Android](https://companion.home-assistant.io/docs/getting_started/), there's a handy new feature waiting for you! Starting with app version 2025.11, you can now add entities to widgets and Android Auto favorites directly from the entity's more information dialog.
+
+<video playsinline muted controls poster="/images/blog/2025-12/android-add-to.png">
+  <source src="/images/blog/2025-12/temp-android-add-to.mp4" type="video/mp4">
+</video>
+
+With just a few taps, you can:
+
+- Add [widgets](https://companion.home-assistant.io/docs/integrations/android-widgets) for quick control of entities right from your home screen
+- Set entities as Android Auto favorites, making them quickly accessible in your car
+
+No more deep-diving into app settings! The **Add to** option appears in the more information dialog whenever the Companion app signals support for it. Selecting it opens a native dialog that lists all available options depending on the entity type.
+
+This is a first step in integrating native mobile features directly into the Home Assistant interface. Future releases will expand this with support for creating shortcuts, tiles, and watch favorites.
+
+Thanks for this great addition, [@TimoPtr]! 🙏
+
+[@TimoPtr]: https://github.com/TimoPtr
+
+## Need help? Join the community
+
+Home Assistant has a great community of users who are all more than willing
+to help each other out. So, join us!
+
+Our very active [Discord chat server](/join-chat) is an excellent place to be,
+and don't forget to join our amazing [forums](https://community.home-assistant.io/).
+
+Found a bug or issue? Please report it in our [issue tracker](https://github.com/home-assistant/core/issues)
+to get it fixed! Or check [our help page](/help) for guidance on more
+places you can go.
+
+Are you more into email? [Sign up for the Open Home Foundation Newsletter](/newsletter)
+to get the latest news about features, things happening in our community, and other projects that support the Open Home straight into your inbox.
+
+## Backward-incompatible changes
+
+We do our best to avoid making changes to existing functionality that might unexpectedly impact your Home Assistant installation. Unfortunately, sometimes, it is inevitable.
+
+We always make sure to document these changes to make the transition as easy as
+possible for you. This release has the following backward-incompatible changes:
+
+{% details "Core and Supervised installation methods, and 32-bit systems" %}
+
+After a 6 month deprecation period, the support for the Home Assistant Core and Home Assistant Supervised installation methods, as well as all 32-bit system architectures (`i386`, `armhf`, and `armv7`), have now been fully removed.
+
+These installation methods and architectures will no longer receive updates (including security updates).
+If you are still using one of these installation methods or architectures, please migrate to a supported installation method and architecture as soon as possible to continue receiving updates and support.
+
+For more information on this change, read the [Deprecating Core and Supervised installation methods, and 32-bit systems](/blog/2025/05/22/deprecating-core-and-supervised-installation-methods-and-32-bit-systems/) blog post.
+
+{% enddetails %}
+
+{% details "Hive" %}
+
+Hive has removed support for their security products. We have removed the alarm control panel from the integration, as the Hive APIs no longer support them.
+
+([@KJonline] - [#156184]) ([hive docs])
+
+[@KJonline]: https://github.com/KJonline
+[#156184]: https://github.com/home-assistant/core/pull/156184
+[hive docs]: /integrations/hive/
+
+{% enddetails %}
+
+{% details "Templates" %}
+
+The `issues()` templating method used to return all issues, including fixed issues. From now on, only active issues are returned.
+
+([@jbouwh] - [#156274])
+
+[@jbouwh]: https://github.com/jbouwh
+[#156274]: https://github.com/home-assistant/core/pull/156274
+
+{% enddetails %}
+
+{% details "go2rtc" %}
+
+It is now required to set a `username` and `password` when enabling the debug UI.
+
+([@edenhaus] - [#157008]) ([go2rtc docs])
+
+[@edenhaus]: https://github.com/edenhaus
+[#157008]: https://github.com/home-assistant/core/pull/157008
+[go2rtc docs]: /integrations/go2rtc/
+
+{% enddetails %}
+
+{% details "UniFi Protect" %}
+
+The license plate event sensor has been removed from the UniFi Protect integration, as it no longer functions with Protect 6 and newer. The UniFi Protect integration has not been compatible with Protect versions older than 6 for quite some time.
+
+([@RaHehl] - [#157196]) ([unifiprotect docs])
+
+[@RaHehl]: https://github.com/RaHehl
+[#157196]: https://github.com/home-assistant/core/pull/157196
+[unifiprotect docs]: /integrations/unifiprotect/
+
+{% enddetails %}
+
+If you are a custom integration developer and want to learn about changes and
+new features available for your integration: Be sure to follow our
+[developer blog][devblog]. The following changes are the most notable for this
+release:
+
+- [Data Update Coordinator now supports Retry After](https://developers.home-assistant.io/blog/2025/11/17/retry-after-update-failed)
+- [Device identification buttons are now classified as diagnostic](https://developers.home-assistant.io/blog/2025/11/21/identify-buttons-diagnostic-category)
+- [Improved error handling for oauth2 configuration without internet](https://developers.home-assistant.io/blog/2025/11/05/config-entry-oauth2-error-handling)
+- [Introducing Labs: Preview features before they become standard](https://developers.home-assistant.io/blog/2025/11/20/labs-preview-features)
+- [The capability_attributes field removed from CalculatedState](https://developers.home-assistant.io/blog/2025/11/10/calculated-state-capability-attributes-removed)
+
+[devblog]: https://developers.home-assistant.io/blog/
+
+## All changes
+
+Of course, there is a lot more in this release. You can find a list of all changes made here: [Full changelog for Home Assistant Core 2025.12](/changelogs/core-2025.12).
