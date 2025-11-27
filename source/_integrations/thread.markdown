@@ -201,6 +201,44 @@ Note: the steps and images here show the process with a Google Thread network. B
    ![image](/images/integrations/thread/thread-ha-preferred.png)
    - 🎉 You successfully created a Home Assistant Thread network and joined it with a pre-existing third-party network.
 
+## Migrating a Thread network to a new adapter
+
+Follow these steps if you already have a Thread adapter running but want to switch to a new adapter.
+
+### Prerequisites
+
+- [Home Assistant Operating System](/docs/glossary/#home-assistant-operating-system) installed on your smart home hub. For example:
+  - on a Home Assistant Green, where Home Assistant OS is preinstalled
+  - On a Home Assistant Yellow or on a Raspberry Pi
+- Existing Thread adapter connected to your Home Assistant hub
+- Latest updates installed
+- A new Thread adapter and a USB extension cable
+  - If your adapter supports multiple protocols:
+  - They might have another firmware installed by default (Zigbee, for example).
+  - Check their documentation and install the OpenThread firmware on the adapter.
+  - Check their documentation and take a note of the baudrate.
+- Thread devices
+
+### To migrate an existing Thread network to a new adapter
+
+1. Plug the new adapter into the extension cable and plug it into the Home Assistant hub.
+2. Go to {% my supervisor_addon title="**Settings** > **Add-ons** > **OpenThread Border Router**" addon="core_openthread_border_router" %} and select the **Configuration** tab.
+3. Under **Devices**, select your adapter.
+4. Enter the **Baudrate** as specified in the documentation of your adapter.
+   - If you can't find the baudrate, contact the manufacturer's support.
+   - If you're feeling lucky, try `460800`.
+   - **Save** your changes.
+   - **Troubleshooting**:
+     - Check the logs.
+     - If the add-on crashes or fails to communicate with the Thread integration: Disable the **Hardware flow control** option and try again.
+5. Restart the add-on and check the logs. Wait.
+   - **Info**: Your Thread network is managed by Home Assistant. It is not stored on the adapter. Migrating the adapter means that Home Assistant will start to use your new adapter's radio instead of the old one.
+6. Go to {% my integrations title="**Settings** > **Devices & services**" %}, select the **Thread** integration.
+   - Select the cogwheel {% icon "mdi:cog-outline" %}.
+   - **Result**: You should now see that the Thread network is still there.
+   - **Troubleshooting**: If you don't see the network there, go back to the add-on configuration and adjust your settings, if needed and try again.
+7. If you no longer want to use the old adapter, you can unplug it now.
+
 ## Understanding the Thread configuration page
 
 This section explains why you might see multiple networks on the Thread configuration page and what this means for your network.
