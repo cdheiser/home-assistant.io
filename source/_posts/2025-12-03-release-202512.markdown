@@ -537,7 +537,7 @@ For more information on this change, read the [Deprecating Core and Supervised i
 
 {% details "Hive" %}
 
-Hive has removed support for their security products. We have removed the alarm control panel from the integration, as the Hive APIs no longer support them.
+Hive has removed support for their security products. We have removed the alarm control panel from the integration, as the Hive APIs no longer support these products.
 
 ([@KJonline] - [#156184]) ([hive docs])
 
@@ -607,10 +607,13 @@ new features available for your integration: Be sure to follow our
 [developer blog][devblog]. The following changes are the most notable for this
 release:
 
+- [Add a status callback for MQTT subscriptions](https://developers.home-assistant.io/blog/2025/11/23/mqtt-subscribe-wait)
 - [Data Update Coordinator now supports Retry After](https://developers.home-assistant.io/blog/2025/11/17/retry-after-update-failed)
 - [Device identification buttons are now classified as diagnostic](https://developers.home-assistant.io/blog/2025/11/21/identify-buttons-diagnostic-category)
 - [Improved error handling for oauth2 configuration without internet](https://developers.home-assistant.io/blog/2025/11/05/config-entry-oauth2-error-handling)
+- [Introducing description placeholders for service action translations](https://developers.home-assistant.io/blog/2025/11/27/service-translation-placeholders/)
 - [Introducing Labs: Preview features before they become standard](https://developers.home-assistant.io/blog/2025/11/20/labs-preview-features)
+- [Serialization of Store data in worker thread is now opt-in](https://developers.home-assistant.io/blog/2025/11/25/storage-helper-opt-in-serialize-in-executor)
 - [The capability_attributes field removed from CalculatedState](https://developers.home-assistant.io/blog/2025/11/10/calculated-state-capability-attributes-removed)
 
 [devblog]: https://developers.home-assistant.io/blog/
