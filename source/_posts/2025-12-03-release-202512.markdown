@@ -131,17 +131,29 @@ Lots of improvements to report on the dashboard front this release! From better 
 
 Picking a default dashboard is now a system-level setting that takes effect instantly for all users on your Home Assistant installation. The dashboard you choose will appear at the top of the sidebar, replacing the current default.
 
+<p class='img'>
+<img src='source/images/blog/2025-12/set-dashboard-default-system.png' alt='Screenshot showing the Dashboard configuration page and the option to make any dashboard default in the three dots menu'>
+</p>
+
 But don't worry, personal preferences still matter! We added a new setting in your {% my profile title="**User profile**" %} where you can override the system default and set your own preferred dashboard.
 
 ### Reorder areas and floors
 
 When using the built-in dashboard experiences (Home, Lights, Security, and others), one of the main pain points was the strict ordering of areas (alphabetically) and floors (numerically by level). This often didn't make sense in a real home, where your guest bathroom shouldn't appear before your living room, and the attic is rarely more relevant than the main floor.
 
-Now you can go to {% my areas title="**Settings** > **Areas, labels & zones**" %} and manually drag and drop any area or floor to reorder them. Your changes will instantly apply to all built-in dashboards that show areas and floors.
+Now you can go to {% my areas title="**Settings** > **Areas, labels & zones**" %} and use the new *Reorder floors and areas* menu to manually drag and drop any area or floor to reorder them. Your changes will instantly apply to all built-in dashboards that show areas and floors.
+
+<p class='img'>
+<img src='/source/images/blog/2025-12/reorder-areas-menu.png' alt='Screenshot showing the reorder areas and floors menu'>
+</p>
 
 ### Experimental dashboards have graduated
 
 With the launch of Labs, we retired the experimental flag from the dashboard creation list. The **Home** dashboard can now be found in the dashboard list (still not visible by default), and the **Areas** dashboard has evolved into Home, so we've removed it for now.
+
+{% note %}
+We want to keep hearing your voice! Share your experience with us [in the Home dashboard survey](https://forms.gle/akJJNZGMadkBP7Xw5) and help us improve every step of the way. And of course [join us on Discord](https://discord.com/channels/330944238910963714/1351536906437005313) to work together on the future of dashboards.
+{% endnote %}
 
 ### Home dashboard improvements
 
@@ -191,6 +203,10 @@ There's also a brand-new **water sankey card** that visualizes your water flow, 
 <img src='/images/dashboards/energy/water-sankey.png' alt='Screenshot showing the water sankey card visualizing water consumption'>
 The new water sankey card shows where your water is going at a glance.
 </p>
+
+### New energy layout
+
+In order to make room for this new functionality we had to reorder the Energy Dashboard. Don't worry, if you only have energy configured, you'll still see the same dashboard. But if you add water, gas or power, the dashboard will be split into several tabs.
 
 ## Integrations
 
@@ -262,7 +278,7 @@ This release also has new virtual integrations. Virtual integrations are stubs t
 It is not just new {% term integrations %} that have been added; existing integrations are also being constantly improved. Here are some of the noteworthy changes to existing integrations:
 
 - [@piitaya] updated the [ESPHome] integration to let Home Assistant generate entity IDs using its standard rules, aligning it with how other integrations work.
-- [Shelly] now supports control modes for Shelly Cury devices. Nice work, [@bieniu]!
+- [Shelly] now supports control modes for upcoming Shelly Cury devices. Nice work, [@bieniu]!
 - Thanks to [@gjohansson-ST], [System Monitor] now exposes fan sensors and battery sensors for your system.
 - The [Tuya] integration received a lot of love! Cat litter boxes now expose switches, buttons, lights, and sensors for controlling your pet's automated litter box. On top of that, doorbell events are now supported too. Thanks, [@heindrichpaul]!
 - [@starkillerOG] expanded the [Reolink] integration with an exposure mode select and audio noise reduction controls for supported cameras.
