@@ -31,13 +31,14 @@ From all of us working on Home Assistant:
 
 Happy holidays, and enjoy the release!
 
+../Frenck
+
 <audio controls>
   <source src="/audio/blog/2025-12-03-release-202512/jingle-labs.mp3">
 </audio>
 
-../Frenck
-
 <!--more-->
+
 
 - [Home Assistant Labs 🧪](#home-assistant-labs-)
 - [Purpose-specific triggers and conditions](#purpose-specific-triggers-and-conditions)
@@ -139,9 +140,7 @@ Lots of improvements to report on the dashboard front this release! From better 
 
 Picking a default dashboard is now a system-level setting that takes effect instantly for all users on your Home Assistant installation. The dashboard you choose will appear at the top of the sidebar, replacing the current default.
 
-<p class='img'>
-<img src='/images/blog/2025-12/set-dashboard-default-system.png' alt='Screenshot showing the Dashboard configuration page and the option to make any dashboard default in the three dots menu'>
-</p>
+<img class="no-shadow" alt="Screenshot showing the Dashboard configuration page and the option to make any dashboard default in the three dots menu." src="/images/blog/2025-12/set-dashboard-default-system.png" />
 
 But don't worry, personal preferences still matter! We added a new setting in your {% my profile title="**User profile**" %} where you can override the system default and set your own preferred dashboard.
 
@@ -151,9 +150,7 @@ When using the built-in dashboard experiences (Home, Lights, Security, and other
 
 Now you can go to {% my areas title="**Settings** > **Areas, labels & zones**" %} and use the new _Reorder floors and areas_ menu to manually drag and drop any area or floor to reorder them. Your changes will instantly apply to all built-in dashboards that show areas and floors.
 
-<p class='img'>
-<img src='/images/blog/2025-12/reorder-areas-menu.png' alt='Screenshot showing the reorder areas and floors menu'>
-</p>
+<img class="no-shadow" alt="Screenshot showing the reorder areas and floors menu." src="/images/blog/2025-12/reorder-areas-menu.png" />
 
 ### Experimental dashboards have graduated
 
@@ -455,7 +452,7 @@ Ever played around with AI in Home Assistant and wondered what data is actually 
 
 This makes it much easier to figure out why the AI decided to skip over that one {% term entity %}, or why it called a specific tool. You can find the debug interface in the voice assistant configuration panel.
 
-<img class="no-shadow" src="/images/blog/2025-12/temp-debug-assistant.png" alt="Screenshot showing the new AI conversation debug interface with system prompt and tool calls visible." />
+<img class="no-shadow" src="/images/blog/2025-12/debug-assistant.png" alt="Screenshot showing the new AI conversation debug interface with system prompt and tool calls visible." />
 
 [@balloob]: https://github.com/balloob
 
