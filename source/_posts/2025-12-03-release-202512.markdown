@@ -75,7 +75,7 @@ Enjoy the (beta) release!
 <!--more-->
 
 - [Home Assistant Labs 🧪](#home-assistant-labs-)
-- [Intuitive triggers and conditions](#intuitive-triggers-and-conditions)
+- [Purpose-specific triggers and conditions](#purpose-specific-triggers-and-conditions)
 - [More dashboard improvements!](#more-dashboard-improvements)
   - [Set a system-wide default dashboard](#set-a-system-wide-default-dashboard)
   - [Reorder areas and floors](#reorder-areas-and-floors)
@@ -127,7 +127,7 @@ But what was the first Labs preview feature we put in there? Well, it's a big on
 
 {% my labs badge %}
 
-## Intuitive triggers and conditions
+## Purpose-specific triggers and conditions
 
 Almost [two years ago](/blog/2024/01/03/release-20241/), we released a new automation editor that unwrapped all our actions and made them easier to understand. Instead of a single, obscure "Call service" action, you now see clear options like "Light: Turn on" or "Media Player: Set Volume".
 
@@ -135,11 +135,11 @@ Ever since, we've been wondering: could we do the same for triggers and conditio
 
 That idea set a two-year plan in motion, and today it's finally becoming a reality.
 
-<img class="no-shadow" alt="Screenshot showing the new intuitive triggers and conditions in the automation editor." src="/images/blog/2025-12/temp-intuitive-triggers.png" />
+<img class="no-shadow" alt="Screenshot showing the new purpose-specific triggers and conditions in the automation editor." src="/images/blog/2025-12/temp-intuitive-triggers.png" />
 
 Along the way, we discovered something interesting: many of you take a "target-first" approach when building automations. You think about _what_ you want to automate (a device, an entity, or an area) before thinking about _how_ to automate it (which action to perform or which trigger to use).
 
-This release introduces a completely new way to build automations. Intuitive triggers and conditions are now provided directly by domains like [Light], [Climate], [Fan], and others, covering the most common automation use cases.
+This release introduces a completely new way to build automations. Purpose-specific triggers and conditions are now provided directly by domains like [Light], [Climate], [Fan], and others, covering the most common automation use cases.
 
 [Light]: /integrations/light
 [Climate]: /integrations/climate
