@@ -21,7 +21,7 @@ As the year winds down and the holidays approach, we're closing out 2025 with a 
 
 This month, we're unveiling **Home Assistant Labs**, a brand-new space where you can preview features before they go mainstream. And what better way to kick it off than with **Winter mode**? ❄️ Enable it and watch snowflakes drift across your dashboard. It's completely unnecessary, utterly delightful, and exactly the kind of thing we love to build. ❄️
 
-But that's just the beginning. We've been working on making automations more intuitive over the past releases, and this release finally delivers **purpose-specific triggers and conditions**. Instead of thinking in (numeric) states, you can now simply say "When a light turns on" or "If the climate is heating". It's automation building the way our mind works, as it should be. 🧠
+But that's just the beginning. We've been working on making {% term automations %} more intuitive over the past releases, and this release finally delivers **purpose-specific triggers and conditions**. Instead of thinking in (numeric) states, you can now simply say "When a light turns on" or "If the climate is heating". It's automation building the way our mind works, as it should be. 🧠
 
 Oh, and if you're looking to level up your Zigbee or Thread network, check out the [Home Assistant Connect ZBT-2](/blog/2025/11/19/home-assistant-connect-zbt-2/) we released last month. It's four times faster and has a gorgeous new antenna design that you'll actually want to display on your desk. 📡
 
@@ -60,7 +60,7 @@ Happy holidays, and enjoy the release!
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
 
-_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@TimoPtr], [@laupalombi], [@jlpouffier], and [@MindFreeze] who helped write the release notes this release. Also, [@edenhaus], [@tr4nt0r], [@jpbede], [@RaHehl], [@bieniu], [@arturpragacz], and [@piitaya] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
+_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@TimoPtr], [@laupalombi], [@jlpouffier], and [@MindFreeze] who helped write these release notes. Also, [@edenhaus], [@tr4nt0r], [@jpbede], [@RaHehl], [@bieniu], [@arturpragacz], and [@piitaya] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
 
 [@arturpragacz]: https://github.com/arturpragacz
 [@bieniu]: https://github.com/bieniu
@@ -109,7 +109,7 @@ That idea set a two-year plan in motion, and today it's finally becoming a reali
 
 <img class="no-shadow" alt="Screenshot showing the new purpose-specific triggers and conditions in the automation editor." src="/images/blog/2025-12/purpose-specific-triggers.png" />
 
-Along the way, we discovered something interesting: many of you take a "target-first" approach when building automations. You think about _what_ you want to automate (a {% term device %}, an {% term entity %}, or an {% term area %}) before thinking about _how_ to automate it (which action to perform or which trigger to use). This release embraces that mindset with a completely new way to build automations.
+Along the way, we discovered something interesting: many of you take a "target-first" approach when building {% term automations %}. You think about _what_ you want to automate (a {% term device %}, an {% term entity %}, or an {% term area %}) before thinking about _how_ to automate it (which action to perform or which trigger to use). This release embraces that mindset with a completely new way to build automations.
 
 Purpose-specific triggers and conditions are now provided directly by {% term domains %} like [Light], [Climate], [Fan], and others, covering the most common automation use cases.
 
@@ -123,7 +123,7 @@ These new triggers and conditions fully support targeting. This means you can tr
 
 {% term Labels %} are supported too! You can now check if any of your Christmas lights are on. Perfect timing for the holidays! 🎄
 
-We've also introduced a new way to pick triggers, conditions, and actions that fits this target-first approach. You can navigate your home by {% term floor %}, then area, then device, and see exactly which options are available for each target. It's a much more intuitive way to build automations.
+We've also introduced a new way to pick triggers, conditions, and actions that fits this target-first approach. You can navigate your home by {% term floor %}, then area, then device, and see exactly which options are available for each target. It's a much more intuitive way to build {% term automations %}.
 
 This feature is still being refined, so we've made it available as a preview feature in Labs. Head over to {% my labs title="**Settings** > **System** > **Labs**" %} to enable it and help us shape the future of automation building!
 
@@ -143,9 +143,9 @@ But don't worry, personal preferences still matter! We added a new setting in yo
 
 ### Reorder areas and floors
 
-When using the built-in dashboard experiences (Home, Lights, Security, and others), one of the main pain points was the strict ordering of areas (alphabetically) and floors (numerically by level). This often didn't make sense in a real home, where your guest bathroom shouldn't appear before your living room, and the attic is rarely more relevant than the main floor.
+When using the built-in dashboard experiences (Home, Lights, Security, and others), one of the main pain points was the strict ordering of {% term areas %} (alphabetically) and {% term floors %} (numerically by level). This often didn't make sense in a real home, where your guest bathroom shouldn't appear before your living room, and the attic is rarely more relevant than the main floor.
 
-Now you can go to {% my areas title="**Settings** > **Areas, labels & zones**" %} and use the new *Reorder floors and areas* menu to manually drag and drop any area or floor to reorder them. Your changes will instantly apply to all built-in dashboards that show areas and floors.
+Now you can go to {% my areas title="**Settings** > **Areas, labels & zones**" %} and use the new _Reorder floors and areas_ menu to manually drag and drop any area or floor to reorder them. Your changes will instantly apply to all built-in dashboards that show areas and floors.
 
 <p class='img'>
 <img src='/images/blog/2025-12/reorder-areas-menu.png' alt='Screenshot showing the reorder areas and floors menu'>
@@ -173,8 +173,7 @@ There is a chance your current favorites might disappear in this release and nee
 
 ### Undo and redo in the dashboard editor
 
-The dashboard editor now includes the undo and redo feature that we added in 2025.10 to the automation and script editor.
-This allows you to experiment safely while editing your dashboards. You can undo up to 75 changes or restore them with a single click, making editing dashboards faster and less stressful.
+The dashboard editor now includes the [undo and redo feature](/blog/2025/10/01/release-202510/#undoredo) that we added in 2025.10 to the {% term automation %} and {% term script %} editor. This allows you to experiment safely while editing your dashboards. You can undo up to 75 changes or restore them with a single click, making editing dashboards faster and less stressful.
 
 Thanks to [@jpbede] for implementing this handy feature!
 
@@ -186,7 +185,7 @@ The Energy dashboard has been helping you track your energy and gas usage for ye
 
 ### Real-time power monitoring
 
-Until now, the Energy dashboard was all about energy: the cumulative kWh you've consumed or produced over time. But sometimes you want to know what's happening _right now_. How much power is that appliance actually pulling? Is your solar system producing at this very moment?
+Until now, the Energy dashboard was all about energy: the cumulative kWh you've consumed or produced over time. But sometimes you want to know what's happening _right now_. How much power is that appliance actually drawing? Is your solar system producing at this very moment?
 
 With this release, you can now configure **power sensors** alongside your energy sensors. Track your real-time grid consumption, see how much you're exporting back to the grid, and watch those watts flow in real-time. The power configuration options now appear alongside energy settings for each source or device, and new power graphs let you see your power consumption throughout the day.
 
@@ -210,12 +209,11 @@ The new water sankey card shows where your water is going at a glance.
 
 ### New energy layout
 
-In order to make room for this new functionality we had to reorder the Energy Dashboard. Don't worry, if you only have energy configured, you'll still see the same dashboard. But if you add water, gas or power, the dashboard will be split into several tabs.
+To make room for this new functionality, the Energy dashboard has been reorganized. Don't worry: if you only have energy configured, you'll still see the same dashboard. But if you add water, gas, or power, the dashboard will be split into several tabs.
 
 ## Integrations
 
-Thanks to our community for keeping pace with the new {% term integrations %}
-and improvements to existing ones! You’re all awesome 🥰
+Thanks to our community for keeping pace with the new {% term integrations %} and improvements to existing ones! You're all awesome 🥰
 
 ### New integrations
 
@@ -234,7 +232,7 @@ We welcome the following new integrations in this release:
 - **[Google Weather]**, added by [@tronikos]  
   Use Google Weather as a source for weather data, providing current conditions, hourly forecasts for the next 24 hours, and daily forecasts for the next 10 days.
 - **[Hanna]**, added by [@bestycame]  
-  Fetch pool water quality data from your Hanna Pool Controller device, including pH, chlorine, ORP values, and water temperature.
+  Fetch pool water quality data from your Hanna Pool Controller device, including pH, chlorine levels, <abbr title="Oxidation-Reduction Potential">ORP</abbr> values, and water temperature.
 - **[Home Assistant Labs]**, added by [@frenck]  
   A dedicated panel where you can preview and test new features before they become standard in Home Assistant.
 - **[Philips Hue BLE]**, added by [@flip-dots]  
@@ -279,7 +277,7 @@ This release also has new virtual integrations. Virtual integrations are stubs t
 
 ### Noteworthy improvements to existing integrations
 
-It is not just new {% term integrations %} that have been added; existing integrations are also being constantly improved. Here are some of the noteworthy changes to existing integrations:
+It is not just new {% term integrations %} that have been added; existing ones are also being constantly improved. Here are some of the noteworthy changes to existing integrations:
 
 - [@piitaya] updated the [ESPHome] integration to let Home Assistant generate entity IDs using its standard rules, aligning it with how other integrations work.
 - [Shelly] now supports control modes for upcoming Shelly Cury devices. Nice work, [@bieniu]!
@@ -289,13 +287,12 @@ It is not just new {% term integrations %} that have been added; existing integr
 - The [OpenAI Conversation] integration now supports GPT-5.1 models. Great work, [@Shulyaka]!
 - Air conditioner and microwave support have landed in the [Home Connect] integration, expanding the range of supported BSH appliances. Thanks, [@Diegorro98]!
 - [@zerzhang] added support for the SwitchBot smart thermostat radiator to the [SwitchBot] integration. Nice!
-- The [Xbox] integration got some love from [@tr4nt0r]! You can now link multiple Xbox accounts, track how many friends you (and your friends) have, see if they're in a party, and control more remote functions. The media browser also gains a new category showcasing official game art and screenshots.
+- The [Xbox] integration got some love from [@tr4nt0r]! You can now link multiple Xbox accounts, track how many friends you (and your friends) have, see if they're in a party, and control more remote functions. The media browser also gained a new category showcasing official game art and screenshots.
 - Got an Ecovacs robot? The [Ecovacs] integration now has a border spin switch (to reach those tricky edges while mopping) and an auto-empty select entity. Thanks, [@aronnebrivio]!
-- [@balloob] added a chat log subscription endpoint to the [Home Assistant] conversation agent, allowing you to subscribe to and receive real-time updates from ongoing conversations.
 - The [VeSync] integration gained a child lock switch, giving you control over this safety feature for your devices. Thanks, [@cdnninja]!
 - [@XiaoLing-git] added support for the SwitchBot smart radiator thermostat to the [SwitchBot Cloud] integration.
 - The [SQL] integration now supports using templates in your queries, giving you more flexibility when querying your databases. Great addition, [@gjohansson-ST]!
-- [@tomwilkie] expanded the [Prometheus] integration to export metrics for the water_heater domain.
+- [@tomwilkie] expanded the [Prometheus] integration to export metrics for the `water_heater` domain.
 - The [Anthropic] integration now supports AI task entities. Thanks, [@Shulyaka]!
 - [Portainer] can now show you resource usage of your containers. Nice work, [@erwindouna]!
 - [@thomasddn] added a button to enable reduced guard mode for compatible vehicles to the [Volvo] integration.
@@ -307,7 +304,6 @@ It is not just new {% term integrations %} that have been added; existing integr
 - The [Nederlandse Spoorwegen] integration received a refactor to improve reliability and maintainability. Thanks, [@heindrichpaul]!
 
 [@aronnebrivio]: https://github.com/aronnebrivio
-[@balloob]: https://github.com/balloob
 [@bieniu]: https://github.com/bieniu
 [@bouwew]: https://github.com/bouwew
 [@cdnninja]: https://github.com/cdnninja
@@ -395,10 +391,7 @@ A big thank you to all the contributors involved! 👏
 
 ### Now available to set up from the UI
 
-While most {% term integrations %} can be set up directly from the Home Assistant
-user interface, some were only available using YAML configuration. We keep moving
-more integrations to the UI, making them more accessible for everyone
-to set up and use.
+While most {% term integrations %} can be set up directly from the Home Assistant user interface, some were only available using YAML configuration. We keep moving more integrations to the UI, making them more accessible for everyone to set up and use.
 
 The following integration is now available via the Home Assistant UI:
 
@@ -413,7 +406,7 @@ The following {% term integrations %} are no longer available as of this release
 
 - **Dominos Pizza**: The Dominos Pizza integration has been removed. The integration no longer functions and its underlying source has been unmaintained since 2019.
 - **Flick Electric**: The Flick Electric integration has been removed. All customers of the Flick Electric company have already been moved to Meridian Energy. The service this integration used is already non-functional.
-- The following integrations have been removed as they cannot be used on, from now on, supported installations:
+- The following integrations have been removed as they are incompatible with the currently supported installation methods:
   - **Bluetooth Tracker**
   - **CUPS**
   - **Decora**
@@ -454,9 +447,9 @@ There are many more improvements in this release; here are some of the other not
 
 Ever played around with AI in Home Assistant and wondered what data is actually being sent?
 
-[@balloob] upgraded the voice debug interface, and you can now inspect the system prompt that tells the AI how to behave, along with any tool calls it made to generate your answer.
+[@balloob] upgraded the voice assistant debug interface, and you can now inspect the system prompt that tells the AI how to behave, along with any tool calls it made to generate your answer.
 
-This makes it much easier to figure out why the AI decided to skip over that one entity, or why it called a specific tool. You can find the debug interface in the voice assistant configuration panel for your favorite assistant.
+This makes it much easier to figure out why the AI decided to skip over that one {% term entity %}, or why it called a specific tool. You can find the debug interface in the voice assistant configuration panel.
 
 <img class="no-shadow" src="/images/blog/2025-12/temp-debug-assistant.png" alt="Screenshot showing the new AI conversation debug interface with system prompt and tool calls visible." />
 
@@ -464,7 +457,7 @@ This makes it much easier to figure out why the AI decided to skip over that one
 
 ### Add entities to Android widgets and favorites
 
-If you're using the [Home Assistant Companion app for Android](https://companion.home-assistant.io/docs/getting_started/), there's a handy new feature waiting for you! Starting with app version 2025.11, you can now add entities to widgets and Android Auto favorites directly from the entity's more information dialog.
+If you're using the [Home Assistant Companion app for Android](https://companion.home-assistant.io/docs/getting_started/), there's a handy new feature waiting for you! Starting with app version 2025.11, you can now add {% term entities %} to widgets and Android Auto favorites directly from the entity's more info dialog.
 
 <video playsinline muted controls poster="/images/blog/2025-12/android-add-to.png">
   <source src="/images/blog/2025-12/temp-android-add-to.mp4" type="video/mp4">
@@ -475,7 +468,7 @@ With just a few taps, you can:
 - Add [widgets](https://companion.home-assistant.io/docs/integrations/android-widgets) for quick control of entities right from your home screen
 - Set entities as Android Auto favorites, making them quickly accessible in your car
 
-No more deep-diving into app settings! The **Add to** option appears in the more information dialog with actions tailored to the entity you are viewing. For example, adding a media player widget is only available for media players.
+No more deep-diving into app settings! The **Add to** option appears in the more info dialog with options tailored to the entity you're viewing. For example, adding a media player widget is only available for media players.
 
 This is a first step in integrating native mobile features directly into the Home Assistant interface. Future releases will expand this with support for creating shortcuts, tiles, and watch favorites.
 
@@ -485,32 +478,25 @@ Thanks for this great addition, [@TimoPtr]! 🙏
 
 ## Need help? Join the community
 
-Home Assistant has a great community of users who are all more than willing
-to help each other out. So, join us!
+Home Assistant has a great community of users who are all more than willing to help each other out. So, join us!
 
-Our very active [Discord chat server](/join-chat) is an excellent place to be,
-and don't forget to join our amazing [forums](https://community.home-assistant.io/).
+Our very active [Discord chat server](/join-chat) is an excellent place to be, and don't forget to join our amazing [forums](https://community.home-assistant.io/).
 
-Found a bug or issue? Please report it in our [issue tracker](https://github.com/home-assistant/core/issues)
-to get it fixed! Or check [our help page](/help) for guidance on more
-places you can go.
+Found a bug or issue? Please report it in our [issue tracker](https://github.com/home-assistant/core/issues) to get it fixed! Or check [our help page](/help) for guidance on more places you can go.
 
-Are you more into email? [Sign up for the Open Home Foundation Newsletter](/newsletter)
-to get the latest news about features, things happening in our community, and other projects that support the Open Home straight into your inbox.
+Are you more into email? [Sign up for the Open Home Foundation Newsletter](/newsletter) to get the latest news about features, things happening in our community, and other projects that support the Open Home straight into your inbox.
 
 ## Backward-incompatible changes
 
-We do our best to avoid making changes to existing functionality that might unexpectedly impact your Home Assistant installation. Unfortunately, sometimes, it is inevitable.
+We do our best to avoid making changes to existing functionality that might unexpectedly impact your Home Assistant installation. Unfortunately, sometimes it is inevitable.
 
-We always make sure to document these changes to make the transition as easy as
-possible for you. This release has the following backward-incompatible changes:
+We always make sure to document these changes to make the transition as easy as possible for you. This release has the following backward-incompatible changes:
 
 {% details "Core and Supervised installation methods, and 32-bit systems" %}
 
-After a 6 month deprecation period, the support for the Home Assistant Core and Home Assistant Supervised installation methods, as well as all 32-bit system architectures (`i386`, `armhf`, and `armv7`), have now been fully removed.
+After a 6-month deprecation period, support for the Home Assistant Core and Home Assistant Supervised installation methods, as well as all 32-bit system architectures (`i386`, `armhf`, and `armv7`), has now been fully removed.
 
-These installation methods and architectures will no longer receive updates (including security updates).
-If you are still using one of these installation methods or architectures, please migrate to a supported installation method and architecture as soon as possible to continue receiving updates and support.
+These installation methods and architectures will no longer receive updates, including security updates. If you are still using one of these installation methods or architectures, please migrate to a supported installation method and architecture as soon as possible to continue receiving updates and support.
 
 For more information on this change, read the [Deprecating Core and Supervised installation methods, and 32-bit systems](/blog/2025/05/22/deprecating-core-and-supervised-installation-methods-and-32-bit-systems/) blog post.
 
@@ -583,10 +569,7 @@ For more information and automation examples, see the [Vehicle Detection Event d
 
 {% enddetails %}
 
-If you are a custom integration developer and want to learn about changes and
-new features available for your integration: Be sure to follow our
-[developer blog][devblog]. The following changes are the most notable for this
-release:
+If you are a custom integration developer and want to learn about changes and new features available for your integration: Be sure to follow our [developer blog][devblog]. The following changes are the most notable for this release:
 
 - [Add a status callback for MQTT subscriptions](https://developers.home-assistant.io/blog/2025/11/23/mqtt-subscribe-wait)
 - [Data Update Coordinator now supports Retry After](https://developers.home-assistant.io/blog/2025/11/17/retry-after-update-failed)
