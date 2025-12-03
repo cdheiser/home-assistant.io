@@ -460,9 +460,9 @@ This makes it much easier to figure out why the AI decided to skip over that one
 
 If you're using the [Home Assistant Companion app for Android](https://companion.home-assistant.io/docs/getting_started/), there's a handy new feature waiting for you! Starting with app version 2025.11, you can now add {% term entities %} to widgets and Android Auto favorites directly from the entity's more info dialog.
 
-<video playsinline muted controls poster="/images/blog/2025-12/android-add-to.png">
-  <source src="/images/blog/2025-12/temp-android-add-to.mp4" type="video/mp4">
-</video>
+<p class="img">
+<img src="/images/blog/2025-12/android-add-to.png" alt="Screenshot showing the new 'Add to' option in the more info dialog for an entity in the Home Assistant Android app.">
+</p>
 
 With just a few taps, you can:
 
