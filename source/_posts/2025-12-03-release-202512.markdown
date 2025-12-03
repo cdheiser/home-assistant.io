@@ -212,6 +212,8 @@ The new water sankey card shows where your water is going at a glance.
 
 To make room for this new functionality, the Energy dashboard has been reorganized. Don't worry: if you only have energy configured, you'll still see the same dashboard. But if you add water, gas, or power, the dashboard will be split into several tabs.
 
+<img class="no-shadow" src="/images/blog/2025-12/new-energy-dashboard-layout.png" alt="Screenshot showing the new Energy dashboard layout with tabs for energy, water, gas, and power." />
+
 ## Integrations
 
 Thanks to our community for keeping pace with the new {% term integrations %} and improvements to existing ones! You're all awesome 🥰
