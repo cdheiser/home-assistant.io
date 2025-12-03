@@ -60,7 +60,7 @@ Happy holidays, and enjoy the release!
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
 
-_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@TimoPtr], [@laupalombi], [@jlpouffier], and [@MindFreeze] who helped write the release notes this release. Also, [@edenhaus], [@tr4nt0r], [@jpbede], [@RaHehl], [@bieniu], and [@arturpragacz] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
+_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@TimoPtr], [@laupalombi], [@jlpouffier], and [@MindFreeze] who helped write the release notes this release. Also, [@edenhaus], [@tr4nt0r], [@jpbede], [@RaHehl], [@bieniu], [@arturpragacz], and [@piitaya] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
 
 [@arturpragacz]: https://github.com/arturpragacz
 [@bieniu]: https://github.com/bieniu
@@ -70,6 +70,7 @@ _A huge thank you to all the contributors who made this release possible! And a 
 [@jpbede]: https://github.com/jpbede
 [@laupalombi]: https://github.com/laupalombi
 [@MindFreeze]: https://github.com/MindFreeze
+[@piitaya]: https://github.com/piitaya
 [@RaHehl]: https://github.com/RaHehl
 [@TimoPtr]: https://github.com/TimoPtr
 [@tr4nt0r]: https://github.com/tr4nt0r
@@ -84,7 +85,9 @@ Labs is a brand-new place in Home Assistant that gives you a sneak peek at featu
 
 <img class="no-shadow" alt="Screenshot showing the new Home Assistant Labs panel with preview features you can enable or disable." src="/images/blog/2025-12/labs.png" />
 
-The very first preview feature available in Labs is **Winter mode** ❄️. Enable it, and watch your Home Assistant interface transform into a winter wonderland with falling snow. A fun way to get into the holiday spirit!
+The very first preview feature available in Labs is **Winter mode** ❄️, inspired by [a community post on Reddit][snowflakes-reddit] originally created by u/Possible-Week-5815. Enable it, and watch your Home Assistant interface transform into a winter wonderland with falling snow. A fun way to get into the holiday spirit!
+
+[snowflakes-reddit]: https://www.reddit.com/r/homeassistant/comments/1p2yxqm/i_added_falling_snowflakes_to_my_dashboard_again/
 
 <img class="no-shadow" alt="Screenshot showing the backup option when you enable a preview feature." src="/images/blog/2025-12/labs-enable-with-backup.png" />
 
@@ -98,29 +101,29 @@ But what was the first Labs preview feature we put in there? Well, it's a big on
 
 ## Purpose-specific triggers and conditions
 
-Almost [two years ago](/blog/2024/01/03/release-20241/), we released a new automation editor that unwrapped all our actions and made them easier to understand. Instead of a single, obscure "Call service" action, you now see clear options like "Light: Turn on" or "Media Player: Set Volume".
+Almost [two years ago](/blog/2024/01/03/release-20241/), we released a new {% term automation %} editor that unwrapped all our {% term actions %} and made them easier to understand. Instead of a single, obscure "Call service" action, you now see clear options like "Light: Turn on" or "Media Player: Set Volume".
 
-Ever since, we've been wondering: could we do the same for triggers and conditions? Instead of relying on technical, state-based options, what if we could offer intuitive alternatives that just make sense? Things like "When a light turns on" or "If a light is on".
+Ever since, we've been wondering: could we do the same for {% term triggers %} and {% term conditions %}? Instead of relying on technical, state-based options, what if we could offer intuitive alternatives that just make sense? Options like "When a light turns on" or "If a light is on".
 
 That idea set a two-year plan in motion, and today it's finally becoming a reality.
 
-<img class="no-shadow" alt="Screenshot showing the new purpose-specific triggers and conditions in the automation editor." src="/images/blog/2025-12/temp-intuitive-triggers.png" />
+<img class="no-shadow" alt="Screenshot showing the new purpose-specific triggers and conditions in the automation editor." src="/images/blog/2025-12/purpose-specific-triggers.png" />
 
-Along the way, we discovered something interesting: many of you take a "target-first" approach when building automations. You think about _what_ you want to automate (a device, an entity, or an area) before thinking about _how_ to automate it (which action to perform or which trigger to use).
+Along the way, we discovered something interesting: many of you take a "target-first" approach when building automations. You think about _what_ you want to automate (a {% term device %}, an {% term entity %}, or an {% term area %}) before thinking about _how_ to automate it (which action to perform or which trigger to use). This release embraces that mindset with a completely new way to build automations.
 
-This release introduces a completely new way to build automations. Purpose-specific triggers and conditions are now provided directly by domains like [Light], [Climate], [Fan], and others, covering the most common automation use cases.
+Purpose-specific triggers and conditions are now provided directly by {% term domains %} like [Light], [Climate], [Fan], and others, covering the most common automation use cases.
+
+These new triggers and conditions fully support targeting. This means you can trigger an automation when _any_ light in your living room turns on, without having to list them one by one or create a group beforehand. Targeting an area keeps things simple: it's always aligned with how your home is organized, and you don't have to update anything when you add or remove devices.
 
 [Light]: /integrations/light
 [Climate]: /integrations/climate
 [Fan]: /integrations/fan
 
-These new triggers and conditions fully support targeting. This means you can trigger an automation when _any_ light in your living room turns on, without having to list them one by one or create a group beforehand. Targeting an area keeps things simple: it's always aligned with how your home is organized, and you don't have to update anything when you add or remove devices.
+<img class="no-shadow" alt="Screenshot showing the new target-first picker for triggers, conditions, and actions." src="/images/blog/2025-12/trigger-target-picker.png" />
 
-<img class="no-shadow" alt="Screenshot showing the new target-first picker for triggers, conditions, and actions." src="/images/blog/2025-12/temp-intuitive-picker.png" />
+{% term Labels %} are supported too! You can now check if any of your Christmas lights are on. Perfect timing for the holidays! 🎄
 
-Labels are supported too! You can now check if any of your Christmas lights are on. Perfect timing for the holidays! 🎄
-
-We've also introduced a new way to pick triggers, conditions, and actions that fits this target-first approach. You can navigate your home by floor, then area, then device, and see exactly which options are available for each target. It's a much more intuitive way to build automations.
+We've also introduced a new way to pick triggers, conditions, and actions that fits this target-first approach. You can navigate your home by {% term floor %}, then area, then device, and see exactly which options are available for each target. It's a much more intuitive way to build automations.
 
 This feature is still being refined, so we've made it available as a preview feature in Labs. Head over to {% my labs title="**Settings** > **System** > **Labs**" %} to enable it and help us shape the future of automation building!
 
