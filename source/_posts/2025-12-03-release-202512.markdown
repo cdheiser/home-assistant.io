@@ -118,17 +118,17 @@ When we develop new features for Home Assistant, we often find ourselves in a tr
 
 That's where **Home Assistant Labs** comes in! 🧪
 
-Labs is a brand-new place in Home Assistant that gives you a sneak peek at features we're working on. These are not unfinished experiments or unstable beta features. They are fully functional and tested, but they might change or even disappear based on feedback. Think of it as a way for us to early share what we're excited about, while giving you the choice to try them out.
+Labs is a brand-new place in Home Assistant that gives you a sneak peek at features we're working on. These are not unfinished experiments or unstable beta features. They are fully functional and tested, but they might change or even disappear based on feedback. Think of it as a way for us to share early what we're excited about, while giving you the choice to try them out.
 
-<img class="no-shadow" alt="Screenshot showing the new Home Assistant Labs panel with preview features you can enable or disable." src="/images/blog/2025-12/temp-labs.png" />
+<img class="no-shadow" alt="Screenshot showing the new Home Assistant Labs panel with preview features you can enable or disable." src="/images/blog/2025-12/labs.png" />
 
 The very first preview feature available in Labs is **Winter mode** ❄️. Enable it, and watch your Home Assistant interface transform into a winter wonderland with falling snow. A fun way to get into the holiday spirit!
 
-<img class="no-shadow" alt="Screenshot showing the backup option when you enable a preview feature." src="/images/blog/2025-12/temp-labs-enable-with-backup.png" />
+<img class="no-shadow" alt="Screenshot showing the backup option when you enable a preview feature." src="/images/blog/2025-12/labs-enable-with-backup.png" />
 
 When you enable a preview feature, you can also choose to create a backup first, just to be safe. And if you change your mind? Simply disable it again. No restart required!
 
-Preview features are off by default, and enabling them won't affect your existing setup. It's completely optional, so if you prefer to stick with the battle proven experience, that's totally fine. But if you're curious and want to explore what's coming next, Labs is the place to be.
+Preview features are off by default, and enabling them won't affect your existing setup. It's completely optional, so if you prefer to stick with the battle-proven experience, that's totally fine. But if you're curious and want to explore what's coming next, Labs is the place to be.
 
 But what was the first Labs preview feature we put in there? Well, it's a big one...
 
