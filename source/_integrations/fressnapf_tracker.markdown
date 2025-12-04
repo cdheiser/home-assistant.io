@@ -12,6 +12,7 @@ ha_domain: fressnapf_tracker
 ha_platforms:
   - binary_sensor
   - device_tracker
+  - light
   - sensor
 ha_integration_type: device
 ---
@@ -32,6 +33,8 @@ The **Fressnapf Tracker** integration provides the following entities.
   - **Description**: Shows the current battery level of your tracker.
 - **Charging Status**
   - **Description**: Indicates whether the tracker is currently charging.
+- **Flashlight**
+  - **Description**: Allows you to turn on the flashlight of the tracker to help locate your pet in the dark.
   
 ## Prerequisites
 
