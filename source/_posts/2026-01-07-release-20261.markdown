@@ -19,7 +19,7 @@ Happy New Year! 🥂
 
 I hope you had a wonderful holiday, spending time with your loved ones. We're kicking off 2026 with a smaller release, as our contributors and maintainers have been enjoying some well-deserved time off as well. But don't worry, there's still plenty of good stuff in this release!
 
-Home Assistant 2026.1 brings a refreshed Home dashboard experience on mobile, with summary cards right at your fingertips without extra taps. We’ve also made it easier than ever to navigate to the protocol connecting your devices, such as Matter, Zigbee, Z-Wave, and more.
+Home Assistant 2026.1 brings a refreshed Home dashboard experience on mobile, with summary cards right at your fingertips without extra taps. We’ve also made it easier than ever to navigate to the protocol connecting your devices, such as Zigbee, Z-Wave, Thread and more.
 
 For automation enthusiasts, we’re continuing our work on our even more "human-friendly" triggers, which can be enabled via Home Assistant Labs, so you can build automations using easy-to-understand language instead of technical state changes, like initiating automations if a button is pressed or someone arrives home.
 
