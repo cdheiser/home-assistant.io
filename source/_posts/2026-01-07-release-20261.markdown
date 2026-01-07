@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "2026.1 Beta: Home is where the dashboard is 🥂"
+title: "2026.1: Home is where the dashboard is 🥂"
 description: "Refreshed Home dashboard on mobile, more purpose-specific triggers, easier access to protocol dashboards, eight new integrations, and more!"
-date: 2025-12-29 00:00:00
+date: 2026-01-07 00:00:00
 date_formatted: "January 7, 2026"
 author: Franck Nijhof
 author_twitter: frenck
@@ -10,38 +10,10 @@ comments: true
 categories:
   - Release-Notes
   - Core
-og_image: /images/blog/2026-01/beta-social.png
+og_image: /images/blog/2026-01/social.png
 ---
 
 <lite-youtube videoid="aU6yqlh-ptw" videotitle="Home Assistant 2026.1 Release Party"></lite-youtube>
-
-{% note %}
-
-**Welcome to the beta release notes for Home Assistant 2026.1** 🎉
-
-Please note that these release notes are a work in progress. 👷‍♀️ We will be completing them over the next couple of days. Not all features might be final yet, and some features _**may not** make it into the final release_.
-
-**Want to help test the beta?** Awesome! ❤️ We have documented how you [can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
-
-While running the beta, we highly recommend joining our _#beta_ channel on the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta testers are in this channel during the beta period to share experiences, ideas, and iterate over new features, fine-tuning them before the final release. It's a really fun place to hang out. 😎
-
-**Reporting issues**: As this is a beta test, you might encounter unexpected behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues. You can find our issue trackers and the reported issues during beta here:
-
-- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/139)
-- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/784)
-- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/146)
-
-🙏 When reporting issues, **make sure to mention the exact beta version you are running** in the issue description. This will help us identify and track the issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
-
-Issues introduced in the beta are processed with priority. 🔝
-
-{% endnote %}
-
-{% tip %}
-
-Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=aU6yqlh-ptw) on January 7, 2026, at 20:00 GMT / 12:00 PT / 21:00 CET!
-
-{% endtip %}
 
 Happy New Year! 🥂
 
@@ -53,7 +25,7 @@ For automation enthusiasts, we’re continuing our work on our even more "human-
 
 On the integrations front, we welcome eight new integrations to the family, including pet tracking with Fressnapf, energy monitoring with eGauge, and smart heating control with Watts Vision+. Plus, improvements to existing integrations from our amazing community contributors.
 
-I wish you a happy and healthy 2026! Enjoy the (beta) release!
+I wish you a happy and healthy 2026! Enjoy the release!
 
 ../Frenck
 
@@ -76,9 +48,11 @@ I wish you a happy and healthy 2026! Enjoy the (beta) release!
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
 
-_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@frenck], [@frenck], and [@frenck] who helped write the release notes for this release. Also, [@frenck], [@frenck], [@frenck], and [@frenck] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
+_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@bramkragten], [@piitaya], and [@abmantis] who helped write the release notes for this release. ❤️_
 
-[@frenck]: https://github.com/frenck
+[@abmantis]: https://github.com/abmantis
+[@bramkragten]: https://github.com/bramkragten
+[@piitaya]: https://github.com/piitaya
 
 ## Home dashboard improvements
 
@@ -120,7 +94,7 @@ Head over to {% my labs title="**Settings** > **System** > **Labs**" %} to enabl
 
 ## Easier navigation to protocol dashboards
 
-For an organization that loves the open standards that seamlessly connect our devices, we sure didn’t promote them enough! Most people didn’t even know that Home Assistant has dedicated dashboards for protocols like Matter, Zigbee, Z-Wave, and more.
+For an organization that loves the open standards that seamlessly connect our devices, we sure didn’t promote them enough! Most people didn’t even know that Home Assistant has dedicated dashboards for protocols like Zigbee, Z-Wave, and more.
 
 This release reorganizes the **Settings** page to give these open protocols a more prominent spot. The protocols section now appears right after the core settings, making it much easier to find all the different ways you’re connecting your devices and quickly access some very useful protocol-specific configurations.
 
