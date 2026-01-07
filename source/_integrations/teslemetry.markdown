@@ -35,14 +35,14 @@ ha_platforms:
   - sensor
   - switch
   - update
-ha_integration_type: integration
+ha_integration_type: hub
 ---
 
 The **Teslemetry** {% term integration %} exposes various commands and sensors from the Tesla vehicles and energy sites connected to a [Teslemetry](https://teslemetry.com/) subscription.
 
 ## Prerequisites
 
-You must have a [Teslemetry](https://teslemetry.com) account, active subscription, and [access token](https://teslemetry.com/console).
+You must have a [Teslemetry](https://teslemetry.com) account with active subscription.
 
 Vehicles delivered in 2024 and later will require a [virtual key](https://teslemetry.com/docs/topics/virtualkey) to be configured in order to run certain commands.
 

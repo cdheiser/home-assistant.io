@@ -13,7 +13,7 @@ ha_domain: amberelectric
 ha_platforms:
   - binary_sensor
   - sensor
-ha_integration_type: integration
+ha_integration_type: service
 ---
 
 [Amber](https://www.amber.com.au/) is an Australian electricity retailer that provides access to wholesale electricity prices. Customers monitor the wholesale price and shift their energy usage to cheaper, greener times. This saves them money and supports Australia's shift towards more renewable energy. Customers can also sell their unused electricity for fluctuating prices. This differs from other wholesale providers, where selling prices vary based on grid demand.
