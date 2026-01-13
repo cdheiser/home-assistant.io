@@ -68,10 +68,12 @@ Some other rules:
 - If a paragraph/markdown isn't written in a flowing text style, it must
   be adjusted.
 - Do not use CAPS for emphasis. Use italics instead.
+- Do not use **bold** for emphasis or to replace a heading. Bold is mainly used for
+  UI strings.
+- Use **bold** to mark up UI strings and use > in breadcrumbs. For example:
+    - Under **Settings** > **Devices & services**, select **Integrations**.
 - Use the word "Home Assistant" in full, and not "HA" or "HASS". 
 - Use sentence-style capitalization for headings and titles.
-- Use **bold** to mark up UI strings. For example:
-    - Under **Settings** > **Devices & services**, select **Integrations**.
 - Do not use "e.g.", "i.e.", "etc.", or "etcetera". Use "like", "for example",
   or "such as" instead.
 - Lists
