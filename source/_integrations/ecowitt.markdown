@@ -20,6 +20,17 @@ ha_integration_type: device
 
 The **Ecowitt** {% term integration %} allows you to integrate [Ecowitt](https://www.ecowitt.com/) devices into Home Assistant.
 
+## Prerequisites
+
+- Your weather station is set up with sensors connected and functioning.
+
+- Your gateway is connected to your local network via Wi-Fi or Ethernet. You can configure the network connection using one of the following methods:
+
+  - **Ecowitt mobile app** (requires creating an Ecowitt account)
+
+  - **Embedded web interface** by connecting to the device's Wi-Fi hotspot and opening `192.168.4.1` in a browser (no account required)
+- Your Home Assistant instance is accessible via HTTP. Ecowitt devices do not support HTTPS connections. If your instance only accepts HTTPS, refer to [TLS/SSL limitations](#tlsssl-limitations).
+
 {% include integrations/config_flow.md %}
 
 ## Ecowitt Weather Station configuration
