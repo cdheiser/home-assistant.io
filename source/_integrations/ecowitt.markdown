@@ -20,6 +20,23 @@ ha_integration_type: device
 
 The **Ecowitt** {% term integration %} allows you to integrate [Ecowitt](https://www.ecowitt.com/) devices into Home Assistant.
 
+## Supported devices
+
+The following devices have been reported to work with the **Ecowitt** {% term integration %}:
+
+### Gateway/Hub
+
+- GW1200 Weather Station Gateway
+- GW2000 Ethernet and Wi-Fi Gateway
+- GW3000 Ethernet and Wi-Fi Gateway with Data Storage
+
+### Sensors
+
+- WH51 Wireless Soil Moisture Sensor
+- WH40 Wireless Self-emptying Rain Gauge Sensor
+- WH57 Outdoor Wireless Lightning Detection Sensor
+- WS90 Wireless 7-in-1 Weather Sensor
+
 ## Prerequisites
 
 - Your weather station is set up with sensors connected and functioning.
