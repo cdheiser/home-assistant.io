@@ -19,11 +19,11 @@ Happy New Year! 🥂
 
 I hope you had a wonderful holiday, spending time with your loved ones. We're kicking off 2026 with a smaller release, as our contributors and maintainers have been enjoying some well-deserved time off as well. But don't worry, there's still plenty of good stuff in this release!
 
-Home Assistant 2026.1 brings a refreshed Home dashboard experience on mobile, with summary cards right at your fingertips without extra taps. We’ve also made it easier than ever to navigate to the protocol connecting your devices, such as Matter, Zigbee, Z-Wave, and more.
+Home Assistant 2026.1 brings a refreshed Home dashboard experience on mobile, with summary cards right at your fingertips without extra taps. We’ve also made it easier than ever to navigate to the protocol connecting your devices, such as Zigbee, Z-Wave, Thread and more.
 
 For automation enthusiasts, we’re continuing our work on our even more "human-friendly" triggers, which can be enabled via Home Assistant Labs, so you can build automations using easy-to-understand language instead of technical state changes, like initiating automations if a button is pressed or someone arrives home.
 
-On the integrations front, we welcome eight new integrations to the family, including pet tracking with Fressnapf, energy monitoring with eGauge, and smart heating control with Watts Vision+. Plus, improvements to existing integrations from our amazing community contributors.
+On the integrations front, we welcome eight new integrations to the family, including pet tracking with Fressnapf, energy monitoring with eGauge, and smart heating control with Watts Vision +. Plus, improvements to existing integrations from our amazing community contributors.
 
 I wish you a happy and healthy 2026! Enjoy the release!
 
@@ -44,6 +44,10 @@ I wish you a happy and healthy 2026! Enjoy the release!
 - [Other noteworthy changes](#other-noteworthy-changes)
   - [Energy dashboard date picker](#energy-dashboard-date-picker)
   - [ESPHome action responses](#esphome-action-responses)
+- [Patch releases](#patch-releases)
+  - [2026.1.1 - January 12](#202611---january-12)
+  - [2026.1.2 - January 16](#202612---january-16)
+  - [2026.1.3 - January 23](#202613---january-23)
 - [Need help? Join the community](#need-help-join-the-community)
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
@@ -56,7 +60,7 @@ _A huge thank you to all the contributors who made this release possible! And a 
 
 ## Home dashboard improvements
 
-The [Home dashboard](/dashboards/home/) continues to evolve! In [the previous release](/blog/2025/12/03/release-202512/#more-dashboard-improvements), we introduced a brand-new sidebar layout, weather tiles, and energy distribution summaries. This release takes it even further with a streamlined mobile experience and better device management.
+The [Home dashboard](/dashboards/dashboards/#home-dashboard) continues to evolve! In [the previous release](/blog/2025/12/03/release-202512/#more-dashboard-improvements), we introduced a brand-new sidebar layout, weather tiles, and energy distribution summaries. This release takes it even further with a streamlined mobile experience and better device management.
 
 ### Streamlined mobile navigation
 
@@ -92,7 +96,7 @@ This feature is still being refined in {% my labs title="**Home Assistant Labs**
 
 As the new purpose-specific triggers and conditions all support targeting something bigger than a simple entity (an area, a floor, or even a label), we also redesigned how the target gets displayed on the automation flow.
 
-The goal of this change is to allow you to quickly glance and your automation, and understand its purpose.
+The goal of this change is to allow you to quickly glance at your automation, and understand its purpose.
 
 <img src='/images/blog/2026-01/target_summary_automation_editor.png' alt='Screenshot showing the new target summary in the automation editor.' class='no-shadow' />
 
@@ -116,8 +120,8 @@ Thanks to our community for keeping pace with the new {% term integrations %} an
 
 We welcome the following new integrations in this release:
 
-- **[Airpatrol]**, added by [@antondalgren]  
-  Control your air conditioning units through Airpatrol WiFi devices directly from Home Assistant.
+- **[AirPatrol]**, added by [@antondalgren]  
+  Control your air conditioning units through AirPatrol Wi-Fi devices directly from Home Assistant.
 - **[eGauge]**, added by [@neggert]  
   Integrate eGauge energy monitors for residential and commercial applications, commonly used with solar energy installations.
 - **[Fluss+]**, added by [@Marcello17]  
@@ -141,7 +145,7 @@ We welcome the following new integrations in this release:
 [@noambav]: https://github.com/noambav
 [@ryanjones-gentex]: https://github.com/ryanjones-gentex
 [@theobld-ww]: https://github.com/theobld-ww
-[Airpatrol]: /integrations/airpatrol
+[AirPatrol]: /integrations/airpatrol
 [eGauge]: /integrations/egauge
 [Fish Audio]: /integrations/fish_audio
 [Fluss+]: /integrations/fluss
@@ -165,7 +169,7 @@ It is not just new {% term integrations %} that have been added; existing ones a
 - The [Matter] integration gained three new diagnostic binary sensors for thermostat remote sensing status from [@lboue], helping you keep an eye on your climate system.
 - [@joostlek] added lots of new sensors to the [SmartThings] integration, including air quality sensors for PM1, PM2.5, and PM10, hood filter usage tracking, fridge temperature sensors for One Door refrigerators, and fan speed control for range hoods.
 - [Roborock] owners with Q7 devices can now integrate them thanks to [@Lash-L], who added basic read-only support with sensors for battery, status, and cleaning data.
-- [@mib1185] improved the [FRITZ!Box Smart Home] integration by adding switch entities that let you enable or disable FRITZ! Smarthome routines (triggers) directly from Home Assistant.
+- [@mib1185] improved the [FRITZ!SmartHome] integration by adding switch entities that let you enable or disable FRITZ! Smart Home routines (triggers) directly from Home Assistant.
 - The [Ping] integration now tracks packet loss, thanks to [@mib1185]. The new sensor shows packet loss as a percentage and is disabled by default.
 - [@Shulyaka] added support for GPT-5.2 and GPT-5.2-pro models to the [OpenAI] integration, including a new "xhigh" reasoning effort level.
 - The [HomeWizard] integration gained two new battery charge modes from [@DCSBL]: zero charge only and zero discharge only, giving you more control over your energy storage.
@@ -204,7 +208,7 @@ A huge thank you to all the contributors who improved these integrations, and to
 [Actron Air]: /integrations/actron_air
 [AirPatrol]: /integrations/airpatrol
 [Airobot]: /integrations/airobot
-[FRITZ!Box Smart Home]: /integrations/fritzbox
+[FRITZ!SmartHome]: /integrations/fritzbox
 [Hikvision]: /integrations/hikvision
 [HomeWizard]: /integrations/homewizard
 [KNX]: /integrations/knx
@@ -321,6 +325,270 @@ To get started, check out the [ESPHome documentation on action responses][esphom
 [ESPHome 2025.12]: https://esphome.io/changelog/2025.12.0/#api-action-responses
 [esphome-action-responses]: https://esphome.io/components/api/#action-responses
 
+## Patch releases
+
+We will also release patch releases for Home Assistant 2026.1 in January.
+These patch releases only contain bug fixes. Our goal is to release a patch
+release once a week, aiming for Friday.
+
+### 2026.1.1 - January 12
+
+- Fix Hikvision NVR binary sensors not being detected ([@ptarjan] - [#160254])
+- Bump eheimdigital to 1.5.0 ([@autinerd] - [#160312])
+- Bump ZHA to 0.0.84 ([@TheJulianJES] - [#160440])
+- Bump pyOverkiz to 1.19.4 ([@iMicknl] - [#160457])
+- Fix JSON serialization of time objects in anthropic tool results ([@dcermak] - [#160459])
+- Add asyncio-level timeout to Backblaze B2 uploads ([@ElCruncharino] - [#160468])
+- Fix Requirement parsing in RequirementsManager ([@epenet] - [#160485])
+- Add Nettleie optimization option ([@osohotwateriot] - [#160494])
+- Bump python-otbr-api to 2.7.1 ([@emontnemery] - [#160496])
+- fix rain sensor for some rare velux windows ([@wollew] - [#160504])
+- Fix trigger selectors ([@bramkragten] - [#160519])
+- Bump Intergas Incomfort-client to v0.6.11 ([@jbouwh] - [#160520])
+- Revert "Update voluptuous and voluptuous-openapi" ([@synesthesiam] - [#160530])
+- Bump serialx to v0.6.2 ([@puddly] - [#160545])
+- Catch any migration failures in Teslemetry ([@Bre77] - [#160549])
+- Fix AttributeError for missing/incomplete health data in Tractive ([@bieniu] - [#160553])
+- Bump pysilero-vad to 3.1.0 ([@synesthesiam] - [#160554])
+- Fix for older Fritzbox models which do not support smarthome triggers ([@mib1185] - [#160555])
+- Bump google-air-quality-api to 2.1.2 ([@Thomas55555] - [#160561])
+- Fix Climate signal in Teslemetry ([@Bre77] - [#160571])
+- Bump pysma to 1.1.0 ([@kellerza] - [#160583])
+- Bump opower to 0.16.1 ([@tronikos] - [#160588])
+- Fix config flow bug in Tesla Fleet ([@Bre77] - [#160591])
+- Add missing segment speed icons for WLED ([@Tommatheussen] - [#160597])
+- Better handling of ratelimiting from Tibber ([@Danielhiversen] - [#160599])
+- Change device class to energy_storage for some enphase_envoy battery entities ([@catsmanac] - [#160603])
+- Fix Z-Wave creating notification binary sensor for idle state ([@MartinHjelmare] - [#160604])
+- Bump pynintendoparental to 2.3.2 ([@pantherale0] - [#160626])
+- Update frontend to 20260107.1 ([@bramkragten] - [#160644])
+- Bump pyhik to 0.4.0 ([@ptarjan] - [#160654])
+- Bump greeclimate to 2.1.1 ([@cmroche] - [#160683])
+- Bump pysilero-vad to 3.2.0 ([@synesthesiam] - [#160691])
+- Revert bthome-ble back to 3.16.0 to fix missing data ([@Ernst79] - [#160694])
+- Fix missing key for brew by weight in lamarzocco ([@zweckj] - [#160722])
+- Bump pytado 0.18.16 ([@erwindouna] - [#160724])
+- Bump python-homewizard-energy to 10.0.1 ([@DCSBL] - [#160736])
+- Fix fitbit icon ([@joostlek] - [#160750])
+
+[#159957]: https://github.com/home-assistant/core/pull/159957
+[#160254]: https://github.com/home-assistant/core/pull/160254
+[#160312]: https://github.com/home-assistant/core/pull/160312
+[#160440]: https://github.com/home-assistant/core/pull/160440
+[#160457]: https://github.com/home-assistant/core/pull/160457
+[#160459]: https://github.com/home-assistant/core/pull/160459
+[#160468]: https://github.com/home-assistant/core/pull/160468
+[#160485]: https://github.com/home-assistant/core/pull/160485
+[#160494]: https://github.com/home-assistant/core/pull/160494
+[#160496]: https://github.com/home-assistant/core/pull/160496
+[#160504]: https://github.com/home-assistant/core/pull/160504
+[#160519]: https://github.com/home-assistant/core/pull/160519
+[#160520]: https://github.com/home-assistant/core/pull/160520
+[#160530]: https://github.com/home-assistant/core/pull/160530
+[#160545]: https://github.com/home-assistant/core/pull/160545
+[#160549]: https://github.com/home-assistant/core/pull/160549
+[#160553]: https://github.com/home-assistant/core/pull/160553
+[#160554]: https://github.com/home-assistant/core/pull/160554
+[#160555]: https://github.com/home-assistant/core/pull/160555
+[#160561]: https://github.com/home-assistant/core/pull/160561
+[#160571]: https://github.com/home-assistant/core/pull/160571
+[#160583]: https://github.com/home-assistant/core/pull/160583
+[#160588]: https://github.com/home-assistant/core/pull/160588
+[#160591]: https://github.com/home-assistant/core/pull/160591
+[#160597]: https://github.com/home-assistant/core/pull/160597
+[#160599]: https://github.com/home-assistant/core/pull/160599
+[#160603]: https://github.com/home-assistant/core/pull/160603
+[#160604]: https://github.com/home-assistant/core/pull/160604
+[#160626]: https://github.com/home-assistant/core/pull/160626
+[#160644]: https://github.com/home-assistant/core/pull/160644
+[#160654]: https://github.com/home-assistant/core/pull/160654
+[#160683]: https://github.com/home-assistant/core/pull/160683
+[#160691]: https://github.com/home-assistant/core/pull/160691
+[#160694]: https://github.com/home-assistant/core/pull/160694
+[#160722]: https://github.com/home-assistant/core/pull/160722
+[#160724]: https://github.com/home-assistant/core/pull/160724
+[#160736]: https://github.com/home-assistant/core/pull/160736
+[#160750]: https://github.com/home-assistant/core/pull/160750
+[@Bre77]: https://github.com/Bre77
+[@DCSBL]: https://github.com/DCSBL
+[@Danielhiversen]: https://github.com/Danielhiversen
+[@ElCruncharino]: https://github.com/ElCruncharino
+[@Ernst79]: https://github.com/Ernst79
+[@MartinHjelmare]: https://github.com/MartinHjelmare
+[@TheJulianJES]: https://github.com/TheJulianJES
+[@Thomas55555]: https://github.com/Thomas55555
+[@Tommatheussen]: https://github.com/Tommatheussen
+[@autinerd]: https://github.com/autinerd
+[@bieniu]: https://github.com/bieniu
+[@bramkragten]: https://github.com/bramkragten
+[@catsmanac]: https://github.com/catsmanac
+[@cmroche]: https://github.com/cmroche
+[@dcermak]: https://github.com/dcermak
+[@emontnemery]: https://github.com/emontnemery
+[@epenet]: https://github.com/epenet
+[@erwindouna]: https://github.com/erwindouna
+[@frenck]: https://github.com/frenck
+[@iMicknl]: https://github.com/iMicknl
+[@jbouwh]: https://github.com/jbouwh
+[@joostlek]: https://github.com/joostlek
+[@kellerza]: https://github.com/kellerza
+[@mib1185]: https://github.com/mib1185
+[@osohotwateriot]: https://github.com/osohotwateriot
+[@pantherale0]: https://github.com/pantherale0
+[@ptarjan]: https://github.com/ptarjan
+[@puddly]: https://github.com/puddly
+[@synesthesiam]: https://github.com/synesthesiam
+[@tronikos]: https://github.com/tronikos
+[@wollew]: https://github.com/wollew
+[@zweckj]: https://github.com/zweckj
+[accuweather docs]: /integrations/accuweather/
+[actron_air docs]: /integrations/actron_air/
+[adax docs]: /integrations/adax/
+[anthropic docs]: /integrations/anthropic/
+[assist_pipeline docs]: /integrations/assist_pipeline/
+[backblaze_b2 docs]: /integrations/backblaze_b2/
+[bthome docs]: /integrations/bthome/
+[climate docs]: /integrations/climate/
+[eheimdigital docs]: /integrations/eheimdigital/
+[enphase_envoy docs]: /integrations/enphase_envoy/
+[fitbit docs]: /integrations/fitbit/
+[fritzbox docs]: /integrations/fritzbox/
+[frontend docs]: /integrations/frontend/
+[google_air_quality docs]: /integrations/google_air_quality/
+[gree docs]: /integrations/gree/
+[hikvision docs]: /integrations/hikvision/
+[homeassistant_hardware docs]: /integrations/homeassistant_hardware/
+[homewizard docs]: /integrations/homewizard/
+[humidifier docs]: /integrations/humidifier/
+[incomfort docs]: /integrations/incomfort/
+[lamarzocco docs]: /integrations/lamarzocco/
+[light docs]: /integrations/light/
+[nintendo_parental_controls docs]: /integrations/nintendo_parental_controls/
+[opower docs]: /integrations/opower/
+[osoenergy docs]: /integrations/osoenergy/
+[otbr docs]: /integrations/otbr/
+[overkiz docs]: /integrations/overkiz/
+[sma docs]: /integrations/sma/
+[tado docs]: /integrations/tado/
+[tesla_fleet docs]: /integrations/tesla_fleet/
+[teslemetry docs]: /integrations/teslemetry/
+[thread docs]: /integrations/thread/
+[tibber docs]: /integrations/tibber/
+[tractive docs]: /integrations/tractive/
+[velux docs]: /integrations/velux/
+[wled docs]: /integrations/wled/
+[zha docs]: /integrations/zha/
+[zwave_js docs]: /integrations/zwave_js/
+
+### 2026.1.2 - January 16
+
+- Fix Airzone Q-Adapt select entities ([@Noltari] - [#160695])
+- Revert back to microVAD ([@synesthesiam] - [#160821])
+- Bump opower to 0.16.2 ([@tronikos] - [#160822])
+- accept leading zeros in sms_code for fressnapf_tracker ([@eifinger] - [#160834])
+- Add support for packaging version >= 26 on the version bump script ([@edenhaus] - [#160858])
+- Update PyNaCl to 1.6.2 ([@cdce8p] - [#160909])
+- Bump pyenphase from 2.4.2 to 2.4.3 ([@catsmanac] - [#160912])
+- Decrease Essent update interval to 1 hour ([@jaapp] - [#160959])
+- Bump opower to 0.16.3 ([@tronikos] - [#160961])
+- Bump PySrDaliGateway from 0.18.0 to 0.19.3 ([@niracler] - [#160972])
+- Add descriptions to openai_conversation ([@zweckj] - [#160979])
+- Clean up unnecessary Z-Wave "device config changed" repairs ([@AlCalzone] - [#161000])
+- Update knx-frontend to 2026.1.15.112308 ([@farmio] - [#161004])
+- Require admin for blueprint ws commands ([@edenhaus] - [#161008])
+- Bump aiomealie to 1.2.0 ([@andrew-codechimp] - [#161058])
+- Update frontend to 20260107.2 ([@bramkragten] - [#161061])
+- Update aioairzone to v1.0.5 ([@Noltari] - [#160688])
+
+[#159957]: https://github.com/home-assistant/core/pull/159957
+[#160688]: https://github.com/home-assistant/core/pull/160688
+[#160695]: https://github.com/home-assistant/core/pull/160695
+[#160771]: https://github.com/home-assistant/core/pull/160771
+[#160821]: https://github.com/home-assistant/core/pull/160821
+[#160822]: https://github.com/home-assistant/core/pull/160822
+[#160834]: https://github.com/home-assistant/core/pull/160834
+[#160858]: https://github.com/home-assistant/core/pull/160858
+[#160909]: https://github.com/home-assistant/core/pull/160909
+[#160912]: https://github.com/home-assistant/core/pull/160912
+[#160959]: https://github.com/home-assistant/core/pull/160959
+[#160961]: https://github.com/home-assistant/core/pull/160961
+[#160972]: https://github.com/home-assistant/core/pull/160972
+[#160979]: https://github.com/home-assistant/core/pull/160979
+[#161000]: https://github.com/home-assistant/core/pull/161000
+[#161004]: https://github.com/home-assistant/core/pull/161004
+[#161008]: https://github.com/home-assistant/core/pull/161008
+[#161058]: https://github.com/home-assistant/core/pull/161058
+[#161061]: https://github.com/home-assistant/core/pull/161061
+[@AlCalzone]: https://github.com/AlCalzone
+[@Noltari]: https://github.com/Noltari
+[@andrew-codechimp]: https://github.com/andrew-codechimp
+[@bramkragten]: https://github.com/bramkragten
+[@catsmanac]: https://github.com/catsmanac
+[@cdce8p]: https://github.com/cdce8p
+[@edenhaus]: https://github.com/edenhaus
+[@eifinger]: https://github.com/eifinger
+[@farmio]: https://github.com/farmio
+[@frenck]: https://github.com/frenck
+[@jaapp]: https://github.com/jaapp
+[@niracler]: https://github.com/niracler
+[@synesthesiam]: https://github.com/synesthesiam
+[@tronikos]: https://github.com/tronikos
+[@zweckj]: https://github.com/zweckj
+
+### 2026.1.3 - January 23
+
+- Bump uiprotect to 8.1.1 ([@RaHehl] - [#160816])
+- Update list of supported locations for London Air ([@allanlewis] - [#160884])
+- Bump onedrive-personal-sdk to 0.1.0 ([@zweckj] - [#160976])
+- Adjust battery voltage sensor display precision for Matter devices ([@lboue] - [#161088])
+- Fix color temperature attributes in wiz ([@arturpragacz] - [#161125])
+- Bump xiaomi-ble to 1.4.3 ([@terop] - [#161132])
+- Bump opower to 0.16.4 ([@tronikos] - [#161153])
+- Fix detection of multiple smart object types in single event ([@RaHehl] - [#161189])
+- Fix icons for 'moving' state ([@stickpin] - [#161194])
+- Bump onedrive-personal-sdk to 0.1.1 ([@zweckj] - [#161337])
+- Bump uiprotect to 10.0.0 ([@RaHehl] - [#161350])
+- Migrate config entries to string unique id ([@edenhaus] - [#161370])
+- Bump uiprotect to 10.0.1 ([@RaHehl] - [#161397])
+- Bump Insteon panel to 0.6.1 ([@teharris1] - [#161411])
+- Bump music-assistant-client to 1.3.3 ([@arturpragacz] - [#161438])
+- Revert deprecation of `server_host` for container installations ([@emontnemery] - [#161443])
+- Bump opower to 0.16.5 ([@tronikos] - [#161450])
+
+[#159957]: https://github.com/home-assistant/core/pull/159957
+[#160771]: https://github.com/home-assistant/core/pull/160771
+[#160816]: https://github.com/home-assistant/core/pull/160816
+[#160884]: https://github.com/home-assistant/core/pull/160884
+[#160976]: https://github.com/home-assistant/core/pull/160976
+[#161085]: https://github.com/home-assistant/core/pull/161085
+[#161088]: https://github.com/home-assistant/core/pull/161088
+[#161125]: https://github.com/home-assistant/core/pull/161125
+[#161132]: https://github.com/home-assistant/core/pull/161132
+[#161153]: https://github.com/home-assistant/core/pull/161153
+[#161189]: https://github.com/home-assistant/core/pull/161189
+[#161194]: https://github.com/home-assistant/core/pull/161194
+[#161337]: https://github.com/home-assistant/core/pull/161337
+[#161350]: https://github.com/home-assistant/core/pull/161350
+[#161370]: https://github.com/home-assistant/core/pull/161370
+[#161397]: https://github.com/home-assistant/core/pull/161397
+[#161411]: https://github.com/home-assistant/core/pull/161411
+[#161438]: https://github.com/home-assistant/core/pull/161438
+[#161443]: https://github.com/home-assistant/core/pull/161443
+[#161450]: https://github.com/home-assistant/core/pull/161450
+[@RaHehl]: https://github.com/RaHehl
+[@allanlewis]: https://github.com/allanlewis
+[@arturpragacz]: https://github.com/arturpragacz
+[@bramkragten]: https://github.com/bramkragten
+[@edenhaus]: https://github.com/edenhaus
+[@emontnemery]: https://github.com/emontnemery
+[@frenck]: https://github.com/frenck
+[@lboue]: https://github.com/lboue
+[@stickpin]: https://github.com/stickpin
+[@teharris1]: https://github.com/teharris1
+[@terop]: https://github.com/terop
+[@tronikos]: https://github.com/tronikos
+[@zweckj]: https://github.com/zweckj
+
 ## Need help? Join the community
 
 Home Assistant has a great community of users who are all more than willing to help each other out. So, join us!
@@ -408,7 +676,7 @@ The `advancedSleep` fan mode has been changed to `advanced_sleep`. If you have a
 
 {% enddetails %}
 
-If you are a custom integration developer and want to learn about changes and new features available for your integration: Be sure to follow our [developer blog][devblog].
+If you are a custom integration developer and want to learn about changes and new features available for your integration, be sure to follow our [developer blog][devblog].
 
 [devblog]: https://developers.home-assistant.io/blog/
 
