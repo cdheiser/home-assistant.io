@@ -74,7 +74,11 @@ Enjoy the (beta) release!
 
 <!--more-->
 
-- [Home dashboard](#home-dashboard)
+- [A new way to view your home](#a-new-way-to-view-your-home)
+  - [Discovered devices at a glance](#discovered-devices-at-a-glance)
+  - [Area assignments made easy](#area-assignments-made-easy)
+  - [Faster area edits](#faster-area-edits)
+  - [UX and visual upgrades](#ux-and-visual-upgrades)
 - [Device database: We need your help!](#device-database-we-need-your-help)
   - [Help us out and share your devices](#help-us-out-and-share-your-devices)
   - [See the data in action](#see-the-data-in-action)
@@ -101,31 +105,31 @@ _A huge thank you to all the contributors who made this release possible! And a 
 
 [@frenck]: https://github.com/frenck
 
-## A New Way to View Your Home
+## A new way to view your home
 
-The Home Dashboard is now Overview as it becomes the official default standard, replacing the old "Overview" for all new instances. If you’re a long-time user who never customized your default view, we’ll suggest the switch to you; otherwise, you can find it in Settings > Dashboards to try it out whenever you're ready.
+The Home Dashboard is now Overview as it becomes the official default standard, replacing the old "Overview" for all new instances. If you’re a long-time user who never customized your default view, we’ll suggest the switch to you; otherwise, you can find it in {% my dashboards title="**Settings** > **Dashboards**" %} to try it out whenever you're ready.
 
-Liked the old Overview as a way to build your custom dashboards? You can still do it - Go to Settings > Dashboards > Create and pick the Overview (legacy) template.
+Liked the old Overview as a way to build your custom dashboards? You can still do it. Go to {% my dashboards title="**Settings** > **Dashboards**" %}, select **Create**, and pick the **Overview (legacy)** template.
 
-### Discovered Devices at a Glance
+### Discovered devices at a glance
 
-Check out the new card in the For You section! It instantly displays any new devices your Home Assistant has discovered, allowing you to add them on the spot or jump straight to device management without digging through menus.
+Check out the new card in the **For You** section! It instantly displays any new devices your Home Assistant has discovered, allowing you to add them on the spot or jump straight to device management without digging through menus.
 
-### Area Assignments Made Easy
+### Area assignments made easy
 
-In the last release we added a dedicated "Devices" area within the Home Dashboard to catch everything currently unassigned. Now this section provides quick prompts to help you categorize your devices into the right rooms, keeping your setup organized with minimal effort.
+In the last release we added a dedicated **Devices** area within the Home Dashboard to catch everything currently unassigned. Now this section provides quick prompts to help you categorize your devices into the right rooms, keeping your setup organized with minimal effort.
 
-### Faster Area Edits
+### Faster area edits
 
-Need to swap the area temperature sensor? Area pages now feature a shortcut in the Edit button. This lets you jump straight to the area's configuration to update primary sensors like humidity or temperature in seconds.
+Need to swap the area temperature sensor? Area pages now feature a shortcut in the **Edit** button. This lets you jump straight to the area's configuration to update primary sensors like humidity or temperature in seconds.
 
 Also, we’ve tidied up the interface by removing awkward empty spaces and fixing issues with some back arrows. Navigating through your sub-menus should now feel as smooth and predictable as you'd expect.
 
-### UX & Visual Upgrades
+### UX and visual upgrades
 
-A **Modern Look in the default theme**: We’ve retired the old blue top bar in favor of a clean, consistent theme that matches our Settings page. This distraction-free design lets your cards and data take center stage.
+**Modern look in the default theme**: We've retired the old blue top bar in favor of a clean, consistent theme that matches our **Settings** page. This distraction-free design lets your cards and data take center stage.
 
-**Personalized Themes**: Themes have moved! You can now find and toggle your favorite looks directly within your User Profile, making it easier to switch styles on the fly.
+**Personalized themes**: Themes have moved! You can now find and toggle your favorite looks directly within your {% my profile title="**User profile**" %}, making it easier to switch styles on the fly.
 
 ## Device database: We need your help!
 
@@ -141,7 +145,7 @@ Since we’re still in the early stages, the device database lives in {% my labs
 
 **TODO**: Insert screenshot of the labs feature here
 
-By introducing it in Labs, we have also introduced an additional section called “Device analytics” in {% my analytics title="**Home Assistant Analytics**" %}. If you opt-in, you are of course able to opt-out at any time.
+By introducing it in Labs, we have also introduced an additional section called **Device analytics** in {% my analytics title="**Home Assistant Analytics**" %}. If you opt in, you are of course able to opt out at any time.
 
 **TODO**: Insert screenshot of the analytics panel here
 
@@ -234,7 +238,7 @@ Meet the **distribution card**, a brand new dashboard card that visualizes how v
 
 <img src='/images/blog/2026-02/temp-distribution-card.png' alt='Screenshot of a the two distribution cards on a desktop, providing a new way of insight into your data.' class='no-shadow' />
 
-The card is fully interactive: click on legend items to hide or show entities (the percentages recalculate dynamically), and click on bar segments to open the more-info dialog for that entity. When you have many entities, the legend shows the first items with a "More" button to expand the rest.
+The card is fully interactive: click on legend items to hide or show entities (the percentages recalculate dynamically), and click on bar segments to open the more-info dialog for that entity. When you have many entities, the legend shows the first items with a **More** button to expand the rest.
 
 The distribution card is smart about what you can combine. It validates that all entities share the same domain and device class, so you won't accidentally mix power sensors with battery sensors. It even handles related units gracefully: mixing watts and kilowatts works just fine.
 
