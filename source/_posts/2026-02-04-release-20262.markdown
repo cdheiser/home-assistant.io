@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "2026.2 Beta: A Betta title 🥂"
+title: "2026.2 Beta: A Betta title 💝"
 description: "Beta release notes for Home Assistant Core 2026.2"
 date: 2026-01-28 00:00:00
 date_formatted: "February 4, 2026"
@@ -430,9 +430,20 @@ The following integrations are now available via the Home Assistant UI:
 
 There are many more improvements in this release; here are some of the other noteworthy changes:
 
-- We have magical automations now! Just connect to the Matrix and let the magic happen. Thanks, [@frenck]!
+- Dashboards now support calendar colors! Pick a color for each calendar, and it will show up in your calendar cards. The [Google Calendar] integration already supports this feature, thanks to [@Misiu].
+- [@karwosts] added live inline template previews to the template editor. As you type, you can instantly see the result of your template without needing to manually refresh.
+- The sidebar now features a subtle scroll fade effect and keeps **Settings** always visible at the bottom, so you never have to scroll to find it. Thanks, [@ildar170975]!
+- The **Developer tools** have been moved to the {% my general title="**Settings**" %} area. We moved it to keeps all administrative tools in one place.
+- [@MindFreeze] added tap action and image tap action options to the area card, giving you more control over what happens when you interact with your areas.
+- The entity card now supports actions, thanks to [@ildar170975]. Configure tap, hold, or double-tap actions to trigger anything you want directly from the card.
+- [@Thomas55555] added parts per billion (ppb) as a valid unit of measurement for sulfur dioxide sensors and number entities.
 
-[@frenck]: https://github.com/frenck
+[@ildar170975]: https://github.com/ildar170975
+[@karwosts]: https://github.com/karwosts
+[@MindFreeze]: https://github.com/MindFreeze
+[@Misiu]: https://github.com/Misiu
+[@Thomas55555]: https://github.com/Thomas55555
+[Google Calendar]: /integrations/google
 
 ### Add buttons to your heading card
 
