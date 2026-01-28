@@ -314,10 +314,58 @@ We welcome the following new integrations in this release:
 
 It is not just new {% term integrations %} that have been added; existing ones are also being constantly improved. Here are some of the noteworthy changes to existing integrations:
 
-- [@frenck] did a thing to the [Lorem ipsum] integration! Now you can do ipsum with more options than ever before. Check it out!
+- [ESPHome] integration now supports water heater devices! Thanks, [@dhoeben], for adding this!
+- [Music Assistant] integration now supports pre-announce URLs, thanks to [@arturpragacz]. Use your custom announcement sounds before your text-to-speech messages plays!
+- [@fr33mang] made it possible to play your "Liked Songs" collection directly in the [Spotify] integration. No more searching for that special playlist. 😁
+- The [Sonos] integration now shows your podcast favorites in the media browser, thanks to [@divers33]. May we recommend the [Home Assistant Podcast](https://hasspodcast.io/)? 🎤
+- [@starkillerOG] added a new pet chime option to the [Reolink] integration. Now you can trigger a special chime when your furry friends are at the door! 🐶
+- The [SmartThings] integration now supports audio notifications, thanks to [@vmonkey].
+- [@Lash-L] improved the [Roborock] integration by adding sensors for the dock water box status. Nice!
+- The [Tibber] integration received several enhancements from [@Danielhiversen]: new binary sensors for EV charger status, additional temperature and grid sensors, and more EV settings to fine-tune your charging experience. ⚡️
+- [@LG-ThinQ-Integration] added support for controlling humidifiers and dehumidifiers in the [LG ThinQ] integration. Thanks!
+- Thanks to [@ptarjan], the [Hikvision] integration now has a camera support! You can view snapshots and streams from your Hikvision cameras and NVRs directly in Home Assistant.
+- [@cdnninja] added PM1 and PM10 air quality sensors to the [VeSync] integration. Nice!
+- The [Bang & Olufsen] integration received battery support from [@mj23000]. You can now monitor battery levels and charging status for your portable Beosound speakers and Beoremote One remotes.
+- [@erwindouna] enhanced the [Portainer] integration with a new prune images button and a state sensor. Awesome!
+- Thanks to [@klaasnicolaas], the [Powerfox] integration now supports gas meters alongside electricity meters.
+- [@terop] added an Indoor Air Quality Score (IAQS) sensor to the [Ruuvi] integration. Great!
+- The [Home Connect] integration can now start dishwasher programs directly from Home Assistant, thanks to [@JesusSanchezLopez]!
+- [@pandanz] added an ambient temperature sensor to the [ToGrill] integration. Keep an eye on the temperature around your grill 🍗, not just inside it!
 
-[@frenck]: https://github.com/frenck
-[Lorem ipsum]: /integrations/lorem_ipsum
+[@arturpragacz]: https://github.com/arturpragacz
+[@cdnninja]: https://github.com/cdnninja
+[@Danielhiversen]: https://github.com/Danielhiversen
+[@dhoeben]: https://github.com/dhoeben
+[@divers33]: https://github.com/divers33
+[@erwindouna]: https://github.com/erwindouna
+[@fr33mang]: https://github.com/fr33mang
+[@JesusSanchezLopez]: https://github.com/JesusSanchezLopez
+[@klaasnicolaas]: https://github.com/klaasnicolaas
+[@Lash-L]: https://github.com/Lash-L
+[@LG-ThinQ-Integration]: https://github.com/LG-ThinQ-Integration
+[@mj23000]: https://github.com/mj23000
+[@pandanz]: https://github.com/pandanz
+[@ptarjan]: https://github.com/ptarjan
+[@starkillerOG]: https://github.com/starkillerOG
+[@terop]: https://github.com/terop
+[@vmonkey]: https://github.com/vmonkey
+[Bang & Olufsen]: /integrations/bang_olufsen
+[ESPHome]: /integrations/esphome
+[Hikvision]: /integrations/hikvision
+[Home Connect]: /integrations/home_connect
+[LG ThinQ]: /integrations/lg_thinq
+[Music Assistant]: /integrations/music_assistant
+[Portainer]: /integrations/portainer
+[Powerfox]: /integrations/powerfox
+[Reolink]: /integrations/reolink
+[Roborock]: /integrations/roborock
+[Ruuvi]: /integrations/ruuvitag
+[SmartThings]: /integrations/smartthings
+[Sonos]: /integrations/sonos
+[Spotify]: /integrations/spotify
+[Tibber]: /integrations/tibber
+[ToGrill]: /integrations/togrill
+[VeSync]: /integrations/vesync
 
 ### Integration quality scale achievements
 
