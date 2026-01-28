@@ -182,7 +182,11 @@ The following new triggers have been added in this release:
 
 ### New conditions
 
-This release marks the start of purpose-specific conditions! Just like triggers, conditions now allow you to express your intent in a more natural way. Instead of checking if the state of an entity equals a specific value, you can now simply ask "If the climate is heating" or "If the lock is locked".
+This release marks the start of purpose-specific conditions!
+
+<img src='/images/blog/2026-02/temp-new-conditions-for-automations.png' alt='Screenshot showing the newly available media player conditions: check if a media player is on, off, playing, paused, or not playing.' class='no-shadow' />
+
+Just like triggers, conditions now allow you to express your intent in a more natural way. Instead of checking if the state of an entity equals a specific value, you can now simply ask "If the climate is heating" or "If the lock is locked".
 
 The following purpose-specific conditions are now available:
 
