@@ -75,12 +75,16 @@ Enjoy the (beta) release!
 <!--more-->
 
 - [Home dashboard](#home-dashboard)
-- [Add-ons are now called Apps!](#add-ons-are-now-called-apps)
+- [Device database: We need your help!](#device-database-we-need-your-help)
+  - [Help us out and share your devices](#help-us-out-and-share-your-devices)
+  - [See the data in action](#see-the-data-in-action)
+  - [Join us in building something meaningful](#join-us-in-building-something-meaningful)
+- [Add-ons are now called Apps](#add-ons-are-now-called-apps)
   - [A faster, snappier Apps panel](#a-faster-snappier-apps-panel)
 - [Purpose-specific triggers and conditions progress](#purpose-specific-triggers-and-conditions-progress)
   - [New triggers](#new-triggers)
   - [New conditions](#new-conditions)
-  - [A brand new card: The distribution card!](#a-brand-new-card-the-distribution-card)
+- [A brand new card: The distribution card](#a-brand-new-card-the-distribution-card)
 - [Quick Bar: The fastest way to anything](#quick-bar-the-fastest-way-to-anything)
   - [Your favorite shortcuts still work](#your-favorite-shortcuts-still-work)
 - [Integrations](#integrations)
@@ -101,7 +105,39 @@ _A huge thank you to all the contributors who made this release possible! And a 
 
 Lorem ipsum; things like now the home panel is a default dashboard, disocvered devices are shown, etc.
 
-## Add-ons are now called Apps!
+## Device database: We need your help!
+
+Finding reliable information about smart home devices before you buy them can be challenging. That’s why we’re building the **Open Home Foundation device database**: a community-powered resource that helps you make informed decisions based on real-world data.
+
+We’ve been working with early contributors to lay the groundwork, and the [results are already impressive](https://openhomefoundation.grafana.net/public-dashboards/1cb22c82e90c4f64afb366c6125a8489): over **2,000 unique devices** across more than **160 integrations** have been submitted by Home Assistant users who opted in to share their anonymized data.
+
+<img src='/images/blog/2026-02/temp-device-database-statistics.png' alt='Screenshot of the publicly available statistics dashboard for the open home foundation device database.' class='no-shadow' />
+
+### Help us out and share your devices
+
+Since we’re still in the early stages, the device database lives in {% my labs title="**Home Assistant Labs**" %}, where you can opt in to share anonymized information about the devices in your home.
+
+**TODO**: Insert screenshot of the labs feature here
+
+By introducing it in Labs, we have also introduced an additional section called “Device analytics” in {% my analytics title="**Home Assistant Analytics**" %}. If you opt-in, you are of course able to opt-out at any time.
+
+**TODO**: Insert screenshot of the analytics panel here
+
+**Privacy is our foundation.** We collect zero personal data, period. Only aggregated, anonymized device information is shared if someone chooses to opt in, providing valuable insights while keeping your privacy intact. Read our Data Use Statement for complete details.
+
+### See the data in action
+
+We’ve launched an [initial public dashboard](https://openhomefoundation.grafana.net/public-dashboards/1cb22c82e90c4f64afb366c6125a8489) where you can explore aggregated statistics and download data as it grows. This is just our first step. We want to build what comes next together with you.
+
+### Join us in building something meaningful
+
+Head to {% my labs title="**Settings** > **System** > **Labs**" %} to enable device analytics and start contributing your real-world anonymized device data to help others make better choices.
+
+Read our blog post for more details and join the conversation in our Discord project channel; we’d love to hear your ideas, feedback, and questions as we shape this resource together.
+
+**TODO**: Add link to the above sentence.
+
+## Add-ons are now called Apps
 
 Starting with this release, **add-ons are now called apps**! 🎉
 
