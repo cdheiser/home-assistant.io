@@ -164,6 +164,8 @@ Besides the rename, we did a major refactoring under the hood of the Apps panel 
 
 You shouldn't notice much of a difference visually, but the panel is now _much_ faster and snappier to use. More importantly, this change makes future development on Apps significantly easier, paving the way for more improvements down the road.
 
+<img src='/images/blog/2026-02/temp-apps-panel.png' alt='Screenshot of the Home Assistant Apps panel.' class='no-shadow' />
+
 ## Purpose-specific triggers and conditions progress
 
 In [Home Assistant 2025.12](/blog/2025/12/03/release-202512/#purpose-specific-triggers-and-conditions), we introduced purpose-specific triggers and conditions. Instead of thinking in technical state changes, you can simply pick things like "When a light turns on" or "If the climate is heating" when building your automations. In [Home Assistant 2026.1](/blog/2026/01/07/release-20261/#purpose-specific-triggers-and-conditions-progress), we added more triggers and laid the groundwork for conditions.
@@ -228,7 +230,7 @@ Thanks to [@jlpouffier] for building this card! 🎉
 
 We continue to make it easier to access and find things in Home Assistant. The quick bar has been completely redesigned and is now simply called **Quick search**. Think of it as the command center for your entire Home Assistant: navigate anywhere, run commands, find entities, devices, or areas, all from a single, unified search.
 
-**TODO** INSERT SCREENSHOT OF QUICK SEARCH
+<img src='/images/blog/2026-02/temp-quick-search.png' alt='Screenshot of the Quick search interface showing category filters and search results.' class='no-shadow' />
 
 Open Quick search from anywhere by pressing <kbd>⌘</kbd> + <kbd>K</kbd> on macOS or <kbd>Ctrl</kbd> + <kbd>K</kbd> on Windows and Linux. The new design features category filters at the top: **Navigate**, **Commands**, **Entities**, **Devices**, and **Areas**. Select a filter to instantly narrow your results, or just start typing to search across everything.
 
