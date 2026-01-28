@@ -141,7 +141,7 @@ Read our blog post for more details and join the conversation in our Discord pro
 
 Starting with this release, **add-ons are now called apps**! 🎉
 
-**TODO** INSERT SCREENSHOT OF THE APPS PANEL
+<img src='/images/blog/2026-02/temp-addons-are-now-apps.png' alt='Screenshot showing the settings menu, that now contains the Apps items instead of Add-ons (as it was called previously)' class='no-shadow' />
 
 You might be wondering: why change the name? The answer comes down to making Home Assistant more approachable for everyone, especially newcomers.
 
