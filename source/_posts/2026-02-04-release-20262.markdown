@@ -123,7 +123,7 @@ By introducing it in Labs, we have also introduced an additional section called 
 
 **TODO**: Insert screenshot of the analytics panel here
 
-**Privacy is our foundation.** We collect zero personal data, period. Only aggregated, anonymized device information is shared if someone chooses to opt in, providing valuable insights while keeping your privacy intact. Read our Data Use Statement for complete details.
+**Privacy is our foundation.** We collect zero personal data, period. Only aggregated, anonymized device information is shared if someone chooses to opt in, providing valuable insights while keeping your privacy intact. Read our [Data Use Statement](https://www.openhomefoundation.org/device-database-data-use-statement/) for complete details.
 
 ### See the data in action
 
