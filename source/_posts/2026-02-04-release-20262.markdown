@@ -97,6 +97,7 @@ Enjoy the (beta) release!
   - [Integration quality scale achievements](#integration-quality-scale-achievements)
   - [Now available to set up from the UI](#now-available-to-set-up-from-the-ui)
 - [Other noteworthy changes](#other-noteworthy-changes)
+  - [Add buttons to your heading card](#add-buttons-to-your-heading-card)
 - [Need help? Join the community](#need-help-join-the-community)
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
@@ -384,6 +385,18 @@ There are many more improvements in this release; here are some of the other not
 - We have magical automations now! Just connect to the Matrix and let the magic happen. Thanks, [@frenck]!
 
 [@frenck]: https://github.com/frenck
+
+### Add buttons to your heading card
+
+The heading card now supports button badges, giving you a new way to add quick actions right alongside your section headings. Display an icon, text, or both, pick a custom color, and configure tap, hold, or double-tap actions to trigger anything you want.
+
+<img src='/images/blog/2026-02/temp-heading-card-buttons.png' alt='Screenshot of a heading card with button badges for quick actions.' class='no-shadow' />
+
+You can also set visibility conditions to show or hide buttons based on entity states. Combined with the existing entity badges, this makes the heading card a versatile anchor for your dashboard sections, whether you want to display status information, provide quick controls, or both.
+
+Thanks to [@piitaya] for this addition! 🎉
+
+[@piitaya]: https://github.com/piitaya
 
 ## Need help? Join the community
 
