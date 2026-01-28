@@ -295,6 +295,9 @@ We welcome the following new integrations in this release:
 - **[NRGkick]**, added by [@andijakl]  
   Monitor your [NRGkick](https://www.nrgkick.com/) Gen2 mobile EV charger locally. Track charging status, energy consumption, power flow across all phases, and device temperatures without requiring a cloud connection.
 
+- **[Prana]**, added by [@prana-dev-official]  
+  Integrate your [Prana](https://prana.ua/) heat recovery ventilation systems. Prana HRV units provide balanced mechanical ventilation with energy-efficient heat exchange, and you can now control and monitor them directly from Home Assistant.
+
 - **[uHoo]**, added by [@getuhoo] and [@joshsmonta]  
   Integrate your [uHoo](https://getuhoo.com) indoor air quality monitors to track temperature, humidity, CO2, PM2.5, and other air quality metrics. Also includes proprietary health indices for virus and mold risk.
 
@@ -304,10 +307,12 @@ We welcome the following new integrations in this release:
 [@glenndehaan]: https://github.com/glenndehaan
 [@joshsmonta]: https://github.com/joshsmonta
 [@petschni]: https://github.com/petschni
+[@prana-dev-official]: https://github.com/prana-dev-official
 [Cloudflare R2]: /integrations/cloudflare_r2
 [Green Planet Energy]: /integrations/green_planet_energy
 [HDFury]: /integrations/hdfury
 [NRGkick]: /integrations/nrgkick
+[Prana]: /integrations/prana
 [uHoo]: /integrations/uhoo
 
 ### Noteworthy improvements to existing integrations
