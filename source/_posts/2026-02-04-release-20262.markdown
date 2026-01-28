@@ -85,7 +85,7 @@ Enjoy the (beta) release!
   - [New triggers](#new-triggers)
   - [New conditions](#new-conditions)
 - [A brand new card: The distribution card](#a-brand-new-card-the-distribution-card)
-- [Quick Bar: The fastest way to anything](#quick-bar-the-fastest-way-to-anything)
+- [Quick search: The fastest way to anything](#quick-search-the-fastest-way-to-anything)
   - [Your favorite shortcuts still work](#your-favorite-shortcuts-still-work)
 - [Integrations](#integrations)
   - [New integrations](#new-integrations)
@@ -222,23 +222,23 @@ Thanks to [@jlpouffier] for building this card! 🎉
 
 [@jlpouffier]: https://github.com/jlpouffier
 
-## Quick Bar: The fastest way to anything
+## Quick search: The fastest way to anything
 
-We continue to make it easier to access and find things in Home Assistant. The quick bar has been completely redesigned and is now called **Quick Search**. Think of it as the command center for your entire Home Assistant: navigate anywhere, run commands, find entities, devices, or areas, all from a single, unified search.
+We continue to make it easier to access and find things in Home Assistant. The quick bar has been completely redesigned and is now simply called **Quick search**. Think of it as the command center for your entire Home Assistant: navigate anywhere, run commands, find entities, devices, or areas, all from a single, unified search.
 
-**TODO** INSERT SCREENSHOT OF QUICK BAR
+**TODO** INSERT SCREENSHOT OF QUICK SEARCH
 
-Open Quick Search from anywhere by pressing <kbd>⌘</kbd> + <kbd>K</kbd> on macOS or <kbd>Ctrl</kbd> + <kbd>K</kbd> on Windows and Linux. The new design features category filters at the top: **Navigate**, **Commands**, **Entities**, **Devices**, and **Areas**. Select a filter to instantly narrow your results, or just start typing to search across everything.
+Open Quick search from anywhere by pressing <kbd>⌘</kbd> + <kbd>K</kbd> on macOS or <kbd>Ctrl</kbd> + <kbd>K</kbd> on Windows and Linux. The new design features category filters at the top: **Navigate**, **Commands**, **Entities**, **Devices**, and **Areas**. Select a filter to instantly narrow your results, or just start typing to search across everything.
 
-Full keyboard navigation makes the Quick Bar a power user's friend. Use the arrow keys to move through results, <kbd>Enter</kbd> to select, and <kbd>Esc</kbd> to close. On mobile, you can assign Quick Search to a gesture for one-tap access.
+Full keyboard navigation makes Quick search a power user's friend. Use the arrow keys to move through results, <kbd>Enter</kbd> to select, and <kbd>Esc</kbd> to close. On mobile, you can assign Quick search to a gesture for one-tap access.
 
 ### Your favorite shortcuts still work
 
-If you've been using the single-key shortcuts from the old quick bar, they still work! The difference is that they now open the new Quick Bar with the corresponding filter already selected:
+If you've been using the single-key shortcuts from the old quick bar, they still work! The difference is that they now open Quick search with the corresponding filter already selected:
 
-- <kbd>e</kbd> opens Quick Bar with the **Entities** filter
-- <kbd>d</kbd> opens Quick Bar with the **Devices** filter
-- <kbd>c</kbd> opens Quick Bar with the **Commands** filter
+- <kbd>e</kbd> opens Quick search with the **Entities** filter
+- <kbd>d</kbd> opens Quick search with the **Devices** filter
+- <kbd>c</kbd> opens Quick search with the **Commands** filter
 - <kbd>a</kbd> still opens **Assist** directly
 - <kbd>m</kbd> still creates a **My link** for the current page (unrelated but still useful mention! 😉)
 
