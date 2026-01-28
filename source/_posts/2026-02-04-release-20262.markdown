@@ -154,8 +154,6 @@ This is where the rename helps: use terminology that people already understand. 
 
 Apps are separate software managed by your Home Assistant Operating System, running next to Home Assistant itself. They can be things like code editors, media servers, MQTT brokers, or database tools. Some apps even pair with integrations: for example, the Mosquitto MQTT broker app provides the service, while the MQTT integration connects Home Assistant to it.
 
-We understand this change won't be universally popular, and we've heard the concerns. Yes, we also have a companion app for your phone. But context matters: when you're in the Apps panel, you know you're installing apps on Home Assistant, not on your phone. The same way you know your TV's apps are different from your phone's apps.
-
 Existing documentation, community posts, and tutorials will continue to reference "add-ons" for some time. Search engines and AI assistants will also need time to catch up. We've put redirects in place to ensure that searching for "add-ons" will still get you where you need to go.
 
 Thank you to everyone who participated in the [community discussion](https://community.home-assistant.io/t/why-im-proposing-we-rename-add-ons-to-apps-and-why-it-matters-for-newcomers/945712) and [architecture proposal](https://github.com/home-assistant/architecture/discussions/1287). Whether you supported the idea, pushed back, or landed somewhere in between, your feedback was invaluable.
