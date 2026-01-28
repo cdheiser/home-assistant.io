@@ -202,11 +202,11 @@ The following purpose-specific conditions are now available:
 
 Head over to {% my labs title="**Settings** > **System** > **Labs**" %} to enable purpose-specific triggers and conditions and give them a try!
 
-### A brand new card: The distribution card!
+## A brand new card: The distribution card
 
 Meet the **distribution card**, a brand new dashboard card that visualizes how values are distributed across multiple entities. It displays your data as a proportional horizontal bar chart with an interactive legend, perfect for seeing at a glance where your power, storage, or any other measurable quantity is going.
 
-**TODO**: Insert screenshot
+<img src='/images/blog/2026-02/temp-distribution-card.png' alt='Screenshot of a the two distribution cards on a desktop, providing a new way of insight into your data.' class='no-shadow' />
 
 The card is fully interactive: click on legend items to hide or show entities (the percentages recalculate dynamically), and click on bar segments to open the more-info dialog for that entity. When you have many entities, the legend shows the first items with a "More" button to expand the rest.
 
@@ -354,7 +354,6 @@ There are many more improvements in this release; here are some of the other not
 - We have magical automations now! Just connect to the Matrix and let the magic happen. Thanks, [@frenck]!
 
 [@frenck]: https://github.com/frenck
-
 
 ## Need help? Join the community
 
