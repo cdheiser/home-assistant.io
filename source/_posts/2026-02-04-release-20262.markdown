@@ -17,7 +17,7 @@ og_image: /images/blog/2026-02/social.png
 
 Home Assistant 2026.2! 💝
 
-February is the month of love, and this release is here to share the love with a new release!
+February is the month of love, and this release is here to share it!
 
 The new **Home Dashboard** is now the official default for all new installations. If you've been using Home Assistant for a while and never customized your default view, you'll get a suggestion to switch; give it a try!
 
