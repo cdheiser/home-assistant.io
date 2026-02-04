@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "2026.2 Beta: A Betta title 💝"
-description: "Beta release notes for Home Assistant Core 2026.2"
-date: 2026-01-28 00:00:00
+title: "2026.2: Home, sweet overview"
+description: "Overview dashboard is now the default for everyone, contribute to a community-powered device database, add-ons become apps, a completely redesigned Quick search with instant access to everything, a brand new distribution card, new sun triggers and light conditions, and more!"
+date: 2026-02-04 00:00:00
 date_formatted: "February 4, 2026"
 author: Franck Nijhof
 author_twitter: frenck
@@ -10,65 +10,24 @@ comments: true
 categories:
   - Release-Notes
   - Core
-og_image: /images/blog/2026-02/beta-social.png
+og_image: /images/blog/2026-02/social.png
 ---
 
 <lite-youtube videoid="EohxnoGc3pg" videotitle="Home Assistant 2026.2 Release Party"></lite-youtube>
 
-{% note %}
-
-**Welcome to the beta release notes for Home Assistant 2026.2** 🎉
-
-<br />
-
-Please note that these release notes are a work in progress. 👷‍♀️ We will be
-completing them over the next couple of days. Not all features might be final
-yet, and some features _**may not** make it into the final release_.
-
-<br />
-
-**Want to help test the beta?** Awesome! ❤️ We have documented how you
-[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
-
-<br />
-
-While running the beta, we highly recommend joining our _#beta_ channel on
-the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
-testers are in this channel during the beta period to share experiences, ideas,
-and iterate over new features, fine-tuning them before the final release.
-It's a really fun place to hang out. 😎
-
-<br />
-
-**Reporting issues**: As this is a beta test, you might encounter unexpected
-behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
-You can find our issue trackers and the reported issues during beta here:
-
-<br />
-
-- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/140)
-- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/790)
-- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/147)
-
-🙏 When reporting issues, **make sure to mention the exact beta version you are
-running** in the issue description. This will help us identify and track the
-issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
-
-<br />
-
-Issues introduced in the beta are processed with priority. 🔝
-
-{% endnote %}
-
-{% tip %}
-
-Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=EohxnoGc3pg) on February 4, 2026, at 20:00 GMT / 12:00 PT / 21:00 CET!
-
-{% endtip %}
-
 Home Assistant 2026.2! 💝
 
-Enjoy the (beta) release!
+February is the month of love, and this release is here to share the love with a new release!
+
+The new **Home Dashboard** is now the official default for all new installations. If you've been using Home Assistant for a while and never customized your default view, you'll get a suggestion to switch; give it a try!
+
+I also need your help! The **Open Home Foundation device database** is being built as a community-powered resource to help everyone make informed decisions about smart home devices. Head to Home Assistant Labs to opt in and contribute your anonymized device data. 📈
+
+**Add-ons are now called Apps**! After a lot of community discussion, it was time to use terminology that everyone understands. Your TV has apps, your phone has apps, and now Home Assistant has apps too.
+
+My personal favorite this release? The completely redesigned **Quick search**! If you're like me and love navigating Home Assistant using your keyboard, you're going to love this one. Press <kbd>⌘</kbd> + <kbd>K</kbd> (or <kbd>Ctrl</kbd> + <kbd>K</kbd> on Windows/Linux) and you have instant access to everything. 🤩
+
+Enjoy the release!
 
 ../Frenck
 
@@ -103,9 +62,13 @@ Enjoy the (beta) release!
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
 
-_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@frenck], [@frenck], and [@frenck] who helped write the release notes this release. Also, [@frenck], [@frenck], [@frenck], and [@frenck] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
+_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@laupalombi] and [@mkerstner] who helped write the release notes this release. Also, [@wollew], [@Diegorro98], and [@MindFreeze] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
 
-[@frenck]: https://github.com/frenck
+[@Diegorro98]: https://github.com/Diegorro98
+[@laupalombi]: https://github.com/laupalombi
+[@MindFreeze]: https://github.com/MindFreeze
+[@mkerstner]: https://github.com/mkerstner
+[@wollew]: https://github.com/wollew
 
 ## A new way to view your home
 
@@ -125,13 +88,13 @@ Check out the new card in the **For You** section! It instantly displays any new
 
 <img src='/images/blog/2026-02/assign-devices-page.png' alt='Screenshot of assigning devices to areas from Devices page in Overview' class='no-shadow' />
 
-In the last release we added a dedicated **Devices** area within the Home Dashboard to catch everything currently unassigned. Now this section provides quick prompts to help you categorize your devices into the right rooms, keeping your setup organized with minimal effort.
+In the last release, we added a dedicated **Devices** area within the Home Dashboard to catch everything currently unassigned. Now this section provides quick prompts to help you categorize your devices into the right rooms, keeping your setup organized with minimal effort.
 
 ### Faster area edits
 
 Need to swap the area temperature sensor? Area pages now feature a shortcut in the **Edit** button. This lets you jump straight to the area's configuration to update primary sensors like humidity or temperature in seconds.
 
-Also, we’ve tidied up the interface by removing awkward empty spaces and fixing issues with some back arrows. Navigating through your sub-menus should now feel as smooth and predictable as you'd expect.
+We've also tidied up the interface by removing awkward empty spaces and fixing issues with some back arrows. Navigating through your sub-menus should now feel as smooth and predictable as you'd expect.
 
 ### UX and visual upgrades
 
@@ -145,7 +108,7 @@ Finding reliable information about smart home devices before you buy them can be
 
 We’ve been working with early contributors to lay the groundwork, and the [results are already impressive](https://openhomefoundation.grafana.net/public-dashboards/1cb22c82e90c4f64afb366c6125a8489): over **10,000 unique devices** across more than **260 integrations** have been submitted by Home Assistant users who opted in to share their anonymized data.
 
-<img src='/images/blog/2026-02/temp-device-database-statistics.png' alt='Screenshot of the publicly available statistics dashboard for the open home foundation device database.' class='no-shadow' />
+<img src='/images/blog/2026-02/device-database-statistics.png' alt='Screenshot of the publicly available statistics dashboard for the open home foundation device database.' class='no-shadow' />
 
 ### Help us out and share your devices
 
@@ -153,11 +116,11 @@ Since we’re still in the early stages, the device database lives in {% my labs
 
 <img src='/images/blog/2026-02/temp-sharing-your-devices-with-ohf-device-database.png' alt='Screenshot of the device analytics sharing option in Home Assistant Analytics.' class='no-shadow' />
 
-By introducing it in Home Assistant Labs, we have also added a new section called **Device analytics** to {% my analytics title="**Home Assistant Analytics**" %}. If you opt in, you are, of course, able to opt out at any time.
+We have also added a new section called **Device analytics** to {% my analytics title="**Home Assistant Analytics**" %}, which shows up when you enable it in Home Assistant Labs. If you opt in, you are, of course, able to opt out at any time.
 
-<img src='/images/blog/2026-02/temp-labs-device-database-analytics.png' alt='Screenshot of the device analytics section in Home Assistant Labs.' class='no-shadow' />
+<img src='/images/blog/2026-02/labs-device-database-analytics.png' alt='Screenshot of the device analytics section in Home Assistant Labs.' class='no-shadow' />
 
-**Privacy is our foundation.** We collect zero personal data, period. Only aggregated, anonymized device information is shared if someone chooses to opt in, providing valuable insights while keeping your privacy intact. Read our [Data Use Statement](https://www.openhomefoundation.org/device-database-data-use-statement/) for complete details.
+**Privacy is our foundation.** We collect zero personal data, period. Only aggregated, anonymized device information is shared if someone chooses to opt in, providing valuable insights while keeping your privacy intact. You can preview what is being sent using the **Preview device analytics** option available in the top-right corner on the Analytics page. Read our [Data Use Statement](https://www.openhomefoundation.org/device-database-data-use-statement/) for complete details.
 
 ### See the data in action
 
@@ -167,13 +130,13 @@ We’ve launched an [initial public dashboard](https://openhomefoundation.grafan
 
 Head to {% my labs title="**Settings** > **System** > **Labs**" %} to enable device analytics and start contributing your real-world anonymized device data to help others make better choices.
 
-Read our [blog post](https://www.home-assistant.io/blog/2026/02/02/about-device-database/) for more details and join the conversation in our Discord project channel; we’d love to hear your ideas, feedback, and questions as we shape this resource together.
+Read our [blog post](/blog/2026/02/02/about-device-database/) for more details and join the conversation in our [Discord project channel](https://discord.com/channels/330944238910963714/1463602457924997236); we'd love to hear your ideas, feedback, and questions as we shape this resource together.
 
 ## Add-ons are now called Apps
 
 Starting with this release, **add-ons are now called apps**! 🎉
 
-<img src='/images/blog/2026-02/temp-addons-are-now-apps.png' alt='Screenshot showing the settings menu, that now contains the Apps items instead of Add-ons (as it was called previously)' class='no-shadow' />
+<img src='/images/blog/2026-02/addons-are-now-apps.png' alt='Screenshot showing the settings menu, that now contains the Apps items instead of Add-ons (as it was called previously)' class='no-shadow' />
 
 You might be wondering: why change the name? The answer comes down to making Home Assistant more approachable for everyone, especially newcomers.
 
@@ -196,7 +159,7 @@ Besides the rename, we did a major refactoring under the hood of the Apps panel 
 
 You shouldn't notice much of a difference visually, but the panel is now _much_ faster and snappier to use. More importantly, this change makes future development on Apps significantly easier, paving the way for more improvements down the road.
 
-<img src='/images/blog/2026-02/temp-apps-panel.png' alt='Screenshot of the Home Assistant Apps panel.' class='no-shadow' />
+<img src='/images/blog/2026-02/apps-panel.png' alt='Screenshot of the Home Assistant Apps panel.' class='no-shadow' />
 
 ## Purpose-specific triggers and conditions progress
 
@@ -214,9 +177,9 @@ The following new triggers have been added in this release:
 
 ### New conditions
 
-This release marks the start of purpose-specific conditions!
+Purpose-specific conditions are expanding! In the previous release, we introduced the first purpose-specific condition for lights. This release adds a whole set of new conditions across many more entity types.
 
-<img src='/images/blog/2026-02/temp-new-conditions-for-automations.png' alt='Screenshot showing the newly available media player conditions: check if a media player is on, off, playing, paused, or not playing.' class='no-shadow' />
+<img src='/images/blog/2026-02/new-conditions-for-automations.png' alt='Screenshot showing the newly available media player conditions: check if a media player is on, off, playing, paused, or not playing.' class='no-shadow' />
 
 Just like triggers, conditions now allow you to express your intent in a more natural way. Instead of checking if the state of an entity equals a specific value, you can now simply ask "If the climate is heating" or "If the lock is locked".
 
@@ -244,7 +207,7 @@ Meet the **distribution card**, a brand new dashboard card that visualizes how v
 
 <img src='/images/blog/2026-02/distribution-card.png' alt='Screenshot of two distribution cards on a desktop, providing new insights into your data.' class='no-shadow' />
 
-The card is fully interactive: click on legend items to hide or show entities (the percentages recalculate dynamically), and click on bar segments to open the more-info dialog for that entity. When you have many entities, the legend shows the first items with a **More** button to expand the rest.
+The card is fully interactive: select legend items to hide or show entities (the percentages recalculate dynamically), and select bar segments to open the more-info dialog for that entity. When you have many entities, the legend shows the first items with a **More** button to expand the rest.
 
 The distribution card is smart about what you can combine. It validates that all entities share the same domain and device class, so you won't accidentally mix power sensors with battery sensors. It even handles related units gracefully: mixing watts and kilowatts works just fine.
 
@@ -445,10 +408,10 @@ The following integrations are now available via the Home Assistant UI:
 
 There are many more improvements in this release; here are some of the other noteworthy changes:
 
+- The **Developer tools** have been moved to the {% my general title="**Settings**" %} area. This change keeps all administrative and system tools in one central location, making the interface cleaner and more consistent. We understand this might take some getting used to, and we hear you! We're actively exploring adding full sidebar menu customization capabilities in the future, giving you the flexibility to organize your navigation exactly the way you want it.
 - Dashboards now support calendar colors! Pick a color for each calendar, and it will show up in your calendar cards. The [Google Calendar] integration already supports this feature, thanks to [@Misiu].
 - [@karwosts] added live inline template previews to the template editor. As you type, you can instantly see the result of your template without needing to manually refresh.
 - The sidebar now features a subtle scroll fade effect and keeps **Settings** always visible at the bottom, so you never have to scroll to find it. Thanks, [@ildar170975]!
-- The **Developer tools** have been moved to the {% my general title="**Settings**" %} area. We moved it to keep all administrative tools in one place.
 - [@MindFreeze] added tap action and image tap action options to the area card, giving you more control over what happens when you interact with your areas.
 - The entity card now supports actions, thanks to [@ildar170975]. Configure tap, hold, or double-tap actions to trigger anything you want directly from the card.
 - [@Thomas55555] added parts per billion (ppb) as a valid unit of measurement for sulfur dioxide sensors and number entities.
