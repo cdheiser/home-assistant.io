@@ -25,7 +25,7 @@ I also need your help! The **Open Home Foundation device database** is being bui
 
 **Add-ons are now called Apps**! After a lot of community discussion, it was time to use terminology that everyone understands. Your TV has apps, your phone has apps, and now Home Assistant has apps too.
 
-My personal favorite this release? The completely redesigned **Quick search**! If you're like me and love navigating Home Assistant using your keyboard, you're going to love this one. Press <kbd>⌘</kbd> + <kbd>K</kbd> (or <kbd>Ctrl</kbd> + <kbd>K</kbd> on Windows/Linux) and you have instant access to everything. 🤩
+My personal favorite this release? The completely redesigned **Quick search**! If you're like me and navigate Home Assistant using your keyboard, you're going to love this one. Press <kbd>⌘</kbd> + <kbd>K</kbd> (or <kbd>Ctrl</kbd> + <kbd>K</kbd> on Windows/Linux) and you have instant access to everything. 🤩
 
 Enjoy the release!
 
@@ -155,7 +155,7 @@ Thank you to everyone who participated in the [community discussion](https://com
 
 ### A faster, snappier Apps panel
 
-Besides the rename, we did a major refactoring under the hood of the Apps panel (previously known as the Add-ons panel) in this release. Previously, this panel was served by a separate process (the Supervisor), but it has now been fully integrated into the Home Assistant frontend.
+Besides the rename, we did a major refactoring under the hood of the Apps panel (formerly known as the Add-ons panel) in this release. Previously, this panel was served by a separate process (the Supervisor), but it has now been fully integrated into the Home Assistant frontend.
 
 You shouldn't notice much of a difference visually, but the panel is now _much_ faster and snappier to use. More importantly, this change makes future development on Apps significantly easier, paving the way for more improvements down the road.
 
