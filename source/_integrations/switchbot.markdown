@@ -10,6 +10,7 @@ ha_category:
   - Humidifier
   - Light
   - Lock
+  - Select
   - Sensor
   - Switch
   - Vacuum
@@ -36,6 +37,7 @@ ha_platforms:
   - humidifier
   - light
   - lock
+  - select
   - sensor
   - switch
   - vacuum
@@ -471,6 +473,7 @@ Features:
 - get humidity
 - get carbon dioxide
 - get battery level
+- set display time format (12h/24h)
 
 #### Contact Sensor
 
