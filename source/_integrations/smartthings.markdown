@@ -76,9 +76,9 @@ SmartThings represents devices as a set of [capabilities](https://developer.smar
 - [Lock](#lock)
 - [Media player](#media-player)
 - [Number](#number)
+- [Scene](#scene)
 - [Select](#select)
 - [Sensor](#sensor)
-- [Scene](#scene)
 - [Switch](#switch)
 - [Update](#update)
 - [Vacuum](#vacuum)
@@ -229,6 +229,10 @@ The SmartThings number platform lets you control numeric values for the followin
 | `samsungce.hoodFanSpeed` (on hood component)                                                                                                           | Hood fan speed               |
 | [`thermostatCoolingSetpoint`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#thermostatCoolingSetpoint) (on cooler, freezer, or onedoor components) | Refrigerator temperature |
 
+### Scene
+
+The SmartThings scene platform lets you activate scenes that you defined in SmartThings. A scene entity is created for each SmartThings scene.
+
 ### Select
 
 The SmartThings Select platform lets you configure device options. Some capabilities require remote control to be enabled on the device before they can be changed.
@@ -251,7 +255,7 @@ The following SmartThings capabilities are supported for Select entities:
 
 ### Sensor
 
-The SmartThings Sensor platform lets your view devices that have sensor-related capabilities. A Sensor entity is created for each attribute (below) supported by the device.
+The SmartThings Sensor platform lets you view devices that have sensor-related capabilities. A Sensor entity is created for each attribute (below) supported by the device.
 
 | SmartThings capability                                                                                                                                        | Related entities in Home Assistant                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
@@ -321,10 +325,6 @@ The SmartThings Sensor platform lets your view devices that have sensor-related 
 | [`voltageMeasurement`](https://developer.smartthings.com/docs/devices/capabilities/capabilities-reference#voltageMeasurement)                                 | Voltage                                                                  |
 | [`washerMode`](https://developer.smartthings.com/docs/devices/capabilities/proposed#washerMode)                                                               | Washer mode                                                              |
 | [`washerOperatingState`](https://developer.smartthings.com/docs/devices/capabilities/proposed#washerOperatingState)                                           | Machine state<br/>Job state<br/>Completion time                          |
-
-### Scene
-
-The SmartThings Scene lets you activate scenes defined in SmartThings. A scene entity is created for each SmartThings scene.
 
 ### Switch
 
