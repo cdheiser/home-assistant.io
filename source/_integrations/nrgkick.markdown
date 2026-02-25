@@ -13,6 +13,7 @@ ha_integration_type: device
 ha_config_flow: true
 ha_zeroconf: true
 ha_platforms:
+  - diagnostics
   - number
   - sensor
   - switch

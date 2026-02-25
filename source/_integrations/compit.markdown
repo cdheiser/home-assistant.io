@@ -11,8 +11,9 @@ ha_codeowners:
   - '@Przemko92'
 ha_domain: compit
 ha_platforms:
-  - climate
   - binary_sensor
+  - climate
+  - number
   - select
   - sensor
   - water_heater
