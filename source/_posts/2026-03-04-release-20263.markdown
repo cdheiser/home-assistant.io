@@ -156,7 +156,7 @@ You can choose between three wake words:
 - _Hey Jarvis_
 - _Hey Mycroft_
 
-Once enabled, simply say your chosen wake word and the Assist pipeline will open, ready to take your command.
+To enable wake word detection, open your Android device's **Settings** > **Companion App** > **Assist for Android**, and enable the **Enable wake word detection** toggle. Once enabled, simply say your chosen wake word and the Assist pipeline will open, ready to take your command.
 
 Watch the video to see wake word detection in action on an Android device.
 
