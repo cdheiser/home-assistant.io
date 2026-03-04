@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "2026.3 Beta: A Betta title"
-description: "Beta release notes for Home Assistant Core 2026.3"
-date: 2026-02-25 00:00:00
+title: "2026.3: A clean sweep"
+description: "Area cleaning for your vacuum, continue on error in the automation editor, Energy dashboard gains real-time badges and a Water Sankey chart, Android phones become voice satellites with wake word detection, and 18 new integrations from the community!"
+date: 2026-03-04 00:00:00
 date_formatted: "March 4, 2026"
 author: Franck Nijhof
 author_twitter: frenck
@@ -10,61 +10,10 @@ comments: true
 categories:
   - Release-Notes
   - Core
-og_image: /images/blog/2026-03/beta-social.png
+og_image: /images/blog/2026-03/social.png
 ---
 
 <lite-youtube videoid="AQOzKdvO97s" videotitle="Home Assistant 2026.3 Release Party"></lite-youtube>
-
-{% note %}
-
-**Welcome to the beta release notes for Home Assistant 2026.3** 🎉
-
-<br />
-
-Please note that these release notes are a work in progress. 👷‍♀️ We will be
-completing them over the next couple of days. Not all features might be final
-yet, and some features _**may not** make it into the final release_.
-
-<br />
-
-**Want to help test the beta?** Awesome! ❤️ We have documented how you
-[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
-
-<br />
-
-While running the beta, we highly recommend joining our _#beta_ channel on
-the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
-testers are in this channel during the beta period to share experiences, ideas,
-and iterate over new features, fine-tuning them before the final release.
-It's a really fun place to hang out. 😎
-
-<br />
-
-**Reporting issues**: As this is a beta test, you might encounter unexpected
-behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
-You can find our issue trackers and the reported issues during beta here:
-
-<br />
-
-- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/141)
-- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/795)
-- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/148)
-
-🙏 When reporting issues, **make sure to mention the exact beta version you are
-running** in the issue description. This will help us identify and track the
-issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
-
-<br />
-
-Issues introduced in the beta are processed with priority. 🔝
-
-{% endnote %}
-
-{% tip %}
-
-Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=AQOzKdvO97s) on March 4, 2026, at 20:00 GMT / 12:00 PT / 21:00 CET!
-
-{% endtip %}
 
 Home Assistant 2026.3! 🎉
 
@@ -91,11 +40,17 @@ make a big difference in everyday use. 🤩
 
 Oh, and before I forget: have you seen our
 [brand new merch store](/blog/2026/02/19/open-home-foundation-merch-store-announcement/)?
-The [Open Home Foundation merch store](https://store.openhomefoundation.org/)
+The [Open Home Foundation store](https://store.openhomefoundation.org/)
 is live! I have to be honest: the quality is _really_ great. The hoodie is so
 darn comfy it's ridiculous. I've been wearing mine non-stop. Go check it out! 🏃
 
-Enjoy the (beta) release!
+Also, mark your calendars: [State of the Open Home 2026](https://sotoh.openhomefoundation.org/)
+is happening on April 8 in Utrecht, the Netherlands! Join us live in the audience
+for a celebration of everything we've built together, a look at what's ahead,
+and your chance to help shape the future of the Open Home. Tickets are limited,
+so [grab yours](https://sotoh.openhomefoundation.org/) while you can! 🎟️
+
+Enjoy the release!
 
 ../Frenck
 
@@ -103,9 +58,7 @@ Enjoy the (beta) release!
 
 - [Send your vacuum to clean specific areas](#send-your-vacuum-to-clean-specific-areas)
   - [Getting started](#getting-started)
-  - [Staying in sync](#staying-in-sync)
   - [Paving the way for voice](#paving-the-way-for-voice)
-  - [Supported integrations](#supported-integrations)
 - [Energy dashboard improvements](#energy-dashboard-improvements)
 - [Continue on error in the automation editor](#continue-on-error-in-the-automation-editor)
 - [Wake word detection on your Android phone (experimental)](#wake-word-detection-on-your-android-phone-experimental)
@@ -121,42 +74,36 @@ Enjoy the (beta) release!
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
 
-_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@frenck], [@frenck], and [@frenck] who helped write the release notes this release. Also, [@frenck], [@frenck], [@frenck], and [@frenck] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
+_A huge thank you to all the contributors who made this release possible! And a special shout-out to [@TimoPtr], [@arturpragacz], and [@MindFreeze] who helped write the release notes this release. Also, [@CoMPaTech], [@balloob], [@OnFreund], and [@silamon] for putting effort into tweaking its contents. Thanks to them, these release notes are in great shape. ❤️_
 
-[@frenck]: https://github.com/frenck
+[@arturpragacz]: https://github.com/arturpragacz
+[@balloob]: https://github.com/balloob
+[@CoMPaTech]: https://github.com/CoMPaTech
+[@MindFreeze]: https://github.com/MindFreeze
+[@OnFreund]: https://github.com/OnFreund
+[@TimoPtr]: https://github.com/TimoPtr
 
 ## Send your vacuum to clean specific areas
 
-Got a robot vacuum? You can now tell it exactly which areas to clean! This release introduces the `vacuum.clean_area` action, which lets you send your vacuum to clean one or more specific areas on demand, right from Home Assistant.
+Got a robot vacuum? You can now tell it exactly which areas to clean! This release introduces the [clean area](/integrations/vacuum#action-clean-area) action, which lets you send your vacuum to clean one or more specific areas on demand, right from Home Assistant. In this release, it's supported by [Matter], [Ecovacs], and [Roborock].
 
 The best part? The action uses your existing Home Assistant areas, not some obscure vendor-specific identifiers. You simply map the segments your vacuum knows about to the areas you've already set up in Home Assistant, and that's all there is to it.
+
+[Ecovacs]: /integrations/ecovacs
+[Matter]: /integrations/matter
+[Roborock]: /integrations/roborock
 
 ### Getting started
 
 When your vacuum supports area cleaning, you can set up the mapping through the vacuum's entity settings. Open the vacuum entity, select the {% icon "mdi:cog-outline" %} settings icon, and look for the **Map vacuum segments to areas** section. From there, you can match the segments your vacuum has detected to your Home Assistant areas.
 
-<img src='/images/blog/2026-03/temp-vacuum-area-mapping.png' alt='Screenshot of the vacuum area mapping dialog, allowing you to map vacuum segments to Home Assistant areas.' class='no-shadow' />
-
-### Staying in sync
+<img src='/images/blog/2026-03/vacuum-area-mapping.png' alt='Screenshot of the vacuum area mapping dialog, allowing you to map vacuum segments to Home Assistant areas.' class='no-shadow' />
 
 If your vacuum's internal segment layout ever changes (for example, after remapping in the manufacturer's app or the vacuum rediscovering its environment), Home Assistant will notice. A repair issue will alert you that the segments have changed, so you can update your mapping and make sure everything stays in sync.
 
 ### Paving the way for voice
 
 Because the mapping uses native Home Assistant areas, this feature lays the groundwork for future voice assistant support. Imagine simply saying "clean the kitchen" and having your vacuum head to the right area. That's not available just yet, but the foundation is now in place to make it happen.
-
-### Supported integrations
-
-The `vacuum.clean_area` action is available for the following integrations in this release:
-
-- [Matter]
-- [Ecovacs]
-- [Roborock]
-
-[Ecovacs]: /integrations/ecovacs
-[Matter]: /integrations/matter
-[Roborock]: /integrations/roborock
-
 
 ## Energy dashboard improvements
 
@@ -184,7 +131,7 @@ The automation editor now has a **Continue on error** option for actions, direct
 
 You can find it in the three-dots {% icon "mdi:dots-vertical" %} menu of any action. When enabled, a visual indicator appears on the action row, so you can quickly see which actions will continue running even if they encounter an error.
 
-<img src='/images/blog/2026-03/temp-automation-continue-on-error.png' alt='Screenshot of the automation editor showing the Continue on error option.' class='no-shadow' />
+<img src='/images/blog/2026-03/automation-continue-on-error.png' alt='Screenshot of the automation editor showing the Continue on error option.' class='no-shadow' />
 
 This is especially handy for automations where a single failing action shouldn't stop the rest from running. For example, if one of several notification actions fails, the remaining ones will still be sent.
 
@@ -212,7 +159,7 @@ Once enabled, simply say your chosen wake word and the Assist pipeline will open
 
 Watch the video for a step-by-step walkthrough on how to enable and use wake word detection on your Android device.
 
-**TODO:** Add video embed
+<lite-youtube videoid="-XkuDD9IlZI" videotitle="Wake word detection on your Android phone"></lite-youtube>
 
 It already integrates with your voice equipment at home, and if another satellite is nearby, only the fastest one will respond. This also applies to multiple Android devices.
 
@@ -282,7 +229,7 @@ We welcome the following new integrations in this release:
   Monitor your [Teltonika Networks](https://teltonika-networks.com/) routers running RutOS. Track cellular signal quality, modem temperature, and network connectivity.
 
 - **[Trane Local]**, added by [@bdraco]  
-  Locally control [Trane](https://www.trane.com/) and [American Standard](https://www.americanstandardair.com/) thermostats over your network using a direct mTLS connection. No cloud required.
+  Locally control [Trane](https://www.trane.com/) and [American Standard](https://www.americanstandardair.com/) thermostats over your network using a direct <abbr title="mutual TLS">mTLS</abbr> connection. No cloud required.
 
 - **[Zinvolt]**, added by [@joostlek]  
   Monitor your [Zinvolt](https://zinvolt.com/) batteries in Home Assistant, including state of charge and other battery metrics.
@@ -324,19 +271,19 @@ We welcome the following new integrations in this release:
 
 This release also has new virtual integrations. Virtual integrations are stubs that are handled by other (existing) integrations to help with findability. These ones are new:
 
-- **[Lorem]**, provided by [Ipsum], added by [@frenck]
+- **[Ubisys]**, provided by [ZHA], added by [@abmantis]
 
-[@frenck]: https://github.com/frenck
-[Lorem]: /integrations/lorem
-[Ipsum]: /integrations/ipsum
+[@abmantis]: https://github.com/abmantis
+[Ubisys]: /integrations/ubisys
+[ZHA]: /integrations/zha
 
 ### Noteworthy improvements to existing integrations
 
 It is not just new {% term integrations %} that have been added; existing ones are also being constantly improved. Here are some of the noteworthy changes to existing integrations:
 
-- **[Matter]** now supports carbon monoxide alarm states and TVOC air quality level sensors. If you have Matter-certified CO sensors or air quality devices, they now show up in Home Assistant. Thanks, [@Leo2442926161] and [@lboue]!
+- **[Matter]** now supports carbon monoxide alarm states and <abbr title="total volatile organic compounds">TVOC</abbr> air quality level sensors. If you have Matter-certified CO sensors or air quality devices, they now show up in Home Assistant. Thanks, [@Leo2442926161] and [@lboue]!
 - **[HomeKit Controller]** now exposes water level sensors, so devices like the Smartmi Humidifier Rainforest will show their current water level in Home Assistant. Thanks, [@romanlytvyn]!
-- **[Reolink]** cameras gained five new diagonal and continuous rotation PTZ buttons, plus the PTZ patrol switch now correctly reports its real-time status. Thanks, [@starkillerOG]!
+- **[Reolink]** cameras gained five new diagonal and continuous rotation <abbr title="pan, tilt, and zoom">PTZ</abbr> buttons, plus the PTZ patrol switch now correctly reports its real-time status. Thanks, [@starkillerOG]!
 - **[SmartThings]** now supports dual-cavity Samsung ovens, with separate entities for each chamber. It also gained switch and select controls for Samsung dishwasher washing options like sanitize, heated dry, and speed booster. Thanks, [@mik-laj] and [@edu-tsen]!
 - **[Roborock]** now fully supports Zeo washing and drying machines with program selection, temperature control, drying modes, and detergent status sensors. Thanks, [@yangqian]!
 - **[OpenAI Conversation]** now supports the `gpt-image-1.5` image generation model for AI Tasks, offering cheaper and faster image generation. Thanks, [@Shulyaka]!
@@ -353,7 +300,7 @@ It is not just new {% term integrations %} that have been added; existing ones a
 - **[Renault]** vehicles now have buttons to remotely sound the horn or flash the lights. Thanks, [@sebastiaanspeck]!
 - **[Proxmox VE]** gained a sensor platform with CPU usage, memory usage, disk usage, and status sensors for nodes, virtual machines, and containers. Thanks, [@erwindouna]!
 - **[Mealie]** now has a `get_shopping_list_items` action that returns structured shopping list data, useful for automations that need more detail than the to-do entity provides. Thanks, [@andrew-codechimp]!
-- **[Ambient Weather Station]** now exposes sensors for the AQIN indoor air quality monitor, including PM2.5, PM10, CO2, temperature, humidity, and AQI measurements. Thanks, [@n-6]!
+- **[Ambient Weather Station]** now exposes sensors for the AQIN indoor air quality monitor, including PM2.5, PM10, CO2, temperature, humidity, and <abbr title="air quality index">AQI</abbr> measurements. Thanks, [@n-6]!
 - **[WeatherFlow]** Tempest stations now show battery level as a percentage for consistency with other integrations. Thanks, [@pkolbus]!
 - **[SleepIQ]** now provides five new sleep health sensors per sleeper: sleep score, sleep duration, heart rate average, respiratory rate average, and heart rate variability. Thanks, [@rhcp011235]!
 - **[Anthropic]** now supports the Claude Opus 4.6 model with adaptive thinking effort levels, and gained native structured outputs for more accurate tool calls on models 4.5 and newer. Thanks, [@Shulyaka]!
@@ -592,6 +539,7 @@ This release ships running on Python 3.14! In case you are wondering what that m
 So, why does it matter to you? Python 3.14 brings performance improvements to the foundation that Home Assistant is built on. The new version includes a faster interpreter, improved startup times, and better memory usage, all of which contribute to a snappier Home Assistant experience. 🚀
 
 Don't worry! We handle the upgrade to Python 3.14 automatically for you on all officially supported installation methods. Just upgrade Home Assistant as you normally would, and you are good to go! 😎
+
 ## Need help? Join the community
 
 Home Assistant has a great community of users who are all more than willing to help each other out. So, join us!
@@ -740,6 +688,7 @@ If you are a custom integration developer and want to learn about changes and ne
 - [async_listen in Labs is deprecated](https://developers.home-assistant.io/blog/2026/02/16/labs-async-listen-deprecation)
 - [Changes in OAuth 2.0 helper error handling](https://developers.home-assistant.io/blog/2026/02/19/oauth-token-request-error-handling)
 - [Custom integrations can now ship their own brand images](https://developers.home-assistant.io/blog/2026/02/24/brands-proxy-api)
+- [Reconfiguration support for webhook helper](https://developers.home-assistant.io/blog/2026/02/18/reconfiguration-support-for-webhook-helper)
 - [Remove deprecated light features](https://developers.home-assistant.io/blog/2026/02/23/remove-deprecate-light-features)
 
 [devblog]: https://developers.home-assistant.io/blog/
