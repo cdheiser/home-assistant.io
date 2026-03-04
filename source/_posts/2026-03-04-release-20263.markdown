@@ -81,6 +81,7 @@ _A huge thank you to all the contributors who made this release possible! And a 
 [@CoMPaTech]: https://github.com/CoMPaTech
 [@MindFreeze]: https://github.com/MindFreeze
 [@OnFreund]: https://github.com/OnFreund
+[@silamon]: https://github.com/silamon
 [@TimoPtr]: https://github.com/TimoPtr
 
 ## Send your vacuum to clean specific areas
