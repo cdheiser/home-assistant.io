@@ -224,19 +224,29 @@ If you use a ZiGate or Sonoff ZBBridge device, you need additional configuration
 
 {% enddetails %}
 
-### Global Options
+### Global options
 
-There are a few global options available once ZHA has been configured. Press **Configure** to access these settings.
+There are a few global options available once ZHA has been configured. To access these settings, go to {% my config_zha title="**Settings** > **Zigbee**" %} and select **Options**.
 
 The options are as follows:
 
 {% configuration_basic %}
-Enable enhanced light color/temperature transition from an off-state:
-  description: "For older non Zigbee 3.0 lights, this still allows a proper transition from an off-state to a new color (without seeing the old color). _(default: off)_"
-Enable enhanced brightness slider during light transition:
-  description: "This avoids seeing intermediary brightness state when turning on lights with a transition. _(default: on)_"
-Group members assume state of group:
-  description: "When using ZHA groups, turning on a ZHA group light makes the ZHA group members optimistically change their state to \"on\", instead of waiting and polling the lights when off. _(default: on)_"
+Identify on join:
+  description: "When a new device joins the network, it performs an identify procedure (such as blinking) so you can locate it. Turn this off if you are adding many devices in bulk and don't need the visual feedback, or if a particular device's identify behavior is disruptive (for example, a siren that beeps). Default: `on`."
+Light transition time:
+  description: "The default transition time (in seconds) used when changing light state. Set to `0` to disable transitions. Increase this (for example, to `1` or `2`) if you want all lights to fade in and out by default, without having to set a transition on every automation. Default: `0`."
+Smooth transition power-on:
+  description: "For older non-Zigbee 3.0 lights, this allows a smooth transition from an off-state to a new color or brightness level, without first showing the old color. Enable this if you have older bulbs (such as older IKEA or Philips bulbs) that briefly flash their previous color when turning on with a transition. Default: `off`."
+Prevent slider jumping during transitions:
+  description: "Prevents the brightness slider from jumping to an intermediate value while a light is transitioning. This avoids a confusing visual flicker in the UI when turning lights on with a transition effect. Disable this if you are debugging light behavior and want to see the actual intermediate brightness values during a transition. Default: `on`."
+Assume state of group:
+  description: "When you turn on a ZHA group light, all group members optimistically update to the `on` state, instead of waiting to be polled. Disable this if you have unreliable bulbs in a group that sometimes don't respond, so the UI reflects the actual state rather than an assumed state. Default: `on`."
+Consider mains-powered devices unavailable after:
+  description: "The time (in seconds) after which a mains-powered device with no activity is considered unavailable. Set to `0` to disable. Lower this value (for example, to `3600` (1 hour)) if you want faster detection when a plug or bulb loses power. Default: `7200` (2 hours)."
+Consider battery-powered devices unavailable after:
+  description: "The time (in seconds) after which a battery-powered device with no activity is considered unavailable. Set to `0` to disable. Raise this for sleepy sensors (such as door or temperature sensors) that only report when triggered, to prevent them from repeatedly going unavailable. Lower it if you want quicker notification when a battery runs out. Default: `21600` (6 hours)."
+Refresh mains-powered devices state on startup:
+  description: "Poll mains-powered devices to refresh their state when ZHA starts up. Disable this if your network is large and the startup polling causes congestion, or if your devices are slow to reconnect after a restart. Default: `on`."
 {% endconfiguration_basic %}
 
 ### Defining the Zigbee channel to use
