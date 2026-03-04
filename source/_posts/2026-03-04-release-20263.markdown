@@ -158,7 +158,7 @@ You can choose between three wake words:
 
 Once enabled, simply say your chosen wake word and the Assist pipeline will open, ready to take your command.
 
-Watch the video for a step-by-step walkthrough on how to enable and use wake word detection on your Android device.
+Watch the video to see wake word detection in action on an Android device.
 
 <lite-youtube videoid="-XkuDD9IlZI" videotitle="Wake word detection on your Android phone"></lite-youtube>
 
