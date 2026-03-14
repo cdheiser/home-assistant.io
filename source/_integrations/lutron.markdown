@@ -52,18 +52,7 @@ If you are using RadioRA2 software version 12 or later, the default `lutron` use
 
 ## Keypad buttons
 
-Keypad button actions are provided in event entities.
-
-The following event types are available:
-- `single_press`: Fired when a button is pressed on most keypads.
-- `press`: Fired when a button is pressed on keypads that support release events (like Raise/Lower buttons).
-- `release`: Fired when a button is released on keypads that support release events.
-
-Buttons also fire a `lutron_event` on the event bus for backward compatibility. This event includes the following data attributes:
-- `id`: The slugified name of the button (for example, `office_pico_on`).
-- `action`: The action performed (`single`, `pressed`, or `released`).
-- `full_id`: The slugified name of the area and button.
-- `uuid`: The Lutron unique identifier for the button.
+Keypad buttons actions are provided in event entities.
 
 ## Keypad LEDs
 
@@ -95,15 +84,14 @@ Any configured Powr Savr occupancy sensors will be added as occupancy binary sen
 
 ## Example automations
 
-### Keypad button notification
-
-This example shows how to use the `event` entity for a notification.
-
 ```yaml
 - alias: "Keypad button pressed notification"
   triggers:
-    - trigger: state
-      entity_id: event.office_pico_on
+    - trigger: event
+      event_type: lutron_event
+      event_data:
+        id: office_pico_on
+        action: single
   actions:
     - action: notify.telegram
       data:
