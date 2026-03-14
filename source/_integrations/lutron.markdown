@@ -36,7 +36,7 @@ Presently, the integration supports communicating with the RadioRA 2 Main Repeat
 
 ## Configuration
 
-When configured, the `lutron` integration will automatically discover the rooms and their associated switches/dimmers as configured by the RadioRA 2 software from Lutron. Each room will be treated as a separate group.
+When configured, the **Lutron** integration will automatically discover the rooms and their associated switches/dimmers as configured by the RadioRA 2 software from Lutron. Each room will be treated as a separate group.
 
 To use Lutron RadioRA 2 devices in your installation, you'll need to first create a username/password in your Lutron programming software. Once a telnet username/password has been programmed, you can follow the instructions from the next chapter.
 
@@ -53,6 +53,10 @@ If you are using RadioRA2 software version 12 or later, the default `lutron` use
 ## Keypad buttons
 
 Keypad buttons actions are provided in event entities.
+
+The buttons fire a `lutron_event` on the event bus. This event includes the following data attributes:
+- `id`: The slugified name of the button (for example, `office_pico_on`).
+- `action`: The action performed (`single`, `pressed`, or `released`).
 
 ## Keypad LEDs
 
