@@ -30,7 +30,7 @@ ha_integration_type: hub
 ha_config_flow: true
 ---
 
-[Lutron](https://www.lutron.com/) is an American lighting control company. They have several lines of home automation devices that manage light switches/dimmers, occupancy sensors, HVAC controls, etc. The **Lutron** integration in Home Assistant is responsible for communicating with the main hub for these systems.
+[Lutron](https://www.lutron.com/) is an American lighting control company. They have several lines of home automation devices that manage light switches, dimmers, occupancy sensors, and HVAC controls. The **Lutron** integration in Home Assistant is responsible for communicating with the main hub for these systems.
 
 Presently, the integration supports communicating with the RadioRA 2 Main Repeater and handles various devices like light switches, dimmers, keypad scenes, fans, and shades.
 
@@ -52,17 +52,19 @@ If you are using RadioRA2 software version 12 or later, the default `lutron` use
 
 ## Keypad buttons
 
-Keypad buttons actions are provided in event entities.
+Keypad button actions are provided in event entities.
 
 The buttons fire a `lutron_event` on the event bus. This event includes the following data attributes:
+
 - `id`: The slugified name of the button (for example, `office_pico_on`).
 - `action`: The action performed (`single`, `pressed`, or `released`).
 
 ## Keypad LEDs
 
-Each full-width button on a Lutron SeeTouch, Hybrid SeeTouch, and Tabletop SeeTouch Keypad has an LED that can be controlled by Home Assistant. 
+Each full-width button on a Lutron seeTouch, Hybrid seeTouch, and Tabletop seeTouch Keypad has an LED that can be controlled by Home Assistant. 
 
 Indicator LEDs for scenes (keypad buttons) are available as **Select** entities. They support the following states:
+
 - **Off**
 - **On**
 - **Slow Flash**
